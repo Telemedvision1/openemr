@@ -16,6 +16,8 @@
 
 [![Backers on Open Collective](https://opencollective.com/openemr/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/openemr/sponsors/badge.svg)](#sponsors)
 
+> **TelemedVision fork:** All customizations live on [`telemedvision/main`](https://github.com/Telemedvision1/openemr/tree/telemedvision/main). Switch to that branch before making any changes.
+
 # OpenEMR
 
 [OpenEMR](https://open-emr.org) is a Free and Open Source electronic health records and medical practice management application. It features fully integrated electronic health records, practice management, scheduling, electronic billing, internationalization, free support, a vibrant community, and a whole lot more. It runs on Windows, Linux, Mac OS X, and many other platforms.
@@ -62,6 +64,11 @@ npm install
 npm run build
 composer dump-autoload -o
 ```
+
+> **TelemedVision:** After building, switch to the `telemedvision/main` branch for clinic customizations:
+> ```shell
+> git checkout telemedvision/main
+> ```
 
 ### Contributors
 
