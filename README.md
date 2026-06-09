@@ -65,6 +65,11 @@ npm run build
 composer dump-autoload -o
 ```
 
+> **TelemedVision:** After building, switch to the `telemedvision/main` branch for clinic customizations:
+> ```shell
+> git checkout telemedvision/main
+> ```
+
 ### Contributors
 
 This project exists thanks to all the people who have contributed. [[Contribute]](CONTRIBUTING.md).
