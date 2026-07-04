@@ -24,7 +24,7 @@
  * @copyright Copyright (c) 2021 Daniel Pflieger <daniel@mi-squared.com> <daniel@growlingflea.com>
  * @copyright Copyright (c) 2021-2023 Robert Down <robertdown@live.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 // prevent UI redressing
@@ -230,7 +230,7 @@ if ($_GET['testing_mode'] ?? 0 == 1) {
 }
 
 $viewArgs = [
-    'title' => $openemr_name,
+    'title' => $tabemr_name,
     'displayLanguage' => $globalsBag->get("language_menu_login") && (count($languageList) != 1),
     'defaultLangID' => $defaultLanguage['id'],
     'defaultLangName' => $defaultLanguage['language'],

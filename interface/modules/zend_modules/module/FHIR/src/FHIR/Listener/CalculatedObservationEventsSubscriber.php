@@ -5,11 +5,11 @@
  * resource that is being saved that has calculated fields (IE records that are derivative data of the primary source)
  * This
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author   Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Discover and Change, Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\ZendModules\FHIR\Listener;

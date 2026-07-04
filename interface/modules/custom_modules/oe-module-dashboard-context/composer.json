@@ -1,7 +1,7 @@
 {
-    "name": "openemr/oe-module-dashboard-context",
+    "name": "tabemr/oe-module-dashboard-context",
     "description": "Dashboard Context Manager module for OpenEMR - Control patient dashboard widget visibility based on care contexts",
-    "type": "openemr-module",
+    "type": "tabemr-module",
     "license": "GPL-3.0-or-later",
     "authors": [
         {
@@ -18,13 +18,13 @@
         }
     },
     "extra": {
-        "openemr": {
+        "tabemr": {
             "type": "custom-module",
             "directory": "oe-module-dashboard-context"
         }
     },
     "keywords": [
-        "openemr",
+        "tabemr",
         "module",
         "dashboard",
         "context",
@@ -32,6 +32,6 @@
         "patient-summary"
     ],
     "support": {
-        "issues": "https://github.com/openemr/openemr/issues"
+        "issues": "https://github.com/tabemr/tabemr/issues"
     }
 }

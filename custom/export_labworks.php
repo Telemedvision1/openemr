@@ -22,7 +22,7 @@
  // then set $FTP_SERVER to an empty string.
  //
  $FTP_SERVER = "192.168.0.30";
- $FTP_USER   = "openemr";
+ $FTP_USER   = "tabemr";
  $FTP_PASS   = "secret";
  $FTP_DIR    = "";
 

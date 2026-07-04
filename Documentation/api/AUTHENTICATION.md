@@ -43,7 +43,7 @@ OpenEMR uses **OAuth 2.0** with **OpenID Connect (OIDC)** for API authentication
 
 OAuth2 endpoints use the following base URL pattern:
 ```
-https://{your-openemr-host}/oauth2/{site}/
+https://{your-tabemr-host}/oauth2/{site}/
 ```
 
 **Example for default site:**
@@ -67,7 +67,7 @@ Enable the appropriate API services in OpenEMR:
 Set your base URL:
 **Administration → Config → Connectors → Site Address (required for OAuth2 and FHIR)**
 
-Example: `https://your-openemr.example.com`
+Example: `https://your-tabemr.example.com`
 
 ### 3. Security Settings
 Configure OAuth2 security settings:
@@ -137,7 +137,7 @@ curl -X POST -k -H 'Content-Type: application/json' \
 
 SMART apps can be registered through the web interface:
 
-1. Navigate to: `https://your-openemr.example.com/interface/smart/register-app.php`
+1. Navigate to: `https://your-tabemr.example.com/interface/smart/register-app.php`
 2. Fill in the app details:
     - App Name
     - Launch URL
@@ -1134,9 +1134,9 @@ All technical accuracy is maintained from the original community-authored docume
 
 ### Contributing
 OpenEMR is an open-source project. To contribute to this documentation:
-- **Report Issues:** [GitHub Issues](https://github.com/openemr/openemr/issues)
+- **Report Issues:** [GitHub Issues](https://github.com/tabemr/tabemr/issues)
 - **Discuss:** [Community Forum](https://community.open-emr.org/)
-- **Submit Changes:** [Pull Requests](https://github.com/openemr/openemr/pulls)
+- **Submit Changes:** [Pull Requests](https://github.com/tabemr/tabemr/pulls)
 
 **Last Updated:** November 2025
 **License:** GPL v3

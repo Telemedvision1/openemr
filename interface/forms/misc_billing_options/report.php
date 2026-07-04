@@ -10,7 +10,7 @@
  * @copyright Copyright (C) 2007 Bo Huynh
  * @copyright Copyright (C) 2016 Terry Hill <terry@lillysystems.com>
  * @copyright Copyright (C) 2017-2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 

@@ -3,11 +3,11 @@
 /**
  * ServiceDeleteEvent is intended to be used and dispatched whenever an OpenEMR Service deletes a record.  Listeners
  * can key off the pre delete event or the post delete event to handle data cleanup or other tasks.
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Discover and Change, Inc. <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2023 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Events\Services;

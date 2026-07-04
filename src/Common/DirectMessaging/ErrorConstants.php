@@ -2,11 +2,11 @@
 
 /**
  * ErrorConstants holds a number of string constants and error codes
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Common\DirectMessaging;

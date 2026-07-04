@@ -34,19 +34,19 @@ http://www.open-emr.org .
 
 The OpenEMR release archive should be named as follows:
 
-openemr-<version>.tar.gz   -or-   openemr-<version>.zip
+tabemr-<version>.tar.gz   -or-   tabemr-<version>.zip
 
 To extract the archive, use either of the following commands from the command line:
 
-bash# tar -pxvzf openemr-<version>-release.tar.gz
-bash# unzip openemr-<version>-release.tar.gz
+bash# tar -pxvzf tabemr-<version>-release.tar.gz
+bash# unzip tabemr-<version>-release.tar.gz
 
 Be sure to use the -p flag when using tar, as certain permissions must be preserved.
 
-OpenEMR will be extracted into a directory named openemr.
+OpenEMR will be extracted into a directory named tabemr.
 
 Alternatively a Debian package may be available as a file named
-openemr-<version>.deb.  This may work with some other Debian-like
+tabemr-<version>.deb.  This may work with some other Debian-like
 Linux distributions such as Ubuntu.
 
 III. Setup
@@ -69,19 +69,19 @@ enabled on your system.  These include:
 Copy the OpenEMR folder into the root folder of the webserver. On Mandrake
 Linux, for example, use the command:
 
-  bash# mv openemr /var/www/html/
+  bash# mv tabemr /var/www/html/
 
 Make sure the webserver is running, and point a web-browser to setup.php located
-within the openemr web folder.  If you installed OpenEMR in the root web
-directory, the URL would read: http://localhost/openemr/setup.php.
+within the tabemr web folder.  If you installed OpenEMR in the root web
+directory, the URL would read: http://localhost/tabemr/setup.php.
 The setup script will step you through the configuration of the OpenEMR.
 
 The first screen of the setup script will ensure that the webserver user
 (in linux, often is "apache", "www-data", or "nobody") has write privileges on
-certain file and directories. The file is openemr/sites/default/sqlconf.php.
+certain file and directories. The file is tabemr/sites/default/sqlconf.php.
 In linux, this can be set by "chmod a+w filename"
 command to grant global write permissions to the file. The directory is
-openemr/sites/default/documents. In
+tabemr/sites/default/documents. In
 linux, if the webserver user name is "apache", then the command
 "chown -R apache:apache directory_name" will grant global write permissions
 to the directories, and we recommend making these changes permanent.
@@ -160,7 +160,7 @@ one group per office be used.
 
 Step 3 is where setup will configure OpenEMR.  It will first create the database
 and connect to it to create the initial tables.  It will then write the mysql
-database configuration to the openemr/sites/default/sqlconf.php file.
+database configuration to the tabemr/sites/default/sqlconf.php file.
 Should anything fail during step 3, you may have to remove the existing database or
 tables before you can try again. If no errors occur, you will see a "Continue"
 button at the bottom.
@@ -191,7 +191,7 @@ is set to a correct value that will work on your system.
 
 Step 6 gives instructions on configuring the Apache web server.  We suggest
 you print these instructions for future reference. Instructions are given to
-secure the "openemrwebroot/sites/*/documents"
+secure the "tabemrwebroot/sites/*/documents"
 directory, which contain patient information. This can
 be done be either placing pertinent .htaccess files in this directory
 or by editing the apache configuration file.  The location of the apache
@@ -202,13 +202,13 @@ In windows, the XAMPP 1.7.0 package places the configuration file at
 xampp\apache\conf\httpd.conf. To configure Zend and to secure the /documents,
 directory you can paste following to the end of the apache
 configuration file (ensure you put full path to directories):
-<Directory "openemrwebroot">
+<Directory "tabemrwebroot">
 AllowOverride FileInfo
 </Directory>
-<Directory "openemrwebroot/sites">
+<Directory "tabemrwebroot/sites">
 AllowOverride None
 </Directory>
-<Directory "openemrwebroot/sites/*/documents">
+<Directory "tabemrwebroot/sites/*/documents">
 order deny,allow
 Deny from all
 </Directory>
@@ -225,15 +225,15 @@ needed. For information on using OpenEMR, consult the User Documentation located
 in the Documentation folder, the documentation at http://www.open-emr.org, and
 the forums at https://community.open-emr.org/.
 
-Reading openemr/sites/default/config.php is a good idea. This file contains some
+Reading tabemr/sites/default/config.php is a good idea. This file contains some
 options to choose from including themes.
 
 To create custom encounter forms, see the files
 
-  openemr/Documentation/3rd Party Form API.txt
-  openemr/interface/forms/OpenEMR_form_example-rev2.tar.gz
+  tabemr/Documentation/3rd Party Form API.txt
+  tabemr/interface/forms/OpenEMR_form_example-rev2.tar.gz
 
-and read the included documentation and online documentation at www.openemr.org.
+and read the included documentation and online documentation at www.tabemr.org.
 Many forms exist in contrib/forms as well as in interface/forms and may be used
 as examples.
 
@@ -258,7 +258,7 @@ configured automatically during OpenEMR setup.  It can be administered
 within OpenEMR in the admin->acl menu.  This is very powerful
 access control software.  To learn more about phpGACL
 (see http://phpgacl.sourceforge.net/), recommend reading the phpGACL manual,
-the /openemr/Documentation/README.phpgacl file, and the online documentation at
+the /tabemr/Documentation/README.phpgacl file, and the online documentation at
 http://www.open-emr.org . Also recommend reading the comments at top of
 src/Common/Acl/AclMain.php .
 
@@ -269,28 +269,28 @@ http://www.open-emr.org .
 
 Be sure to back up your OpenEMR installation and database before upgrading!
 
-Upgrading OpenEMR is currently done by replacing the old openemr directory with
-a newer version. And, ensure you copy your settings from the following old openemr
+Upgrading OpenEMR is currently done by replacing the old tabemr directory with
+a newer version. And, ensure you copy your settings from the following old tabemr
 files to the new configuration files (we do not recommend simply
 copying the entire files):
 
-  openemr/sites/default/sqlconf.php
+  tabemr/sites/default/sqlconf.php
     --Also in this sqlconf.php file, set the $config variable (found near bottom
       of file within bunch of slashes) to 1 ($config = 1;)
-  openemr/sites/default/config.php
+  tabemr/sites/default/config.php
 
 The following directories should be copied from the old version to the
 new version:
 
-  openemr/sites/default/documents
-  openemr/sites/default/era
-  openemr/sites/default/edi
-  openemr/sites/default/letter_templates
+  tabemr/sites/default/documents
+  tabemr/sites/default/era
+  tabemr/sites/default/edi
+  tabemr/sites/default/letter_templates
 
 If there are other files that you have customized, then you will also need
 to treat those carefully.
 
 To upgrade the database, run the sql_upgrade.php script from your web
-browser (for example http://openemr.location/sql_upgrade.php).  It will
+browser (for example http://tabemr.location/sql_upgrade.php).  It will
 prompt you to select the old release number, and will display the SQL
 commands issued as the upgrade occurs.

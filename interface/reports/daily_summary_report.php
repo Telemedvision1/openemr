@@ -12,7 +12,7 @@
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2016 Rishabh Software
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
@@ -267,7 +267,7 @@ $selectedProvider = $_POST['form_provider'] ?? "";  // provider filter
         //Count Total New Patient
         $newPatientSql = sqlStatement("SELECT `OPE`.`pc_eventDate` , `f`.`name` AS facility_Name , count( * ) AS totalNewPatient, `PD`.`providerID`, CONCAT( `u`.`fname`, ' ', `u`.`lname` ) AS provider_name
                                         FROM `patient_data` AS PD
-                                        LEFT JOIN `openemr_postcalendar_events` AS OPE ON ( `OPE`.`pc_pid` = `PD`.`pid` )
+                                        LEFT JOIN `tabemr_postcalendar_events` AS OPE ON ( `OPE`.`pc_pid` = `PD`.`pid` )
                                         LEFT JOIN `facility` AS f ON ( `OPE`.`pc_facility` = `f`.`id` )
                                         LEFT JOIN `users` AS u ON ( `OPE`.`pc_aid` = `u`.`id` )
                                         WHERE `OPE`.`pc_title` = 'New Patient'

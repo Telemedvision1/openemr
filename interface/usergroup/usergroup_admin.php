@@ -17,7 +17,7 @@
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2021 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2022-2023 Robert Down <robertdown@live.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");

@@ -11,8 +11,8 @@
  * @copyright Copyright (c) 2009 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2018-2025 Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2021 Daniel Pflieger <daniel@mi-squared.com>, <daniel@growlingflea.com>
- * @link https://github.com/openemr/openemr/tree/master
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link https://github.com/tabemr/tabemr/tree/master
+ * @license https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Billing;

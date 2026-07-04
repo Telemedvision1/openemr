@@ -7,7 +7,7 @@
  * @author    Kevin Yeh <kevin.y@integralemr.com>
  * @copyright Copyright (c) 2013 Kevin Yeh <kevin.y@integralemr.com>
  * @copyright Copyright (c) 2013 OEMR
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 function start_edit(data, event) {
     data.edit_mode(true);

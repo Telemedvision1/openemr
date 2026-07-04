@@ -17,7 +17,7 @@
  * @copyright Copyright (c) 2015-2017 Terry Hill <terry@lillysystems.com>
  * @copyright Copyright (c) 2019 Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2017-2024 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\Common\Csrf\CsrfUtils;
@@ -32,7 +32,7 @@ $session = SessionWrapperFactory::getInstance()->getActiveSession();
 
 require_once("./verify_session.php");
 /**
- * @Global $srcdir openemr src folder, setup during verify_session.php
+ * @Global $srcdir tabemr src folder, setup during verify_session.php
  */
 require_once("{$globalsBag->getString('srcdir')}/documents.php");
 require_once($globalsBag->getString('fileroot') . "/controllers/C_Document.class.php");

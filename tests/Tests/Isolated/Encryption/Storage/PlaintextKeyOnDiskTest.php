@@ -5,7 +5,7 @@
  * @link      https://www.open-emr.org
  * @author    Eric Stern <erics@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -28,7 +28,7 @@ final class PlaintextKeyOnDiskTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->tempDir = sys_get_temp_dir() . '/openemr_key_test_' . uniqid();
+        $this->tempDir = sys_get_temp_dir() . '/tabemr_key_test_' . uniqid();
         mkdir($this->tempDir);
     }
 

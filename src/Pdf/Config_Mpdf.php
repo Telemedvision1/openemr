@@ -7,7 +7,7 @@
  * @author Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2023 Stephen Waite <stephen.waite@cmsvt.com>
  * @link https://www.open-emr.org
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Pdf;
@@ -20,7 +20,7 @@ class Config_Mpdf
     public static function getConfigMpdf()
     {
         return [
-            'tempDir' => (new CacheDirectory())->for('openemr-mpdf'),
+            'tempDir' => (new CacheDirectory())->for('tabemr-mpdf'),
             'mode' => OEGlobalsBag::getInstance()->get('pdf_language'),
             'format' => OEGlobalsBag::getInstance()->get('pdf_size'),
             'default_font_size' => OEGlobalsBag::getInstance()->getInt('pdf_font_size'),

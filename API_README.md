@@ -147,7 +147,7 @@ https://localhost:9300/apis/default/portal
 ### Interactive Testing
 Test endpoints interactively with Swagger UI:
 ```
-https://your-openemr-install/swagger/
+https://your-tabemr-install/swagger/
 ```
 
 ### Online Demos
@@ -221,7 +221,7 @@ system/Binary.read
 ### Community
 - **[Community Forum](https://community.open-emr.org/)** - Ask questions, share knowledge
 - **[Development Thread](https://community.open-emr.org/t/v6-authorization-and-api-changes-afoot/15450)** - API development discussion
-- **[GitHub Issues](https://github.com/openemr/openemr/issues)** - Report bugs, request features
+- **[GitHub Issues](https://github.com/tabemr/tabemr/issues)** - Report bugs, request features
 
 ### Standards & Specifications
 - **[FHIR R4 Spec](https://hl7.org/fhir/R4/)** - HL7 FHIR specification
@@ -389,9 +389,9 @@ All technical accuracy is maintained from the original community-authored docume
 
 ### Contributing
 OpenEMR is an open-source project. To contribute to this documentation:
-- **Report Issues:** [GitHub Issues](https://github.com/openemr/openemr/issues)
+- **Report Issues:** [GitHub Issues](https://github.com/tabemr/tabemr/issues)
 - **Discuss:** [Community Forum](https://community.open-emr.org/)
-- **Submit Changes:** [Pull Requests](https://github.com/openemr/openemr/pulls)
+- **Submit Changes:** [Pull Requests](https://github.com/tabemr/tabemr/pulls)
 
 **Last Updated:** November 2025
 **License:** GPL v3

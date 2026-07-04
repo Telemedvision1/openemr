@@ -18,17 +18,17 @@ See [`Tests/README.md`](Tests/README.md) for detailed PHPUnit test documentation
 
 ### Docker (recommended)
 
-Install [openemr-cmd](https://github.com/openemr/openemr-devops/tree/master/utilities/openemr-cmd) for shorthand commands that work from any directory:
+Install [tabemr-cmd](https://github.com/tabemr/tabemr-devops/tree/master/utilities/tabemr-cmd) for shorthand commands that work from any directory:
 
 ```bash
-openemr-cmd ut    # Unit tests
-openemr-cmd at    # API tests
-openemr-cmd et    # E2E browser tests
-openemr-cmd st    # Services tests
-openemr-cmd cst   # All tests (clean-sweep-tests)
+tabemr-cmd ut    # Unit tests
+tabemr-cmd at    # API tests
+tabemr-cmd et    # E2E browser tests
+tabemr-cmd st    # Services tests
+tabemr-cmd cst   # All tests (clean-sweep-tests)
 ```
 
-Use `openemr-cmd -h` to list all available commands.
+Use `tabemr-cmd -h` to list all available commands.
 
 ### Isolated tests (no Docker required)
 

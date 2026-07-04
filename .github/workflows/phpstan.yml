@@ -96,7 +96,7 @@ jobs:
           # shellcheck disable=SC2016
           echo '| Composer | `composer phpstan` |'
           # shellcheck disable=SC2016
-          echo '| Docker | `openemr-cmd pst` |'
+          echo '| Docker | `tabemr-cmd pst` |'
         } >> "$GITHUB_STEP_SUMMARY"
     # Regenerate baseline for artifact upload (runs always).
     - name: Regenerate PHPStan Baseline

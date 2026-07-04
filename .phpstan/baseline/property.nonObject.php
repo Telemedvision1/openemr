@@ -989,12 +989,12 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Cannot access property \\$children on mixed\\.$#',
     'count' => 4,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access property \\$menu_id on mixed\\.$#',
     'count' => 2,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access property \\$AnalyzeFormResult on mixed\\.$#',
@@ -1359,17 +1359,17 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Cannot access property \\$children on mixed\\.$#',
     'count' => 2,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access property \\$label on mixed\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access property \\$menu_id on mixed\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access property \\$children on mixed\\.$#',

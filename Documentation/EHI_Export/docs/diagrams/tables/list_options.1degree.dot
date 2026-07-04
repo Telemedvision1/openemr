@@ -85,9 +85,9 @@ digraph "oneDegreeRelationshipsDiagram" {
   "lists_medication":"prescription_id":w -> "prescriptions":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "lists_medication":"request_intent":w -> "list_options":"option_id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "lists_medication":"usage_category":w -> "list_options":"option_id.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "openemr_postcalendar_events":"pc_apptstatus":w -> "list_options":"option_id.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "openemr_postcalendar_events":"pc_pid":w -> "patient_data":"pid":e [arrowhead=none dir=back arrowtail=crowodot];
-  "openemr_postcalendar_events":"pc_room":w -> "list_options":"option_id.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tabemr_postcalendar_events":"pc_apptstatus":w -> "list_options":"option_id.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tabemr_postcalendar_events":"pc_pid":w -> "patient_data":"pid":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tabemr_postcalendar_events":"pc_room":w -> "list_options":"option_id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "patient_care_experience_preferences":"observation_code":w -> "list_options":"option_id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "patient_care_experience_preferences":"patient_id":w -> "patient_data":"pid":e [arrowhead=none dir=back arrowtail=crowodot];
   "patient_data":"interpreter_needed":w -> "list_options":"option_id.type":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -547,10 +547,10 @@ digraph "oneDegreeRelationshipsDiagram" {
     target="_top"
     tooltip="lists_medication"
   ];
-  "openemr_postcalendar_events" [
+  "tabemr_postcalendar_events" [
    label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3"  BGCOLOR="#f5f5f5"><TABLE BORDER="0" CELLSPACING="0"><TR><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="182" HEIGHT="16"><B>openemr_postcalendar_events</B></TD><TD ALIGN="RIGHT">[table]</TD></TR></TABLE></TD></TR>
+      <TR><TD COLSPAN="3"  BGCOLOR="#f5f5f5"><TABLE BORDER="0" CELLSPACING="0"><TR><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="182" HEIGHT="16"><B>tabemr_postcalendar_events</B></TD><TD ALIGN="RIGHT">[table]</TD></TR></TABLE></TD></TR>
       <TR><TD PORT="pc_eid" COLSPAN="3" ALIGN="LEFT"><TABLE BORDER="0" CELLSPACING="0" ALIGN="LEFT"><TR ALIGN="LEFT"><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="15" HEIGHT="16"><IMG SRC="../../images/primaryKeys.png"/></TD><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="182" HEIGHT="16">pc_eid</TD></TR></TABLE></TD></TR>
       <TR><TD PORT="pc_catid" COLSPAN="3" BGCOLOR="#ffffff" ALIGN="LEFT"><TABLE BORDER="0" CELLSPACING="0" ALIGN="LEFT"><TR ALIGN="LEFT"><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="15" HEIGHT="16"><IMG SRC="../../images/foreignKeys.png"/></TD><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="182" HEIGHT="16">pc_catid</TD></TR></TABLE></TD></TR>
       <TR><TD PORT="pc_aid" COLSPAN="3" BGCOLOR="#ffffff" ALIGN="LEFT"><TABLE BORDER="0" CELLSPACING="0" ALIGN="LEFT"><TR ALIGN="LEFT"><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="15" HEIGHT="16"><IMG SRC="../../images/foreignKeys.png"/></TD><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="182" HEIGHT="16">pc_aid</TD></TR></TABLE></TD></TR>
@@ -571,9 +571,9 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#ffffff">&lt; 10</TD><TD ALIGN="RIGHT" BGCOLOR="#ffffff">  </TD><TD ALIGN="RIGHT" BGCOLOR="#ffffff">2 &gt;</TD></TR>
     </TABLE>>
-    URL="../../tables/openemr_postcalendar_events.html"
+    URL="../../tables/tabemr_postcalendar_events.html"
     target="_top"
-    tooltip="openemr_postcalendar_events"
+    tooltip="tabemr_postcalendar_events"
   ];
   "patient_care_experience_preferences" [
    label=<

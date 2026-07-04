@@ -62,7 +62,7 @@ $db = &$gacl->db;
 $smarty = new Smarty;
 $smarty->setCompileCheck(true);
 $smarty->setTemplateDir($gacl_options['smarty_template_dir'] ?? '');
-$smarty->setCompileDir((new CacheDirectory())->for('openemr-smarty'));
+$smarty->setCompileDir((new CacheDirectory())->for('tabemr-smarty'));
 
 /*
  * Email address used in setup.php, please do not change.

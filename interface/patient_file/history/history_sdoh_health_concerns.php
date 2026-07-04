@@ -2,11 +2,11 @@
 
 /*
  * history_sdoh_health_concerns.php
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 /**
@@ -16,7 +16,7 @@
  * @package   OpenEMR
  * @link      https://www.open-emr.org
  * @author    System Architect
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 $srcdir = dirname(__FILE__, 4) . "/library";

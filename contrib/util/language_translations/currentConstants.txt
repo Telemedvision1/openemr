@@ -2269,7 +2269,7 @@ Contact Lenses
 Contact Medical Information Integration, LLC at http://mi-squared.com for Lab Exchange Service.
 Contact Medical Information Integration, LLC at http://mi-squared.com or ZH Healthcare at http://zhservices.com for subscribing the eRx service
 Contact Medical Information Integration, LLC at http://mi-squared.com or ZH Healthcare at http://zhservices.com for subscribing to the NewCrop eRx service.
-Contact mi-squared at http://www.mi-squared.com/products-services/openemr/ or ZH Healthcare at https://blueehr.com/contact-us/ for subscribing to the NewCrop eRx service.
+Contact mi-squared at http://www.mi-squared.com/products-services/tabemr/ or ZH Healthcare at https://blueehr.com/contact-us/ for subscribing to the NewCrop eRx service.
 Contact name
 Contact Open Med Practice, www.openmedpractice.com for subscribing to the Weno Free eRx service.
 Contact or Notify Phone
@@ -6133,7 +6133,7 @@ Local Filesystem will store the order as a HL7v2.3 message in a predefined locat
 Locale
 Locality
 Location
-location of the openemr machine and may contain sensitive data, so it is recommended to manually delete the files after its use
+location of the tabemr machine and may contain sensitive data, so it is recommended to manually delete the files after its use
 Location of this lot
 Location unspecified
 Location where Hylafax stores faxes.

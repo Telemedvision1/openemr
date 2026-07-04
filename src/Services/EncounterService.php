@@ -13,7 +13,7 @@
  * @copyright Copyright (c) 2018 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Services;
@@ -260,7 +260,7 @@ class EncounterService extends BaseService
                                last_update
                            FROM form_encounter
                        ) fe
-                       LEFT JOIN openemr_postcalendar_categories as opc
+                       LEFT JOIN tabemr_postcalendar_categories as opc
                        ON opc.pc_catid = fe.pc_catid
                        LEFT JOIN list_options as class ON class.option_id = fe.class_code
                        LEFT JOIN (

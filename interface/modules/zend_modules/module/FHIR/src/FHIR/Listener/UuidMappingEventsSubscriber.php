@@ -6,11 +6,11 @@
  * done on each save.  If for some reason an event isn't fired or is dropped before the subscribe receives it, a CRON
  * job goes through every 6 hours and populates the uuids so nothing is missed.
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\ZendModules\FHIR\Listener;

@@ -161,15 +161,15 @@ while [[ "${LOOKING}" -eq 1 ]]; do
 done
 
 # Extract the OpenEMR web directory tree.
-dlg_info "Extracting ${BAKDIR}/openemr.tar.gz ..."
-mkdir openemr
-cd openemr || exit
-if ! tar zxf ../openemr.tar.gz; then
-  dlg_msg "Error: tar could not extract '${BAKDIR}/openemr.tar.gz'."
+dlg_info "Extracting ${BAKDIR}/tabemr.tar.gz ..."
+mkdir tabemr
+cd tabemr || exit
+if ! tar zxf ../tabemr.tar.gz; then
+  dlg_msg "Error: tar could not extract '${BAKDIR}/tabemr.tar.gz'."
   exit 1
 fi
 
-OEDIR=/var/www/openemr
+OEDIR=/var/www/tabemr
 
 # Get the Site ID, it should be the only site backed up.
 shopt -s nullglob
@@ -288,8 +288,8 @@ mysqladmin --password="${MYROOTPASS}" --force drop "${OEDBNAME}" 2> /dev/null
 
 dlg_info "Restoring OpenEMR database ..."
 cd "${BAKDIR}" || exit
-if ! gunzip openemr.sql.gz; then
-  dlg_msg "Error: Could not decompress '${BAKDIR}/openemr.sql.gz'."
+if ! gunzip tabemr.sql.gz; then
+  dlg_msg "Error: Could not decompress '${BAKDIR}/tabemr.sql.gz'."
   exit 1
 fi
 
@@ -306,20 +306,20 @@ fi
 mysql --password="${MYROOTPASS}" --execute "CREATE USER '${OEDBUSER}'@'localhost' IDENTIFIED BY '${OEDBPASS}'" "${OEDBNAME}"
 mysql --password="${MYROOTPASS}" --execute "GRANT ALL PRIVILEGES ON ${OEDBNAME}.* TO '${OEDBUSER}'@'localhost' WITH GRANT OPTION" "${OEDBNAME}"
 
-if ! mysql --user="${OEDBUSER}" --password="${OEDBPASS}" "${OEDBNAME}" < openemr.sql; then
+if ! mysql --user="${OEDBUSER}" --password="${OEDBPASS}" "${OEDBNAME}" < tabemr.sql; then
   dlg_msg "Error: Restore to database '${OEDBNAME}' failed."
   exit 1
 fi
 
 if [[ -e "${OEDIR}" ]]; then
   dlg_info "Restoring site subdirectory ..."
-  if ! mv "${BAKDIR}"/openemr/sites/"${OLDSITEID}" "${OEDIR}"/sites/"${SITEID}"; then
+  if ! mv "${BAKDIR}"/tabemr/sites/"${OLDSITEID}" "${OEDIR}"/sites/"${SITEID}"; then
     dlg_msg "Error: Cannot create directory '${OEDIR}/sites/${SITEID}'."
     exit 1
   fi
 else
   dlg_info "Restoring OpenEMR web directory tree ..."
-  if ! mv "${BAKDIR}"/openemr "${OEDIR}"; then
+  if ! mv "${BAKDIR}"/tabemr "${OEDIR}"; then
     dlg_msg "Error: Cannot create directory '${OEDIR}'."
     exit 1
   fi

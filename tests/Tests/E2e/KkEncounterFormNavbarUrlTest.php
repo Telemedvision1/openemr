@@ -14,7 +14,7 @@
  * @link      https://www.open-emr.org
  * @author    OpenEMR Contributors
  * @copyright Copyright (c) 2026 OpenEMR Contributors
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -117,7 +117,7 @@ class KkEncounterFormNavbarUrlTest extends PantherTestCase
 
         if ($useGrid === "true") {
             $seleniumHost = getenv("SELENIUM_HOST", true) ?: "selenium";
-            $e2eBaseUrl = getenv("SELENIUM_BASE_URL", true) ?: "http://openemr";
+            $e2eBaseUrl = getenv("SELENIUM_BASE_URL", true) ?: "http://tabemr";
             $implicitWait = (int) (getenv("SELENIUM_IMPLICIT_WAIT") ?: 0);
             $pageLoadTimeout = (int) (getenv("SELENIUM_PAGE_LOAD_TIMEOUT") ?: 60);
 

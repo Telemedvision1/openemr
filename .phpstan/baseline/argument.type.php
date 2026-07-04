@@ -10374,7 +10374,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Parameter \\#1 \\$text of function attr_js expects string, mixed given\\.$#',
     'count' => 2,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Parameter \\#1 \\$text of function attr expects string, mixed given\\.$#',
@@ -74944,12 +74944,12 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Parameter \\#1 \\$json of function json_decode expects string, string\\|false given\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../tests/eventdispatcher/oe-modify-patient-menu-example/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../tests/eventdispatcher/oe-modify-patient-menu-example/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Parameter \\#1 \\$menu of method OpenEMR\\\\Menu\\\\PatientMenuEvent\\:\\:setMenu\\(\\) expects array, mixed given\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../tests/eventdispatcher/oe-modify-patient-menu-example/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../tests/eventdispatcher/oe-modify-patient-menu-example/tabemr.bootstrap.php',
 ];
 
 return ['parameters' => ['ignoreErrors' => $ignoreErrors]];

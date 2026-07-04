@@ -69,7 +69,7 @@ Enable: **☑ Enable OpenEMR Standard FHIR REST API**
 
 Set base URL: **Administration → Config → Connectors → Site Address (required for OAuth2 and FHIR)**
 
-Example: `https://your-openemr.example.com` or `https://localhost:9300` for local testing.  If installed in a subdirectory, include it (e.g. `https://your-openemr.example.com/openemr`).
+Example: `https://your-tabemr.example.com` or `https://localhost:9300` for local testing.  If installed in a subdirectory, include it (e.g. `https://your-tabemr.example.com/tabemr`).
 
 Note that several curl examples are given in this guide.  If your OpenEMR instance is using a self-signed certificate you will need to pass -k to curl to disable certificate verification for testing purposes.
 
@@ -90,7 +90,7 @@ See [Authorization Guide](AUTHORIZATION.md#fhir-api-scopes-apifhir) for complete
 
 FHIR endpoints use the following base URL pattern:
 ```
-https://{your-openemr-host}/apis/{site}/fhir
+https://{your-tabemr-host}/apis/{site}/fhir
 ```
 
 ### Default Site
@@ -393,34 +393,34 @@ OpenEMR supports **30 FHIR R4 resources** across all contexts (patient, user, sy
 The resources that OpenEMR supports is documented via Swagger. You can see this documentation (and can test it) by going to the swagger directory in your OpenEMR installation. The FHIR API is documented there in the fhir section. Can also see (and test) this in the online demos at https://www.open-emr.org/wiki/index.php/Development_Demo#Daily_Build_Development_Demos (clicking on the API (Swagger) User Interface link for the demo will take you there).
 
 ### Administration Resources
-- Patient ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Patient))
-- Practitioner ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Practitioner))
-- PractitionerRole ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_PractitionerRole))
-- CareTeam ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_CareTeam))
-- Device ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Device))
-- Organization ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Organization))
-- Location ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Location))
-- Person ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Person))
-- RelatedPerson ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_RelatedPerson))
-- Group ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Group))
-- Encounter ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Encounter))
-- Appointment ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Appointment))
+- Patient ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_Patient))
+- Practitioner ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_Practitioner))
+- PractitionerRole ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_PractitionerRole))
+- CareTeam ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_CareTeam))
+- Device ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_Device))
+- Organization ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_Organization))
+- Location ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_Location))
+- Person ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_Person))
+- RelatedPerson ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_RelatedPerson))
+- Group ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_Group))
+- Encounter ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_Encounter))
+- Appointment ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_Appointment))
 
 
 ### Clinical Resources
-- AllergyIntolerance ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_AllergyIntolerance))
-- Condition ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Condition))
+- AllergyIntolerance ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_AllergyIntolerance))
+- Condition ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_Condition))
 - - Problem List
 - - Health Concerns
 - - Diagnoses
-- Procedure ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Procedure))
-- CarePlan ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_CarePlan))
-- Goal ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Goal))
-- CareTeam ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_CareTeam))
-- DiagnosticReport for Clinical Notes ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_DiagnosticReport))
+- Procedure ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_Procedure))
+- CarePlan ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_CarePlan))
+- Goal ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_Goal))
+- CareTeam ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_CareTeam))
+- DiagnosticReport for Clinical Notes ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_DiagnosticReport))
 
 ### Diagnostic Resources
-- Observation ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Observation))
+- Observation ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_Observation))
 - - Laboratory
 - - Vital Signs
 - - Social History
@@ -434,29 +434,29 @@ The resources that OpenEMR supports is documented via Swagger. You can see this 
 - - Pregnancy Intent
 - - Sexual Orientation
 - - Uncategorized Observations
-- DiagnosticReport for Laboratory Results ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_DiagnosticReport))
-- ServiceRequest([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_ServiceCategory))
-- Media ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Media))
-- Specimen ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Specimen))
+- DiagnosticReport for Laboratory Results ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_DiagnosticReport))
+- ServiceRequest([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_ServiceCategory))
+- Media ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_Media))
+- Specimen ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_Specimen))
 
 ### Medication Resources
-- MedicationRequest ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_MedicationRequest))
-- Medication ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Medication))
-- MedicationDispense ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_MedicationDispense))
-- Immunization ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Immunization))
+- MedicationRequest ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_MedicationRequest))
+- Medication ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_Medication))
+- MedicationDispense ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_MedicationDispense))
+- Immunization ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_Immunization))
 
 ### Document Resources
-- DocumentReference ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_DocumentReference))
-- Binary ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Binary))
+- DocumentReference ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_DocumentReference))
+- Binary ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_Binary))
 
 ### Financial Resources
-- Coverage ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Coverage))
+- Coverage ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_Coverage))
 
 ### Security and Privacy
-- Provenance ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Provenance))
+- Provenance ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_Provenance))
 
 ### Terminology
-- ValueSet ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_ValueSet))
+- ValueSet ([swagger](https://demo.tabemr.io/tabemr/swagger/#/fhir/get_fhir_ValueSet))
 
 ## Bulk FHIR Exports
 
@@ -884,7 +884,7 @@ Upload XML to patient documents under "CCDA" category for human-readable view.
 ### Tutorial
 
 Complete tutorial with screenshots:
-https://github.com/openemr/openemr/issues/5284#issuecomment-1155678620
+https://github.com/tabemr/tabemr/issues/5284#issuecomment-1155678620
 
 ## Error Handling
 
@@ -1064,7 +1064,7 @@ US Core 3.1, 7.0, and 8.0 has profiles that in some resources conflict with each
 - US Core 8.0 IG: https://hl7.org/fhir/us/core/STU8/
 
 **Swagger Documentation:**
-- Production: `https://your-openemr-install/swagger/`
+- Production: `https://your-tabemr-install/swagger/`
 - Online Demo: https://www.open-emr.org/wiki/index.php/Development_Demo
 
 ---
@@ -1087,9 +1087,9 @@ All technical accuracy is maintained from the original community-authored docume
 
 ### Contributing
 OpenEMR is an open-source project. To contribute to this documentation:
-- **Report Issues:** [GitHub Issues](https://github.com/openemr/openemr/issues)
+- **Report Issues:** [GitHub Issues](https://github.com/tabemr/tabemr/issues)
 - **Discuss:** [Community Forum](https://community.open-emr.org/)
-- **Submit Changes:** [Pull Requests](https://github.com/openemr/openemr/pulls)
+- **Submit Changes:** [Pull Requests](https://github.com/tabemr/tabemr/pulls)
 
 **Last Updated:** November 2025
 **License:** GPL v3

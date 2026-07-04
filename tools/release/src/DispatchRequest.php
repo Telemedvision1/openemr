@@ -11,7 +11,7 @@
  * @link      http://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -20,10 +20,10 @@ namespace OpenEMR\Release;
 
 final readonly class DispatchRequest
 {
-    public const EVENT_REL_CUT = 'openemr-rel-cut';
-    public const EVENT_REL_UPDATE = 'openemr-rel-update';
-    public const EVENT_TAG = 'openemr-tag';
-    public const EVENT_DOCS_BINARIES = 'openemr-docs-binaries';
+    public const EVENT_REL_CUT = 'tabemr-rel-cut';
+    public const EVENT_REL_UPDATE = 'tabemr-rel-update';
+    public const EVENT_TAG = 'tabemr-tag';
+    public const EVENT_DOCS_BINARIES = 'tabemr-docs-binaries';
     public const EVENT_PROBE = 'release-permissions-probe';
 
     /**

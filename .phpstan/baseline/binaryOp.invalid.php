@@ -4239,7 +4239,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Binary operation "\\." between \'/interface/modules…\' and mixed results in an error\\.$#',
     'count' => 2,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Binary operation "\\." between mixed and \'\\:\\:\' results in an error\\.$#',

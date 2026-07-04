@@ -88,7 +88,7 @@ jobs:
       db: ${{ steps.parse.outputs.db }}
       docker_dir: ${{ steps.parse.outputs.docker_dir }}
       e2e_enabled: ${{ steps.parse.outputs.e2e_enabled }}
-      openemr_dir: ${{ steps.parse.outputs.openemr_dir }}
+      tabemr_dir: ${{ steps.parse.outputs.tabemr_dir }}
       redis_sentinel_enabled: ${{ steps.parse.outputs.redis_sentinel_enabled }}
       suites: ${{ steps.compute-suites.outputs.suites }}
       compose_file: ${{ steps.parse-env.outputs.compose_file }}
@@ -461,7 +461,7 @@ jobs:
     env:
       COMPOSE_FILE: ${{ needs.setup.outputs.compose_file }}
       DOCKER_DIR: ${{ needs.setup.outputs.docker_dir }}
-      OPENEMR_DIR: ${{ needs.setup.outputs.openemr_dir }}
+      OPENEMR_DIR: ${{ needs.setup.outputs.tabemr_dir }}
       ENABLE_COVERAGE: ${{ inputs.enable_coverage }}
     steps:
     - name: Checkout Code
@@ -541,7 +541,7 @@ jobs:
       run: |
         . ci/ciLibrary.source
         import_database < db-dump.sql
-        # Reload privilege tables so imported users (e.g., openemr) take effect
+        # Reload privilege tables so imported users (e.g., tabemr) take effect
         dc exec -T mysql sh -c 'mariadb -u root -proot -e "FLUSH PRIVILEGES" 2>/dev/null || mysql -u root -proot -e "FLUSH PRIVILEGES"'
 
     - name: Prepare for coverage reporting
@@ -566,12 +566,12 @@ jobs:
 
     ##
     # Coverage conversion for suites that use auto_prepend.php
-    # (server-side coverage stored as raw PHP files in /tmp/openemr-coverage/)
+    # (server-side coverage stored as raw PHP files in /tmp/tabemr-coverage/)
     - name: Convert API coverage to Clover XML
       if: ${{ !cancelled() && env.ENABLE_COVERAGE == 'true' && matrix.suite == 'api' }}
       run: |
         . ci/ciLibrary.source
-        convert_coverage /tmp/openemr-coverage/api \
+        convert_coverage /tmp/tabemr-coverage/api \
                          /dev/null \
                          --clover=coverage.api.clover.xml
 
@@ -579,7 +579,7 @@ jobs:
       if: ${{ !cancelled() && env.ENABLE_COVERAGE == 'true' && matrix.suite == 'e2e' }}
       run: |
         . ci/ciLibrary.source
-        convert_coverage /tmp/openemr-coverage/e2e \
+        convert_coverage /tmp/tabemr-coverage/e2e \
                          /dev/null \
                          --clover=coverage.e2e.clover.xml
 
@@ -636,7 +636,7 @@ jobs:
       if: ${{ failure() && matrix.suite == 'e2e' }}
       env:
         # Write under RUNNER_TEMP so this step still works when the workspace
-        # is owned by the apache user (the openemr container chowns its
+        # is owned by the apache user (the tabemr container chowns its
         # bind-mounted workdir on startup, leaving the runner unable to mkdir
         # in `.` when prereq steps were skipped).
         DIAG_DIR: ${{ runner.temp }}/selenium-diagnostics
@@ -678,7 +678,7 @@ jobs:
       if: ${{ !cancelled() && matrix.suite == 'e2e' }}
       run: |
         . ci/ciLibrary.source
-        dc logs openemr
+        dc logs tabemr
 
     - name: E2e error logs
       if: ${{ !cancelled() && matrix.suite == 'e2e' && needs.setup.outputs.webserver == 'apache' }}

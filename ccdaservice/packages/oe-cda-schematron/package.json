@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/openemr/oe-cda-schematron.git"
+    "url": "git+https://github.com/tabemr/oe-cda-schematron.git"
   },
   "author": "Eric Wadkins, Jerry Padgett",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/openemr/cda-schematron/issues"
+    "url": "https://github.com/tabemr/cda-schematron/issues"
   },
-  "homepage": "https://github.com/openemr/cda-schematron#readme",
+  "homepage": "https://github.com/tabemr/cda-schematron#readme",
   "devDependencies": {
     "chai": "^3.5.0",
     "grunt": "^1.6.2",

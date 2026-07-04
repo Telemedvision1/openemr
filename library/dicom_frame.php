@@ -9,7 +9,7 @@
  * @author    Jerry Padgett <sjpadgett@gmail.com> 'Viewer wrapper'
  * @copyright Copyright (c) 2017-2018 Victor Kofia <https://kofiav.com>
  * @copyright Copyright (c) 2018-2020 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 /* Warning: This script wraps the Dicom viewer which is HTML5 compatible only and bootstrap styling

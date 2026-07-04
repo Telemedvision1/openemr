@@ -2,11 +2,11 @@
 
 /*
  * FhirCareTeamServiceTest.php
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Public Domain This file was generated through the use of Claude.AI on 2024-06-10.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Tests\Services\FHIR;

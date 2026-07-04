@@ -66,7 +66,7 @@ jobs:
     - name: Fix permissions for Docker uid/gid differences
       run: |
         # HACK Docker runs with a different uid/gid than the host.
-        # See openemr/openemr#9233
+        # See tabemr/tabemr#9233
         sudo chmod -R 0777 .
 
     - name: Install PHP
@@ -304,8 +304,8 @@ jobs:
     - name: Install OpenEMR-cmd
       run: |
         mkdir -p "$HOME/bin"
-        curl -sSfL https://raw.githubusercontent.com/openemr/openemr-devops/master/utilities/openemr-cmd/openemr-cmd > "$HOME/bin/openemr-cmd"
-        chmod +x "$HOME/bin/openemr-cmd"
+        curl -sSfL https://raw.githubusercontent.com/tabemr/tabemr-devops/master/utilities/tabemr-cmd/tabemr-cmd > "$HOME/bin/tabemr-cmd"
+        chmod +x "$HOME/bin/tabemr-cmd"
         # add the command to default path so will be found and run.sh can still be used locally
 
     - name: Run Inferno Certification Tests

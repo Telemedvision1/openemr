@@ -11,7 +11,7 @@
  * @copyright Copyright (c) Open Source Medical Software
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * sherwingaddis@gmail.com added bootstrap 2023
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 

@@ -9,7 +9,7 @@
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -29,7 +29,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  * This addresses the root cause of issue #11151 where URLSearchParams produced
  * parameters in a different order than act() expected.
  *
- * @see https://github.com/openemr/openemr/issues/11162
+ * @see https://github.com/tabemr/tabemr/issues/11162
  */
 class ControllerRoutingTest extends TestCase
 {

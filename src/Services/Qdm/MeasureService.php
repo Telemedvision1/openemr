@@ -12,7 +12,7 @@ class MeasureService
 
     /**
      * Get measure sources with dynamic path building
-     * The 'openemr/oe-cqm-parsers' path is built at runtime using the global cqm_performance_period
+     * The 'tabemr/oe-cqm-parsers' path is built at runtime using the global cqm_performance_period
      */
     public static function fetchMeasureSourceOptions()
     {
@@ -20,7 +20,7 @@ class MeasureService
         $reporting_year .= '_reporting_period';
 
         return [
-            'openemr/oe-cqm-parsers' => "/ccdaservice/node_modules/oe-cqm-parsers/$reporting_year/json_measures",
+            'tabemr/oe-cqm-parsers' => "/ccdaservice/node_modules/oe-cqm-parsers/$reporting_year/json_measures",
             'contrib' => '/contrib/ecqm/EP-EC-eCQM-2020-05'
         ];
     }
@@ -28,7 +28,7 @@ class MeasureService
     public static function fetchMeasureOptions()
     {
         $measureSources = self::fetchMeasureSourceOptions();
-        $measureSourcePath = $measureSources['openemr/oe-cqm-parsers'];
+        $measureSourcePath = $measureSources['tabemr/oe-cqm-parsers'];
         $measurePath = OEGlobalsBag::getInstance()->getProjectDir() . $measureSourcePath;
         $options = [];
 
@@ -42,7 +42,7 @@ class MeasureService
     public static function fetchMeasuresPath()
     {
         $measureSources = self::fetchMeasureSourceOptions();
-        $measureSourcePath = $measureSources['openemr/oe-cqm-parsers'];
+        $measureSourcePath = $measureSources['tabemr/oe-cqm-parsers'];
         return OEGlobalsBag::getInstance()->getProjectDir() . $measureSourcePath;
     }
 
@@ -106,7 +106,7 @@ class MeasureService
         OEGlobalsBag::getInstance()->set('cqm_performance_period', $year);
 
         $measureSources = self::fetchMeasureSourceOptions();
-        $measurePath = OEGlobalsBag::getInstance()->getProjectDir() . $measureSources['openemr/oe-cqm-parsers'];
+        $measurePath = OEGlobalsBag::getInstance()->getProjectDir() . $measureSources['tabemr/oe-cqm-parsers'];
 
         // Restore original global
         OEGlobalsBag::getInstance()->set('cqm_performance_period', $tempGlobal);

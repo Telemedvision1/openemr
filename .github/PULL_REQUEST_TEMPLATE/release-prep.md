@@ -13,13 +13,13 @@ annotated release tag and triggers the docs/infra workflows.
 
 ## Release manager checklist
 
-- [ ] Edit the auto-generated release-notes draft (in the `website-openemr` docs PR for this release).
-- [ ] Sign off on the ONC certification page (in the `website-openemr` docs PR for this release).
-- [ ] Confirm the `openemr-devops` infra rotation PR is green.
+- [ ] Edit the auto-generated release-notes draft (in the `website-tabemr` docs PR for this release).
+- [ ] Sign off on the ONC certification page (in the `website-tabemr` docs PR for this release).
+- [ ] Confirm the `tabemr-devops` infra rotation PR is green.
 - [ ] Merge this PR (triggers the tag and downstream finalization).
 
 ## What this PR does NOT cover
 
 - Acknowledgments — generated from `git shortlog vPREV..HEAD` in the docs PR.
-- Test-matrix / package-pin rotations — handled by the openemr-devops rotation workflow.
-- `fsupgrade-N.sh` and upgrade Dockerfile changes — handled in openemr-devops `docker/openemr/<version>/`.
+- Test-matrix / package-pin rotations — handled by the tabemr-devops rotation workflow.
+- `fsupgrade-N.sh` and upgrade Dockerfile changes — handled in tabemr-devops `docker/tabemr/<version>/`.

@@ -1,11 +1,11 @@
 <?php
 
 /**
- * @package   openemr
+ * @package   tabemr
  * @link      https://www.open-emr.org
  * @author    Eric Stern <erics@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -223,7 +223,7 @@ class DatabaseConnectionOptionsTest extends TestCase
     public function testFromSqlconfWithUnixSocket(): void
     {
         $sqlconf = [
-            'dbase' => 'openemr',
+            'dbase' => 'tabemr',
             'login' => 'root',
             'pass' => 'secret',
             'socket' => '/var/run/mysqld/mysqld.sock',
@@ -240,7 +240,7 @@ class DatabaseConnectionOptionsTest extends TestCase
     public function testFromSqlconfDefaultsCharset(): void
     {
         $sqlconf = [
-            'dbase' => 'openemr',
+            'dbase' => 'tabemr',
             'login' => 'root',
             'pass' => 'secret',
             'host' => 'localhost',
@@ -256,7 +256,7 @@ class DatabaseConnectionOptionsTest extends TestCase
     public function testFromSqlconfWithSslConfig(): void
     {
         $sqlconf = [
-            'dbase' => 'openemr',
+            'dbase' => 'tabemr',
             'login' => 'root',
             'pass' => 'secret',
             'host' => 'localhost',

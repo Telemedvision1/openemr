@@ -9,7 +9,7 @@
  *      state:
  *        empty or 0 - Ensures required file and directory permission are correctly set prior to starting installation.
  *        1 - Step 1: Select database setup (ie. create the database or use a database already initialized)
- *        2 - Step 2: Enter in database and openemr user information
+ *        2 - Step 2: Enter in database and tabemr user information
  *        3 - Step 3: Create database
  *        4 - Step 4: Instructions on configuring PHP
  *        5 - Step 5: Instructions on configuring the web server
@@ -28,7 +28,7 @@
  * @copyright Copyright (c) 2019 Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2019-2021 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 // Checks if the server's PHP version is compatible with OpenEMR:
@@ -289,7 +289,7 @@ if (!empty($config) && (($state ?? 0) < 4)) {
 }
 
 // This will effectively only allow entry into the setup.php script at the first step and will bar entry to the
-//  script if openemr has already been installed.
+//  script if tabemr has already been installed.
 //  2 mechanisms are also in place to ensure go through script in chronological order
 //   - a session variable tracks the next state expected and kills script is not correct
 //   - only the next state csrf is handed out in the form
@@ -508,7 +508,7 @@ function cloneClicked() {
                 <li>Reviewing <code> <?php echo text($OE_SITE_DIR); ?>/config.php </code> is a good idea. This file
                     contains some settings that you may want to change.</li>
                 <li>There's much information and many extra tools bundled within the OpenEMR installation directory.
-                    Please refer to openemr/Documentation. Many forms and other useful scripts can be found at openemr/contrib.</li>
+                    Please refer to tabemr/Documentation. Many forms and other useful scripts can be found at tabemr/contrib.</li>
                 <li>To ensure a consistent look and feel throughout the application,
                     <a href='http://www.mozilla.org/products/firefox/'>Firefox</a> and <a href="https://www.google.com/chrome/browser/desktop/index.html">Chrome</a> are recommended. The OpenEMR development team exclusively tests with modern versions of these browsers.</li>
                 <li>The OpenEMR project home page, documentation, and forums can be found at <a href = "https://www.open-emr.org" rel='noopener' target="_blank">https://www.open-emr.org</a></li>
@@ -667,13 +667,13 @@ STP2TOP;
                                     <label class="font-weight-bold" for="dbname">Database Name:</label> <a href="#dbname_info"  class="info-anchor icon-tooltip"  data-toggle="collapse" ><i class="fa fa-question-circle" aria-hidden="true"></i></a>
                                 </div>
                                 <div>
-                                    <input name='dbname' id='dbname' type='text' class='form-control' value='openemr' />
+                                    <input name='dbname' id='dbname' type='text' class='form-control' value='tabemr' />
                                 </div>
                             </div>
                             <div id="dbname_info" class="collapse">
                                 <a href="#dbname_info" data-toggle="collapse" class="oe-pull-away"><i class="fa fa-times oe-help-x" aria-hidden="true"></i></a>
                                 <p>This will be the name of the OpenEMR database in MySQL.</p>
-                                <p>'openemr' is the recommended name.</p>
+                                <p>'tabemr' is the recommended name.</p>
                                 <p>This database will contain patient data as well as data pertaining to the OpenEMR installation.</p>
                             </div>
                         </div>
@@ -685,13 +685,13 @@ STP2TOP;
                                     <label class="font-weight-bold" for="login">Login Name:</label> <a href="#login_info"  class="info-anchor icon-tooltip"  data-toggle="collapse" ><i class="fa fa-question-circle" aria-hidden="true"></i></a>
                                 </div>
                                 <div>
-                                    <input name='login' ID='login' type='text' class='form-control' value='openemr' />
+                                    <input name='login' ID='login' type='text' class='form-control' value='tabemr' />
                                 </div>
                             </div>
                             <div id="login_info" class="collapse">
                                 <a href="#login_info" data-toggle="collapse" class="oe-pull-away"><i class="fa fa-times oe-help-x" aria-hidden="true"></i></a>
                                 <p>This is the name that OpenEMR will use to login to the MySQL database.</p>
-                                <p>'openemr' is the recommended name.</p>
+                                <p>'tabemr' is the recommended name.</p>
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -1624,7 +1624,7 @@ STP4TOP;
                     $isCliServer = PHP_SAPI === 'cli-server';
                     $defaultWs = $isFpm ? 'fpm' : ($isCliServer ? 'cli' : 'apache');
                     $docsDirectoryGlob = text(preg_replace("/{$site_id}/", "*", realpath($docsDirectory)));
-                    $openemrDirectory = text(realpath(__DIR__));
+                    $tabemrDirectory = text(realpath(__DIR__));
                     echo "<h3 class='mb-3 border-bottom'>Step " . text($state) . " - Configure Web Server</h3>";
                     echo "<div class='jumbotron p-5'>";
                     echo "<p>Select your web server configuration to see the required setup instructions.</p>";
@@ -1647,17 +1647,17 @@ STP4TOP;
                     <div id='instructions_apache'" . ($defaultWs === 'apache' ? '' : " style='display:none'") . ">
                         <p>The <code>\"" . $docsDirectoryGlob . "\"</code> directory contain patient information, and
                         it is important to secure these directories. Additionally, some settings are required for the Zend Framework to work in OpenEMR. This can be done by pasting the below to end of your apache configuration file:</p>
-                        &nbsp;&nbsp;<code>&lt;Directory \"" . $openemrDirectory . "\"&gt;<br />
+                        &nbsp;&nbsp;<code>&lt;Directory \"" . $tabemrDirectory . "\"&gt;<br />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AllowOverride FileInfo<br />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Require all granted<br />
                         &nbsp;&nbsp;<code>&lt;/Directory&gt;</code><br />
-                        &nbsp;&nbsp;&lt;Directory \"" . $openemrDirectory . "/sites\"&gt;<br />
+                        &nbsp;&nbsp;&lt;Directory \"" . $tabemrDirectory . "/sites\"&gt;<br />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AllowOverride None<br />
                         &nbsp;&nbsp;&lt;/Directory&gt;</code><br />
                         &nbsp;&nbsp;<code>&lt;Directory \"" . $docsDirectoryGlob . "\"&gt;<br />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Require all denied<br />
                         &nbsp;&nbsp;&lt;/Directory&gt;</code><br />
-                        &nbsp;&nbsp;<code>&lt;Directory \"" . $openemrDirectory . "/bin\"&gt;<br />
+                        &nbsp;&nbsp;<code>&lt;Directory \"" . $tabemrDirectory . "/bin\"&gt;<br />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Require all denied<br />
                         &nbsp;&nbsp;&lt;/Directory&gt;</code><br /><br />
                         <p>If you are having difficulty finding your apache configuration file, then refer to the <a href='Documentation/INSTALL' rel='noopener' target='_blank'><u>'INSTALL'</u></a> manual for suggestions.</p>

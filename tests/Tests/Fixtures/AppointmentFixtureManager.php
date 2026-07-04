@@ -11,7 +11,7 @@
  * @link      https://www.open-emr.org
  * @author    Craig Allen <craigrallen@gmail.com>
  * @copyright Copyright (c) 2026 Craig Allen <craigrallen@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Tests\Fixtures;
@@ -128,12 +128,12 @@ class AppointmentFixtureManager
         // Remove test appointments by title
         try {
             // Remove uuid_registry entries for our test appointments
-            $select = "SELECT `uuid` FROM `openemr_postcalendar_events` WHERE `pc_title` LIKE ?";
+            $select = "SELECT `uuid` FROM `tabemr_postcalendar_events` WHERE `pc_title` LIKE ?";
             $records = QueryUtils::fetchRecords($select, [$bindVariable]);
             foreach ($records as $row) {
                 if ($row['uuid'] !== null && $row['uuid'] !== '') {
                     QueryUtils::sqlStatementThrowException(
-                        "DELETE FROM `uuid_registry` WHERE `table_name` = 'openemr_postcalendar_events' AND `uuid` = ?",
+                        "DELETE FROM `uuid_registry` WHERE `table_name` = 'tabemr_postcalendar_events' AND `uuid` = ?",
                         [$row['uuid']]
                     );
                 }
@@ -141,7 +141,7 @@ class AppointmentFixtureManager
 
             // Remove the appointments
             QueryUtils::sqlStatementThrowException(
-                "DELETE FROM openemr_postcalendar_events WHERE pc_title LIKE ?",
+                "DELETE FROM tabemr_postcalendar_events WHERE pc_title LIKE ?",
                 [$bindVariable]
             );
         // @codeCoverageIgnoreStart Defensive catch — only fires on unexpected DB errors during cleanup.

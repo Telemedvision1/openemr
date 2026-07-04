@@ -342,7 +342,7 @@ class SMARTAuthorizationControllerTest extends TestCase
 //
 //        $globalsBag = new OEGlobalsBag([
 //            'site_addr_oath' => 'http://localhost:8080'
-//            ,'web_root' => 'openemr'
+//            ,'web_root' => 'tabemr'
 //            ,'css_header' => 'theme_light.css'
 //        ]);
 //        $kernel = $this->createMock(OEHttpKernel::class);

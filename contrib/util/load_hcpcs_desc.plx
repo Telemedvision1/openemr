@@ -28,7 +28,7 @@ use DBI;
 #                 Parameters that you may customize                   #
 #######################################################################
 
-my $DBNAME = "openemr";  # database name
+my $DBNAME = "tabemr";  # database name
 
 # To load the short descriptions (SHORTU.txt, not currently used by
 # OpenEMR but probably should), change this to "code_text_short":

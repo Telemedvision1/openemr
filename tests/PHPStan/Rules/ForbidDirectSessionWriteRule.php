@@ -30,7 +30,7 @@
  * @link      https://www.open-emr.org
  * @author    Milan Zivkovic <zivkovic.milan@gmail.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\PHPStan\Rules;
@@ -136,7 +136,7 @@ class ForbidDirectSessionWriteRule implements Rule
                     $replacement,
                 )
             )
-                ->identifier('openemr.forbidDirectSessionWrite')
+                ->identifier('tabemr.forbidDirectSessionWrite')
                 ->tip('SessionUtil methods use withWritableSession() to auto-reopen the session lock before writing.')
                 ->build(),
         ];

@@ -6,7 +6,7 @@
  * @author    Jacob T.Paul <jacob@zhservices.com>
  * @author    Basil P T <basil@zhservices.com>
  * @copyright Copyright (c) 2013 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 // Global variables

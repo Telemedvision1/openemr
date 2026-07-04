@@ -24,7 +24,7 @@
  * @copyright Copyright (c) 2021-2022 Robert Down <robertdown@live.com
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../globals.php");
@@ -934,8 +934,8 @@ $oemr_ui = new OemrUI($arrOeUiSettings);
             var Count = 0;
                 <?php
             //Encounter details are stored to javascript as array.
-                $result4 = sqlStatement("SELECT fe.encounter,fe.date,openemr_postcalendar_categories.pc_catname FROM form_encounter AS fe " .
-                " left join openemr_postcalendar_categories on fe.pc_catid=openemr_postcalendar_categories.pc_catid  WHERE fe.pid = ? order by fe.date desc", [$pid]);
+                $result4 = sqlStatement("SELECT fe.encounter,fe.date,tabemr_postcalendar_categories.pc_catname FROM form_encounter AS fe " .
+                " left join tabemr_postcalendar_categories on fe.pc_catid=tabemr_postcalendar_categories.pc_catid  WHERE fe.pid = ? order by fe.date desc", [$pid]);
                 if (sqlNumRows($result4) > 0) {
                     while ($rowresult4 = sqlFetchArray($result4)) { ?>
             EncounterIdArray[Count] = <?php echo js_escape($rowresult4['encounter']); ?>;
@@ -1837,7 +1837,7 @@ $oemr_ui = new OemrUI($arrOeUiSettings);
                         $toggleSet = true;
                         $priorDate = "";
                         $therapyGroupCategories = [];
-                        $query = sqlStatement("SELECT pc_catid FROM openemr_postcalendar_categories WHERE pc_cattype = 3 AND pc_active = 1");
+                        $query = sqlStatement("SELECT pc_catid FROM tabemr_postcalendar_categories WHERE pc_cattype = 3 AND pc_active = 1");
                         while ($result = sqlFetchArray($query)) {
                             $therapyGroupCategories[] = $result['pc_catid'];
                         }

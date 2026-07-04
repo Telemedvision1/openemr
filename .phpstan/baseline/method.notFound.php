@@ -59,17 +59,17 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Call to an undefined method Symfony\\\\Contracts\\\\EventDispatcher\\\\EventDispatcherInterface\\:\\:addListener\\(\\)\\.$#',
     'count' => 7,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Call to an undefined method Symfony\\\\Contracts\\\\EventDispatcher\\\\Event\\:\\:getPid\\(\\)\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Call to an undefined method Symfony\\\\Contracts\\\\EventDispatcher\\\\Event\\:\\:getRecipientPhone\\(\\)\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Call to an undefined method Symfony\\\\Contracts\\\\EventDispatcher\\\\EventDispatcherInterface\\:\\:addListener\\(\\)\\.$#',

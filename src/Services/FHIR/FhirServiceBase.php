@@ -31,7 +31,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
  * @link      https://www.open-emr.org
  * @author    Dixon Whitmire <dixonwh@gmail.com>
  * @copyright Copyright (c) 2020 Dixon Whitmire <dixonwh@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 abstract class FhirServiceBase implements
     IResourceSearchableService,

@@ -13,7 +13,7 @@
  *
  * @copyright Copyright (c) 2016 Raymond Magauran <rmagauran@gmail.com>
  * LICENSE: This program is free software: you can redistribute it and/or modify
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use Mpdf\Mpdf;
@@ -561,7 +561,7 @@ mpdf-->
     }
 </style>';
 
-    $stylesheet = file_get_contents('/var/www/localhost/htdocs/openemr/interface/forms/eye_mag/css/report.css');
+    $stylesheet = file_get_contents('/var/www/localhost/htdocs/tabemr/interface/forms/eye_mag/css/report.css');
 
     //$pdf->WriteHTML($stylesheet,\Mpdf\HTMLParserMode::HEADER_CSS);
     $pdf->WriteHTML($header);

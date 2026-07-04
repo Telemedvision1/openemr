@@ -12,7 +12,7 @@
  * @copyright  Copyright (c) 2014 Z&H Consultancy Services Private Limited <sam@zhservices.com>
  * @copyright  Copyright (c) 2017-2025 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright  Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @license    https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license    https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Carecoordination\Model;
@@ -2217,7 +2217,7 @@ class EncounterccdadispatchTable
         FROM form_encounter AS fe
         LEFT JOIN facility AS f ON f.id=fe.facility_id
         LEFT JOIN users AS u ON u.id=fe.provider_id
-        LEFT JOIN openemr_postcalendar_categories AS cat ON cat.pc_catid=fe.pc_catid
+        LEFT JOIN tabemr_postcalendar_categories AS cat ON cat.pc_catid=fe.pc_catid
         LEFT JOIN list_options AS lo ON lo.list_id = 'physician_type' AND lo.option_id = u.physician_type
         WHERE $wherCon fe.pid = ? ORDER BY fe.date";
         array_push($sqlBindArray, $pid);

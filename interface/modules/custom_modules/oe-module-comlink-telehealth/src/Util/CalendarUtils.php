@@ -3,11 +3,11 @@
 /**
  * Contains Helper methods for working with the calendar
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Comlink
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Comlink\OpenEMR\Modules\TeleHealthModule\Util;
@@ -48,7 +48,7 @@ class CalendarUtils
         $sql = "select pc_catid,pc_constant_id,pc_catname,pc_catcolor,pc_catdesc,pc_recurrtype,pc_enddate,pc_recurrspec"
             . " ,pc_recurrfreq,pc_duration,pc_end_date_flag,pc_end_date_type,pc_end_all_day,pc_dailylimit,pc_cattype"
             . " ,pc_active,pc_seq,aco_spec"
-            . " from openemr_postcalendar_categories "
+            . " from tabemr_postcalendar_categories "
             . " WHERE pc_catid = ? ";
         $records = QueryUtils::fetchRecords($sql, [$id]);
         if (!empty($records)) {

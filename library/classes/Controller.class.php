@@ -11,7 +11,7 @@
  * @copyright Copyright (c) OpenEMR contributors
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
  * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@open-emr.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\Common\Acl\AccessDeniedHelper;
@@ -66,7 +66,7 @@ class Controller extends Smarty implements ControllerInterface
          $this->template_mod = "general";
          $this->_current_action = "";
          $this->_state = true;
-         $this->setCompileDir((new CacheDirectory())->for('openemr-smarty'));
+         $this->setCompileDir((new CacheDirectory())->for('tabemr-smarty'));
          $this->setCompileCheck(true);
          $this->setPluginsDir([__DIR__ . "/../smarty/plugins", OEGlobalsBag::getInstance()->getKernel()->getVendorDir() . "/smarty/smarty/libs/plugins"]);
          // Register {$x|text} explicitly so Smarty does not fall back to the

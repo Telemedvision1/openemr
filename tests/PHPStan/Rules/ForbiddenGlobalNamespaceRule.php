@@ -6,7 +6,7 @@
  * @package   OpenEMR
  * @author    Eric Stern <erics@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -80,7 +80,7 @@ class ForbiddenGlobalNamespaceRule implements Rule
         $includeTip = 'If this MUST be a global function, use `library/global_functions.inc.php` as a last resort.';
         return [
             RuleErrorBuilder::message($message)
-                ->identifier('openemr.noGlobalNsFunctions')
+                ->identifier('tabemr.noGlobalNsFunctions')
                 ->addTip($closureTip)
                 ->addTip($ooTip)
                 ->addTip($includeTip)

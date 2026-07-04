@@ -5399,12 +5399,12 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Function oe_module_priorauth_add_menu_item\\(\\) has no return type specified\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Function oe_module_priorauth_patient_menu_item\\(\\) has no return type specified\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Method OpenEMR\\\\Modules\\\\WenoModule\\\\Bootstrap\\:\\:isWenoUser\\(\\) has no return type specified\\.$#',
@@ -28834,7 +28834,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Function oe_module_custom_patient_menu\\(\\) has no return type specified\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../tests/eventdispatcher/oe-modify-patient-menu-example/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../tests/eventdispatcher/oe-modify-patient-menu-example/tabemr.bootstrap.php',
 ];
 
 return ['parameters' => ['ignoreErrors' => $ignoreErrors]];

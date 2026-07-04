@@ -146,7 +146,7 @@ class BearerTokenAuthorizationStrategy implements IAuthorizationStrategy
         $tokenRaw = $this->verifyAccessToken($repository, $request);
         // collect token attributes
         $attributes = $tokenRaw->getAttributes();
-        // collect openemr user uuid
+        // collect tabemr user uuid
         $userId = $attributes['oauth_user_id'];
         // collect client id (will be empty for PKCE)
         $clientId = $attributes['oauth_client_id'] ?? null;

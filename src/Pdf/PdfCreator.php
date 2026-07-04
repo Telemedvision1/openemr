@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2017 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Pdf;
@@ -35,7 +35,7 @@ class PdfCreator
      */
     private function getBinaryPath(): string
     {
-        $binroot = OEGlobalsBag::getInstance()->getKernel()->getVendorDir() . "/openemr/wkhtmltopdf-openemr/bin";
+        $binroot = OEGlobalsBag::getInstance()->getKernel()->getVendorDir() . "/tabemr/wkhtmltopdf-tabemr/bin";
 
         // This will not necessarily reflect actual machine bus width but php bus size.
         $bit = str_contains(php_uname("m"), '64') ? "64" : "32";

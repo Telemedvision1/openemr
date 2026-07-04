@@ -18,7 +18,7 @@ A comprehensive module for managing patient dashboard widget visibility based on
 
 1. Download or clone this module to:
    ```
-   [openemr]/interface/modules/custom_modules/oe-module-dashboard-context/
+   [tabemr]/interface/modules/custom_modules/oe-module-dashboard-context/
    ```
 
 2. Navigate to **Admin > System > Modules** in OpenEMR

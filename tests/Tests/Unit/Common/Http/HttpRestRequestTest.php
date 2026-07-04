@@ -2,11 +2,11 @@
 
 /*
  * HttpRestRequestTest.php
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Tests\Unit\Common\Http;
@@ -56,11 +56,11 @@ class HttpRestRequestTest extends TestCase
         $_SERVER = [
             'REQUEST_METHOD' => 'GET',
             'HTTP_HOST' => 'localhost',
-            'DOCUMENT_ROOT' => '/var/www/html/openemr/',
+            'DOCUMENT_ROOT' => '/var/www/html/tabemr/',
             'REQUEST_URI' => '/apis/dispatch.php?_REWRITE_COMMAND=default/fhir/Patient/123&name=john',
             'QUERY_STRING' => '_REWRITE_COMMAND=default/fhir/Patient/123&name=john',
             'SCRIPT_NAME' => '/apis/dispatch.php',
-            'SCRIPT_FILENAME' => '/var/www/html/openemr/apis/dispatch.php'
+            'SCRIPT_FILENAME' => '/var/www/html/tabemr/apis/dispatch.php'
         ];
 
         $request = HttpRestRequest::createFromGlobals();
@@ -107,11 +107,11 @@ class HttpRestRequestTest extends TestCase
         $_SERVER = [
             'REQUEST_METHOD' => 'POST',
             'HTTP_HOST' => 'localhost',
-            'DOCUMENT_ROOT' => '/var/www/html/openemr/',
+            'DOCUMENT_ROOT' => '/var/www/html/tabemr/',
             'REQUEST_URI' => '/apis/dispatch.php?_REWRITE_COMMAND=default/fhir/Patient/123',
             'QUERY_STRING' => '_REWRITE_COMMAND=default/fhir/Patient/123',
             'SCRIPT_NAME' => '/apis/dispatch.php',
-            'SCRIPT_FILENAME' => '/var/www/html/openemr/apis/dispatch.php'
+            'SCRIPT_FILENAME' => '/var/www/html/tabemr/apis/dispatch.php'
         ];
 
         $request = HttpRestRequest::createFromGlobals();
@@ -182,7 +182,7 @@ class HttpRestRequestTest extends TestCase
             'REQUEST_URI' => '/apis/dispatch.php?_REWRITE_COMMAND=/default/fhir/Patient/123/',
             'QUERY_STRING' => '_REWRITE_COMMAND=/default/fhir/Patient/123/',
             'SCRIPT_NAME' => '/apis/dispatch.php',
-            'SCRIPT_FILENAME' => '/var/www/html/openemr/apis/dispatch.php'
+            'SCRIPT_FILENAME' => '/var/www/html/tabemr/apis/dispatch.php'
         ];
 
         $request = HttpRestRequest::createFromGlobals();

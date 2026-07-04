@@ -1035,9 +1035,9 @@ All technical accuracy is maintained from the original community-authored docume
 
 ### Contributing
 OpenEMR is an open-source project. To contribute to this documentation:
-- **Report Issues:** [GitHub Issues](https://github.com/openemr/openemr/issues)
+- **Report Issues:** [GitHub Issues](https://github.com/tabemr/tabemr/issues)
 - **Discuss:** [Community Forum](https://community.open-emr.org/)
-- **Submit Changes:** [Pull Requests](https://github.com/openemr/openemr/pulls)
+- **Submit Changes:** [Pull Requests](https://github.com/tabemr/tabemr/pulls)
 
 **Last Updated:** November 2025
 **License:** GPL v3

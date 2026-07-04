@@ -653,13 +653,13 @@
         </table>
 <!--        - Recall Appts-->
 <!--        - Patient Appointments-->
-        <table name="openemr_postcalendar_events" comments="Holds records for Patient Appointment/Calendar information">
+        <table name="tabemr_postcalendar_events" comments="Holds records for Patient Appointment/Calendar information">
             <column name="pc_eid" comments="Surrogate id of the record used as the primary incrementing key"/>
             <column name="pc_pid"  comments="The internal patient identifier">
                 <foreignKey table="patient_data" column="pid" />
             </column>
             <column name="pc_catid" comments="The appointment category">
-                <foreignKey table="openemr_postcalendar_categories" column="pc_catid" />
+                <foreignKey table="tabemr_postcalendar_categories" column="pc_catid" />
             </column>
             <column name="pc_aid" comments="The provider this appointment is connected to">
                 <foreignKey table="users" column="id" />
@@ -683,7 +683,7 @@
                 <foreignKey table="users" column="id" />
             </column>
             <column name="pc_prefcatid" comments="Preferred category id for a provider available slot">
-                <foreignKey table="openemr_postcalendar_categories" column="pc_catid" />
+                <foreignKey table="tabemr_postcalendar_categories" column="pc_catid" />
             </column>
             <column name="pc_multiple" comments="Multiple occurrences of the event. Used if this is a recurring appointment."/>
             <column name="pc_title" comments="Title of the event"/>
@@ -714,7 +714,7 @@
             <column name="pc_sendalertemail" comments="Send email alerts for the event"/>
             <column name="uuid" comments="UUID of the record"/>
         </table>
-        <table name="openemr_postcalendar_categories" comments="Contains the types / categories a patient scheduled appointment can be">
+        <table name="tabemr_postcalendar_categories" comments="Contains the types / categories a patient scheduled appointment can be">
             <column name="pc_catid" comments="Auto-incremented identifier for the appointment category"/>
             <column name="pc_constant_id" comments="Identifier for the appointment category which is referenced in the codebase for appointment specific functionality"/>
             <column name="pc_catname" comments="Name of the appointment category"/>
@@ -742,7 +742,7 @@
                 <foreignKey table="patient_data" column="pid" />
             </column>
             <column name="eid"  comments="The calendar appointment id">
-                <foreignKey table="openemr_postcalendar_events" column="pc_eid" />
+                <foreignKey table="tabemr_postcalendar_events" column="pc_eid" />
             </column>
             <column name="original_user" comments="This is the user that created the original record">
                 <foreignKey table="users" column="username" />
@@ -2156,8 +2156,8 @@
             <column name="onset_date" comments="The date when the condition or issue for the group started"/>
             <column name="sensitivity" comments="Sensitivity information related to the encounter as to who should be able to access / view this encounter"/>
             <column name="billing_note" comments="Notes related to billing for the encounter"/>
-            <column name="pc_catid" comments="The encounter service category taken from 'openemr_postcalendar_categories'">
-                <foreignKey table="openemr_postcalendar_categories" column="pc_catid" />
+            <column name="pc_catid" comments="The encounter service category taken from 'tabemr_postcalendar_categories'">
+                <foreignKey table="tabemr_postcalendar_categories" column="pc_catid" />
             </column>
             <column name="last_level_billed"  comments="The party for whom payment was last billed. 0=None, 1=Ins1, 2=Ins2, 3=Ins3" />
             <column name="last_level_closed"  comments="The party for whom payment was last received. 0=None, 1=Ins1, 2=Ins2, 3=Ins3" />
@@ -2179,7 +2179,7 @@
             <column name="pos_code" comments="Place of service code"/>
             <column name="counselors" comments="Information about counselors related to the encounter"/>
             <column name="appt_id"  comments="The calendar appointment id that this encounter is associated with or that this encounter was created from">
-                <foreignKey table="openemr_postcalendar_events" column="pc_eid" />
+                <foreignKey table="tabemr_postcalendar_events" column="pc_eid" />
             </column>
         </table>
         <table name="form_group_attendance" comments="Group encounter form for tracking the attendance of therapy participants to a group session encounter">

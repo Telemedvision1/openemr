@@ -2,11 +2,11 @@
 
 /*
  * SMARTSessionTokenContextIntegrationTest.php
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 /**
@@ -22,7 +22,7 @@
  * @package   OpenEMR
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com> (AI-assisted)
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  *
  */
 
@@ -63,7 +63,7 @@ class SMARTSessionTokenContextIntegrationTest extends TestCase
     private MockObject $claimExtractor;
     private MockObject $logger;
 
-    const KEY_PATH_PRIVATE = __DIR__ . '/../../../data/Unit/Common/Auth/Grant/openemr-rsa384-private.key';
+    const KEY_PATH_PRIVATE = __DIR__ . '/../../../data/Unit/Common/Auth/Grant/tabemr-rsa384-private.key';
     private OEGlobalsBag $oldGlobals;
     private mixed $oldKernel = null;
 
@@ -80,15 +80,15 @@ class SMARTSessionTokenContextIntegrationTest extends TestCase
         // Set up global variables that are referenced
         $this->globalsBag = new OEGlobalsBag([
             'site_addr_oath' => 'https://example.com',
-            'web_root' => '/openemr',
+            'web_root' => '/tabemr',
         ]);
         foreach ($this->globalsBag->all() as $key => $value) {
             $GLOBALS[$key] = $value;
         }
         // ServerConfig reads webRoot from the Kernel, so provide one with the test value
         $this->oldKernel = $GLOBALS['kernel'] ?? null;
-        $webserverRoot = OEGlobalsBag::getInstance()->getProjectDir() ?: '/var/www/openemr';
-        $GLOBALS['kernel'] = new Kernel($webserverRoot, '/openemr');
+        $webserverRoot = OEGlobalsBag::getInstance()->getProjectDir() ?: '/var/www/tabemr';
+        $GLOBALS['kernel'] = new Kernel($webserverRoot, '/tabemr');
         $this->serverConfig = new ServerConfig();
         // ServerConfig reads site_id from SessionWrapperFactory at construction time,
         // but that session may have been reset by earlier tests. Set it explicitly.
@@ -632,7 +632,7 @@ class SMARTSessionTokenContextIntegrationTest extends TestCase
 
         $this->assertArrayHasKey('smart_style_url', $context);
         $this->assertStringContainsString('https://example.com', $context['smart_style_url']);
-        $this->assertStringContainsString('/openemr/oauth2/default', $context['smart_style_url']);
+        $this->assertStringContainsString('/tabemr/oauth2/default', $context['smart_style_url']);
         $this->assertStringContainsString('smart-style', $context['smart_style_url']);
     }
 }

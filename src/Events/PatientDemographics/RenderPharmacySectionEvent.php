@@ -6,7 +6,7 @@
  * @link      https://www.open-emr.org
  * @author    Kofi Appiah <kkappiah@medsov.com>
  * @copyright Copyright (c) 2024 omegasystemsgroup <info@omegasystemsgroup.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  *
  */
 
@@ -29,12 +29,12 @@ class RenderPharmacySectionEvent extends Event
     const RENDER_JAVASCRIPT = 'patientDemographics.render.javascript';
 
     /**
-     * This event is triggered after rendering the default openemr pharmacy selector
+     * This event is triggered after rendering the default tabemr pharmacy selector
      */
     const RENDER_AFTER_PHARMACY_SECTION = 'patientDemographics.render.section.after.pharmacy';
 
     /**
-     * This event is triggered after rendering the selected openemr pharmacy
+     * This event is triggered after rendering the selected tabemr pharmacy
      * in the demographics section
      */
     const RENDER_AFTER_SELECTED_PHARMACY_SECTION = 'patientDemographics.render.after.selected.pharmacy';

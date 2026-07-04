@@ -3,11 +3,11 @@
 /**
  * FhirOperationDocRefRestController handles the creation / retrieve of Clinical Summary of Care (CCD) documents for a patient.
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\RestControllers\FHIR\Operations;
@@ -91,7 +91,7 @@ class FhirOperationDocRefRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function getAll($searchParams, $puuidBind = null)
     {

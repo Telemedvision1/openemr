@@ -446,14 +446,14 @@ $fa-font-path: "../assets/@fortawesome/fontawesome-free/webfonts";
     background-color: $light;
   }
 
-  /*~~openemr5 tabs menu , user and logout icon~~*/
+  /*~~tabemr5 tabs menu , user and logout icon~~*/
   #menu_icon,
   #logout_icon,
   #user_icon {
     color: $gray !important;
   }
 
-  /*~~openemr5 tabs menu , user and logout icon~~*/
+  /*~~tabemr5 tabs menu , user and logout icon~~*/
   /*openrmr5.0.2 edit_globals vertical menu*/
   #oe-nav-ul.tabNav li {
     border: 0;
@@ -507,7 +507,7 @@ $fa-font-path: "../assets/@fortawesome/fontawesome-free/webfonts";
   #patient_caret {
     font-style: smaller;
   }
-  /*openemr5.0.2 edit_globals vertical menu*/
+  /*tabemr5.0.2 edit_globals vertical menu*/
   /*bootstrap navbar */
   .navbar-collapse.collapse.in {
     background-color: $light !important;

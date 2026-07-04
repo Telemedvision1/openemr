@@ -9,7 +9,7 @@
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2012 Kevin McCormick Longview, Texas
  * @copyright Copyright (c) 2018-2020 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . '/../globals.php');

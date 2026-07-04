@@ -29,7 +29,7 @@ use OpenEMR\Core\OEGlobalsBag;
 
 class Therapy_Groups_Events
 {
-    const TABLE = 'openemr_postcalendar_events';
+    const TABLE = 'tabemr_postcalendar_events';
 
     /**
      * Get all events of specified group.

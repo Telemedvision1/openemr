@@ -1,13 +1,13 @@
 <?php
 
 /**
- * ResourceServiceSearchTrait handles the creating of openemr search parameters for a resource.
+ * ResourceServiceSearchTrait handles the creating of tabemr search parameters for a resource.
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Services\FHIR\Traits;

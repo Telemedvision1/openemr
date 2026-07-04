@@ -8,7 +8,7 @@
  * @author    Ranganath Pathak <pathak01@hotmail.com>
   * @version 1.0.0
  * @copyright Copyright (c) 2017 Ranganath Pathak <pathak01@hotmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\Common\Session\SessionWrapperFactory;

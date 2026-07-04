@@ -2,11 +2,11 @@
 
 /**
  * FhirCarePlanRestController.php
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\RestControllers\FHIR;
@@ -102,7 +102,7 @@ class FhirCarePlanRestController
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
             new OA\Response(response: '404', ref: '#/components/responses/uuidnotfound'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function getOne($fhirId, $puuidBind = null)
     {
@@ -183,7 +183,7 @@ class FhirCarePlanRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function getAll($searchParams, $puuidBind = null)
     {

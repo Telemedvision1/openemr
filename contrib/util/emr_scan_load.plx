@@ -14,7 +14,7 @@ use DBI;
 #######################################################################
 #   This program is to be run frequently via the system crontab.  On
 # each run it will move scanned-in documents from a shared directory
-# into matching locations in the openemr/documents directory, and also
+# into matching locations in the tabemr/documents directory, and also
 # update the database accordingly.
 #  Each scanned-in file must be placed into a directory corresponding
 # to its category, and its name must begin with the patient's pubpid
@@ -32,8 +32,8 @@ use DBI;
 
 # Parameters for MySQL database connections:
 #
-my $DBNAME = "openemr"; # database name
-my $DBUSER = "openemr"; # database user name
+my $DBNAME = "tabemr"; # database name
+my $DBUSER = "tabemr"; # database user name
 my $DBPASS = "secret";  # database user's password
 
 # Log file location:
@@ -46,7 +46,7 @@ my $INPATH = "/mnt/drive2/scan_docs";
 
 # Base directory for OpenEMR documents:
 #
-# my $OUTPATH = "/usr/local/apache2/htdocs/openemr/documents";
+# my $OUTPATH = "/usr/local/apache2/htdocs/tabemr/documents";
 my $OUTPATH = "/mnt/drive2/documents";
 
 # This should specify the user and group that the web server runs as:
@@ -129,7 +129,7 @@ sub is_doc_available($$) {
 	my $query = "SELECT " .
     "pc_catid, pc_eventDate, pc_endDate, pc_recurrtype, pc_recurrspec, " .
     "pc_startTime, pc_endTime, pc_alldayevent " .
-    "FROM openemr_postcalendar_events " .
+    "FROM tabemr_postcalendar_events " .
     "WHERE pc_aid = '$docid' AND " .
     "( pc_catid = 2 OR pc_catid = 3 OR pc_duration >= 21600 ) AND " .
     "pc_eventDate <= '$current_date' AND pc_endDate >= '$current_date' " .

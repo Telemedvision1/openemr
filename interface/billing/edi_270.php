@@ -17,7 +17,7 @@
  * @copyright Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019-2020 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019-2020 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
@@ -133,7 +133,7 @@ if ($exclude_policy != "") {
         c.cms_id as cms_id,
         c.eligibility_id as eligibility_id,
         c.name as payer_name
-        FROM openemr_postcalendar_events AS e
+        FROM tabemr_postcalendar_events AS e
         LEFT JOIN users AS d on (e.pc_aid is not null and e.pc_aid = d.id)
         LEFT JOIN facility AS f on (f.id = e.pc_facility)
         LEFT JOIN patient_data AS p ON p.pid = e.pc_pid

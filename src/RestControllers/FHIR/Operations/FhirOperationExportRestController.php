@@ -130,7 +130,7 @@ class FhirOperationExportRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     #[OA\Get(
         path: '/fhir/Patient/$export',
@@ -141,7 +141,7 @@ class FhirOperationExportRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     #[OA\Get(
         path: '/fhir/Group/{id}/$export',
@@ -161,7 +161,7 @@ class FhirOperationExportRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function processExport($exportParams, $exportType, $acceptHeader, $preferHeader)
     {
@@ -262,7 +262,7 @@ class FhirOperationExportRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function processExportStatusRequestForJob($jobUuidString)
     {
@@ -336,7 +336,7 @@ class FhirOperationExportRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function processDeleteExportForJob($jobUuidString)
     {

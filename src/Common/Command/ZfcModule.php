@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2022 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Common\Command;
@@ -26,7 +26,7 @@ class ZfcModule extends Command
     protected function configure(): void
     {
         $this
-            ->setName('openemr:zfc-module')
+            ->setName('tabemr:zfc-module')
             ->setDescription('Module maintenance (install_sql, install_acl, upgrade_acl, upgrade_sql, install, enable, disable, unregister)')
             ->addUsage('--site=default --modname=Carecoordination --modaction=install')
             ->setDefinition(

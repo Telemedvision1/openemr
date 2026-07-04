@@ -9,7 +9,7 @@
  * @package   OpenEMR
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\PHPStan\Rules;
@@ -57,7 +57,7 @@ class ForbiddenClassesRule implements Rule
                 );
 
                 $errors[] = RuleErrorBuilder::message($message)
-                    ->identifier('openemr.deprecatedLaminasDb')
+                    ->identifier('tabemr.deprecatedLaminasDb')
                     ->tip('See src/Common/Database/QueryUtils.php for modern database patterns')
                     ->build();
             }

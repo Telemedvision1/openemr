@@ -18,7 +18,7 @@
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019 Ron Pulcer <rspulcer_2k@yahoo.com>
  * @copyright Copyright (c) 2019-2022 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 // Set $sessionAllowWrite to true since there are session writes here after html has already been outputted

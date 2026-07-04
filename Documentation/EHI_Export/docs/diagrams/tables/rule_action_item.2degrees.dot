@@ -85,9 +85,9 @@ digraph "twoDegreesRelationshipsDiagram" {
   "lists_medication":"elipses":w -> "prescriptions":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "lists_medication":"elipses":w -> "list_options":"option_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "lists_medication":"elipses":w -> "list_options":"option_id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "openemr_postcalendar_events":"elipses":w -> "list_options":"option_id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "openemr_postcalendar_events":"elipses":w -> "patient_data":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "openemr_postcalendar_events":"elipses":w -> "list_options":"option_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tabemr_postcalendar_events":"elipses":w -> "list_options":"option_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tabemr_postcalendar_events":"elipses":w -> "patient_data":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tabemr_postcalendar_events":"elipses":w -> "list_options":"option_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "patient_care_experience_preferences":"elipses":w -> "list_options":"option_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "patient_care_experience_preferences":"elipses":w -> "patient_data":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "patient_data":"elipses":w -> "list_options":"option_id":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -365,16 +365,16 @@ digraph "twoDegreesRelationshipsDiagram" {
     target="_top"
     tooltip="lists_medication"
   ];
-  "openemr_postcalendar_events" [
+  "tabemr_postcalendar_events" [
    label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3"  BGCOLOR="#f5f5f5"><TABLE BORDER="0" CELLSPACING="0"><TR><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="182" HEIGHT="16"><B>openemr_postcalendar_events</B></TD><TD ALIGN="RIGHT">[table]</TD></TR></TABLE></TD></TR>
+      <TR><TD COLSPAN="3"  BGCOLOR="#f5f5f5"><TABLE BORDER="0" CELLSPACING="0"><TR><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="182" HEIGHT="16"><B>tabemr_postcalendar_events</B></TD><TD ALIGN="RIGHT">[table]</TD></TR></TABLE></TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#ffffff">&lt; 10</TD><TD ALIGN="RIGHT" BGCOLOR="#ffffff">  </TD><TD ALIGN="RIGHT" BGCOLOR="#ffffff">2 &gt;</TD></TR>
     </TABLE>>
-    URL="../../tables/openemr_postcalendar_events.html"
+    URL="../../tables/tabemr_postcalendar_events.html"
     target="_top"
-    tooltip="openemr_postcalendar_events"
+    tooltip="tabemr_postcalendar_events"
   ];
   "patient_care_experience_preferences" [
    label=<

@@ -10,7 +10,7 @@
  * @package   OpenEMR
  * @author    GitHub Copilot // AI-generated
  * @copyright Copyright (c) 2025 OpenEMR
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\PHPStan\Rules;
@@ -78,7 +78,7 @@ class ForbiddenGlobalsAccessRule implements Rule
 
         return [
             RuleErrorBuilder::message($message)
-                ->identifier('openemr.forbiddenGlobalsAccess')
+                ->identifier('tabemr.forbiddenGlobalsAccess')
                 ->tip('For encrypted values, OEGlobalsBag handles decryption automatically. See src/Core/OEGlobalsBag.php')
                 ->build()
         ];

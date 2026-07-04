@@ -3,7 +3,7 @@
 /*
  * TokenIntrospectionRestController.php  handles OAuth2 token introspection requests as per RFC 7662 and SMART on FHIR v2.2 specifications.
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
@@ -11,7 +11,7 @@
  * @copyright Copyright (c) 2020 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
-* @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+* @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\RestControllers;

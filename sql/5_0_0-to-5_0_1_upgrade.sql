@@ -175,8 +175,8 @@ CREATE TABLE `therapy_groups_counselors`(
 ) ENGINE=InnoDB;
 #EndIf
 
-#IfMissingColumn openemr_postcalendar_events pc_gid
-ALTER TABLE openemr_postcalendar_events ADD pc_gid int(11) DEFAULT 0;
+#IfMissingColumn tabemr_postcalendar_events pc_gid
+ALTER TABLE tabemr_postcalendar_events ADD pc_gid int(11) DEFAULT 0;
 #EndIf
 
 #IfNotRow2D list_options list_id lists option_id groupstat
@@ -187,8 +187,8 @@ INSERT INTO list_options (`list_id`, `option_id`, `title`, `seq`, `is_default`, 
 INSERT INTO list_options (`list_id`, `option_id`, `title`, `seq`, `is_default`, `option_value`, `notes`) VALUES ('groupstat', '<', '< Not Reported', '40', '0', '0', 'FEFDCF|0');
 #EndIf
 
-#IfNotRow openemr_postcalendar_categories pc_catname Group Therapy
-INSERT INTO openemr_postcalendar_categories (`pc_catname`, `pc_catcolor`, `pc_recurrspec`, `pc_duration` ,`pc_cattype` , `pc_active` , `pc_seq`)
+#IfNotRow tabemr_postcalendar_categories pc_catname Group Therapy
+INSERT INTO tabemr_postcalendar_categories (`pc_catname`, `pc_catcolor`, `pc_recurrspec`, `pc_duration` ,`pc_cattype` , `pc_active` , `pc_seq`)
 VALUES ('Group Therapy' , '#BFBFBF' , 'a:5:{s:17:"event_repeat_freq";s:1:"0";s:22:"event_repeat_freq_type";s:1:"0";s:19:"event_repeat_on_num";s:1:"1";s:19:"event_repeat_on_day";s:1:"0";s:20:"event_repeat_on_freq";s:1:"0";}', '3600', '3', '1', '90');
 #EndIf
 
@@ -205,7 +205,7 @@ CREATE TABLE `form_groups_encounter` (
   `onset_date` datetime default NULL,
   `sensitivity` varchar(30) default NULL,
   `billing_note` text,
-  `pc_catid` int(11) NOT NULL default '5' COMMENT 'event category from openemr_postcalendar_categories',
+  `pc_catid` int(11) NOT NULL default '5' COMMENT 'event category from tabemr_postcalendar_categories',
   `last_level_billed` int  NOT NULL DEFAULT 0 COMMENT '0=none, 1=ins1, 2=ins2, etc',
   `last_level_closed` int  NOT NULL DEFAULT 0 COMMENT '0=none, 1=ins1, 2=ins2, etc',
   `last_stmt_date`    date DEFAULT NULL,
@@ -436,8 +436,8 @@ ALTER TABLE `categories` ADD `aco_spec` varchar(63) NOT NULL default 'patients|d
 ALTER TABLE `onsite_mail` CHANGE `owner` `owner` varchar(128) DEFAULT NULL;
 #Endif
 
-#IfNotColumnType openemr_postcalendar_events pc_facility int(11)
-ALTER TABLE `openemr_postcalendar_events` CHANGE `pc_facility` `pc_facility` int(11) NOT NULL DEFAULT '0' COMMENT 'facility id for this event';
+#IfNotColumnType tabemr_postcalendar_events pc_facility int(11)
+ALTER TABLE `tabemr_postcalendar_events` CHANGE `pc_facility` `pc_facility` int(11) NOT NULL DEFAULT '0' COMMENT 'facility id for this event';
 #Endif
 
 #IfMissingColumn form_misc_billing_options onset_date
@@ -454,8 +454,8 @@ INSERT INTO `list_options` (`list_id`, `option_id`, `title`, `seq`, `is_default`
 ALTER TABLE `users` ADD `main_menu_role` VARCHAR(50) NOT NULL DEFAULT 'standard';
 #EndIf
 
-#IfMissingColumn openemr_postcalendar_categories aco_spec
-ALTER TABLE `openemr_postcalendar_categories` ADD COLUMN `aco_spec` VARCHAR(63) NOT NULL DEFAULT 'encounters|notes';
+#IfMissingColumn tabemr_postcalendar_categories aco_spec
+ALTER TABLE `tabemr_postcalendar_categories` ADD COLUMN `aco_spec` VARCHAR(63) NOT NULL DEFAULT 'encounters|notes';
 #EndIf
 #IfNotRow2D list_options list_id lists option_id apps
 INSERT INTO list_options (list_id,option_id,title) VALUES ('lists','apps','Apps');
@@ -661,13 +661,13 @@ DELETE FROM list_options WHERE list_id = 'transactions';
 DELETE FROM list_options WHERE list_id = 'lists' AND option_id = 'transactions';
 #EndIf
 
-#IfMissingColumn openemr_postcalendar_categories pc_constant_id
-ALTER TABLE `openemr_postcalendar_categories` ADD `pc_constant_id` VARCHAR (255) default NULL;
-UPDATE `openemr_postcalendar_categories` SET pc_constant_id = LOWER(REPLACE (pc_catname,' ', '_'));
+#IfMissingColumn tabemr_postcalendar_categories pc_constant_id
+ALTER TABLE `tabemr_postcalendar_categories` ADD `pc_constant_id` VARCHAR (255) default NULL;
+UPDATE `tabemr_postcalendar_categories` SET pc_constant_id = LOWER(REPLACE (pc_catname,' ', '_'));
 #EndIf
 
-#IfNotIndex openemr_postcalendar_categories pc_constant_id
-ALTER TABLE openemr_postcalendar_categories ADD UNIQUE KEY (`pc_constant_id`);
+#IfNotIndex tabemr_postcalendar_categories pc_constant_id
+ALTER TABLE tabemr_postcalendar_categories ADD UNIQUE KEY (`pc_constant_id`);
 #EndIf
 
 #IfMissingColumn facility facility_taxonomy

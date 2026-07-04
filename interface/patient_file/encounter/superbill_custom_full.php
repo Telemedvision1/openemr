@@ -13,7 +13,7 @@
  * @copyright Copyright (c) 2018-2021 Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2025 Sherwin Gaddis <sherwin.gaddis@gmail.com> (updated look and feel)
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../globals.php");

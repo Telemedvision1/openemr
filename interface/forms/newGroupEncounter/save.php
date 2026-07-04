@@ -15,7 +15,7 @@
  * @copyright Copyright (c) 2016 Amiel Elboim <amielel@matrix.co.il>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../globals.php");
@@ -170,8 +170,8 @@ if (is_array($_POST['issues'])) {
   }
 }*/
 
-$result4 = sqlStatement("SELECT fe.encounter,fe.date,openemr_postcalendar_categories.pc_catname FROM form_groups_encounter AS fe " .
-    " left join openemr_postcalendar_categories on fe.pc_catid=openemr_postcalendar_categories.pc_catid  WHERE fe.group_id = ? order by fe.date desc", [$group_id]);
+$result4 = sqlStatement("SELECT fe.encounter,fe.date,tabemr_postcalendar_categories.pc_catname FROM form_groups_encounter AS fe " .
+    " left join tabemr_postcalendar_categories on fe.pc_catid=tabemr_postcalendar_categories.pc_catid  WHERE fe.group_id = ? order by fe.date desc", [$group_id]);
 ?>
 <html>
 <body>

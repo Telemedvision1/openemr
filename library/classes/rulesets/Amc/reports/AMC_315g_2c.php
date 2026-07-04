@@ -22,7 +22,7 @@
  * @link      https://www.open-emr.org
  * @copyright 2022 Discover and Change, Inc.
  * @author    Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  *
  */
 

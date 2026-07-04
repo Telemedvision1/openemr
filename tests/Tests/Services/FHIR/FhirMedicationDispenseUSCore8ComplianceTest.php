@@ -6,12 +6,12 @@
  * Tests to ensure the MedicationDispense implementation complies with
  * US Core StructureDefinition requirements and constraints
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Claude.AI Assistant
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 // AI-generated content begins

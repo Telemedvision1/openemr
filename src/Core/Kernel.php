@@ -3,7 +3,7 @@
 /**
  * OpenEMR <https://open-emr.org>.
  *
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Core;
@@ -36,10 +36,10 @@ class Kernel
     private $container;
 
     /**
-     * @param ?string $projectDir Absolute filesystem root (e.g. "/var/www/openemr").
+     * @param ?string $projectDir Absolute filesystem root (e.g. "/var/www/tabemr").
      *                            Optional for backward compat with modules that construct
      *                            a Kernel without paths; path getters throw if null.
-     * @param ?string $webRoot    URL path prefix (e.g. "/openemr" or "").
+     * @param ?string $webRoot    URL path prefix (e.g. "/tabemr" or "").
      *                            Optional for the same reason as $projectDir.
      * @param ?EventDispatcherInterface $dispatcher Pre-built event dispatcher to inject.
      */
@@ -76,7 +76,7 @@ class Kernel
     // ---- Path accessors (web-relative) ------------------------------------
 
     /**
-     * URL path prefix, e.g. "/openemr" or ""
+     * URL path prefix, e.g. "/tabemr" or ""
      */
     public function getWebRoot(): string
     {
@@ -118,7 +118,7 @@ class Kernel
     // ---- Path accessors (filesystem-absolute) -----------------------------
 
     /**
-     * Absolute filesystem root, e.g. "/var/www/openemr"
+     * Absolute filesystem root, e.g. "/var/www/tabemr"
      */
     public function getProjectDir(): string
     {

@@ -11,7 +11,7 @@
  * @copyright Copyright (c) 2017 Matthew Vita <matthewvita48@gmail.com>
  * @copyright Copyright (c) 2017 Victor Kofia <victor.kofia@gmail.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Services;

@@ -9,7 +9,7 @@
  * @author    Amiel Elboim <amielel@matrix.co.il>
  * @copyright Copyright (c) 2016 Shachar Zilbershlag <shaharzi@matrix.co.il>
  * @copyright Copyright (c) 2016 Amiel Elboim <amielel@matrix.co.il>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../../library/api.inc.php");
@@ -86,16 +86,16 @@ function insert_into_tgpa_table($form_id, $pid, $participantData): void
  */
 function insert_patient_appt($pid, $gid, $pc_aid, $pc_eventDate, $pc_startTime, $participantData)
 {
-    $select_sql = "SELECT pc_eid FROM openemr_postcalendar_events WHERE pc_pid = ? AND pc_gid = ? AND pc_eventDate = ? AND pc_startTime = ?;";
+    $select_sql = "SELECT pc_eid FROM tabemr_postcalendar_events WHERE pc_pid = ? AND pc_gid = ? AND pc_eventDate = ? AND pc_startTime = ?;";
     $result = sqlStatement($select_sql, [$pid, $gid, $pc_eventDate, $pc_startTime]);
     $result_array = sqlFetchArray($result);
     if ($result_array) {
-        $insert_sql = "UPDATE openemr_postcalendar_events SET pc_apptstatus = ? WHERE pc_eid = ?;";
+        $insert_sql = "UPDATE tabemr_postcalendar_events SET pc_apptstatus = ? WHERE pc_eid = ?;";
         sqlStatement($insert_sql, [$participantData['status'], $result_array['pc_eid']]);
         return $result_array['pc_eid'];
     } else {
         $insert_sql =
-            "INSERT INTO openemr_postcalendar_events " .
+            "INSERT INTO tabemr_postcalendar_events " .
             "(pc_catid, pc_aid, pc_pid, pc_gid, pc_title, pc_informant, pc_eventDate, pc_recurrspec, pc_startTime, pc_sharing, pc_apptstatus) " .
             "VALUES (?, ?, ?, ?, 'Group Therapy', 1, ?, ?, ?, 0, ?); ";
         $recurrspec = 'a:6:{s:17:"event_repeat_freq";s:1:"0";s:22:"event_repeat_freq_type";s:1:"0";s:19:"event_repeat_on_num";s:1:"1";s:19:"event_repeat_on_day";s:1:"0";s:20:"event_repeat_on_freq";s:1:"0";s:6:"exdate";s:0:"";}';
@@ -151,7 +151,7 @@ function get_appt_data($encounter_id)
 {
     $sql =
         "SELECT ope.pc_aid, ope.pc_eventDate, ope.pc_startTime, ope.pc_room FROM form_groups_encounter as fge " .
-        "JOIN openemr_postcalendar_events as ope ON fge.appt_id = ope.pc_eid " .
+        "JOIN tabemr_postcalendar_events as ope ON fge.appt_id = ope.pc_eid " .
         "WHERE fge.encounter = ?;";
     $result = sqlQuery($sql, [$encounter_id]);
     return $result;
@@ -230,6 +230,6 @@ function largest_id($table)
 
 function get_groups_cat_id()
 {
-    $result = sqlQuery('SELECT pc_catid FROM openemr_postcalendar_categories WHERE pc_cattype = 3 AND pc_active = 1 LIMIT 1');
+    $result = sqlQuery('SELECT pc_catid FROM tabemr_postcalendar_categories WHERE pc_cattype = 3 AND pc_active = 1 LIMIT 1');
     return !empty($result) ? $result['pc_catid'] : 0;
 }

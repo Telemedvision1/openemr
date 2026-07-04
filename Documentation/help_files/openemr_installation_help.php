@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2019 Ranganath Pathak <pathak@scrs1.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 ?>
@@ -79,7 +79,7 @@
                     <p><?php echo ("There are two parts to the OpenEMR application");?>:</p>
 
                         <ul>
-                            <li><?php echo ("The scripts that the web server uses to interact with the data and display results on a web page. These scripts need to be placed in the web server document root directory, e.g. /var/www/html/openemr in Ubuntu/Debian"); ?></li>
+                            <li><?php echo ("The scripts that the web server uses to interact with the data and display results on a web page. These scripts need to be placed in the web server document root directory, e.g. /var/www/html/tabemr in Ubuntu/Debian"); ?></li>
                             <li><?php echo ("The data - both application specific and clinical, which exists mainly in a database, though some data exists in directories outside of the database"); ?></li>
                         </ul>
 
@@ -149,7 +149,7 @@
 
                     <p><?php echo ("This file should be writable by everybody"); ?>.</p>
                         <ul>
-                            <li><strong><?php echo ("openemr/sites/default/sqlconf.php"); ?></strong></li>
+                            <li><strong><?php echo ("tabemr/sites/default/sqlconf.php"); ?></strong></li>
                         </ul>
                     <p><?php echo ("In Linux use the following command to set the proper permissions");?>.</p>
 
@@ -161,7 +161,7 @@
 
                     <p><?php echo ("To facilitate this process the following directory should be writable by the web server (Apache)"); ?>:</p>
                         <ul>
-                            <li><strong>/var/www/html/openemr/sites/default/documents</strong> - <?php echo ("where all files etc are stored"); ?></li>
+                            <li><strong>/var/www/html/tabemr/sites/default/documents</strong> - <?php echo ("where all files etc are stored"); ?></li>
                         </ul>
 
                     <p><?php echo ("These files need to have owner and user set to the Apache user. In Linux the Apache user and owner are 'www-data' in Ubuntu and Debian, 'apache' in Redhat, Fedora and CentOS , 'nobody' is a generic user and group name that is used by other applications as well");?>.</p>
@@ -251,7 +251,7 @@
 
                     <p><?php echo ("If you had previously selected the 'Have setup Create the Database' option  a database with the name in the database field will be created, along with the user specified in 'Login Name'");?>.</p>
 
-                    <p><?php echo ("The default value is 'openemr' with a default login name of 'openemr', you must supply a password for this user usually it is 'openemr' for the sake of simplicity");?>.</p>
+                    <p><?php echo ("The default value is 'tabemr' with a default login name of 'tabemr', you must supply a password for this user usually it is 'tabemr' for the sake of simplicity");?>.</p>
 
                     <p><?php echo ("You can change any or all three values to those of your choice");?>.</p>
 
@@ -419,7 +419,7 @@
 
                     <p><?php echo ("They are"); ?>:</p>
                         <ul>
-                            <li><strong>/var/www/html/openemr/sites/default/documents</strong> - <?php echo ("where all files etc are stored"); ?></li>
+                            <li><strong>/var/www/html/tabemr/sites/default/documents</strong> - <?php echo ("where all files etc are stored"); ?></li>
                         </ul>
                     <p><?php echo ("It will also ask you to add some data to the Apache configuration file to make the Zend Framework work better");?>.</p>
 
@@ -448,21 +448,21 @@
                     <p><?php echo ("To configure Zend and to secure the /documents directory you can paste following to the end of the apache configuration file");?>:</p>
 
                     <pre>
-                    &lt;Directory &quot;openemrwebroot&quot;&gt;
+                    &lt;Directory &quot;tabemrwebroot&quot;&gt;
                     &nbsp;&nbsp;AllowOverride FileInfo
                     &nbsp;&nbsp;Require all granted
                     &lt;/Directory&gt;
-                    &lt;Directory &quot;openemrwebroot/sites&quot;&gt;
+                    &lt;Directory &quot;tabemrwebroot/sites&quot;&gt;
                     &nbsp;&nbsp;AllowOverride None
                     &lt;/Directory&gt;
-                    &lt;Directory &quot;openemrwebroot/sites/*/documents&quot;&gt;
+                    &lt;Directory &quot;tabemrwebroot/sites/*/documents&quot;&gt;
                     &nbsp;&nbsp;Require all denied
                     &lt;/Directory&gt;
                     </pre>
 
-                    <p><?php echo ("The 'openemrwebroot' is the directory in which the OpenEMR scripts exist on the web server");?>.</p>
+                    <p><?php echo ("The 'tabemrwebroot' is the directory in which the OpenEMR scripts exist on the web server");?>.</p>
 
-                    <p><?php echo ("The script will automatically list the 'openemrwebroot' upon reaching Step 6 Configure Apache Web Server");?>.</p>
+                    <p><?php echo ("The script will automatically list the 'tabemrwebroot' upon reaching Step 6 Configure Apache Web Server");?>.</p>
 
                     <p><?php echo ("You can cut and paste this code block into the Apache configuration file");?>.</p>
 
@@ -556,7 +556,7 @@
 
                     <p><strong><?php echo ("Step 1");?></strong> - <?php echo ("Back up the old OpenEMR files as well as the data before you embark on this endeavor");?>.</p>
 
-                    <p><strong><?php echo ("Step 2");?></strong> - <?php echo ("Replace the old openemr directory with the new version in the web server document root directory");?>.</p>
+                    <p><strong><?php echo ("Step 2");?></strong> - <?php echo ("Replace the old tabemr directory with the new version in the web server document root directory");?>.</p>
 
                     <p><strong><?php echo ("Step 3");?></strong> - <?php echo ("Copy the settings from the following old OpenEMR files to the new configuration files");?>.</p>
 
@@ -564,8 +564,8 @@
 
                     <p><?php echo ("The files whose data needs to be updated are"); ?>:</p>
                         <ul>
-                            <li><?php echo ("openemr/sites/default/sqlconf.php"); ?></li>
-                            <li><?php echo ("openemr/sites/default/config.php"); ?></li>
+                            <li><?php echo ("tabemr/sites/default/sqlconf.php"); ?></li>
+                            <li><?php echo ("tabemr/sites/default/config.php"); ?></li>
                         </ul>
 
                     <p><?php echo ("Set the \$config variable in sqlconf.php (found near bottom of file within bunch of slashes) to 1 (\$config = 1;)");?>.</p>
@@ -574,7 +574,7 @@
 
                     <p><strong><?php echo ("Step 4");?></strong> - <?php echo ("The following directory contains patient information should however be copied from the old version to the new version"); ?>:</p>
                         <ul>
-                            <li><?php echo ("openemr/sites/default/documents - files, documents, images etc"); ?></li>
+                            <li><?php echo ("tabemr/sites/default/documents - files, documents, images etc"); ?></li>
                         </ul>
 
                     <p><?php echo ("If there are other files that you have customized, then you will also need to customize those files in the current version");?>.</p>
@@ -585,7 +585,7 @@
 
                     <p><i class="fa fa-exclamation-circle oe-text-orange"  aria-hidden="true"></i> <?php echo ("Upgrading the database will retain all the old data and add new tables, if any, to the existing database and new fields to existing tables so that the upgraded version can function seamlessly with the old data");?>.</p>
 
-                    <p><?php echo ("Run the sql_upgrade.php script from your web browser (for example http://openemr.location/sql_upgrade.php)");?>.</p>
+                    <p><?php echo ("Run the sql_upgrade.php script from your web browser (for example http://tabemr.location/sql_upgrade.php)");?>.</p>
 
                     <p><?php echo ("It will prompt you to select the old release number, and will display the SQL commands issued as the upgrade occurs");?>.</p>
 
@@ -605,17 +605,17 @@
 
                         <ul>
                             <li><?php echo ("It is a three-tier web database application, user tier, data tier and middle tier"); ?></li>
-                            <li><?php echo ("The middle tier contains the PHP scripts that the webserver (Apache) uses to interact with the data tier and the user tier. It has to be in the webserver's openemr document root directory"); ?></li>
+                            <li><?php echo ("The middle tier contains the PHP scripts that the webserver (Apache) uses to interact with the data tier and the user tier. It has to be in the webserver's tabemr document root directory"); ?></li>
                             <li><?php echo ("The data tier stores most of the data in a database, most commonly MySQL or MariaDB"); ?></li>
-                            <li><?php echo ("Some data (images, electronic remittance advice files, transmitted electronic batches for various kinds etc.) are stored in directories in the openemr document root folder of the webserver"); ?></li>
+                            <li><?php echo ("Some data (images, electronic remittance advice files, transmitted electronic batches for various kinds etc.) are stored in directories in the tabemr document root folder of the webserver"); ?></li>
                             <li><?php echo ("For PHP to interact with the database a virtual user is needed and created by the setup script"); ?></li>
-                            <li><?php echo ("For Apache/PHP to be able to read and write data to the directories containing patient information in the webserver openemr document root directory, the webserver needs permission to read and write to those directories"); ?></li>
+                            <li><?php echo ("For Apache/PHP to be able to read and write data to the directories containing patient information in the webserver tabemr document root directory, the webserver needs permission to read and write to those directories"); ?></li>
                             <li><?php echo ("The setup script also creates an initial user with full administrative privileges to the OpenEMR application at the time of initial setup"); ?></li>
                         </ul>
 
                     <p><?php echo ("The multisite setup will share the middle tier scripts between all instances and have a unique data tier for each instance"); ?>.</p>
 
-                    <p><?php echo ("This means creating a new database for each site as well as creating a place in the webserver openemr document root directory to hold the site-specific non-database data"); ?>.</p>
+                    <p><?php echo ("This means creating a new database for each site as well as creating a place in the webserver tabemr document root directory to hold the site-specific non-database data"); ?>.</p>
 
                     <p><?php echo ("The place where the non-database data for each site is stored is in a directory called 'sites' in the OpenEMR document root directory of the initial single site installation"); ?>.</p>
 
@@ -643,13 +643,13 @@
 
                     <p><?php echo ("Change the user and group of the 'sites' directory in the initial OpenEMR installation to that of the webserver"); ?>.</p>
 
-                    <p><?php echo ("In Ubuntu/Debian <code>cd</code> into the openemr directory in webserver document root directory and execute the following command:"); ?>.</p>
+                    <p><?php echo ("In Ubuntu/Debian <code>cd</code> into the tabemr directory in webserver document root directory and execute the following command:"); ?>.</p>
 
                     <p><code>sudo chown -R www-data:www-data sites</code></p>
 
                     <p><strong><?php echo ("INSTALLATION"); ?> :</strong></p>
 
-                    <p><?php echo ("If you are accessing the OpenEMR application from the computer/server  that it has been installed in type <code>http://localhost/openemr/admin.php</code> in the address bar of a browser. NOTE: This assumes that the OpenEMR files are in a directory called 'openemr', if not change the name to reflect the OpenEMR root directory. If you are accessing it from another computer substitute the localhost name with the IP address or domain name of the OpenEMR installation ");?>.</p>
+                    <p><?php echo ("If you are accessing the OpenEMR application from the computer/server  that it has been installed in type <code>http://localhost/tabemr/admin.php</code> in the address bar of a browser. NOTE: This assumes that the OpenEMR files are in a directory called 'tabemr', if not change the name to reflect the OpenEMR root directory. If you are accessing it from another computer substitute the localhost name with the IP address or domain name of the OpenEMR installation ");?>.</p>
 
                     <p><?php echo ("This will bring up the the 'OpenEMR Site Administration' page"); ?>.</p>
 
@@ -724,7 +724,7 @@
 
                     <p><?php echo ("Click on 'Proceed to Final Step' to complete the installation"); ?>.</p>
 
-                    <p><?php echo ("To access this site you will have to append <code>?siteid=site ID</code> to the openemr url"); ?>.</p>
+                    <p><?php echo ("To access this site you will have to append <code>?siteid=site ID</code> to the tabemr url"); ?>.</p>
 
                     <p><?php echo ("Advantages of the multisite module"); ?>.</p>
 

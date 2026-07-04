@@ -40,7 +40,7 @@ use OpenEMR\Validators\ProcessingResult;
  * @author             Jerry Padgett <sjpadgett@gmail.com>
  * @copyright          Copyright (c) 2021 Vishnu Yarmaneni <vardhanvishnu@gmail.com>
  * @copyright          Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license            https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license            https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 /**
@@ -156,7 +156,7 @@ class FhirCoverageService extends FhirServiceBase implements IPatientCompartment
         // Policy Type as additional identifier if present
         if (!empty($dataRecord['policy_type'])) {
             $policyTypeIdentifier = new FHIRIdentifier();
-            $policyTypeIdentifier->setSystem("http://openemr.org/fhir/policy-type");
+            $policyTypeIdentifier->setSystem("http://tabemr.org/fhir/policy-type");
             $policyTypeIdentifier->setValue($dataRecord['policy_type']);
             $coverageResource->addIdentifier($policyTypeIdentifier);
         }

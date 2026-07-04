@@ -9,10 +9,10 @@
  *
  * @package   OpenEMR
  * @link      https://www.open-emr.org
- * @see       https://github.com/openemr/openemr/issues/10842
+ * @see       https://github.com/tabemr/tabemr/issues/10842
  * @author    Josh Baiad <josh@jbaiad.com>
  * @copyright Copyright (c) 2026 Josh Baiad <josh@jbaiad.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);

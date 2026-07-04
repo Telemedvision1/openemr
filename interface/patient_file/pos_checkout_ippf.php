@@ -46,7 +46,7 @@
  * @copyright Copyright (c) 2018 Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2019 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 $webserver_root = \OpenEMR\Core\OEGlobalsBag::getInstance()->getProjectDir();

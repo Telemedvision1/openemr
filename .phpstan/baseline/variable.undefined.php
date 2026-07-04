@@ -932,7 +932,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/language/language.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Variable \\$openemr_name might not be defined\\.$#',
+    'message' => '#^Variable \\$tabemr_name might not be defined\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/login/login.php',
 ];

@@ -9,7 +9,7 @@
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2018 Matthew Vita <matthewvita48@gmail.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\RestControllers;
@@ -117,7 +117,7 @@ class InsuranceRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function getAll($searchParams)
     {
@@ -152,7 +152,7 @@ class InsuranceRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function getOne($insuranceUuid, $puuid)
     {
@@ -203,7 +203,7 @@ class InsuranceRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function put($puuid, $insuranceUuid, $data)
     {
@@ -256,7 +256,7 @@ class InsuranceRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function post($puuid, $data)
     {
@@ -324,7 +324,7 @@ class InsuranceRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function operationSwapInsurance(string $puuid, string $type, string $insuranceUuid)
     {

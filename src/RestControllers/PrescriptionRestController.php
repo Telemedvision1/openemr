@@ -11,7 +11,7 @@
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
  * @copyright Copyright (c) 2024 Ivan Googla
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\RestControllers;
@@ -59,7 +59,7 @@ class PrescriptionRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function post(array $data, HttpRestRequest $request): ResponseInterface
     {
@@ -92,7 +92,7 @@ class PrescriptionRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function delete(string $uuid, HttpRestRequest $request): ResponseInterface
     {
@@ -122,7 +122,7 @@ class PrescriptionRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function getOne(string $uuid, HttpRestRequest $request): ResponseInterface
     {
@@ -147,7 +147,7 @@ class PrescriptionRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function getAll(HttpRestRequest $request): ResponseInterface
     {

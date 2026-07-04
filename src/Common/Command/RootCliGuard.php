@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -76,7 +76,7 @@ final class RootCliGuard
     /**
      * Resolve the current process's effective UID by running `id -u`
      * via Symfony Process. The `posix` PHP extension would give the
-     * same result via a direct syscall, but the openemr docker images
+     * same result via a direct syscall, but the tabemr docker images
      * don't ship it, so the entire production path goes through
      * Symfony Process — keeping a single tested path here is simpler
      * than carrying a posix branch that real environments never run.

@@ -11,7 +11,7 @@
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Tests\Integration\Services\FHIR;
@@ -74,7 +74,7 @@ class FhirLocationServiceIntegrationTest extends TestCase
     {
         $this->markTestSkipped("Skipping for now until we can ensure test isolation and cleanup.");
         // Create test patients
-        // TODO: should we use the openemr FixtureManager to do this?
+        // TODO: should we use the tabemr FixtureManager to do this?
         $groupPatient1Uuid = $this->createTestPatient('John', 'GroupMember1');
         $groupPatient2Uuid = $this->createTestPatient('Jane', 'GroupMember2');
         $nonGroupPatientUuid = $this->createTestPatient('Bob', 'NonGroupMember');

@@ -4,11 +4,11 @@
  * GlobalConnectorsEnum.php  Holds the list of Connectors settings in Globals that are found in /library/globals.inc.php
  * This allows constants to be type checked and autocompleted in IDEs when used in code
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Services\Globals;

@@ -2,11 +2,11 @@
 
 /*
  * DrugSalesService.php
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Services;
@@ -255,7 +255,7 @@ class DrugSalesService extends BaseService
             );
             // TODO: Better error handling.
             if (empty($tmp[0]['count'])) {
-                // credit to cburnicki and his PR here https://github.com/openemr/openemr/pull/8598/files
+                // credit to cburnicki and his PR here https://github.com/tabemr/tabemr/pull/8598/files
                 // This is a system error - the encounter ID exists but doesn't match the patient
                 $this->getLogger()->error("Drug dispensing error: Encounter does not exist or does not belong to patient", ['patient_id' => $patient_id, 'encounter_id' => $encounter_id]);
                 throw new Exception(xl('System error: The selected encounter does not exist or does not belong to this patient. This may indicate a data integrity issue. Please contact support if this problem persists.'));

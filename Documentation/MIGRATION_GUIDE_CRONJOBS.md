@@ -25,15 +25,15 @@ Both commands accept the standard `--site=<site>` option (defaults to `default`)
 ### Before
 
 ```cron
-0 * * * *  /usr/bin/php -f /var/www/html/openemr/interface/batchcom/batch_phone_notification.php site=default
-30 * * * * /usr/bin/php -f /var/www/html/openemr/custom/zutil.cli.doc_import.php site=default
+0 * * * *  /usr/bin/php -f /var/www/html/tabemr/interface/batchcom/batch_phone_notification.php site=default
+30 * * * * /usr/bin/php -f /var/www/html/tabemr/custom/zutil.cli.doc_import.php site=default
 ```
 
 ### After
 
 ```cron
-0 * * * *  /usr/bin/php /var/www/html/openemr/bin/console --site=default notifications:phone
-30 * * * * /usr/bin/php /var/www/html/openemr/bin/console --site=default documents:import
+0 * * * *  /usr/bin/php /var/www/html/tabemr/bin/console --site=default notifications:phone
+30 * * * * /usr/bin/php /var/www/html/tabemr/bin/console --site=default documents:import
 ```
 
 Notes:
@@ -110,5 +110,5 @@ For in-process invocation (e.g., from a test or another command), resolve the co
 
 ## References
 
-- PR: [openemr/openemr#11707](https://github.com/openemr/openemr/pull/11707)
-- Tracking issue: [openemr/openemr#11668](https://github.com/openemr/openemr/issues/11668)
+- PR: [tabemr/tabemr#11707](https://github.com/tabemr/tabemr/pull/11707)
+- Tracking issue: [tabemr/tabemr#11668](https://github.com/tabemr/tabemr/issues/11668)

@@ -9,7 +9,7 @@
  * @package   OpenEMR
  * @link      https://www.open-emr.org
  * @copyright Copyright (c) 2025 OpenEMR Foundation
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\PHPStan\Rules;
@@ -60,7 +60,7 @@ class ForbiddenCurlFunctionsRule implements Rule
                     $functionName
                 )
             )
-                ->identifier('openemr.forbiddenCurlFunction')
+                ->identifier('tabemr.forbiddenCurlFunction')
                 ->tip('Migrate to GuzzleHttp for better testability and PSR-7 compliance')
                 ->build()
         ];

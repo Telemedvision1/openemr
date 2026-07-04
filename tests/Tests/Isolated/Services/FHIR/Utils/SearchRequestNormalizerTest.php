@@ -2,11 +2,11 @@
 
 /*
  * SearchRequestNormalizerTest.php
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Tests\Isolated\Services\FHIR\Utils;
@@ -31,7 +31,7 @@ class SearchRequestNormalizerTest extends TestCase
             'HTTPS' => 'on',
             'REQUEST_SCHEME' => 'https',
             'REQUEST_URI' => '/apis/default/fhir/Patient/_search',
-            'SCRIPT_FILENAME' => '/var/www/html/openemr/apis/dispatch.php',
+            'SCRIPT_FILENAME' => '/var/www/html/tabemr/apis/dispatch.php',
             'SCRIPT_NAME' => '/apis/dispatch.php',
             'PATH_INFO' => '/fhir/Patient/_search',
         ]);

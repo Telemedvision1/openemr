@@ -9,7 +9,7 @@
  * @link      http://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -23,9 +23,9 @@ final readonly class Dispatcher
 {
     /** @var list<string> Default consumer repos when --target-repos is not supplied. */
     public const DEFAULT_TARGET_REPOS = [
-        'openemr/openemr-devops',
-        'openemr/website-openemr',
-        'openemr/demo_farm_openemr',
+        'tabemr/tabemr-devops',
+        'tabemr/website-tabemr',
+        'tabemr/demo_farm_tabemr',
     ];
 
     public function __construct(

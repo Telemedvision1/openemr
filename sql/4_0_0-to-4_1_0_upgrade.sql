@@ -169,7 +169,7 @@ INSERT INTO `clinical_rules` ( `id`, `pid`, `active_alert_flag`, `passive_alert_
 #IfNotTable enc_category_map
 CREATE TABLE `enc_category_map` (
   `rule_enc_id` varchar(31) NOT NULL DEFAULT '' COMMENT 'encounter id from rule_enc_types list in list_options',
-  `main_cat_id` int(11) NOT NULL DEFAULT 0 COMMENT 'category id from event category in openemr_postcalendar_categories',
+  `main_cat_id` int(11) NOT NULL DEFAULT 0 COMMENT 'category id from event category in tabemr_postcalendar_categories',
   KEY  (`rule_enc_id`,`main_cat_id`)
 ) ENGINE=MyISAM ;
 INSERT INTO `enc_category_map` ( `rule_enc_id`, `main_cat_id` ) VALUES ('enc_outpatient', 5);
@@ -942,18 +942,18 @@ update form_encounter set billing_facility = (SELECT id FROM facility ORDER BY b
 ALTER TABLE facility ADD COLUMN color VARCHAR(7);
 #EndIf
 
-#IfMissingColumn openemr_postcalendar_events pc_billing_location
-ALTER TABLE openemr_postcalendar_events ADD COLUMN pc_billing_location smallint(6);
+#IfMissingColumn tabemr_postcalendar_events pc_billing_location
+ALTER TABLE tabemr_postcalendar_events ADD COLUMN pc_billing_location smallint(6);
 #EndIf
 
-#IfMissingColumn openemr_postcalendar_categories pc_cattype
-ALTER TABLE `openemr_postcalendar_categories` ADD `pc_cattype` INT( 11 ) NOT NULL COMMENT 'Used in grouping categories';
+#IfMissingColumn tabemr_postcalendar_categories pc_cattype
+ALTER TABLE `tabemr_postcalendar_categories` ADD `pc_cattype` INT( 11 ) NOT NULL COMMENT 'Used in grouping categories';
 
-UPDATE `openemr_postcalendar_categories` SET `pc_cattype`='1' WHERE `pc_catid`='4';
-UPDATE `openemr_postcalendar_categories` SET `pc_cattype`='1' WHERE `pc_catid`='2';
-UPDATE `openemr_postcalendar_categories` SET `pc_cattype`='1' WHERE `pc_catid`='3';
-UPDATE `openemr_postcalendar_categories` SET `pc_cattype`='1' WHERE `pc_catid`='8';
-UPDATE `openemr_postcalendar_categories` SET `pc_cattype`='1' WHERE `pc_catid`='11';
+UPDATE `tabemr_postcalendar_categories` SET `pc_cattype`='1' WHERE `pc_catid`='4';
+UPDATE `tabemr_postcalendar_categories` SET `pc_cattype`='1' WHERE `pc_catid`='2';
+UPDATE `tabemr_postcalendar_categories` SET `pc_cattype`='1' WHERE `pc_catid`='3';
+UPDATE `tabemr_postcalendar_categories` SET `pc_cattype`='1' WHERE `pc_catid`='8';
+UPDATE `tabemr_postcalendar_categories` SET `pc_cattype`='1' WHERE `pc_catid`='11';
 #EndIf
 
 #IfMissingColumn patient_data deceased_date
@@ -1502,12 +1502,12 @@ CREATE TABLE `notification_settings` (
 INSERT INTO `notification_settings` (`SettingsId`, `Send_SMS_Before_Hours`, `Send_Email_Before_Hours`, `SMS_gateway_username`, `SMS_gateway_password`, `SMS_gateway_apikey`, `type`) VALUES (1, 150, 150, 'sms username', 'sms password', 'sms api key', 'SMS/Email Settings');
 #EndIf
 
-#IfMissingColumn openemr_postcalendar_events pc_sendalertsms
-ALTER TABLE openemr_postcalendar_events ADD pc_sendalertsms VARCHAR(3) NOT NULL DEFAULT 'NO';
+#IfMissingColumn tabemr_postcalendar_events pc_sendalertsms
+ALTER TABLE tabemr_postcalendar_events ADD pc_sendalertsms VARCHAR(3) NOT NULL DEFAULT 'NO';
 #EndIf
 
-#IfMissingColumn openemr_postcalendar_events pc_sendalertemail
-ALTER TABLE openemr_postcalendar_events ADD pc_sendalertemail VARCHAR(3) NOT NULL DEFAULT 'NO';
+#IfMissingColumn tabemr_postcalendar_events pc_sendalertemail
+ALTER TABLE tabemr_postcalendar_events ADD pc_sendalertemail VARCHAR(3) NOT NULL DEFAULT 'NO';
 #EndIf
 
 #IfNotRow4D rule_target id rule_inr_monitor group_id 1 method target_proc value INR::CPT4:85610::::::ge::1
@@ -1595,9 +1595,9 @@ CREATE TABLE `audit_master` (
 #IfNotTable audit_details
 CREATE TABLE `audit_details` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
-  `table_name` VARCHAR(100) NOT NULL COMMENT 'openemr table name',
-  `field_name` VARCHAR(100) NOT NULL COMMENT 'openemr table''s field name',
-  `field_value` TEXT NOT NULL COMMENT 'openemr table''s field value',
+  `table_name` VARCHAR(100) NOT NULL COMMENT 'tabemr table name',
+  `field_name` VARCHAR(100) NOT NULL COMMENT 'tabemr table''s field name',
+  `field_value` TEXT NOT NULL COMMENT 'tabemr table''s field value',
   `audit_master_id` BIGINT(20) NOT NULL COMMENT 'Id of the audit_master table',
   `entry_identification` VARCHAR(255) NOT NULL DEFAULT '1' COMMENT 'Used when multiple entry occurs from the same table.1 means no multiple entry',
   PRIMARY KEY (`id`)

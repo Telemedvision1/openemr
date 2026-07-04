@@ -13,7 +13,7 @@
  * @copyright Copyright (c) 2019 Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\BC\DatabaseConnectionFactory;
@@ -118,7 +118,7 @@ class Installer implements InstallerInterface
         // Record names of sql table files
         $this->main_sql = __DIR__ . '/../../sql/database.sql';
         $this->translation_sql = __DIR__ . '/../../contrib/util/language_translations/currentLanguage_utf8.sql';
-        $this->devel_translation_sql = "http://translations.openemr.io/languageTranslations_utf8.sql";
+        $this->devel_translation_sql = "http://translations.tabemr.io/languageTranslations_utf8.sql";
         $this->ippf_sql = __DIR__ . "/../../sql/ippf_layout.sql";
         $this->cvx = __DIR__ . "/../../sql/cvx_codes.sql";
         $this->additional_users = __DIR__ . "/../../sql/official_additional_users.sql";
@@ -647,7 +647,7 @@ class Installer implements InstallerInterface
      */
     public function install_additional_users(): bool
     {
-        // Add the official openemr users (services)
+        // Add the official tabemr users (services)
         if ($this->load_file($this->additional_users, "Additional Official Users") == false) {
             return false;
         }
@@ -1454,7 +1454,7 @@ $config = 1; /////////////
         // does substantial filesystem writes (site directory copy, key
         // material, generated config) and root-owned outputs would brick
         // the web server later. CLI entry points are InstallerAuto.php
-        // (this repo) and auto_configure.php (openemr-devops); the web
+        // (this repo) and auto_configure.php (tabemr-devops); the web
         // setup.php is also a caller but RootCliGuard short-circuits for
         // non-CLI SAPI so web installs are unaffected. Skipped under
         // PHPUnit so InstallerTest can construct/exercise the class.
@@ -2059,7 +2059,7 @@ DSTD;
         <script>
             $(function () {
                 $('#help-href').click (function(){
-                    document.getElementById('targetiframe').src = "Documentation/help_files/openemr_installation_help.php";
+                    document.getElementById('targetiframe').src = "Documentation/help_files/tabemr_installation_help.php";
                 })
             });
             $(function () {

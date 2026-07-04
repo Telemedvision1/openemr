@@ -9,7 +9,7 @@
  # @copyright Copyright (c) 2016 Kevin Yeh <kevin.y@integralemr.com>
  # @copyright Copyright (c) 2016 Brady Miller <brady.g.miller@gmail.com>
  # @copyright Copyright (c) 2019 Ranganath Pathak <pathak@scrs1.org>
- # @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ # @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
 #}
 
 <script type="text/html" id="user-data-template">
@@ -44,7 +44,7 @@
             <li class="dropdown-divider"></li>
             <li><a class="dropdown-item"
                    data-bind="click: function() {navigateTab('./../about_page.php', 'About', function() {activateTabByName('About',true);});}">
-                <i class="fa fa-fw pr-2 text-muted fa-info"></i>&nbsp;{{ "About"|xlt }} {{ openemr_name|text }}
+                <i class="fa fa-fw pr-2 text-muted fa-info"></i>&nbsp;{{ "About"|xlt }} {{ tabemr_name|text }}
             </a></li>
             <li class="dropdown-divider"></li>
             <li><a class="dropdown-item" data-bind="click: logout">

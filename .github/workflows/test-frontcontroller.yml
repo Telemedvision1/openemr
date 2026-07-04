@@ -36,7 +36,7 @@ jobs:
           MYSQL_ROOT_PASSWORD: root
           MYSQL_USER: ci
           MYSQL_PASSWORD: topsecret
-          MYSQL_DATABASE: openemr_test
+          MYSQL_DATABASE: tabemr_test
         ports:
           - 3306:3306
 
@@ -57,7 +57,7 @@ jobs:
             --db-port=3306
             --db-user=ci
             --db-password=topsecret
-            --db-name=openemr_test
+            --db-name=tabemr_test
             --oe-admin-username=admin
             --oe-admin-password=pass
             --enable-rest-api
@@ -71,7 +71,7 @@ jobs:
 
       - name: Suppress product registration prompt
         run: |
-          mysql -h 127.0.0.1 -P 3306 -u root -proot openemr_test -e "
+          mysql -h 127.0.0.1 -P 3306 -u root -proot tabemr_test -e "
             INSERT INTO product_registration (opt_out) VALUES (1);
           "
 

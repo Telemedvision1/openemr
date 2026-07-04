@@ -47,7 +47,7 @@ services:
 
         # --- Client cert (required for mTLS) ---
         openssl genrsa -out client.key 2048
-        openssl req -new -key client.key -subj "/CN=openemr-client" \
+        openssl req -new -key client.key -subj "/CN=tabemr-client" \
           | openssl x509 -req -CA ca.crt -CAkey ca.key -CAcreateserial \
               -days 1 -out client.crt
 
@@ -244,8 +244,8 @@ services:
              "-p", "26379", "SENTINEL", "masters"]
 
   # ---------- OpenEMR: TLS + X.509 client certs ----------
-  openemr:
-    image: openemr/openemr:flex-3.23-php-8.5@sha256:227bcf2e7181a3d786f3109b56fdbd7d26c0dacd6ddcf359328a64b5b9ec3ffc
+  tabemr:
+    image: tabemr/tabemr:flex-3.23-php-8.5@sha256:227bcf2e7181a3d786f3109b56fdbd7d26c0dacd6ddcf359328a64b5b9ec3ffc
     environment:
       REDIS_TLS: "yes"
       REDIS_X509: "yes"

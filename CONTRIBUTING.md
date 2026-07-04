@@ -16,8 +16,8 @@ For larger changes — new features, architectural changes, or anything that wou
 
 OpenEMR is split across multiple repositories. Make sure your contribution targets the right one:
 
-- **[openemr/openemr](https://github.com/openemr/openemr)** — The application itself: PHP code, frontend, APIs, clinical features, tests.
-- **[openemr/openemr-devops](https://github.com/openemr/openemr-devops)** — Infrastructure and deployment: Docker, Kubernetes, cloud provisioning (CloudFormation, Terraform), and operational tooling.
+- **[tabemr/tabemr](https://github.com/tabemr/tabemr)** — The application itself: PHP code, frontend, APIs, clinical features, tests.
+- **[tabemr/tabemr-devops](https://github.com/tabemr/tabemr-devops)** — Infrastructure and deployment: Docker, Kubernetes, cloud provisioning (CloudFormation, Terraform), and operational tooling.
 
 When in doubt, ask on the forum or open an issue to discuss where the work belongs.
 
@@ -86,7 +86,7 @@ If the AI made the commit directly (e.g., Claude Code), the trailer is typically
 
 You will need a "local" version of OpenEMR to make changes to the source code. Two paths:
 
-- **Recommended:** the [Docker development environment](https://hub.docker.com/r/openemr/openemr/) described below. Single Docker dependency on the host; the openemr container provides PHP, Node, Composer, the test runners, the pre-commit hooks, and all the validation tooling. This is the path most contributors use and the rest of this section walks through.
+- **Recommended:** the [Docker development environment](https://hub.docker.com/r/tabemr/tabemr/) described below. Single Docker dependency on the host; the tabemr container provides PHP, Node, Composer, the test runners, the pre-commit hooks, and all the validation tooling. This is the path most contributors use and the rest of this section walks through.
 - **Alternative:** install OpenEMR's full dependency stack directly on your host (PHP 8.2+, Composer, Node, Python 3, MySQL/MariaDB, etc.) and run everything natively without Docker. See [Working without Docker](#working-without-docker) at the bottom of this document for the host-toolchain workflow.
 
 ---
@@ -94,7 +94,7 @@ You will need a "local" version of OpenEMR to make changes to the source code. T
 ### Starting with OpenEMR Development Docker Environment
 - For the highly recommended free course "You Can Be a OpenEMR Developer in 5 Easy Steps", click below:
 
-    [You Can Be a OpenEMR Developer in 5 Easy Steps](https://www.open-emr.org/blog/you-can-be-a-openemr-developer-in-5-easy-steps/)
+    [You Can Be a OpenEMR Developer in 5 Easy Steps](https://www.open-emr.org/blog/you-can-be-a-tabemr-developer-in-5-easy-steps/)
 
 - For the Video Tutorial, click below:
 
@@ -102,7 +102,7 @@ You will need a "local" version of OpenEMR to make changes to the source code. T
 
     - (Recommend using Ubuntu Desktop 22.04 for above video and other videos in the [OpenEMR Easy Docker Development Environment Video Series](https://www.youtube.com/playlist?list=PLFiWG_dDadgQT7zjqvEqbXm1OiuubOVO8). Easiest way to do this is setting up a [Ubuntu Desktop 22.04 Virtual Machine on VirtualBox](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox), which recommend configuring with 40GB hard drive, assigning 25% of computer memory, and assigning 25% of cpu cores to the virtual machine.)
 
-1. [Create your own fork of OpenEMR](https://github.com/openemr/openemr/fork) (you will need a GitHub account) and `git clone` it to your local machine.
+1. [Create your own fork of OpenEMR](https://github.com/tabemr/tabemr/fork) (you will need a GitHub account) and `git clone` it to your local machine.
 
     - For the Video Tutorial, click below:
 
@@ -111,40 +111,40 @@ You will need a "local" version of OpenEMR to make changes to the source code. T
       - (Recommend using Ubuntu Desktop 22.04 for above video and other videos in the [OpenEMR Easy Docker Development Environment Video Series](https://www.youtube.com/playlist?list=PLFiWG_dDadgQT7zjqvEqbXm1OiuubOVO8). Easiest way to do this is setting up a [Ubuntu Desktop 22.04 Virtual Machine on VirtualBox](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox), which recommend configuring with 40GB hard drive, assigning 25% of computer memory, and assigning 25% of cpu cores to the virtual machine.)
 
     - If you haven't already, [install git](https://git-scm.com/downloads) for your system
-	- (optional) If you want to set up the base services(e.g. git, docker, docker compose, openemr-cmd, minkube and kubectl) easily, please try [openemr-env-installer](https://github.com/openemr/openemr-devops/tree/master/utilities/openemr-env-installer)
+	- (optional) If you want to set up the base services(e.g. git, docker, docker compose, tabemr-cmd, minkube and kubectl) easily, please try [tabemr-env-installer](https://github.com/tabemr/tabemr-devops/tree/master/utilities/tabemr-env-installer)
     - (optional) It's best to also add an `upstream` origin to keep your local fork up to date. [Check out this guide](https://oneemptymind.wordpress.com/2018/07/11/keeping-a-fork-up-to-date/) for more info.
 2. Install the development prerequisites:
     - If you haven't already, [install Docker](https://docs.docker.com/install/) and [install compose](https://docs.docker.com/compose/install/) for your system.
-    - [Install `openemr-cmd`](https://github.com/openemr/openemr-devops/tree/master/utilities/openemr-cmd) — the canonical CLI for working with the development docker environment. It runs from any directory, dispatches commands into the running openemr container, manages git worktrees, installs pre-commit hooks, and replaces the longer `docker compose exec openemr /root/devtools <cmd>` form throughout this document.
-        - **Windows note:** `openemr-cmd` is a bash script. Install it inside WSL2 (recommended) or Git Bash. Native cmd.exe / PowerShell cannot invoke a bash script directly; if you stay on those, fall back to the underlying `docker compose exec openemr /root/devtools <cmd>` form for each example below.
-        - Verify with `openemr-cmd --version` and `openemr-cmd --help` (or `openemr-cmd-h <keyword>` to search). All examples below assume openemr-cmd is on your PATH.
-    - (optional) If you want to monitor and easily manage the docker environment, also [install openemr-monitor](https://github.com/openemr/openemr-devops/tree/master/utilities/openemr-monitor) and [install portainer](https://github.com/openemr/openemr-devops/tree/master/utilities/portainer) for your system.
-    - (optional) If you want to migrate the running docker environment, try [openemr-env-migrator](https://github.com/openemr/openemr-devops/tree/master/utilities/openemr-env-migrator).
-    - (optional) If you want to set up with an orchestration tool, try [OpenEMR Kubernetes Orchestrations](https://github.com/openemr/openemr-devops/tree/master/kubernetes/minikube).
+    - [Install `tabemr-cmd`](https://github.com/tabemr/tabemr-devops/tree/master/utilities/tabemr-cmd) — the canonical CLI for working with the development docker environment. It runs from any directory, dispatches commands into the running tabemr container, manages git worktrees, installs pre-commit hooks, and replaces the longer `docker compose exec tabemr /root/devtools <cmd>` form throughout this document.
+        - **Windows note:** `tabemr-cmd` is a bash script. Install it inside WSL2 (recommended) or Git Bash. Native cmd.exe / PowerShell cannot invoke a bash script directly; if you stay on those, fall back to the underlying `docker compose exec tabemr /root/devtools <cmd>` form for each example below.
+        - Verify with `tabemr-cmd --version` and `tabemr-cmd --help` (or `tabemr-cmd-h <keyword>` to search). All examples below assume tabemr-cmd is on your PATH.
+    - (optional) If you want to monitor and easily manage the docker environment, also [install tabemr-monitor](https://github.com/tabemr/tabemr-devops/tree/master/utilities/tabemr-monitor) and [install portainer](https://github.com/tabemr/tabemr-devops/tree/master/utilities/portainer) for your system.
+    - (optional) If you want to migrate the running docker environment, try [tabemr-env-migrator](https://github.com/tabemr/tabemr-devops/tree/master/utilities/tabemr-env-migrator).
+    - (optional) If you want to set up with an orchestration tool, try [OpenEMR Kubernetes Orchestrations](https://github.com/tabemr/tabemr-devops/tree/master/kubernetes/minikube).
 3. From the easy dev environment directory, start the docker stack:
     ```sh
-    cd openemr/docker/development-easy
-    openemr-cmd up
+    cd tabemr/docker/development-easy
+    tabemr-cmd up
     ```
-    - `openemr-cmd up` starts the stack in detached mode (it runs `docker compose up -d` under the hood). The `cd` is required because docker compose reads `docker-compose.yml` from the current directory.
+    - `tabemr-cmd up` starts the stack in detached mode (it runs `docker compose up -d` under the hood). The `cd` is required because docker compose reads `docker-compose.yml` from the current directory.
     - To watch the startup logs and see when OpenEMR is ready, in a separate terminal `cd` to the same directory and run:
       ```sh
-      cd openemr/docker/development-easy
-      docker compose logs -f openemr
+      cd tabemr/docker/development-easy
+      docker compose logs -f tabemr
       ```
       When the build is done, you'll see the following messages:
       ```sh
-      openemr_1  | Love OpenEMR? You can now support the project via the open collective:
-      openemr_1  |  > https://opencollective.com/openemr/donate
-      openemr_1  |
-      openemr_1  | Starting cron daemon!
-      openemr_1  | Starting apache!
+      tabemr_1  | Love OpenEMR? You can now support the project via the open collective:
+      tabemr_1  |  > https://opencollective.com/tabemr/donate
+      tabemr_1  |
+      tabemr_1  | Starting cron daemon!
+      tabemr_1  | Starting apache!
       ```
 4. Navigate to `http://localhost:8300/` or `https://localhost:9300/` to login as `admin`. Password is `pass`.
 5. If you wish to connect to the sql database, this docker environment provides the following 2 options:
     - Navigate to `http://localhost:8310/` where you can login into phpMyAdmin.
     - Or you can directly connect to port 8320 via your favorite sql tool (Mysql Workbench etc.).
-    - Use `username/user`: openemr, `password`: openemr .
+    - Use `username/user`: tabemr, `password`: tabemr .
 6. Make changes to any files on your local file system. Most changes will appear after a refresh of the page or iFrame you're working on.
 
     - For the Video Tutorials, click below:
@@ -157,19 +157,19 @@ You will need a "local" version of OpenEMR to make changes to the source code. T
 
     - An exception to this is if making changes to styling scripts in interface/themes/. In that case will need to clear web browser cache and run the following command to rebuild the theme files:
       ```sh
-      openemr-cmd build-themes
+      tabemr-cmd build-themes
       ```
 7. When you're done, clean up. From the easy dev environment directory:
     ```sh
-    cd openemr/docker/development-easy
-    openemr-cmd down
+    cd tabemr/docker/development-easy
+    tabemr-cmd down
     ```
-    - `openemr-cmd down` runs `docker compose down -v` under the hood, removing the named volumes so the next `openemr-cmd up` rebuilds from scratch.
+    - `tabemr-cmd down` runs `docker compose down -v` under the hood, removing the named volumes so the next `tabemr-cmd up` rebuilds from scratch.
     - If you'd rather preserve volumes between sessions (so the next start reuses the cached database/vendor/node_modules and comes up much faster), use the raw form instead:
       ```sh
       docker compose down
       ```
-8. [Submit a PR](https://github.com/openemr/openemr/compare) from your fork into `openemr/openemr#master`!
+8. [Submit a PR](https://github.com/tabemr/tabemr/compare) from your fork into `tabemr/tabemr#master`!
 
 ### After You Submit
 
@@ -226,15 +226,15 @@ The OpenEMR development docker environment has a very rich advanced feature set.
 
 ---
 
-1. <a name="worktrees"></a>git Worktrees are supported. Developers can work on separate worktrees with docker testing stacks concurrently. This requires use of the `openemr-cmd` command (see above for instructions on installing the `openemr-cmd` command). Recommend running these command in the base directory of the base repo.
+1. <a name="worktrees"></a>git Worktrees are supported. Developers can work on separate worktrees with docker testing stacks concurrently. This requires use of the `tabemr-cmd` command (see above for instructions on installing the `tabemr-cmd` command). Recommend running these command in the base directory of the base repo.
 
     - Following will give an overview of the available commands:
       ```sh
-      openemr-cmd worktree
+      tabemr-cmd worktree
       ```
 
       ```
-      Usage: openemr-cmd worktree <add|remove|up|down|start|stop|exec|list|regen|set-env|prune> [options]
+      Usage: tabemr-cmd worktree <add|remove|up|down|start|stop|exec|list|regen|set-env|prune> [options]
 
         add <branch> [-b] [--env easy|easy-light|easy-redis] [--start]
                                   Create worktree (-b creates new branch, default env: easy)
@@ -244,7 +244,7 @@ The OpenEMR development docker environment has a very rich advanced feature set.
         start <branch>            Start stopped containers for worktree (preserves data)
         stop <branch>             Stop running containers for worktree (preserves data)
         set-env <branch> <env>    Switch a worktree's env (easy|easy-light|easy-redis); stack must be down first
-        exec <branch> <cmd> [args...]   Run an openemr-cmd command against the worktree's openemr container
+        exec <branch> <cmd> [args...]   Run an tabemr-cmd command against the worktree's tabemr container
         list                      List all worktrees and status
         regen <branch>            Regenerate override/env files
         prune [--dry-run]         Remove state entries whose worktree dir is gone or invalid
@@ -253,93 +253,93 @@ The OpenEMR development docker environment has a very rich advanced feature set.
 
     - Can create a new worktree on a new branch via:
       ```sh
-      openemr-cmd worktree add worktree-branch-label -b
+      tabemr-cmd worktree add worktree-branch-label -b
       ```
 
     - Or can create a new worktree on a existing branch:
       ```sh
-      openemr-cmd worktree add worktree-branch-label
+      tabemr-cmd worktree add worktree-branch-label
       ```
 
     - Can start the docker testing stack on a worktree via:
       ```sh
-      openemr-cmd worktree up worktree-branch-label
+      tabemr-cmd worktree up worktree-branch-label
       ```
 
     - Can stop the docker testing stack on a worktree via:
       ```sh
-      openemr-cmd worktree down worktree-branch-label
+      tabemr-cmd worktree down worktree-branch-label
       ```
 
     - Can pause a worktree's running containers without recreating them (preserves data and is faster than `down`/`up`):
       ```sh
-      openemr-cmd worktree stop worktree-branch-label
+      tabemr-cmd worktree stop worktree-branch-label
       ```
 
     - Can resume a worktree's stopped containers (counterpart to `stop`):
       ```sh
-      openemr-cmd worktree start worktree-branch-label
+      tabemr-cmd worktree start worktree-branch-label
       ```
 
-    - Can run any standard `openemr-cmd` command against a specific worktree's `openemr` container without manually looking up the container id. Examples:
+    - Can run any standard `tabemr-cmd` command against a specific worktree's `tabemr` container without manually looking up the container id. Examples:
       ```sh
-      openemr-cmd worktree exec worktree-branch-label drid
-      openemr-cmd worktree exec worktree-branch-label shell
-      openemr-cmd worktree exec worktree-branch-label pl
+      tabemr-cmd worktree exec worktree-branch-label drid
+      tabemr-cmd worktree exec worktree-branch-label shell
+      tabemr-cmd worktree exec worktree-branch-label pl
       ```
 
     - Can switch a worktree to a different docker dev environment (`easy`, `easy-light`, or `easy-redis`). The stack must be fully torn down first (use `worktree down` to discard the old volumes, or `worktree down --keep-volumes` to preserve them):
       ```sh
-      openemr-cmd worktree set-env worktree-branch-label easy-redis
+      tabemr-cmd worktree set-env worktree-branch-label easy-redis
       ```
 
     - Can remove the worktree via:
       ```sh
-      openemr-cmd worktree remove worktree-branch-label
+      tabemr-cmd worktree remove worktree-branch-label
       ```
       `remove` is also tolerant of an already-deleted worktree directory — it cleans up the state entry, skips the destructive steps, and prints a manual hint for any lingering docker resources for that stack.
 
     - Can view the list of worktrees via:
       ```sh
-      openemr-cmd worktree list
+      tabemr-cmd worktree list
       ```
       Three non-running statuses can appear:
-      - `missing` — the worktree directory is gone (prunable). Footer: `(N stale state entries — run "openemr-cmd worktree prune" to clean up; directories on disk are left intact)`.
-      - `partial` — the directory is intact but its compose files (`.env` / `docker-compose.override.yml`) are gone. Footer: `(N entries have missing compose files — run "openemr-cmd worktree regen <branch>" to regenerate)`.
+      - `missing` — the worktree directory is gone (prunable). Footer: `(N stale state entries — run "tabemr-cmd worktree prune" to clean up; directories on disk are left intact)`.
+      - `partial` — the directory is intact but its compose files (`.env` / `docker-compose.override.yml`) are gone. Footer: `(N entries have missing compose files — run "tabemr-cmd worktree regen <branch>" to regenerate)`.
       - `invalid` — the directory is intact + has compose files, but `wt_validate_dir_safe` fails (it lives outside the expected parent, or git no longer registers it as a worktree). Counted with `missing` for the prune footer.
 
     - Can clean up stale state entries (e.g. after deleting a worktree directory manually) via:
       ```sh
-      openemr-cmd worktree prune
-      openemr-cmd worktree prune --dry-run
+      tabemr-cmd worktree prune
+      tabemr-cmd worktree prune --dry-run
       ```
       `--dry-run` previews which entries would be removed without changing anything. Prune only touches `.worktrees.json` — directories on disk and their docker resources are left alone. Never hand-edit `.worktrees.json`.
 
-    - Lots of other cool stuff is listed in the usage description via `openemr-cmd worktree`
+    - Lots of other cool stuff is listed in the usage description via `tabemr-cmd worktree`
 
 
-2. <a name="precommit"></a>Pre-commit hooks for the docker dev environment can be installed so that `git commit` validates staged changes against the project's full `.pre-commit-config.yaml` suite (phpstan, rector, phpcs, codespell, actionlint, etc.) inside the running openemr container. No host install of PHP, Node, Python, codespell, or actionlint is required — only Docker. Routing is cwd-aware: a commit fired from worktree `foo` dispatches to `foo`'s container.
+2. <a name="precommit"></a>Pre-commit hooks for the docker dev environment can be installed so that `git commit` validates staged changes against the project's full `.pre-commit-config.yaml` suite (phpstan, rector, phpcs, codespell, actionlint, etc.) inside the running tabemr container. No host install of PHP, Node, Python, codespell, or actionlint is required — only Docker. Routing is cwd-aware: a commit fired from worktree `foo` dispatches to `foo`'s container.
 
     - One-time install per clone (run from the base repo on master):
       ```sh
-      openemr-cmd prek-install
+      tabemr-cmd prek-install
       ```
-      Short form: `openemr-cmd pi`. Linked worktrees share git hooks via gitcommondir, so this single install covers every current and future worktree of the primary repo — no per-worktree re-install needed when you `openemr-cmd worktree add <branch>`.
+      Short form: `tabemr-cmd pi`. Linked worktrees share git hooks via gitcommondir, so this single install covers every current and future worktree of the primary repo — no per-worktree re-install needed when you `tabemr-cmd worktree add <branch>`.
 
-    - After install, `git commit` from any clone or worktree fires the hooks inside the corresponding openemr container. The stack must be running at commit time (`openemr-cmd up` for the primary, `openemr-cmd worktree up <branch>` for a worktree); if it's down, the hook aborts cleanly with a "no running openemr container found" message.
+    - After install, `git commit` from any clone or worktree fires the hooks inside the corresponding tabemr container. The stack must be running at commit time (`tabemr-cmd up` for the primary, `tabemr-cmd worktree up <branch>` for a worktree); if it's down, the hook aborts cleanly with a "no running tabemr container found" message.
 
     - Manual invocations (anytime, no install needed) for ad-hoc validation:
       ```sh
-      openemr-cmd prek run --all-files     # whole-codebase check, not just staged
-      openemr-cmd prek run phpstan         # run a single hook
-      openemr-cmd prek autoupdate          # bump hook versions in .pre-commit-config.yaml
+      tabemr-cmd prek run --all-files     # whole-codebase check, not just staged
+      tabemr-cmd prek run phpstan         # run a single hook
+      tabemr-cmd prek autoupdate          # bump hook versions in .pre-commit-config.yaml
       ```
 
     - To remove the auto-firing hooks:
       ```sh
-      openemr-cmd prek-uninstall
+      tabemr-cmd prek-uninstall
       ```
-      Short form: `openemr-cmd pu`. Removes only openemr-cmd-managed shims; any other hooks you've installed manually are left alone. If `pi` would overwrite a non-managed hook, it refuses unless `--force` is passed (which backs up the existing hook to a uniquely-suffixed `*.bak.XXXXXXXX` before installing the shim).
+      Short form: `tabemr-cmd pu`. Removes only tabemr-cmd-managed shims; any other hooks you've installed manually are left alone. If `pi` would overwrite a non-managed hook, it refuses unless `--force` is passed (which backs up the existing hook to a uniquely-suffixed `*.bak.XXXXXXXX` before installing the shim).
 
     - Mutually exclusive with host-based `prek install` / `pre-commit install`: both paths write to the same `.git/hooks/` files, so the most recent install wins for auto-firing on commit. Manual invocations from either path remain independent.
 
@@ -357,138 +357,138 @@ The OpenEMR development docker environment has a very rich advanced feature set.
         - Start listening
         - Untoggle "Break at first line in PHP scripts"
         - Untoggle both settings that start with "Force Break at first line..."
-        - See [these images for more detail](https://github.com/openemr/openemr-devops/pull/283#issuecomment-779798156)
+        - See [these images for more detail](https://github.com/tabemr/tabemr-devops/pull/283#issuecomment-779798156)
     - VSCode and VSCodium
         - Listen for XDebug
-        - Use this `launch.json` [template](https://github.com/openemr/openemr-devops/issues/285#issuecomment-782899207)
+        - Use this `launch.json` [template](https://github.com/tabemr/tabemr-devops/issues/285#issuecomment-782899207)
     - Make sure port 9003 is open on your host operating system
     - Profiling output can be found in /tmp directory in the docker. Following will list the profiling output files:
       ```sh
-      openemr-cmd list-xdebug-profiles
+      tabemr-cmd list-xdebug-profiles
       ```
     - To check Xdebug log:
       ```sh
-      openemr-cmd xdebug-log
+      tabemr-cmd xdebug-log
       ```
 4. <a name="api"></a>API development and testing.
     - Swagger is including in OpenEMR to ease API documentation, development, and testing.
-    - The following command will update the API documentation (derive documentation from [_rest_routes.inc.php](_rest_routes.inc.php) to [swagger/openemr-api.yaml](swagger/openemr-api.yaml)):
+    - The following command will update the API documentation (derive documentation from [_rest_routes.inc.php](_rest_routes.inc.php) to [swagger/tabemr-api.yaml](swagger/tabemr-api.yaml)):
       ```sh
-      openemr-cmd build-api-docs
+      tabemr-cmd build-api-docs
       ```
     - Can go to Swagger at [https://localhost:9300/swagger](https://localhost:9300/swagger) where it is super easy to test the API:
         - First, click on 'Authorize' button.
         - Then click 'Select All' scopes.
         - Can then do the following from command line to get a client id and secret, which then can copy/paste into the fields:
           ```sh
-          openemr-cmd register-oauth2-client
+          tabemr-cmd register-oauth2-client
           ```
         - Then click 'Authorize' button and follow the flow and before you know it, you will be authorized to test the api endpoints!
     - There is also a mechanism to allow use of the above Swagger tool with multisite.
         - Before going to the Swagger gui linked above, run the following command (after running below command, the Swagger gui will then be configured to work with the selected multisite):
           ```sh
-          openemr-cmd set-swagger-to-multisite <multisite-name>
+          tabemr-cmd set-swagger-to-multisite <multisite-name>
           ```
         - To collect a client id and secret for the selected multisite, can then do:
           ```sh
-          openemr-cmd register-oauth2-client <multisite-name>
+          tabemr-cmd register-oauth2-client <multisite-name>
           ```
         - When done testing with Swagger on the selected multisite, recommend setting swagger back to the default multisite to avoid changes to the swagger configuration script showing up in your local git repository:
           ```sh
-          openemr-cmd set-swagger-to-multisite
+          tabemr-cmd set-swagger-to-multisite
           ```
-    - There is also a dev tool to make it easy to test the API on the online OpenEMR demo farm. For example, what if you wanted to test the API at [https://eleven.openemr.io/a/openemr](https://eleven.openemr.io/a/openemr):
-        - Go to [https://eleven.openemr.io/a/openemr/swagger](https://eleven.openemr.io/a/openemr/swagger/index.html) and follow the Swagger gui flow above. The following command can be used to get a client id and secret from that online demo:
+    - There is also a dev tool to make it easy to test the API on the online OpenEMR demo farm. For example, what if you wanted to test the API at [https://eleven.tabemr.io/a/tabemr](https://eleven.tabemr.io/a/tabemr):
+        - Go to [https://eleven.tabemr.io/a/tabemr/swagger](https://eleven.tabemr.io/a/tabemr/swagger/index.html) and follow the Swagger gui flow above. The following command can be used to get a client id and secret from that online demo:
           ```sh
-          openemr-cmd register-oauth2-client-demo https://eleven.openemr.io/a/openemr
+          tabemr-cmd register-oauth2-client-demo https://eleven.tabemr.io/a/tabemr
           ```
 5. <a name="other_php_versions"></a>Testing other PHP versions.
-    - The standard `flex` docker used in the easy development environments is PHP 8.5. This can be modified by changing the image (`image: openemr/openemr:flex`) used in the docker-compose.yml script. To use PHP 8.2, then just need to change it to `image: openemr/openemr:flex-3.22-php-8.2`. To use PHP 8.3 then change it to `image: openemr/openemr:flex-3.23-php-8.3`. To use PHP 8.4 then change it to `image: openemr/openemr:flex-3.23-php-8.4`.
+    - The standard `flex` docker used in the easy development environments is PHP 8.5. This can be modified by changing the image (`image: tabemr/tabemr:flex`) used in the docker-compose.yml script. To use PHP 8.2, then just need to change it to `image: tabemr/tabemr:flex-3.22-php-8.2`. To use PHP 8.3 then change it to `image: tabemr/tabemr:flex-3.23-php-8.3`. To use PHP 8.4 then change it to `image: tabemr/tabemr:flex-3.23-php-8.4`.
 6. <a name="dev_tools_tests"></a>Php syntax checking, psr12 checking, and automated testing.
     - To check PHP error logs:
       ```sh
-      openemr-cmd php-log
+      tabemr-cmd php-log
       ```
     - To create a report of PSR12 code styling issues (this takes several minutes):
       ```sh
-      openemr-cmd psr12-report
+      tabemr-cmd psr12-report
       ```
     - To fix PSR12 code styling issues (this takes several minutes):
       ```sh
-      openemr-cmd psr12-fix
+      tabemr-cmd psr12-fix
       ```
     - To create a report of theme styling issues:
       ```sh
-      openemr-cmd lint-themes-report
+      tabemr-cmd lint-themes-report
       ```
     - To fix theme styling issues:
       ```sh
-      openemr-cmd lint-themes-fix
+      tabemr-cmd lint-themes-fix
       ```
     - To check PHP parsing errors (this takes several minutes):
       ```sh
-      openemr-cmd php-parserror
+      tabemr-cmd php-parserror
       ```
     - To dry run Rector changes:
       ```sh
-      openemr-cmd rector-dry-run
+      tabemr-cmd rector-dry-run
       ```
     - To process Rector changes:
       ```sh
-      openemr-cmd rector-process
+      tabemr-cmd rector-process
       ```
     - To run unit testing:
       ```sh
-      openemr-cmd unit-test
+      tabemr-cmd unit-test
       ```
     - To run api testing:
       ```sh
-      openemr-cmd api-test
+      tabemr-cmd api-test
       ```
     - To run e2e testing:
       ```sh
-      openemr-cmd e2e-test
+      tabemr-cmd e2e-test
       ```
-      - (You can actually view the e2e tests in real-time by going to [http://localhost:7900](http://localhost:7900) with password 'openemr123'.)
+      - (You can actually view the e2e tests in real-time by going to [http://localhost:7900](http://localhost:7900) with password 'tabemr123'.)
     - To run services testing:
       ```sh
-      openemr-cmd services-test
+      tabemr-cmd services-test
       ```
     - To run fixtures testing:
       ```sh
-      openemr-cmd fixtures-test
+      tabemr-cmd fixtures-test
       ```
     - To run validators testing:
       ```sh
-      openemr-cmd validators-test
+      tabemr-cmd validators-test
       ```
     - To run controllers testing:
       ```sh
-      openemr-cmd controllers-test
+      tabemr-cmd controllers-test
       ```
     - To run common testing:
       ```sh
-      openemr-cmd common-test
+      tabemr-cmd common-test
       ```
     - To run isolated PHPUnit tests (no database required; fast — covers Twig template compilation/render tests and other pure-PHP isolated suites):
       ```sh
-      openemr-cmd phpunit-isolated
+      tabemr-cmd phpunit-isolated
       ```
     - **Mutating maintenance command** — not a test: regenerates the expected-output fixture files used by Twig render tests when you've intentionally changed a Twig template. Overwrites files under `tests/Tests/Isolated/Common/Twig/fixtures/render/`; review the diff before committing:
       ```sh
-      openemr-cmd update-twig-fixtures
+      tabemr-cmd update-twig-fixtures
       ```
     - **Mutating maintenance command** — not a test: regenerates the snapshot fixtures used by the layout field rendering tests (`FieldRenderingSnapshotTest`, DB-backed). Run when you've intentionally changed the layout field renderer; review the diff before committing:
       ```sh
-      openemr-cmd update-layout-field-fixtures
+      tabemr-cmd update-layout-field-fixtures
       ```
 7. <a name="dev_tools_suite"></a>Run the entire dev tool suite (PSR12 fix, lint themes fix, PHP parse error, unit/API/e2e/services/fixtures/validators/controllers/common tests) in one command, run
     ```sh
-    openemr-cmd clean-sweep
+    tabemr-cmd clean-sweep
     ```
 8. <a name="dev_tools_auto"></a>Run only all the automated tests (unit/API/e2e/services/fixtures/validators/controllers/common tests) in one command, run
     ```sh
-    openemr-cmd clean-sweep-tests
+    tabemr-cmd clean-sweep-tests
     ```
 9. <a name="dev_tools_reset"></a>Resetting OpenEMR and loading demo data.
     - For the Video Tutorial, click below:
@@ -499,16 +499,16 @@ The OpenEMR development docker environment has a very rich advanced feature set.
 
     - To reset OpenEMR only (then can reinstall manually via setup.php in web browser):
       ```sh
-      openemr-cmd dev-reset
+      tabemr-cmd dev-reset
       ```
         - When running setup.php, need to use `mysql` for 'Server Host', `root` for 'Root Password', and `%` for 'User Hostname'.
     - To reset and reinstall OpenEMR:
       ```sh
-      openemr-cmd dev-reset-install
+      tabemr-cmd dev-reset-install
       ```
     - To reset and reinstall OpenEMR with demo data (this includes several users with access controls setup in addition to patient portal logins. [See HERE for those credentials](https://www.open-emr.org/wiki/index.php/Development_Demo#Demo_Credentials).):
       ```sh
-      openemr-cmd dev-reset-install-demodata
+      tabemr-cmd dev-reset-install-demodata
       ```
         - hint: this is also a great way to test any changes a developer has made to the sql upgrade stuff (ie. such as sql/5_0_2-to-6_0_0_upgrade.sql)
 10. <a name="dev_tools_backup"></a>Backup and restore OpenEMR data (database and data on drive) via snapshots.
@@ -520,15 +520,15 @@ The OpenEMR development docker environment has a very rich advanced feature set.
 
      - Create a backup snapshot (using `example` below, but can use any alphanumeric identifier):
       ```sh
-      openemr-cmd backup-snapshot example
+      tabemr-cmd backup-snapshot example
       ```
     - Restore from a snapshot (using `example` below, but can use any alphanumeric identifier)
       ```sh
-      openemr-cmd restore-snapshot example
+      tabemr-cmd restore-snapshot example
       ```
     - To list the snapshots
       ```sh
-      openemr-cmd list-snapshots
+      tabemr-cmd list-snapshots
       ```
 11. <a name="dev_tools_send"></a>Send/receive snapshots (capsules are backup files that can be saved to disk or shared with other developers).
     - For the Video Tutorial, click below:
@@ -540,28 +540,28 @@ The OpenEMR development docker environment has a very rich advanced feature set.
     - Here is how to grab a capsule from the docker, which can then store or share with friends.
         - List the capsules:
           ```sh
-          openemr-cmd list-capsules
+          tabemr-cmd list-capsules
           ```
         - Copy the capsule from the docker to your current directory (using `example.tgz` below):
           ```sh
-          openemr-cmd get-capsule example.tgz
+          tabemr-cmd get-capsule example.tgz
           ```
           An optional second argument lets you save to a different directory:
           ```sh
-          openemr-cmd get-capsule example.tgz /path/to/save
+          tabemr-cmd get-capsule example.tgz /path/to/save
           ```
     - Here is how to send a capsule into the docker.
         - Copy the capsule from current directory into the docker (using `example.tgz` below):
           ```sh
-          openemr-cmd put-capsule example.tgz
+          tabemr-cmd put-capsule example.tgz
           ```
         - Restore from the new shiny snapshot (using `example` below):
           ```sh
-          openemr-cmd restore-snapshot example
+          tabemr-cmd restore-snapshot example
           ```
         - Ensure run upgrade to ensure will work with current version OpenEMR:
           ```sh
-          openemr-cmd ensure-version 5.0.2
+          tabemr-cmd ensure-version 5.0.2
           ```
 12. <a name="dev_tools_randompatients"></a>Create and add random patient data. This will use synthea to create random patients that are then imported into OpenEMR. You can choose the number of patients. Note that each patient will take several seconds.
     - For the Video Tutorial, click below:
@@ -572,93 +572,93 @@ The OpenEMR development docker environment has a very rich advanced feature set.
 
     - Create and add 100 random patients (defaults to development mode set to true, which is set be default to true; development mode will markedly improve performance by bypassing the import of the ccda document and bypassing the use of the audit_master and audit_details tables and will directly import the new patient data from the ccda. Note this should never be done on sites that already contain real data/use, and it will also turn off the audit log during the import.):
        ```sh
-       openemr-cmd import-random-patients 100
+       tabemr-cmd import-random-patients 100
        ```
        or
        ```sh
-       openemr-cmd import-random-patients 100 true
+       tabemr-cmd import-random-patients 100 true
        ```
     - Create and add 100 random patients (with development mode set to false)
        ```sh
-       openemr-cmd import-random-patients 100 false
+       tabemr-cmd import-random-patients 100 false
        ```
 13. <a name="dev_tools_bankmultisite"></a>Create a bank of multisites with selected number of multisites that are all labelled from run1..runx. It will clone from the default instance. This can be helpful for testing of multisites and other larger scale testing.
     - Create 5 multisites (will be run1, run2, run3, run4, run5):
       ```sh
-      openemr-cmd generate-multisite-bank 5
+      tabemr-cmd generate-multisite-bank 5
       ```
 14. <a name="dev_tools_multisite"></a>Turn on and turn off support for multisite feature (to allow setting up multisites in setup.php script).
     - Turn on support for multisite:
       ```sh
-      openemr-cmd enable-multisite
+      tabemr-cmd enable-multisite
       ```
     - Turn off support for multisite:
       ```sh
-      openemr-cmd disable-multisite
+      tabemr-cmd disable-multisite
       ```
 15. <a name="dev_tools_listmultisite"></a>The available multisites can be listed via following command:
     ```sh
-    openemr-cmd list-multisites
+    tabemr-cmd list-multisites
     ```
 16. <a name="dev_tools_charset"></a>Change the database character set and collation (character set is the encoding that is used to store data in the database; collation are a set of rules that the database uses to sort the stored data).
     - Best to demonstrate this devtool with examples.
         - Set character set to utf8mb4 and collation to utf8mb4_general_ci (this is default for OpenEMR 6 and higher):
           ```sh
-          openemr-cmd change-encoding-collation utf8mb4 utf8mb4_general_ci
+          tabemr-cmd change-encoding-collation utf8mb4 utf8mb4_general_ci
           ```
         - Set character set to utf8mb4 and collation to utf8mb4_unicode_ci:
           ```sh
-          openemr-cmd change-encoding-collation utf8mb4 utf8mb4_unicode_ci
+          tabemr-cmd change-encoding-collation utf8mb4 utf8mb4_unicode_ci
           ```
         - Set character set to utf8mb4 and collation to utf8mb4_vietnamese_ci:
           ```sh
-          openemr-cmd change-encoding-collation utf8mb4 utf8mb4_vietnamese_ci
+          tabemr-cmd change-encoding-collation utf8mb4 utf8mb4_vietnamese_ci
           ```
         - Set character set to utf8 and collation to utf8_general_ci (this is default for OpenEMR 5 and lower):
           ```sh
-          openemr-cmd change-encoding-collation utf8 utf8_general_ci
+          tabemr-cmd change-encoding-collation utf8 utf8_general_ci
           ```
 17. <a name="dev_tools_https"></a>Test ssl certificate (to test client based certificates and revert back to default self signed certificate) and force/unforce https.
     - To test client based certificates, create a zip package of the certificate in OpenEMR at Administration->System->Certificates. Then import this zip package (example `ssl.zip`) into the docker via:
       ```sh
-      openemr-cmd put-client-cert ssl.zip
+      tabemr-cmd put-client-cert ssl.zip
       ```
     - To list the available certificate packages on docker:
       ```sh
-      openemr-cmd list-client-certs
+      tabemr-cmd list-client-certs
       ```
     - To install and configure a certificate package (example `ssl`):
       ```sh
-      openemr-cmd setup-client-cert ssl
+      tabemr-cmd setup-client-cert ssl
       ```
     - To revert back to self-signed certificates (ie. revert the changes required for client based certificates):
       ```sh
-      openemr-cmd on-self-signed-cert
+      tabemr-cmd on-self-signed-cert
       ```
     - To force https in apache script via redirect:
       ```sh
-      openemr-cmd force-https
+      tabemr-cmd force-https
       ```
     - To revert the changes that forced https in apache script:
       ```sh
-      openemr-cmd un-force-https
+      tabemr-cmd un-force-https
       ```
 18. <a name="dev_tools_ssl"></a>Place/remove testing sql ssl certificate and testing sql ssl client key/cert.
     - Place the testing sql ssl CA cert:
       ```sh
-      openemr-cmd sql-ssl
+      tabemr-cmd sql-ssl
       ```
     - Remove the testing sql ssl CA cert:
       ```sh
-      openemr-cmd sql-ssl-off
+      tabemr-cmd sql-ssl-off
       ```
     - Place the testing sql ssl CA cert and testing sql ssl client key/cert:
       ```sh
-      openemr-cmd sql-ssl-client
+      tabemr-cmd sql-ssl-client
       ```
     - Remove the testing sql ssl CA cert and testing sql ssl client key/cert:
       ```sh
-      openemr-cmd sql-ssl-client-off
+      tabemr-cmd sql-ssl-client-off
       ```
 19. <a name="dev_tools_couchdb"></a>CouchDB integration.
     - In OpenEMR, CouchDB is an option for the patients document storage. For this reason, a CouchDB docker is included in this OpenEMR docker development environment. You can visit the CouchDB GUI directly via http://localhost:5984/_utils/ or https://localhost:6984/_utils/ with username `admin` and password `password`. You can configure OpenEMR to use this CouchDB docker for patient document storage in OpenEMR at Administration->Globals->Documents:
@@ -670,62 +670,62 @@ The OpenEMR development docker environment has a very rich advanced feature set.
     - Developer tools to place/remove testing couchdb ssl certificate and testing couchdb ssl client key/cert.
         - Place the testing couchdb ssl CA cert:
           ```sh
-          openemr-cmd couchdb-ssl
+          tabemr-cmd couchdb-ssl
           ```
         - Remove the testing couchdb ssl CA cert:
           ```sh
-          openemr-cmd couchdb-ssl-off
+          tabemr-cmd couchdb-ssl-off
           ```
         - Place the testing couchdb ssl CA cert and testing couchdb ssl client key/cert:
           ```sh
-          openemr-cmd couchdb-ssl-client
+          tabemr-cmd couchdb-ssl-client
           ```
         - Remove the testing couchdb ssl CA cert and testing couchdb ssl client key/cert:
           ```sh
-          openemr-cmd couchdb-ssl-client-off
+          tabemr-cmd couchdb-ssl-client-off
           ```
 20. <a name="dev_tools_ldap"></a>LDAP integration.
     - In OpenEMR, LDAP is an option for authentication. If this is turned on, then this will be supported for the `admin` user, which will use the following password: `admin`
     - Turn on LDAP:
       ```sh
-      openemr-cmd enable-ldap
+      tabemr-cmd enable-ldap
       ```
     - Turn off LDAP:
       ```sh
-      openemr-cmd disable-ldap
+      tabemr-cmd disable-ldap
       ```
     - Developer tools to place/remove testing ldap tls/ssl certificate and testing ldap tls/ssl client key/cert.
         - Place the testing ldap tls/ssl CA cert:
           ```sh
-          openemr-cmd ldap-ssl
+          tabemr-cmd ldap-ssl
           ```
         - Remove the testing ldap tls/ssl CA cert:
           ```sh
-          openemr-cmd ldap-ssl-off
+          tabemr-cmd ldap-ssl-off
           ```
         - Place the testing ldap tls/ssl CA cert and testing ldap tls/ssl client key/cert:
           ```sh
-          openemr-cmd ldap-ssl-client
+          tabemr-cmd ldap-ssl-client
           ```
         - Remove the testing ldap tls/ssl CA cert and testing ldap tls/ssl client key/cert:
           ```sh
-          openemr-cmd ldap-ssl-client-off
+          tabemr-cmd ldap-ssl-client-off
           ```
 21. <a name="dev_tools_webroot"></a>Test webroot value.
-    - The default setup of the docker development environments are with a blank webroot, however, it is a good idea to also test with a webroot setting. There is an option to set the webroot to openemr.
-    - Note this dev tool requires the use of the openemr-cmd script, which is discussed above and can find instructions to install and use openemr-cmd script at [install openemr-cmd](https://github.com/openemr/openemr-devops/tree/master/utilities/openemr-cmd).
+    - The default setup of the docker development environments are with a blank webroot, however, it is a good idea to also test with a webroot setting. There is an option to set the webroot to tabemr.
+    - Note this dev tool requires the use of the tabemr-cmd script, which is discussed above and can find instructions to install and use tabemr-cmd script at [install tabemr-cmd](https://github.com/tabemr/tabemr-devops/tree/master/utilities/tabemr-cmd).
     - Set webroot to blank:
       ```sh
-      openemr-cmd change-webroot-blank
+      tabemr-cmd change-webroot-blank
       ```
-    - Set webroot to `openemr`:
+    - Set webroot to `tabemr`:
       ```sh
-      openemr-cmd change-webroot-openemr
+      tabemr-cmd change-webroot-tabemr
       ```
 
 ## Working without Docker
 
-The sections above describe the recommended Docker-based workflow. If you maintain a full host toolchain (PHP 8.2+, Composer with `composer install` populated `vendor/`, Node, Python 3), you can run validation, code-quality checks, and isolated tests directly on your machine without invoking the openemr container.
+The sections above describe the recommended Docker-based workflow. If you maintain a full host toolchain (PHP 8.2+, Composer with `composer install` populated `vendor/`, Node, Python 3), you can run validation, code-quality checks, and isolated tests directly on your machine without invoking the tabemr container.
 
 ### Pre-commit hooks on host
 
@@ -736,7 +736,7 @@ pre-commit install --hook-type commit-msg  # Validates commit message format
 pre-commit install                          # Enables all code quality hooks
 ```
 
-This is mutually exclusive with `openemr-cmd prek-install` (both write to the same `.git/hooks/` files; most recent install wins). Requires PHP 8.2+, Composer, `composer install` populated `vendor/`, Python 3 with `pre-commit` (or `prek`) installed, plus a binary for any hook that uses `language: system` outside the composer scripts (e.g. `actionlint`).
+This is mutually exclusive with `tabemr-cmd prek-install` (both write to the same `.git/hooks/` files; most recent install wins). Requires PHP 8.2+, Composer, `composer install` populated `vendor/`, Python 3 with `pre-commit` (or `prek`) installed, plus a binary for any hook that uses `language: system` outside the composer scripts (e.g. `actionlint`).
 
 ### Code-quality checks on host
 
@@ -782,33 +782,33 @@ If you'd rather not use Docker at all, you can install OpenEMR directly on your 
 
 ## Financial contributions
 
-We also welcome financial contributions in full transparency on our [open collective](https://opencollective.com/openemr).
+We also welcome financial contributions in full transparency on our [open collective](https://opencollective.com/tabemr).
 Anyone can file an expense. If the expense makes sense for the development of the community, it will be "merged" in the ledger of our open collective by the core contributors and the person who filed the expense will be reimbursed.
 
 ## Credits
 
 ### Contributors
 
-Thank you to all the people who have already contributed to openemr!
-<a href="https://github.com/openemr/openemr/graphs/contributors"><img src="https://opencollective.com/openemr/contributors.svg?width=890" /></a>
+Thank you to all the people who have already contributed to tabemr!
+<a href="https://github.com/tabemr/tabemr/graphs/contributors"><img src="https://opencollective.com/tabemr/contributors.svg?width=890" /></a>
 
 ### Backers
 
-Thank you to all our backers! [[Become a backer](https://opencollective.com/openemr#backer)]
+Thank you to all our backers! [[Become a backer](https://opencollective.com/tabemr#backer)]
 
-<a href="https://opencollective.com/openemr#backers" target="_blank"><img src="https://opencollective.com/openemr/backers.svg?width=890"></a>
+<a href="https://opencollective.com/tabemr#backers" target="_blank"><img src="https://opencollective.com/tabemr/backers.svg?width=890"></a>
 
 ### Sponsors
 
-Thank you to all our sponsors! (please ask your company to also support this open source project by [becoming a sponsor](https://opencollective.com/openemr#sponsor))
+Thank you to all our sponsors! (please ask your company to also support this open source project by [becoming a sponsor](https://opencollective.com/tabemr#sponsor))
 
-<a href="https://opencollective.com/openemr/sponsor/0/website" target="_blank"><img src="https://opencollective.com/openemr/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/openemr/sponsor/1/website" target="_blank"><img src="https://opencollective.com/openemr/sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/openemr/sponsor/2/website" target="_blank"><img src="https://opencollective.com/openemr/sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/openemr/sponsor/3/website" target="_blank"><img src="https://opencollective.com/openemr/sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/openemr/sponsor/4/website" target="_blank"><img src="https://opencollective.com/openemr/sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/openemr/sponsor/5/website" target="_blank"><img src="https://opencollective.com/openemr/sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/openemr/sponsor/6/website" target="_blank"><img src="https://opencollective.com/openemr/sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/openemr/sponsor/7/website" target="_blank"><img src="https://opencollective.com/openemr/sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/openemr/sponsor/8/website" target="_blank"><img src="https://opencollective.com/openemr/sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/openemr/sponsor/9/website" target="_blank"><img src="https://opencollective.com/openemr/sponsor/9/avatar.svg"></a>
+<a href="https://opencollective.com/tabemr/sponsor/0/website" target="_blank"><img src="https://opencollective.com/tabemr/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/tabemr/sponsor/1/website" target="_blank"><img src="https://opencollective.com/tabemr/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/tabemr/sponsor/2/website" target="_blank"><img src="https://opencollective.com/tabemr/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/tabemr/sponsor/3/website" target="_blank"><img src="https://opencollective.com/tabemr/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/tabemr/sponsor/4/website" target="_blank"><img src="https://opencollective.com/tabemr/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/tabemr/sponsor/5/website" target="_blank"><img src="https://opencollective.com/tabemr/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/tabemr/sponsor/6/website" target="_blank"><img src="https://opencollective.com/tabemr/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/tabemr/sponsor/7/website" target="_blank"><img src="https://opencollective.com/tabemr/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/tabemr/sponsor/8/website" target="_blank"><img src="https://opencollective.com/tabemr/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/tabemr/sponsor/9/website" target="_blank"><img src="https://opencollective.com/tabemr/sponsor/9/avatar.svg"></a>

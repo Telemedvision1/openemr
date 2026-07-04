@@ -10,7 +10,7 @@
  * @link      http://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -27,8 +27,8 @@ final readonly class TagCreationRequest
         public string $appToken,
         public string $date,
         public bool $test = false,
-        public string $taggerName = 'openemr-release-bot',
-        public string $taggerEmail = 'release-bot@openemr.invalid',
+        public string $taggerName = 'tabemr-release-bot',
+        public string $taggerEmail = 'release-bot@tabemr.invalid',
     ) {
         if (preg_match('/^\d+\.\d+\.\d+$/', $version) !== 1) {
             throw new \InvalidArgumentException('version must be MAJOR.MINOR.PATCH; got: ' . $version);
@@ -67,7 +67,7 @@ final readonly class TagCreationRequest
         Conductor PR: %s
         Merge commit: %s
 
-        Created by openemr-release-bot via automation
+        Created by tabemr-release-bot via automation
         TPL;
         return sprintf($template, $this->version, $this->date, $this->conductorPrUrl, $this->commitSha);
     }

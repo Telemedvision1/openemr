@@ -7,7 +7,7 @@
  * @copyright Copyright (c) 2005-2020 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2018-2021 Stephen Waite <stephen.waite@cmsvt.com>
  * @link https://www.open-emr.org
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 // This returns an associative array keyed on procedure code, representing

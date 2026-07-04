@@ -9,7 +9,7 @@ We are in the process of overhauling CLI and module-related tooling, so this cov
 
 > [!IMPORTANT]
 > The Doctrine Migrations system is NOT fully integrated into OpenEMR yet.
-> Don't make database changes using this until [#10708](https://github.com/openemr/openemr/issues/10708) is completed (at minimum).
+> Don't make database changes using this until [#10708](https://github.com/tabemr/tabemr/issues/10708) is completed (at minimum).
 
 ## Creating a Migration Script
 

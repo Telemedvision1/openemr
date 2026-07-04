@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\RestControllers\FHIR;
@@ -129,7 +129,7 @@ class FhirMedicationDispenseRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function getAll(array $searchParams, ?string $puuidBind = null): Response
     {
@@ -236,7 +236,7 @@ class FhirMedicationDispenseRestController
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
             new OA\Response(response: '404', ref: '#/components/responses/uuidnotfound'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function getOne(string $fhirId, ?string $puuidBind = null): Response
     {

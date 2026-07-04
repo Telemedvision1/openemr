@@ -12,7 +12,7 @@
  * @package   OpenEMR
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com> (AI-assisted)
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Tests\Isolated\Common\Auth\OpenIDConnect;
@@ -45,7 +45,7 @@ class IdTokenSMARTResponseTest extends TestCase
     private MockObject $claimExtractor;
     private MockObject $logger;
 
-    const KEY_PATH_PRIVATE = __DIR__ . '/../../../../data/Unit/Common/Auth/Grant/openemr-rsa384-private.key';
+    const KEY_PATH_PRIVATE = __DIR__ . '/../../../../data/Unit/Common/Auth/Grant/tabemr-rsa384-private.key';
 
     protected function setUp(): void
     {
@@ -155,7 +155,7 @@ class IdTokenSMARTResponseTest extends TestCase
         $this->globalsBag->method('get')
             ->willReturnMap([
                 ['site_addr_oath', 'https://example.com'],
-                ['webroot', '/openemr']
+                ['webroot', '/tabemr']
             ]);
 
         $this->session->method('has')->with('nonce')->willReturn(true);
@@ -189,7 +189,7 @@ class IdTokenSMARTResponseTest extends TestCase
         $this->globalsBag->method('get')
             ->willReturnMap([
                 ['site_addr_oath', 'https://example.com'],
-                ['webroot', '/openemr']
+                ['webroot', '/tabemr']
             ]);
 
         $this->session->method('has')->with('nonce')->willReturn(false);

@@ -10,9 +10,9 @@ A PHP auto-prepend script runs before every HTTP request during E2E, API, and In
 
 - **Prepend**: Starts Xdebug coverage collection when `ENABLE_COVERAGE=true`
 - **Shutdown**: Captures raw coverage data at request end and saves to:
-  - `/tmp/openemr-coverage/e2e/coverage.e2e.*.raw.php` for E2E tests
-  - `/tmp/openemr-coverage/api/coverage.api.*.raw.php` for API tests
-  - `/tmp/openemr-coverage/inferno/coverage.inferno.*.raw.php` for Inferno tests
+  - `/tmp/tabemr-coverage/e2e/coverage.e2e.*.raw.php` for E2E tests
+  - `/tmp/tabemr-coverage/api/coverage.api.*.raw.php` for API tests
+  - `/tmp/tabemr-coverage/inferno/coverage.inferno.*.raw.php` for Inferno tests
 
 Each file contains a raw Xdebug coverage array from a single HTTP request. The test type is automatically detected based on:
 - `INFERNO_TEST=true` environment variable → Inferno
@@ -30,7 +30,7 @@ Configures PHP to auto-prepend the coverage script:
 
 After tests complete, the `convert_coverage()` shell helper (in `ciLibrary.source`) runs the
 `convert-coverage` CLI tool **inside the Docker container** via `_exec`. This is critical because
-the raw coverage arrays contain absolute container paths (e.g., `/var/www/localhost/htdocs/openemr/src/Foo.php`)
+the raw coverage arrays contain absolute container paths (e.g., `/var/www/localhost/htdocs/tabemr/src/Foo.php`)
 that only resolve inside the container.
 
 The helper passes `--coverage-filter` for each source directory so the CodeCoverage `Filter` is
@@ -45,9 +45,9 @@ The `convert-coverage` CLI tool:
 Examples using the shell helper (from `ci/ciLibrary.source`):
 ```bash
 . ci/ciLibrary.source
-convert_coverage /tmp/openemr-coverage/e2e coverage/coverage.e2e.cov --clover=coverage.e2e.clover.xml
-convert_coverage /tmp/openemr-coverage/api coverage/coverage.api.cov --clover=coverage.api.clover.xml
-convert_coverage /tmp/openemr-coverage/inferno /dev/null --clover=coverage.inferno-http.clover.xml
+convert_coverage /tmp/tabemr-coverage/e2e coverage/coverage.e2e.cov --clover=coverage.e2e.clover.xml
+convert_coverage /tmp/tabemr-coverage/api coverage/coverage.api.cov --clover=coverage.api.clover.xml
+convert_coverage /tmp/tabemr-coverage/inferno /dev/null --clover=coverage.inferno-http.clover.xml
 ```
 
 ### 4. Merging (`merge_coverage` in `ciLibrary.source`)
@@ -107,9 +107,9 @@ flowchart TD
     A[Test Starts - E2E, API, or Inferno] --> B[HTTP Request]
     B --> C[auto_prepend.php detects test type]
     C --> D{Test Type?}
-    D -->|INFERNO_TEST=true| E[Inferno Test - save to /tmp/openemr-coverage/inferno/]
-    D -->|/apis/*| F[API Test - save to /tmp/openemr-coverage/api/]
-    D -->|Other| G[E2E Test - save to /tmp/openemr-coverage/e2e/]
+    D -->|INFERNO_TEST=true| E[Inferno Test - save to /tmp/tabemr-coverage/inferno/]
+    D -->|/apis/*| F[API Test - save to /tmp/tabemr-coverage/api/]
+    D -->|Other| G[E2E Test - save to /tmp/tabemr-coverage/e2e/]
     E --> H[PHP executes application code]
     F --> H
     G --> H

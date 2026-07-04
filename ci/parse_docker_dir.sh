@@ -3,8 +3,8 @@
 set -xeuo pipefail
 
 readonly -A WEBSERVER_OPENEMR_DIRS=(
-  ['apache']=/var/www/localhost/htdocs/openemr
-  ['nginx']=/usr/share/nginx/html/openemr
+  ['apache']=/var/www/localhost/htdocs/tabemr
+  ['nginx']=/usr/share/nginx/html/tabemr
 )
 
 ##
@@ -50,8 +50,8 @@ parse() {
   [[ ${docker_dir} = *_no-e2e ]] && e2e_enabled=false || e2e_enabled=true
 
   # Determine OpenEMR directory based on webserver
-  openemr_dir="${WEBSERVER_OPENEMR_DIRS[${webserver}]}"
-  if [[ -z ${openemr_dir} ]]; then
+  tabemr_dir="${WEBSERVER_OPENEMR_DIRS[${webserver}]}"
+  if [[ -z ${tabemr_dir} ]]; then
     echo "Unknown webserver: ${webserver}" >&2
     return 1
   fi
@@ -92,7 +92,7 @@ parse() {
   jq -cn \
     --arg compose_file "${compose_file}" \
     --arg docker_dir "${docker_dir}" \
-    --arg openemr_dir "${openemr_dir}" \
+    --arg tabemr_dir "${tabemr_dir}" \
     --arg database "${database}" \
     --arg database_template "${database_template}" \
     --arg db "${db}" \
@@ -111,7 +111,7 @@ parse() {
       env: {
         COMPOSE_FILE: $compose_file,
         DOCKER_DIR: $docker_dir,
-        OPENEMR_DIR: $openemr_dir
+        OPENEMR_DIR: $tabemr_dir
       },
       output: {
         database: $database,
@@ -121,7 +121,7 @@ parse() {
         e2e_enabled: $e2e_enabled,
         mailpit_template: $mailpit_template,
         node_version: $node_version,
-        openemr_dir: $openemr_dir,
+        tabemr_dir: $tabemr_dir,
         php: $php,
         redis_sentinel_enabled: $redis_sentinel_enabled,
         redis_sentinel_template: $redis_sentinel_template,

@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Common\Command;
@@ -22,7 +22,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 #[AsCommand(
-    name: 'openemr:generate-phpstan-types',
+    name: 'tabemr:generate-phpstan-types',
     description: 'Generate PHPStan type aliases from database.sql CREATE TABLE statements'
 )]
 class GeneratePhpstanTypesCommand extends Command
@@ -232,7 +232,7 @@ class GeneratePhpstanTypesCommand extends Command
              *
              * @package   OpenEMR
              * @link      https://www.open-emr.org
-             * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+             * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
              */
 
             namespace OpenEMR\Common\Database;

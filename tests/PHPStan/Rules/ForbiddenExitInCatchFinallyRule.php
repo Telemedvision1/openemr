@@ -19,7 +19,7 @@
  * @author    Eric Stern <erics@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
  * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -99,7 +99,7 @@ class ForbiddenExitInCatchFinallyRule implements Rule
         return RuleErrorBuilder::message(
             sprintf('exit/die inside a %s block swallows the caught exception and aborts the process.', $block)
         )
-            ->identifier('openemr.exitInCatchOrFinally')
+            ->identifier('tabemr.exitInCatchOrFinally')
             ->line($exit->getStartLine())
             ->tip('Re-throw (throw;) or wrap the exception (throw new …Exception(…, previous: $e)) so the global exception handler can log and respond.')
             ->build();

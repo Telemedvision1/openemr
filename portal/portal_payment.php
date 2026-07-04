@@ -12,7 +12,7 @@
  * @copyright Copyright (c) 2006-2020 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2016-2019 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\BC\ServiceContainer;

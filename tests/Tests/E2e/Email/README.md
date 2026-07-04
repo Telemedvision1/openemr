@@ -107,8 +107,8 @@ Email settings are configured in `docker/development-easy/docker-compose.yml`:
 OPENEMR_SETTING_EMAIL_METHOD: SMTP
 OPENEMR_SETTING_SMTP_HOST: mailpit
 OPENEMR_SETTING_SMTP_PORT: 1025
-OPENEMR_SETTING_SMTP_USER: openemr
-OPENEMR_SETTING_SMTP_PASS: openemr
+OPENEMR_SETTING_SMTP_USER: tabemr
+OPENEMR_SETTING_SMTP_PASS: tabemr
 OPENEMR_SETTING_SMTP_SECURE: ''
 OPENEMR_SETTING_SMTP_Auth: 'TRUE'
 ```
@@ -241,7 +241,7 @@ Full message response includes:
 
 1. Increase timeout in `waitForEmail()` calls
 2. Check if email sending is actually triggered
-3. Review OpenEMR error logs: `docker compose logs openemr`
+3. Review OpenEMR error logs: `docker compose logs tabemr`
 
 ### Mailpit API Connection Errors
 

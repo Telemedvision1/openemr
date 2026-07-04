@@ -4,11 +4,11 @@
  * CcdaGenerator.php  is responsible for generating a CCDA document.  It creates the initial xml input data for the
  * ccda node service and then communicates with the ccda node service to get back the generated ccda document.
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Carecoordination\Model;

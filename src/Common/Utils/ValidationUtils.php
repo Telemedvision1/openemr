@@ -13,7 +13,7 @@
  * @copyright  Copyright (c) 2022 Discover and Change, Inc <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
  * @copyright  Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license    https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license    https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Common\Utils;
@@ -30,7 +30,7 @@ class ValidationUtils
         if (filter_var($email, FILTER_VALIDATE_EMAIL, FILTER_FLAG_EMAIL_UNICODE)) {
             // TODO: OpenEMR has used this validator regex for 11+ years... leaving this line in case we need to revert
             // on January 30th 2023 added the ability to support SMTP label addresses such as myname+label@gmail.com
-            // Fixes #6159 (openemr/openemr/issues/6159)
+            // Fixes #6159 (tabemr/tabemr/issues/6159)
 
 //        if (preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-\+]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i", $email)) {
             return true;

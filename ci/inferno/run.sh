@@ -66,10 +66,10 @@ initialize_inferno() {
     echo 'Inferno lit'
 }
 
-initialize_openemr() {
+initialize_tabemr() {
     echo 'Initializing OpenEMR'
     local -x DOCKER_DIR=inferno
-    local -x OPENEMR_DIR=/var/www/localhost/htdocs/openemr
+    local -x OPENEMR_DIR=/var/www/localhost/htdocs/tabemr
     local repo_root
     repo_root="$(git rev-parse --show-toplevel)"
     cd -P "${repo_root}"
@@ -81,18 +81,18 @@ initialize_openemr() {
     cd -
     dockers_env_start
     install_configure
-    "${HOME}/bin/openemr-cmd" pc inferno-files/files/resources/openemr-snapshots/2025-06-25-inferno-baseline.tgz
-    "${HOME}/bin/openemr-cmd" rs 2025-06-25-inferno-baseline
+    "${HOME}/bin/tabemr-cmd" pc inferno-files/files/resources/tabemr-snapshots/2025-06-25-inferno-baseline.tgz
+    "${HOME}/bin/tabemr-cmd" rs 2025-06-25-inferno-baseline
     #  Snapshot is from 7.0.3; run migrations to create any new tables
-    docker compose exec -T openemr php "${OPENEMR_DIR}/sql_upgrade.php" --from=7.0.3
+    docker compose exec -T tabemr php "${OPENEMR_DIR}/sql_upgrade.php" --from=7.0.3
     # (may need to configure api globals here)
     # Prevent password expiration from blocking OAuth password grant
-    docker compose exec -T openemr mysql -u openemr --password=openemr -h mysql openemr \
+    docker compose exec -T tabemr mysql -u tabemr --password=tabemr -h mysql tabemr \
         -e "UPDATE users_secure SET last_update_password = NOW()"
     # Fix user to qualify as Practitioner: NPI AND (username OR valid abook_type)
     # Snapshot predates commit 4af4c827f which added username/abook_type filtering
-    # See https://github.com/openemr/openemr/issues/11831#issuecomment-4341049367
-    docker compose exec -T openemr mysql -u openemr --password=openemr -h mysql openemr \
+    # See https://github.com/tabemr/tabemr/issues/11831#issuecomment-4341049367
+    docker compose exec -T tabemr mysql -u tabemr --password=tabemr -h mysql tabemr \
         -e "UPDATE users SET abook_type = 'external_provider', npi = '0123456789' WHERE uuid = UNHEX(REPLACE('96889cb7-0f90-4d9e-9a6c-ac0e70c01cb1', '-', ''))"
 
     # Configure coverage after containers are running and OpenEMR is initialized
@@ -112,7 +112,7 @@ initialize_openemr() {
 }
 run_testsuite() {
     local -x DOCKER_DIR=inferno
-    local -x OPENEMR_DIR=/var/www/localhost/htdocs/openemr
+    local -x OPENEMR_DIR=/var/www/localhost/htdocs/tabemr
     local repo_root
     repo_root="$(git rev-parse --show-toplevel)"
 
@@ -142,7 +142,7 @@ run_testsuite() {
 
 collect_inferno_coverage() {
     local -x DOCKER_DIR=inferno
-    local -x OPENEMR_DIR=/var/www/localhost/htdocs/openemr
+    local -x OPENEMR_DIR=/var/www/localhost/htdocs/tabemr
     local repo_root
     repo_root="$(git rev-parse --show-toplevel)"
 
@@ -159,7 +159,7 @@ collect_inferno_coverage() {
 
     # Convert HTTP request coverage to clover.xml format
     # Run inside the container so file paths resolve correctly
-    convert_coverage /tmp/openemr-coverage/inferno \
+    convert_coverage /tmp/tabemr-coverage/inferno \
                      /dev/null \
                      --clover=coverage.inferno-http.clover.xml
     ls -lah coverage.inferno-http.clover.xml || true
@@ -217,7 +217,7 @@ main() {
 
     initialize_inferno
     check_inferno
-    initialize_openemr
+    initialize_tabemr
 
     # Run the test suite and capture exit code
     # shellcheck disable=SC2310

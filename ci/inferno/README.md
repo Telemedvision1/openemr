@@ -40,7 +40,7 @@ This Docker Compose setup extends the Inferno test tools from the `onc-certifica
 ## Services
 
 - **mysql**: Database for OpenEMR
-- **openemr**: The OpenEMR instance to be tested
+- **tabemr**: The OpenEMR instance to be tested
 - **inferno**: The main Inferno testing application
 - **worker**: Processes test jobs from the queue
 - **nginx**: Web server for the Inferno UI (available at http://localhost:8000)

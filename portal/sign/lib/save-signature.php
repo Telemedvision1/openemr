@@ -11,7 +11,7 @@
  * @copyright Copyright (c) 2016-2021 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 //Need to unwrap data to ensure user/patient is authorized
@@ -26,7 +26,7 @@ $ignoreAuth = false;
 
 use OpenEMR\Common\Session\SessionWrapperFactory;
 
-// this script is used by both the patient portal and main openemr; below does authorization.
+// this script is used by both the patient portal and main tabemr; below does authorization.
 if ($isPortal) {
     // Will start the (patient) portal OpenEMR session/cookie.
     // Need access to classes, so run autoloader now instead of in globals.php.

@@ -11,7 +11,7 @@
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019-2024 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../library/forms.inc.php");
@@ -504,8 +504,8 @@ class C_Document extends Controller
         // Populate the dropdown with patient's encounter list
         $this->assign("TAG_ACTION", $this->_link("tag") . "document_id=" . urlencode((string) $d->get_id()) . "&process=true");
         $encOptions = "<option value='0'>-- " . xlt('Select Encounter') . " --</option>";
-        $result_docs = sqlStatement("SELECT fe.encounter,fe.date,openemr_postcalendar_categories.pc_catname FROM form_encounter AS fe " .
-            "LEFT JOIN openemr_postcalendar_categories ON fe.pc_catid=openemr_postcalendar_categories.pc_catid  WHERE fe.pid = ? ORDER BY fe.date desc", [$patient_id]);
+        $result_docs = sqlStatement("SELECT fe.encounter,fe.date,tabemr_postcalendar_categories.pc_catname FROM form_encounter AS fe " .
+            "LEFT JOIN tabemr_postcalendar_categories ON fe.pc_catid=tabemr_postcalendar_categories.pc_catid  WHERE fe.pid = ? ORDER BY fe.date desc", [$patient_id]);
         if (sqlNumRows($result_docs) > 0) {
             while ($row_result_docs = sqlFetchArray($result_docs)) {
                 $sel_enc = ($row_result_docs['encounter'] == $d->get_encounter_id()) ? ' selected' : '';
@@ -523,7 +523,7 @@ class C_Document extends Controller
 
         //Populate the dropdown with category list
         $visit_category_list = "<option value='0'>-- " . xlt('Select One') . " --</option>";
-        $cres = sqlStatement("SELECT pc_catid, pc_catname FROM openemr_postcalendar_categories ORDER BY pc_catname");
+        $cres = sqlStatement("SELECT pc_catid, pc_catname FROM tabemr_postcalendar_categories ORDER BY pc_catname");
         while ($crow = sqlFetchArray($cres)) {
             $catid = $crow['pc_catid'];
             if ($catid < 9 && $catid != 5) {
@@ -722,7 +722,7 @@ class C_Document extends Controller
             exit; // exits only if file download from CouchDB is successful.
         }
         if ($couch_docid && $couch_revid) {
-            //special case when retrieving a document from couchdb that has been converted to a jpg and not directly referenced in openemr documents table
+            //special case when retrieving a document from couchdb that has been converted to a jpg and not directly referenced in tabemr documents table
             //try to convert it if it has not yet been converted
             //first, see if the converted jpg already exists
             $couch = new CouchDB();

@@ -610,7 +610,7 @@ class MyResourceRestController
             new OA\Response(response: "400", ref: "#/components/responses/badrequest"),
             new OA\Response(response: "401", ref: "#/components/responses/unauthorized"),
         ],
-        security: [["openemr_auth" => []]]
+        security: [["tabemr_auth" => []]]
     )]
     public function getAll($search = array())
     {
@@ -636,7 +636,7 @@ class MyResourceRestController
             new OA\Response(response: "400", ref: "#/components/responses/badrequest"),
             new OA\Response(response: "401", ref: "#/components/responses/unauthorized"),
         ],
-        security: [["openemr_auth" => []]]
+        security: [["tabemr_auth" => []]]
     )]
     public function getOne($uuid)
     {
@@ -660,7 +660,7 @@ class MyResourceRestController
             new OA\Response(response: "400", ref: "#/components/responses/badrequest"),
             new OA\Response(response: "401", ref: "#/components/responses/unauthorized"),
         ],
-        security: [["openemr_auth" => []]]
+        security: [["tabemr_auth" => []]]
     )]
     public function post($data)
     {
@@ -702,7 +702,7 @@ class MyResourceRestController
             new OA\Response(response: "400", ref: "#/components/responses/badrequest"),
             new OA\Response(response: "401", ref: "#/components/responses/unauthorized"),
         ],
-        security: [["openemr_auth" => []]]
+        security: [["tabemr_auth" => []]]
     )]
     public function put($uuid, $data)
     {
@@ -729,11 +729,11 @@ The OpenAPI attributes (`#[OA\Get]`, `#[OA\Post]`, etc.) document the API endpoi
 - **parameters**: Query or path parameters
 - **requestBody**: For POST/PUT, defines the expected request body schema
 - **responses**: Maps HTTP status codes to response schemas (use refs to reusable components)
-- **security**: Authentication requirements (usually `[["openemr_auth" => []]]`)
+- **security**: Authentication requirements (usually `[["tabemr_auth" => []]]`)
 
 To regenerate the Swagger documentation after changes:
 ```bash
-php bin/console openemr:create-api-documentation --skip-globals
+php bin/console tabemr:create-api-documentation --skip-globals
 ```
 
 **Step 3: Add Routes**
@@ -931,7 +931,7 @@ class FhirMyResourceRestController
             new OA\Response(response: "400", ref: "#/components/responses/badrequest"),
             new OA\Response(response: "401", ref: "#/components/responses/unauthorized"),
         ],
-        security: [["openemr_auth" => []]]
+        security: [["tabemr_auth" => []]]
     )]
     public function getAll($search)
     {
@@ -973,7 +973,7 @@ class FhirMyResourceRestController
             new OA\Response(response: "401", ref: "#/components/responses/unauthorized"),
             new OA\Response(response: "404", ref: "#/components/responses/uuidnotfound"),
         ],
-        security: [["openemr_auth" => []]]
+        security: [["tabemr_auth" => []]]
     )]
     public function getOne($uuid)
     {
@@ -1550,8 +1550,8 @@ class PatientServiceTest extends TestCase
 
 1. **Fork the repository**
 ```bash
-   git clone https://github.com/openemr/openemr.git
-   cd openemr
+   git clone https://github.com/tabemr/tabemr.git
+   cd tabemr
    git checkout -b feature/my-new-feature
 ```
 
@@ -1638,13 +1638,13 @@ Brief description of changes
 
 **Resources:**
 - **API Forum Thread:** https://community.open-emr.org/t/v6-authorization-and-api-changes-afoot/15450
-- **GitHub:** https://github.com/openemr/openemr
+- **GitHub:** https://github.com/tabemr/tabemr
 - **Documentation:** https://www.open-emr.org/wiki/
 
 **Support:**
 - **Community Forum:** https://community.open-emr.org/
 - **Chat:** https://chat.open-emr.org/
-- **Issues:** https://github.com/openemr/openemr/issues
+- **Issues:** https://github.com/tabemr/tabemr/issues
 
 For questions about extending the API, post in the community forum or join the developer chat.
 
@@ -1668,9 +1668,9 @@ All technical accuracy is maintained from the original community-authored docume
 
 ### Contributing
 OpenEMR is an open-source project. To contribute to this documentation:
-- **Report Issues:** [GitHub Issues](https://github.com/openemr/openemr/issues)
+- **Report Issues:** [GitHub Issues](https://github.com/tabemr/tabemr/issues)
 - **Discuss:** [Community Forum](https://community.open-emr.org/)
-- **Submit Changes:** [Pull Requests](https://github.com/openemr/openemr/pulls)
+- **Submit Changes:** [Pull Requests](https://github.com/tabemr/tabemr/pulls)
 
 **Last Updated:** November 2025
 **License:** GPL v3

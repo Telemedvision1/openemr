@@ -56,7 +56,7 @@ oe-module-faxsms/
 │   └── api_onetime.php           # One-time API setup
 ├── sql/                          # SQL migration scripts
 ├── vendor/                       # Composer dependencies (RingCentral SDK)
-├── openemr.bootstrap.php         # Module bootstrap - event listeners and menu
+├── tabemr.bootstrap.php         # Module bootstrap - event listeners and menu
 ├── ModuleManagerListener.php     # Laminas module lifecycle hooks
 ├── BootstrapService.php          # Service initialization
 ├── messageUI.php                 # Main UI for viewing/sending messages
@@ -109,7 +109,7 @@ Each vendor has its own controller class extending `AppDispatch`:
 
 ### 3. Event System Integration
 
-**Bootstrap File**: `openemr.bootstrap.php`
+**Bootstrap File**: `tabemr.bootstrap.php`
 
 The module integrates with OpenEMR's Symfony event dispatcher to:
 
@@ -265,7 +265,7 @@ class NewVendorClient extends AppDispatch
 
 3. **Add Setup UI** in `setup.php` or create new setup file
 
-4. **Update Bootstrap Menu** in `openemr.bootstrap.php` to include new vendor
+4. **Update Bootstrap Menu** in `tabemr.bootstrap.php` to include new vendor
 
 5. **Register in Dispatcher** - Ensure `AppDispatch::getApiService()` can instantiate your class
 
@@ -499,7 +499,7 @@ dlgopen(url, dialogName, modalSize, height, allowResize, title, options);
 
 ### View Module Status
 ```bash
-mysql -u local_openemr -p 5qy3xkMjP4A2US1u7Qv -e "
+mysql -u local_tabemr -p 5qy3xkMjP4A2US1u7Qv -e "
   SELECT mod_name, mod_directory, enabled, mod_ui_active
   FROM modules
   WHERE mod_directory = 'oe-module-faxsms';"
@@ -507,7 +507,7 @@ mysql -u local_openemr -p 5qy3xkMjP4A2US1u7Qv -e "
 
 ### Check Globals
 ```bash
-mysql -u local_openemr -p 5qy3xkMjP4A2US1u7Qv -e "
+mysql -u local_tabemr -p 5qy3xkMjP4A2US1u7Qv -e "
   SELECT gl_name, gl_value
   FROM globals
   WHERE gl_name LIKE 'oefax%' OR gl_name LIKE 'oesms%' OR gl_name = 'oe_enable_email';"
@@ -515,14 +515,14 @@ mysql -u local_openemr -p 5qy3xkMjP4A2US1u7Qv -e "
 
 ### View Credentials (Encrypted)
 ```bash
-mysql -u local_openemr -p 5qy3xkMjP4A2US1u7Qv -e "
+mysql -u local_tabemr -p 5qy3xkMjP4A2US1u7Qv -e "
   SELECT id, auth_user, vendor, updated
   FROM module_faxsms_credentials;"
 ```
 
 ### Check Message Queue
 ```bash
-mysql -u local_openemr -p 5qy3xkMjP4A2US1u7Qv -e "
+mysql -u local_tabemr -p 5qy3xkMjP4A2US1u7Qv -e "
   SELECT id, account, job_id, date, calling_number, called_number
   FROM oe_faxsms_queue
   ORDER BY date DESC LIMIT 20;"
@@ -596,7 +596,7 @@ SignalWire provides a Twilio-compatible REST API for faxing, making it an excell
    - In SignalWire dashboard, select your fax number
    - Configure "Fax Settings":
      - When a fax is received: Webhook
-     - URL: `https://your-openemr.com/interface/modules/custom_modules/oe-module-faxsms/library/webhook_receiver.php?type=fax&vendor=signalwire`
+     - URL: `https://your-tabemr.com/interface/modules/custom_modules/oe-module-faxsms/library/webhook_receiver.php?type=fax&vendor=signalwire`
      - Method: POST
      - Content-Type: application/x-www-form-urlencoded
 

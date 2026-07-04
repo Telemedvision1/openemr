@@ -33,7 +33,7 @@ services:
     - selenium
     environment:
       DISPLAY_CONTAINER_NAME: selenium
-  openemr:
+  tabemr:
     environment:
       SELENIUM_USE_GRID: "true"
       SELENIUM_HOST: selenium

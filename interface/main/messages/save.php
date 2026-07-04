@@ -7,7 +7,7 @@
  * @link    http://www.MedExBank.com
  * @author  MedEx <support@MedExBank.com>
  * @copyright Copyright (c) 2017 MedEx <support@MedExBank.com>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once "../../globals.php";
@@ -185,7 +185,7 @@ if (($_REQUEST['pid']) && ($_REQUEST['action'] == "new_recall")) {
         $result['PLAN'] = $result2['ORDER_DETAILS'];
     }
 
-    $query = "SELECT * FROM openemr_postcalendar_events WHERE pc_pid =? ORDER BY pc_eventDate DESC LIMIT 1";
+    $query = "SELECT * FROM tabemr_postcalendar_events WHERE pc_pid =? ORDER BY pc_eventDate DESC LIMIT 1";
     $result2 = sqlQuery($query, [$_REQUEST['pid']]);
     if ($result2) { //if they were never actually scheduled this would be blank
         $result['DOLV']     = oeFormatShortDate($result2['pc_eventDate']);

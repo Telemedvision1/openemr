@@ -18,7 +18,7 @@ Complete documentation for OpenEMR's REST API, FHIR API, and SMART on FHIR integ
 ### Prerequisites
 1. SSL/TLS configured (required)
 2. Base URL set: **Administration → Config → Connectors → Site Address**
-   - Example: `https://your-openemr-install` or `https://your-openemr-install/openemr` (note this should be the root of your openemr installation without a trailing slash)
+   - Example: `https://your-tabemr-install` or `https://your-tabemr-install/tabemr` (note this should be the root of your tabemr installation without a trailing slash)
 3. APIs enabled:
     - **Standard API**: Administration → Config → Connectors → Enable OpenEMR Standard REST API
     - **FHIR API**: Administration → Config → Connectors → Enable OpenEMR Standard FHIR REST API
@@ -133,10 +133,10 @@ Include site name in endpoint:
 
 ## Support & Resources
 
-- **Interactive Testing**: https://your-openemr-install/swagger/
+- **Interactive Testing**: https://your-tabemr-install/swagger/
 - **Online Demos**: https://www.open-emr.org/wiki/index.php/Development_Demo
 - **Community Forum**: https://community.open-emr.org/
-- **Issue Tracker**: https://github.com/openemr/openemr/issues
+- **Issue Tracker**: https://github.com/tabemr/tabemr/issues
 
 ## Security
 
@@ -175,9 +175,9 @@ All technical accuracy is maintained from the original community-authored docume
 
 ### Contributing
 OpenEMR is an open-source project. To contribute to this documentation:
-- **Report Issues:** [GitHub Issues](https://github.com/openemr/openemr/issues)
+- **Report Issues:** [GitHub Issues](https://github.com/tabemr/tabemr/issues)
 - **Discuss:** [Community Forum](https://community.open-emr.org/)
-- **Submit Changes:** [Pull Requests](https://github.com/openemr/openemr/pulls)
+- **Submit Changes:** [Pull Requests](https://github.com/tabemr/tabemr/pulls)
 
 **Last Updated:** November 2025
 **License:** GPL v3

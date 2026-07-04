@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -34,8 +34,8 @@ class EmailSendTest extends TestCase
         $GLOBALS['EMAIL_METHOD'] = 'SMTP';
         $GLOBALS['SMTP_HOST'] = getenv('OPENEMR_SETTING_SMTP_HOST') ?: 'mailpit';
         $GLOBALS['SMTP_PORT'] = getenv('OPENEMR_SETTING_SMTP_PORT') ?: '1025';
-        $GLOBALS['SMTP_USER'] = getenv('OPENEMR_SETTING_SMTP_USER') ?: 'openemr';
-        $GLOBALS['SMTP_PASS'] = getenv('OPENEMR_SETTING_SMTP_PASS') ?: 'openemr';
+        $GLOBALS['SMTP_USER'] = getenv('OPENEMR_SETTING_SMTP_USER') ?: 'tabemr';
+        $GLOBALS['SMTP_PASS'] = getenv('OPENEMR_SETTING_SMTP_PASS') ?: 'tabemr';
         // Note: SMTP_SECURE empty string fails MyMailer::isConfigured() check
         // Use 'none' for no encryption (Mailpit accepts any value)
         $GLOBALS['SMTP_SECURE'] = getenv('OPENEMR_SETTING_SMTP_SECURE') ?: 'none';

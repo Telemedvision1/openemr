@@ -8,7 +8,7 @@
  * @link      https://www.open-emr.org
  * @author    Ray Magauran <magauran@MedFetch.com>
  * @copyright Copyright (c) 2016 Raymond Magauran <magauran@MedFetch.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 var mousePressed = false;

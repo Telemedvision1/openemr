@@ -1,22 +1,22 @@
-[![Syntax Status](https://github.com/openemr/openemr/actions/workflows/syntax.yml/badge.svg)](https://github.com/openemr/openemr/actions/workflows/syntax.yml)
-[![Styling Status](https://github.com/openemr/openemr/actions/workflows/styling.yml/badge.svg)](https://github.com/openemr/openemr/actions/workflows/styling.yml)
-[![Testing Status](https://github.com/openemr/openemr/actions/workflows/test.yml/badge.svg)](https://github.com/openemr/openemr/actions/workflows/test.yml)
-[![JS Unit Testing Status](https://github.com/openemr/openemr/actions/workflows/js-test.yml/badge.svg)](https://github.com/openemr/openemr/actions/workflows/js-test.yml)
-[![PHPStan](https://github.com/openemr/openemr/actions/workflows/phpstan.yml/badge.svg)](https://github.com/openemr/openemr/actions/workflows/phpstan.yml)
-[![Rector](https://github.com/openemr/openemr/actions/workflows/rector.yml/badge.svg)](https://github.com/openemr/openemr/actions/workflows/rector.yml)
-[![ShellCheck](https://github.com/openemr/openemr/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/openemr/openemr/actions/workflows/shellcheck.yml)
-[![Docker Compose Linting](https://github.com/openemr/openemr/actions/workflows/docker-compose-lint.yml/badge.svg)](https://github.com/openemr/openemr/actions/workflows/docker-compose-lint.yml)
-[![Dockerfile Linting](https://github.com/openemr/openemr/actions/workflows/hadolint.yml/badge.svg)](https://github.com/openemr/openemr/actions/workflows/hadolint.yml)
-[![Isolated Tests](https://github.com/openemr/openemr/actions/workflows/isolated-tests.yml/badge.svg)](https://github.com/openemr/openemr/actions/workflows/isolated-tests.yml)
-[![Inferno Certification Test](https://github.com/openemr/openemr/actions/workflows/inferno-test.yml/badge.svg)](https://github.com/openemr/openemr/actions/workflows/inferno-test.yml)
-[![Composer Checks](https://github.com/openemr/openemr/actions/workflows/composer.yml/badge.svg)](https://github.com/openemr/openemr/actions/workflows/composer.yml)
-[![Composer Require Checker](https://github.com/openemr/openemr/actions/workflows/composer-require-checker.yml/badge.svg)](https://github.com/openemr/openemr/actions/workflows/composer-require-checker.yml)
-[![API Docs Freshness Checks](https://github.com/openemr/openemr/actions/workflows/api-docs.yml/badge.svg)](https://github.com/openemr/openemr/actions/workflows/api-docs.yml)
-[![codecov](https://codecov.io/gh/openemr/openemr/graph/badge.svg?token=7Eu3U1Ozdq)](https://codecov.io/gh/openemr/openemr)
+[![Syntax Status](https://github.com/tabemr/tabemr/actions/workflows/syntax.yml/badge.svg)](https://github.com/tabemr/tabemr/actions/workflows/syntax.yml)
+[![Styling Status](https://github.com/tabemr/tabemr/actions/workflows/styling.yml/badge.svg)](https://github.com/tabemr/tabemr/actions/workflows/styling.yml)
+[![Testing Status](https://github.com/tabemr/tabemr/actions/workflows/test.yml/badge.svg)](https://github.com/tabemr/tabemr/actions/workflows/test.yml)
+[![JS Unit Testing Status](https://github.com/tabemr/tabemr/actions/workflows/js-test.yml/badge.svg)](https://github.com/tabemr/tabemr/actions/workflows/js-test.yml)
+[![PHPStan](https://github.com/tabemr/tabemr/actions/workflows/phpstan.yml/badge.svg)](https://github.com/tabemr/tabemr/actions/workflows/phpstan.yml)
+[![Rector](https://github.com/tabemr/tabemr/actions/workflows/rector.yml/badge.svg)](https://github.com/tabemr/tabemr/actions/workflows/rector.yml)
+[![ShellCheck](https://github.com/tabemr/tabemr/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/tabemr/tabemr/actions/workflows/shellcheck.yml)
+[![Docker Compose Linting](https://github.com/tabemr/tabemr/actions/workflows/docker-compose-lint.yml/badge.svg)](https://github.com/tabemr/tabemr/actions/workflows/docker-compose-lint.yml)
+[![Dockerfile Linting](https://github.com/tabemr/tabemr/actions/workflows/hadolint.yml/badge.svg)](https://github.com/tabemr/tabemr/actions/workflows/hadolint.yml)
+[![Isolated Tests](https://github.com/tabemr/tabemr/actions/workflows/isolated-tests.yml/badge.svg)](https://github.com/tabemr/tabemr/actions/workflows/isolated-tests.yml)
+[![Inferno Certification Test](https://github.com/tabemr/tabemr/actions/workflows/inferno-test.yml/badge.svg)](https://github.com/tabemr/tabemr/actions/workflows/inferno-test.yml)
+[![Composer Checks](https://github.com/tabemr/tabemr/actions/workflows/composer.yml/badge.svg)](https://github.com/tabemr/tabemr/actions/workflows/composer.yml)
+[![Composer Require Checker](https://github.com/tabemr/tabemr/actions/workflows/composer-require-checker.yml/badge.svg)](https://github.com/tabemr/tabemr/actions/workflows/composer-require-checker.yml)
+[![API Docs Freshness Checks](https://github.com/tabemr/tabemr/actions/workflows/api-docs.yml/badge.svg)](https://github.com/tabemr/tabemr/actions/workflows/api-docs.yml)
+[![codecov](https://codecov.io/gh/tabemr/tabemr/graph/badge.svg?token=7Eu3U1Ozdq)](https://codecov.io/gh/tabemr/tabemr)
 
-[![Backers on Open Collective](https://opencollective.com/openemr/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/openemr/sponsors/badge.svg)](#sponsors)
+[![Backers on Open Collective](https://opencollective.com/tabemr/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/tabemr/sponsors/badge.svg)](#sponsors)
 
-> **TelemedVision fork:** All customizations live on [`telemedvision/main`](https://github.com/Telemedvision1/openemr/tree/telemedvision/main). Switch to that branch before making any changes.
+> **TelemedVision fork:** All customizations live on [`telemedvision/main`](https://github.com/Telemedvision1/tabemr/tree/telemedvision/main). Switch to that branch before making any changes.
 
 # OpenEMR
 
@@ -36,7 +36,7 @@ Extensive documentation and forums can be found on the [OpenEMR website](https:/
 
 ### Reporting Issues and Bugs
 
-Report these on the [Issue Tracker](https://github.com/openemr/openemr/issues). If you are unsure if it is an issue/bug, then always feel free to use the [Forum](https://community.open-emr.org/) and [Chat](https://www.open-emr.org/chat/) to discuss about the issue 🪲.
+Report these on the [Issue Tracker](https://github.com/tabemr/tabemr/issues). If you are unsure if it is an issue/bug, then always feel free to use the [Forum](https://community.open-emr.org/) and [Chat](https://www.open-emr.org/chat/) to discuss about the issue 🪲.
 
 ### Reporting Security Vulnerabilities
 
@@ -73,7 +73,7 @@ composer dump-autoload -o
 ### Contributors
 
 This project exists thanks to all the people who have contributed. [[Contribute]](CONTRIBUTING.md).
-<a href="https://github.com/openemr/openemr/graphs/contributors"><img src="https://opencollective.com/openemr/contributors.svg?width=890" /></a>
+<a href="https://github.com/tabemr/tabemr/graphs/contributors"><img src="https://opencollective.com/tabemr/contributors.svg?width=890" /></a>
 
 
 ### Sponsors

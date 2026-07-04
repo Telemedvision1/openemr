@@ -3,11 +3,11 @@
 /**
  * Handles all of the page rendering and api communications for a teleconference room.
  *
- * @package   openemr
+ * @package   tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Comlink\OpenEMR\Modules\TeleHealthModule\Controller;
@@ -901,7 +901,7 @@ class TeleconferenceRoomController
         $userId = $user['id'];
         $auditTrail = $user['fname'] . ' ' . $user['lname'] . '(' . $user['username'] . ')';
 
-        $sql = "UPDATE openemr_postcalendar_events SET pc_aid =? WHERE pc_eid =? ";
+        $sql = "UPDATE tabemr_postcalendar_events SET pc_aid =? WHERE pc_eid =? ";
         QueryUtils::sqlStatementThrowException($sql, [$userId, $appt['pc_eid']]);
 
         if (!AclMain::aclCheckCore('patients', 'appt', '', ['write', 'wsome'])) {

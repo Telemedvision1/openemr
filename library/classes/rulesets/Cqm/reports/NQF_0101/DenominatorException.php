@@ -39,7 +39,7 @@ class NQF_0101_DenominatorException implements CqmFilterIF
         //Category Assessment not done:  Medical Reason value set with the identifying SNOMEDCT Code attached at the Select List level.
         //Risk Category Assessment SNOMEDCT 161590003, 183932001, 183964008, 183966005, 216952002, 266721009, 269191009
         $riskCatAssessQry = "SELECT count(*) as cnt FROM form_encounter fe " .
-                            "INNER JOIN openemr_postcalendar_categories opc ON fe.pc_catid = opc.pc_catid " .
+                            "INNER JOIN tabemr_postcalendar_categories opc ON fe.pc_catid = opc.pc_catid " .
                             "INNER JOIN procedure_order pr ON  fe.encounter = pr.encounter_id " .
                             "INNER JOIN procedure_order_code prc ON pr.procedure_order_id = prc.procedure_order_id " .
                             "WHERE opc.pc_catname = 'Office Visit' " .

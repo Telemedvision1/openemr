@@ -13,7 +13,7 @@
  *             "REPEAT_ON" -- stored as (weekday, nth occurrence) so the
  *             iterator can pick e.g. the 3rd Thursday of each month.
  *
- * Prior to openemr/openemr#11407 the threshold here was `> 6`, which stranded
+ * Prior to tabemr/tabemr#11407 the threshold here was `> 6`, which stranded
  * freq type 5 in the REPEAT branch; __increment() had no handler for that
  * freq type and looped forever. The threshold is now `> 4`, matching the
  * postcalendar iterator's expectations for every type 5..9.
@@ -22,7 +22,7 @@
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);

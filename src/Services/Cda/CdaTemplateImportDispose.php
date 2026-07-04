@@ -9,7 +9,7 @@
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2021 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Services\Cda;
@@ -681,12 +681,12 @@ class CdaTemplateImportDispose
                         $reason = $catname;
                     }
                 }
-                $pc_catid = sqlQuery("SELECT pc_catid FROM `openemr_postcalendar_categories` Where `pc_catname` = ?", [$catname])['pc_catid'] ?? '';
+                $pc_catid = sqlQuery("SELECT pc_catid FROM `tabemr_postcalendar_categories` Where `pc_catname` = ?", [$catname])['pc_catid'] ?? '';
             }
             if (empty($pc_catid) && !empty($catname)) {
                 // create a new category to match the import
                 $const_id = str_replace(' ', '_', strtolower($catname));
-                $sql = "INSERT INTO openemr_postcalendar_categories(
+                $sql = "INSERT INTO tabemr_postcalendar_categories(
                     `pc_catname`,
                     `pc_constant_id`,
                     `pc_catcolor`,

@@ -63,7 +63,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/allergy/{auuid}':
     get:
       tags:
@@ -86,7 +86,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /api/appointment:
     get:
       tags:
@@ -101,7 +101,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/appointment/{eid}':
     get:
       tags:
@@ -124,7 +124,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /api/background_service:
     get:
       tags:
@@ -157,7 +157,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /api/background_service/$run:
     post:
       tags:
@@ -203,7 +203,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/background_service/{name}':
     get:
       tags:
@@ -261,7 +261,7 @@ paths:
                 type: object
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/background_service/{name}/run':
     post:
       tags:
@@ -375,7 +375,7 @@ paths:
                 status: error
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /api/drug:
     get:
       tags:
@@ -390,7 +390,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/drug/{uuid}':
     get:
       tags:
@@ -413,7 +413,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /api/facility:
     get:
       tags:
@@ -562,7 +562,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     post:
       tags:
         - standard
@@ -663,7 +663,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/facility/{fuuid}':
     get:
       tags:
@@ -686,7 +686,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     put:
       tags:
         - standard
@@ -792,7 +792,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /api/immunization:
     get:
       tags:
@@ -1004,7 +1004,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/immunization/{uuid}':
     get:
       tags:
@@ -1027,7 +1027,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /api/insurance_company:
     get:
       tags:
@@ -1042,7 +1042,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     post:
       tags:
         - standard
@@ -1062,7 +1062,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/insurance_company/{iid}':
     get:
       tags:
@@ -1085,7 +1085,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     put:
       tags:
         - standard
@@ -1113,7 +1113,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /api/insurance_type:
     get:
       tags:
@@ -1128,7 +1128,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/list/{list_name}':
     get:
       tags:
@@ -1151,7 +1151,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /api/medical_problem:
     get:
       tags:
@@ -1209,7 +1209,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/medical_problem/{muuid}':
     get:
       tags:
@@ -1232,7 +1232,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /api/patient:
     get:
       tags:
@@ -1378,7 +1378,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     post:
       tags:
         - standard
@@ -1425,7 +1425,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{pid}/appointment':
     get:
       tags:
@@ -1448,7 +1448,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     post:
       tags:
         - standard
@@ -1528,7 +1528,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{pid}/appointment/{eid}':
     delete:
       tags:
@@ -1558,7 +1558,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     get:
       tags:
         - standard
@@ -1587,7 +1587,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{pid}/dental_issue':
     get:
       tags:
@@ -1610,7 +1610,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     post:
       tags:
         - standard
@@ -1638,7 +1638,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{pid}/dental_issue/{did}':
     delete:
       tags:
@@ -1668,7 +1668,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     get:
       tags:
         - standard
@@ -1697,7 +1697,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     put:
       tags:
         - standard
@@ -1732,7 +1732,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{pid}/document':
     get:
       tags:
@@ -1769,7 +1769,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     post:
       tags:
         - standard
@@ -1809,7 +1809,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{pid}/document/{did}':
     get:
       tags:
@@ -1839,7 +1839,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{pid}/encounter/{eid}/soap_note':
     get:
       tags:
@@ -1869,7 +1869,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     post:
       tags:
         - standard
@@ -1904,7 +1904,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{pid}/encounter/{eid}/soap_note/{sid}':
     get:
       tags:
@@ -1941,7 +1941,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     put:
       tags:
         - standard
@@ -1983,7 +1983,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{pid}/encounter/{eid}/vital':
     get:
       tags:
@@ -2013,7 +2013,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     post:
       tags:
         - standard
@@ -2048,7 +2048,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{pid}/encounter/{eid}/vital/{vid}':
     get:
       tags:
@@ -2085,7 +2085,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     put:
       tags:
         - standard
@@ -2127,7 +2127,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{pid}/medication':
     get:
       tags:
@@ -2150,7 +2150,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     post:
       tags:
         - standard
@@ -2178,7 +2178,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{pid}/medication/{mid}':
     delete:
       tags:
@@ -2208,7 +2208,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     get:
       tags:
         - standard
@@ -2237,7 +2237,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     put:
       tags:
         - standard
@@ -2272,7 +2272,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{pid}/message':
     post:
       tags:
@@ -2301,7 +2301,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{pid}/message/{mid}':
     delete:
       tags:
@@ -2331,7 +2331,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     put:
       tags:
         - standard
@@ -2366,7 +2366,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{pid}/surgery':
     get:
       tags:
@@ -2389,7 +2389,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     post:
       tags:
         - standard
@@ -2417,7 +2417,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{pid}/surgery/{sid}':
     delete:
       tags:
@@ -2447,7 +2447,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     get:
       tags:
         - standard
@@ -2476,7 +2476,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     put:
       tags:
         - standard
@@ -2511,7 +2511,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{pid}/transaction':
     get:
       tags:
@@ -2534,7 +2534,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     post:
       tags:
         - standard
@@ -2562,7 +2562,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{puuid}':
     get:
       tags:
@@ -2587,7 +2587,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     put:
       tags:
         - standard
@@ -2617,7 +2617,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{puuid}/allergy':
     get:
       tags:
@@ -2640,7 +2640,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     post:
       tags:
         - standard
@@ -2668,7 +2668,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{puuid}/allergy/{auuid}':
     delete:
       tags:
@@ -2698,7 +2698,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     get:
       tags:
         - standard
@@ -2727,7 +2727,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     put:
       tags:
         - standard
@@ -2762,7 +2762,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{puuid}/employer':
     get:
       tags:
@@ -2785,7 +2785,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth:
+          tabemr_auth:
             - user/employer.read
             - patient/employer.read
   '/api/patient/{puuid}/encounter':
@@ -2810,7 +2810,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     post:
       tags:
         - standard
@@ -2869,7 +2869,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{puuid}/encounter/{euuid}':
     get:
       tags:
@@ -2901,7 +2901,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     put:
       tags:
         - standard
@@ -2938,7 +2938,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{puuid}/insurance':
     get:
       tags:
@@ -2961,7 +2961,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     post:
       tags:
         - standard
@@ -2989,7 +2989,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{puuid}/insurance/$swap-insurance':
     get:
       tags:
@@ -3026,7 +3026,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{puuid}/insurance/{insuranceUuid}':
     put:
       tags:
@@ -3062,7 +3062,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{puuid}/insurance/{uuid}':
     get:
       tags:
@@ -3085,7 +3085,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{puuid}/medical_problem':
     get:
       tags:
@@ -3108,7 +3108,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     post:
       tags:
         - standard
@@ -3136,7 +3136,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/patient/{puuid}/medical_problem/{muuid}':
     delete:
       tags:
@@ -3166,7 +3166,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     get:
       tags:
         - standard
@@ -3195,7 +3195,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     put:
       tags:
         - standard
@@ -3230,7 +3230,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /api/practitioner:
     get:
       tags:
@@ -3449,7 +3449,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     post:
       tags:
         - standard
@@ -3619,7 +3619,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/practitioner/{pruuid}':
     get:
       tags:
@@ -3642,7 +3642,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     put:
       tags:
         - standard
@@ -3924,7 +3924,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /api/prescription:
     get:
       tags:
@@ -3939,7 +3939,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     post:
       tags:
         - standard
@@ -3975,7 +3975,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/prescription/{uuid}':
     delete:
       tags:
@@ -3998,7 +3998,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     get:
       tags:
         - standard
@@ -4020,7 +4020,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /api/procedure:
     get:
       tags:
@@ -4035,7 +4035,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/procedure/{uuid}':
     get:
       tags:
@@ -4058,7 +4058,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /api/product:
     get:
       tags:
@@ -4073,7 +4073,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/transaction/{tid}':
     put:
       tags:
@@ -4102,7 +4102,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /api/user:
     get:
       tags:
@@ -4328,7 +4328,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/api/user/{uuid}':
     get:
       tags:
@@ -4351,7 +4351,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /api/version:
     get:
       tags:
@@ -4366,7 +4366,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/$bulkdata-status:
     delete:
       tags:
@@ -4381,7 +4381,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     get:
       tags:
         - fhir
@@ -4395,7 +4395,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/$export:
     get:
       tags:
@@ -4410,7 +4410,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/.well-known/smart-configuration:
     get:
       tags:
@@ -4473,7 +4473,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/AllergyIntolerance/{uuid}':
     get:
       tags:
@@ -4548,7 +4548,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/Appointment:
     get:
       tags:
@@ -4603,7 +4603,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/Appointment/{uuid}':
     get:
       tags:
@@ -4637,7 +4637,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/Binary/{id}':
     get:
       tags:
@@ -4660,7 +4660,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/CarePlan:
     get:
       tags:
@@ -4722,7 +4722,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/CarePlan/{uuid}':
     get:
       tags:
@@ -4776,7 +4776,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/CareTeam:
     get:
       tags:
@@ -4838,7 +4838,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/CareTeam/{uuid}':
     get:
       tags:
@@ -4914,7 +4914,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/Condition:
     get:
       tags:
@@ -4969,7 +4969,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/Condition/{uuid}':
     get:
       tags:
@@ -5035,7 +5035,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/Coverage:
     get:
       tags:
@@ -5097,7 +5097,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/Coverage/{uuid}':
     get:
       tags:
@@ -5144,7 +5144,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/Device:
     get:
       tags:
@@ -5199,7 +5199,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/Device/{uuid}':
     get:
       tags:
@@ -5255,7 +5255,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/DiagnosticReport:
     get:
       tags:
@@ -5331,7 +5331,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/DiagnosticReport/{uuid}':
     get:
       tags:
@@ -5400,7 +5400,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/DocumentReference:
     get:
       tags:
@@ -5476,7 +5476,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/DocumentReference/$docref:
     post:
       tags:
@@ -5523,7 +5523,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/DocumentReference/{uuid}':
     get:
       tags:
@@ -5568,8 +5568,8 @@ paths:
                     -
                       coding:
                         -
-                          system: 'https://localhost:9300/apis/default/fhir/ValueSet/openemr-document-types'
-                          code: openemr-document
+                          system: 'https://localhost:9300/apis/default/fhir/ValueSet/tabemr-document-types'
+                          code: tabemr-document
                           display: 'OpenEMR Document'
                   subject:
                     reference: Patient/946da619-c631-431a-a282-487cd6fb7802
@@ -5594,7 +5594,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/Encounter:
     get:
       tags:
@@ -5656,7 +5656,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/Encounter/{uuid}':
     get:
       tags:
@@ -5730,7 +5730,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/Goal:
     get:
       tags:
@@ -5785,7 +5785,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/Goal/{uuid}':
     get:
       tags:
@@ -5839,7 +5839,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/Group:
     get:
       tags:
@@ -5894,7 +5894,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/Group/{id}/$export':
     get:
       tags:
@@ -5917,7 +5917,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/Group/{uuid}':
     get:
       tags:
@@ -5942,7 +5942,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/Immunization:
     get:
       tags:
@@ -6004,7 +6004,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/Immunization/{uuid}':
     get:
       tags:
@@ -6055,7 +6055,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/Location:
     get:
       tags:
@@ -6103,7 +6103,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/Location/{uuid}':
     get:
       tags:
@@ -6151,7 +6151,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/Media:
     get:
       tags:
@@ -6213,7 +6213,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/Media/{uuid}':
     get:
       tags:
@@ -6267,7 +6267,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/Medication:
     get:
       tags:
@@ -6315,7 +6315,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/Medication/{uuid}':
     get:
       tags:
@@ -6363,7 +6363,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/MedicationDispense:
     get:
       tags:
@@ -6432,7 +6432,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/MedicationDispense/{uuid}':
     get:
       tags:
@@ -6498,7 +6498,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/MedicationRequest:
     get:
       tags:
@@ -6567,7 +6567,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/MedicationRequest/{uuid}':
     get:
       tags:
@@ -6629,7 +6629,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/Observation:
     get:
       tags:
@@ -6706,7 +6706,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/Observation/{uuid}':
     get:
       tags:
@@ -6787,7 +6787,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/OperationDefinition:
     get:
       tags:
@@ -6942,7 +6942,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     post:
       tags:
         - fhir
@@ -7037,7 +7037,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/Organization/{uuid}':
     get:
       tags:
@@ -7103,7 +7103,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     put:
       tags:
         - fhir
@@ -7171,7 +7171,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/Patient:
     get:
       tags:
@@ -7312,7 +7312,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     post:
       tags:
         - fhir
@@ -7445,7 +7445,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/Patient/$export:
     get:
       tags:
@@ -7460,7 +7460,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/Patient/{uuid}':
     get:
       tags:
@@ -7560,7 +7560,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     put:
       tags:
         - fhir
@@ -7647,7 +7647,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/Person:
     get:
       tags:
@@ -7772,7 +7772,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/Person/{uuid}':
     get:
       tags:
@@ -7847,7 +7847,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/Practitioner:
     get:
       tags:
@@ -7972,7 +7972,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     post:
       tags:
         - fhir
@@ -8041,7 +8041,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/Practitioner/{uuid}':
     get:
       tags:
@@ -8094,7 +8094,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
     put:
       tags:
         - fhir
@@ -8149,7 +8149,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/PractitionerRole:
     get:
       tags:
@@ -8211,7 +8211,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/PractitionerRole/{uuid}':
     get:
       tags:
@@ -8265,7 +8265,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/Procedure:
     get:
       tags:
@@ -8327,7 +8327,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/Procedure/{uuid}':
     get:
       tags:
@@ -8370,7 +8370,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/Provenance:
     get:
       tags:
@@ -8411,7 +8411,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/Provenance/{uuid}':
     get:
       tags:
@@ -8479,7 +8479,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/Questionnaire:
     get:
       tags:
@@ -8520,7 +8520,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/QuestionnaireResponse:
     get:
       tags:
@@ -8561,7 +8561,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/QuestionnaireResponse/{uuid}':
     get:
       tags:
@@ -8602,7 +8602,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/RelatedPerson:
     get:
       tags:
@@ -8657,7 +8657,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/RelatedPerson/{uuid}':
     get:
       tags:
@@ -8738,7 +8738,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/ServiceRequest:
     get:
       tags:
@@ -8821,7 +8821,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/ServiceRequest/{uuid}':
     get:
       tags:
@@ -8879,7 +8879,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/Specimen:
     get:
       tags:
@@ -8955,7 +8955,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/Specimen/{uuid}':
     get:
       tags:
@@ -9033,7 +9033,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/ValueSet:
     get:
       tags:
@@ -9081,7 +9081,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/fhir/ValueSet/{uuid}':
     get:
       tags:
@@ -9142,7 +9142,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /fhir/metadata:
     get:
       tags:
@@ -9167,7 +9167,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /portal/patient/appointment:
     get:
       tags:
@@ -9182,7 +9182,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/portal/patient/appointment/{auuid}':
     get:
       tags:
@@ -9205,7 +9205,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   /portal/patient/encounter:
     get:
       tags:
@@ -9220,7 +9220,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
   '/portal/patient/encounter/{euuid}':
     get:
       tags:
@@ -9243,7 +9243,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          tabemr_auth: {  }
 components:
   parameters:
     _lastUpdated:
@@ -10206,7 +10206,7 @@ components:
       description: 'Enter a previously generated Bearer token here to authenticate'
       bearerFormat: JWT
       scheme: bearer
-    openemr_auth:
+    tabemr_auth:
       type: oauth2
       flows:
         authorizationCode:

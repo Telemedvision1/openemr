@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2010-2021 Rod Roark <rod@sunsetsystems.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 var oeFixedHeaderSrc;     // the report's main table

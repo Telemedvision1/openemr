@@ -5,7 +5,7 @@
  * @link      https://www.open-emr.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2022 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\Core\Header;
@@ -98,7 +98,7 @@ if (!isset($_GET['render_group_assignments'])) {
 <html>
 <head>
     <?php
-    if (empty($globalsBag->get('openemr_version') ?? null)) {
+    if (empty($globalsBag->get('tabemr_version') ?? null)) {
         Header::setupHeader(['opener','datetime-picker', 'sortablejs']);
     } else {
         Header::setupHeader(['opener','datetime-picker']); ?>
@@ -350,7 +350,7 @@ if (!isset($_GET['render_group_assignments'])) {
 <html>
 <head>
     <?php
-    if (empty($globalsBag->get('openemr_version') ?? null)) {
+    if (empty($globalsBag->get('tabemr_version') ?? null)) {
         Header::setupHeader(['opener','datetime-picker', 'sortablejs']);
     } else {
         Header::setupHeader(['opener','datetime-picker']); ?>

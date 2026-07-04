@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2016-2019 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . '/../../interface/globals.php');
@@ -126,7 +126,7 @@ class ApplicationTable
      * @param array $auditvals
      *            Parameters of audit
      * @param bool $log
-     *            openemr Logging True / False
+     *            tabemr Logging True / False
      * @param bool $error
      *            Error Display True / False
      * @param mixed $type audit array params for portal audits

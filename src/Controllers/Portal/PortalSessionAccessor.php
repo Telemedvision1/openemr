@@ -4,7 +4,7 @@
  * PortalSessionAccessor — narrow read/write surface over the patient portal session.
  *
  * Exists so PatientPortalLoginController doesn't have to call $session->set() / ->remove()
- * directly, which the upstream phpstan rule `openemr.forbidDirectSessionWrite` rejects:
+ * directly, which the upstream phpstan rule `tabemr.forbidDirectSessionWrite` rejects:
  * those methods silently fail on read-and-close sessions, and the production code path
  * has to route writes through SessionUtil::setSession/unsetSession to auto-reopen the
  * session lock.
@@ -18,7 +18,7 @@
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Controllers\Portal;

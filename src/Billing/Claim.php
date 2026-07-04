@@ -8,8 +8,8 @@
  * @author Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2009-2020 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2017-2025 Stephen Waite <stephen.waite@cmsvt.com>
- * @link https://github.com/openemr/openemr/tree/master
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link https://github.com/tabemr/tabemr/tree/master
+ * @license https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Billing;

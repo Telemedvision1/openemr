@@ -2,11 +2,11 @@
 
 /**
  * CustomClientCredentialsGrantTest.php
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Tests\Unit\Common\Auth\OpenIDConnect\Grant;
@@ -177,8 +177,8 @@ class CustomClientCredentialsGrantTest extends TestCase
         $configuration = Configuration::forAsymmetricSigner(
         // You may use RSA or ECDSA and all their variations (256, 384, and 512)
             new Sha384(),
-            InMemory::file(__DIR__ . "/../../../../../data/Unit/Common/Auth/Grant/openemr-rsa384-private.key"),
-            InMemory::file(__DIR__ . "/../../../../../data/Unit/Common/Auth/Grant/openemr-rsa384-public.pem")
+            InMemory::file(__DIR__ . "/../../../../../data/Unit/Common/Auth/Grant/tabemr-rsa384-private.key"),
+            InMemory::file(__DIR__ . "/../../../../../data/Unit/Common/Auth/Grant/tabemr-rsa384-public.pem")
             // You may also override the JOSE encoder/decoder if needed by providing extra arguments here
         );
 
@@ -282,8 +282,8 @@ class CustomClientCredentialsGrantTest extends TestCase
         $configuration = Configuration::forAsymmetricSigner(
         // You may use RSA or ECDSA and all their variations (256, 384, and 512)
             new Sha384(),
-            LocalFileReference::file(__DIR__ . "/../../../../../data/Unit/Common/Auth/Grant/openemr-rsa384-private.key"),
-            LocalFileReference::file(__DIR__ . "/../../../../../data/Unit/Common/Auth/Grant/openemr-rsa384-public.pem")
+            LocalFileReference::file(__DIR__ . "/../../../../../data/Unit/Common/Auth/Grant/tabemr-rsa384-private.key"),
+            LocalFileReference::file(__DIR__ . "/../../../../../data/Unit/Common/Auth/Grant/tabemr-rsa384-public.pem")
             // You may also override the JOSE encoder/decoder if needed by providing extra arguments here
         );
 

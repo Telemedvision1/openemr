@@ -9,7 +9,7 @@
  * @author     Jerry Padgett <sjpadgett@gmail.com>
  * @copyright  Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
  * @copyright  Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license    https://github.com/openemr/openemr/blob/master/LICENSE GNU GeneralPublic License 3
+ * @license    https://github.com/tabemr/tabemr/blob/master/LICENSE GNU GeneralPublic License 3
  */
 
 namespace OpenEMR\Services\Qrda;
@@ -427,7 +427,7 @@ XML;
     private function getOrganizationInfo()
     {
         return [
-            'name' => OEGlobalsBag::getInstance()->getString('openemr_name') ?? 'OpenEMR Practice',
+            'name' => OEGlobalsBag::getInstance()->getString('tabemr_name') ?? 'OpenEMR Practice',
             'npi' => OEGlobalsBag::getInstance()->get('practice_npi') ?? '1234567890',
             'tin' => OEGlobalsBag::getInstance()->get('practice_tin') ?? '123456789',
             'address' => [

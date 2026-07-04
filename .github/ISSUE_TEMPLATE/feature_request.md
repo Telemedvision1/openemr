@@ -14,5 +14,5 @@ Write concise description of what feature you want
 
 
 
-<!-- Love openemr? Please consider supporting our project:
-👉  https://github.com/sponsors/openemr -->
+<!-- Love tabemr? Please consider supporting our project:
+👉  https://github.com/sponsors/tabemr -->

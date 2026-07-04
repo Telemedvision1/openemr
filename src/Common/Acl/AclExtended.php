@@ -14,7 +14,7 @@
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2021 Rod Roark <rod@sunsetsystems.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Common\Acl;
@@ -936,7 +936,7 @@ class AclExtended
      * @param  string  $section_title  Title of section
      * @param  string  $object_name    Identifier of object
      * @param  string  $object_title   Title of object
-     * @param  string  $order_number   number to determine order in list. used in sensitivities to order the choices in openemr
+     * @param  string  $order_number   number to determine order in list. used in sensitivities to order the choices in tabemr
      */
     public static function addObjectAclWithOrder($section_name, $section_title, $object_name, $object_title, $order_number)
     {
@@ -963,7 +963,7 @@ class AclExtended
      * @param  string  $section_title  Title of section
      * @param  string  $object_name    Identifier of object
      * @param  string  $object_title   Title of object
-     * @param  string  $order_number   number to determine order in list. used in sensitivities to order the choices in openemr
+     * @param  string  $order_number   number to determine order in list. used in sensitivities to order the choices in tabemr
      */
     public static function editObjectAcl($section_name, $section_title, $object_name, $object_title, $order_number)
     {

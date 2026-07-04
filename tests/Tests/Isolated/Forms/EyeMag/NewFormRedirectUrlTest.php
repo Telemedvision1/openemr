@@ -21,7 +21,7 @@
  * @link      https://www.open-emr.org
  * @author    OpenEMR Contributors
  * @copyright Copyright (c) 2026 OpenEMR Contributors
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);

@@ -13,7 +13,7 @@
  * @copyright Copyright (c) 2008 cfapress <cfapress>
  * @copyright Copyright (c) 2017-2023 Robert Down <robertdown@live.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../globals.php");
@@ -125,13 +125,13 @@ $session = SessionWrapperFactory::getInstance()->getActiveSession();
  <!--
  function doCPT(select) {
     var numchecked = 0;
-    for (i=0; i<document.my_form.openemr_net_cptcode.length; i++) {
-        if (document.my_form.openemr_net_cptcode[i].checked == true) {
+    for (i=0; i<document.my_form.tabemr_net_cptcode.length; i++) {
+        if (document.my_form.tabemr_net_cptcode[i].checked == true) {
             numchecked++;
         }
     }
     if (numchecked == 0) {
-        document.my_form.openemr_net_cptcode[1].checked = true;
+        document.my_form.tabemr_net_cptcode[1].checked = true;
     }
  }
  -->
@@ -167,9 +167,9 @@ $session = SessionWrapperFactory::getInstance()->getActiveSession();
 <tr>
     <td></td>
     <td colspan="2">
-        &nbsp;&nbsp;&nbsp;<input type="radio" name="openemr_net_cptcode" value=""><?php echo xlt('none{{Code}}'); ?><br />
-        &nbsp;&nbsp;&nbsp;<input type="radio" name="openemr_net_cptcode" value="99212 Established - Uncomplicated"><?php echo xlt('99212 Established - Uncomplicated'); ?><br />
-        &nbsp;&nbsp;&nbsp;<input type="radio" name="openemr_net_cptcode" value="99213 Established - Low Complexity"><?php echo xlt('99213 Established - Low Complexity'); ?><br />
+        &nbsp;&nbsp;&nbsp;<input type="radio" name="tabemr_net_cptcode" value=""><?php echo xlt('none{{Code}}'); ?><br />
+        &nbsp;&nbsp;&nbsp;<input type="radio" name="tabemr_net_cptcode" value="99212 Established - Uncomplicated"><?php echo xlt('99212 Established - Uncomplicated'); ?><br />
+        &nbsp;&nbsp;&nbsp;<input type="radio" name="tabemr_net_cptcode" value="99213 Established - Low Complexity"><?php echo xlt('99213 Established - Low Complexity'); ?><br />
     </td>
 </tr>
 </table>

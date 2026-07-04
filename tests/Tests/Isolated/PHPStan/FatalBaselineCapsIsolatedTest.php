@@ -13,13 +13,13 @@
  *     / array). PHPStan also fires `*.nonObject` on `mixed` and class-union
  *     types, which aren't certain crashes; those are excluded.
  *
- * See openemr/openemr#11792 for context and the plan to drive caps to zero.
+ * See tabemr/tabemr#11792 for context and the plan to drive caps to zero.
  *
  * @package   OpenEMR
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -82,7 +82,7 @@ class FatalBaselineCapsIsolatedTest extends TestCase
                 "%s has %d %s, exceeding cap of %d.\n"
                     . "This category represents code that crashes at load or call time.\n"
                     . "Do not raise the cap — fix the underlying code.\n"
-                    . 'See openemr/openemr#11792.',
+                    . 'See tabemr/tabemr#11792.',
                 $filename,
                 $count,
                 $what,

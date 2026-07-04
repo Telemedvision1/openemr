@@ -10,7 +10,7 @@
  * @link      https://www.open-emr.org
  * @author    Andrew Alanis <progradedteam@gmail.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -52,7 +52,7 @@ class RawRequestBodyReaderIsolatedTest extends TestCase
 
     public function testThrowsOnUnreadableStream(): void
     {
-        $reader = new RawRequestBodyReader('/this/path/does/not/exist/openemr');
+        $reader = new RawRequestBodyReader('/this/path/does/not/exist/tabemr');
 
         // Use error_reporting() instead of set_error_handler() so the test
         // still exercises the real error_get_last() path — set_error_handler

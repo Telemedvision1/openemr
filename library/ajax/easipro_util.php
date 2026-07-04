@@ -9,7 +9,7 @@
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018 Shiqiang Tao <StrongTSQ@gmail.com>
  * @copyright Copyright (c) 2020 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\Common\Csrf\CsrfUtils;
@@ -27,7 +27,7 @@ if (!empty($session->get('pid')) && !empty($session->get('patient_portal_onsite_
     $pid = $session->get('pid');
     $ignoreAuth = true;
 } else {
-    // request is from openemr core
+    // request is from tabemr core
     SessionWrapperFactory::getInstance()->destroyPortalSession();
     $ignoreAuth = false;
     $session = SessionWrapperFactory::getInstance()->getCoreSession();

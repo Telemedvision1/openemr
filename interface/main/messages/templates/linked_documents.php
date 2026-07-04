@@ -8,11 +8,11 @@
  * on the screen with associated error counts being displayed if they are available.  Each document is handled separately
  * as an async validation process.
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\BC\ServiceContainer;
@@ -40,8 +40,8 @@ if (empty($tmp)) {
 
 $enc_list = [];
 if (!empty($prow)) {
-    $results = QueryUtils::fetchRecords("SELECT fe.encounter,fe.date,openemr_postcalendar_categories.pc_catname FROM form_encounter AS fe " .
-        " LEFT JOIN openemr_postcalendar_categories ON fe.pc_catid=openemr_postcalendar_categories.pc_catid  WHERE fe.pid = ? ORDER BY fe.date DESC", [$prow['pid']]);
+    $results = QueryUtils::fetchRecords("SELECT fe.encounter,fe.date,tabemr_postcalendar_categories.pc_catname FROM form_encounter AS fe " .
+        " LEFT JOIN tabemr_postcalendar_categories ON fe.pc_catid=tabemr_postcalendar_categories.pc_catid  WHERE fe.pid = ? ORDER BY fe.date DESC", [$prow['pid']]);
     foreach ($enc_list as $row) {
         $enc_list[] = [
             'encounter' => $row['encounter'],

@@ -255,7 +255,7 @@ Returns DocumentReference with link to download CCD XML file.
 
 **[→ Complete $docref Guide](Documentation/api/FHIR_API.md#documentreference-docref-operation)**
 
-**[→ CCD Tutorial with Screenshots](https://github.com/openemr/openemr/issues/5284#issuecomment-1155678620)**
+**[→ CCD Tutorial with Screenshots](https://github.com/tabemr/tabemr/issues/5284#issuecomment-1155678620)**
 
 ## ⚡ SMART on FHIR Integration
 
@@ -310,7 +310,7 @@ Returns DocumentReference with link to download CCD XML file.
 ### Swagger UI
 Interactive API testing:
 ```
-https://your-openemr-install/swagger/
+https://your-tabemr-install/swagger/
 ```
 
 ### Online Demos
@@ -339,7 +339,7 @@ curl https://localhost:9300/apis/default/fhir/.well-known/smart-configuration
 
 ### Community
 - **[OpenEMR Forum](https://community.open-emr.org/)** - Ask questions
-- **[GitHub Issues](https://github.com/openemr/openemr/issues)** - Report bugs
+- **[GitHub Issues](https://github.com/tabemr/tabemr/issues)** - Report bugs
 
 ### Standards
 - **[FHIR R4 Spec](https://hl7.org/fhir/R4/)** - Official specification
@@ -442,9 +442,9 @@ All technical accuracy is maintained from the original community-authored docume
 
 ### Contributing
 OpenEMR is an open-source project. To contribute to this documentation:
-- **Report Issues:** [GitHub Issues](https://github.com/openemr/openemr/issues)
+- **Report Issues:** [GitHub Issues](https://github.com/tabemr/tabemr/issues)
 - **Discuss:** [Community Forum](https://community.open-emr.org/)
-- **Submit Changes:** [Pull Requests](https://github.com/openemr/openemr/pulls)
+- **Submit Changes:** [Pull Requests](https://github.com/tabemr/tabemr/pulls)
 
 **Last Updated:** November 2025
 **License:** GPL v3

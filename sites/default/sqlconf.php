@@ -5,9 +5,9 @@
 
 $host   = 'localhost';
 $port   = '3306';
-$login  = 'openemr';
-$pass   = 'openemr';
-$dbase  = 'openemr';
+$login  = 'tabemr';
+$pass   = 'tabemr';
+$dbase  = 'tabemr';
 
 $sqlconf = [];
 global $sqlconf;

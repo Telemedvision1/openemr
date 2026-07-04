@@ -8,7 +8,7 @@
  * @link    https://www.open-emr.org
  * @author  Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Controllers\Interface\Forms\Observation;
@@ -80,7 +80,7 @@ class ObservationController
         $formId = $request->query->getInt('form_id');
         $id = $request->query->getInt('id', 0);
         if ($formId <= 0) {
-            $formId = $id; // openemr sends us the form_id as the id param for new forms
+            $formId = $id; // tabemr sends us the form_id as the id param for new forms
         }
 
         $session = SessionWrapperFactory::getInstance()->getActiveSession();

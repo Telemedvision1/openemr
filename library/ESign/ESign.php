@@ -10,7 +10,7 @@
  * @author    Medical Information Integration, LLC
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2013 OEMR
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace ESign;

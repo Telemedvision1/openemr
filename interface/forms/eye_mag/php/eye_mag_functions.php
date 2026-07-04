@@ -9,7 +9,7 @@
  * @link      https://www.open-emr.org
  * @author    Ray Magauran <rmagauran@gmail.com>
  * @copyright Copyright (c) 2016- Raymond Magauran <rmagauran@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\Common\Acl\AclMain;
@@ -6192,7 +6192,7 @@ function findProvider($pid, $encounter)
     if ($providerid < '1') {
        //find the default providerID from the calendar
         $visit_date = date('Y-m-d', strtotime($find_provider['date'] ?? ''));
-        $query = "select * from openemr_postcalendar_events where pc_pid=? and pc_eventDate=?";
+        $query = "select * from tabemr_postcalendar_events where pc_pid=? and pc_eventDate=?";
         $find_provider3 = sqlQuery($query, [$pid,$visit_date]);
         $new_providerid = $find_provider3['pc_aid'] ?? '';
         if (($new_providerid < '1') || (!$new_providerid)) {

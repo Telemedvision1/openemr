@@ -22,12 +22,12 @@
  * - Overrides populateAuthenticator() and populateAuthenticationTime() for ADI-specific logic
  * - Calls PatientAdvanceDirectiveService for data retrieval
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @copyright Elements marked with AI GENERATED CODE - are in the public domain
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Discover and Change, Inc <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Tests\Services\FHIR\DocumentReference;

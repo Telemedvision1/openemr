@@ -13,7 +13,7 @@
  * @copyright Copyright (c) 2016-2025 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Tyler Wrenn <tyler@tylerwrenn.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 // prevent UI redressing
@@ -49,7 +49,7 @@ $sessionAllowWrite = true;
 SessionWrapperFactory::getInstance()->setSessionReadOnly(false);
 $session = SessionWrapperFactory::getInstance()->getPortalSession();
 
-//don't require standard openemr authorization in globals.php
+//don't require standard tabemr authorization in globals.php
 $ignoreAuth_onsite_portal = true;
 
 //includes
@@ -620,7 +620,7 @@ if (!($session->has('password_update') || ($globalsBag->getBoolean('portal_two_p
                     <?php } ?>
                 <?php } ?>
             <?php } ?>
-            <legend class="text-center bg-light text-dark pt-2 py-1"><h2><?php echo $globalsBag->getString('openemr_name') . ' ' . xlt('Portal Login'); ?></h2></legend>
+            <legend class="text-center bg-light text-dark pt-2 py-1"><h2><?php echo $globalsBag->getString('tabemr_name') . ' ' . xlt('Portal Login'); ?></h2></legend>
             <form class="mx-1" action="get_patient_info.php" method="POST" onsubmit="return process()">
                 <?php if (isset($redirectUrl)) { ?>
                     <input id="redirect" type="hidden" name="redirect" value="<?php echo attr($redirectUrl); ?>" />

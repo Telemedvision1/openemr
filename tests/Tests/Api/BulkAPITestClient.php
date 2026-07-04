@@ -21,7 +21,7 @@ use Psr\Log\NullLogger;
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2025 Discover and Change, Inc. <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  *
  */
 class BulkAPITestClient extends ApiTestClient
@@ -67,8 +67,8 @@ class BulkAPITestClient extends ApiTestClient
                 throw new \RuntimeException("JWKs file not found: " . $jwksFile);
             }
             $credentials['jwks'] = json_decode((string) file_get_contents($jwksFile));
-            $privateKey = InMemory::file($keyLocation . "openemr-rsa384-private.key");
-            $publicKey = InMemory::file($keyLocation . "openemr-rsa384-public.pem");
+            $privateKey = InMemory::file($keyLocation . "tabemr-rsa384-private.key");
+            $publicKey = InMemory::file($keyLocation . "tabemr-rsa384-public.pem");
         }
 
         if ($this->client_id === null || $this->client_id === '') {

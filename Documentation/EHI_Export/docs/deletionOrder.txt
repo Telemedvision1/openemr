@@ -41,8 +41,8 @@ payment_gateway_details
 patient_settings
 patient_portal_menu
 patient_birthday_alert
-openemr_modules
-openemr_module_vars
+tabemr_modules
+tabemr_module_vars
 address
 onsite_online
 onsite_messages
@@ -292,7 +292,7 @@ insurance_data
 form_CAMOS_subcategory
 ehi_export_job
 documents
-openemr_postcalendar_events
+tabemr_postcalendar_events
 form_CAMOS_category
 procedure_order
 forms
@@ -314,7 +314,7 @@ layout_group_properties
 form_track_anything_type
 form_physical_exam_diagnoses
 drugs
-openemr_postcalendar_categories
+tabemr_postcalendar_categories
 contact
 therapy_groups
 preference_value_sets

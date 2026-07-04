@@ -43129,7 +43129,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Function send_patient_data_to_remote_system\\(\\) has parameter \\$patientData with no type specified\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../tests/eventdispatcher/oe-patient-create-update-hooks-example/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../tests/eventdispatcher/oe-patient-create-update-hooks-example/tabemr.bootstrap.php',
 ];
 
 return ['parameters' => ['ignoreErrors' => $ignoreErrors]];

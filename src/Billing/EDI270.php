@@ -19,7 +19,7 @@
  * @copyright Copyright (c) 2019 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019-2023 Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Billing;

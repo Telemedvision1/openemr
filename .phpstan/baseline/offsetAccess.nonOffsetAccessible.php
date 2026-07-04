@@ -13899,7 +13899,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Cannot access an offset on mixed\\.$#',
     'count' => 4,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access offset \'account\' on mixed\\.$#',
@@ -14674,7 +14674,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Cannot access an offset on mixed\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access offset \'email\' on mixed\\.$#',
@@ -47992,7 +47992,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/Qdm/Measure.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot access offset \'openemr/oe\\-cqm\\-parsers\' on mixed\\.$#',
+    'message' => '#^Cannot access offset \'tabemr/oe\\-cqm\\-parsers\' on mixed\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../src/Services/Qdm/MeasureService.php',
 ];

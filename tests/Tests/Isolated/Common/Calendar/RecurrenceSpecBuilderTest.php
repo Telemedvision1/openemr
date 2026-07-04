@@ -4,7 +4,7 @@
  * Isolated tests for RecurrenceSpecBuilder.
  *
  * Exercises the REPEAT vs REPEAT_ON branching that add_edit_event.php depends
- * on when saving recurring calendar events. Covers the openemr/openemr#11407
+ * on when saving recurring calendar events. Covers the tabemr/tabemr#11407
  * regression: freq type 5 must route to REPEAT_ON (pc_recurrtype = 2), not
  * REPEAT, or the __increment() fast-forward loop spins forever.
  *
@@ -12,7 +12,7 @@
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -70,7 +70,7 @@ final class RecurrenceSpecBuilderTest extends TestCase
     }
 
     /**
-     * Regression test for openemr/openemr#11407.
+     * Regression test for tabemr/tabemr#11407.
      *
      * 2024-03-21 is the 3rd Thursday of March 2024. Pre-fix, type 5 hit the
      * `> 6` threshold and fell through to REPEAT with an unhandled freq type,

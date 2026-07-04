@@ -41,51 +41,51 @@ docker compose up --detach --wait
 ## Working in a git worktree
 
 OpenEMR supports concurrent development across branches via git worktrees
-managed by `openemr-cmd worktree` (see `CONTRIBUTING.md` for the full feature
+managed by `tabemr-cmd worktree` (see `CONTRIBUTING.md` for the full feature
 set). Skip this section if the working directory does not match
-`*/openemr-wt-<slug>/` — that path is the signal you are inside a managed
-worktree, where `<slug>` is the branch label. `openemr-cmd worktree list`
+`*/tabemr-wt-<slug>/` — that path is the signal you are inside a managed
+worktree, where `<slug>` is the branch label. `tabemr-cmd worktree list`
 confirms.
 
 **Never use raw `git worktree add`, `git worktree remove`, or
-`git worktree move` against this repo.** The `openemr-cmd worktree` script
+`git worktree move` against this repo.** The `tabemr-cmd worktree` script
 owns state that bare git does not: a JSON state file tracking each worktree,
 a per-worktree compose override with its assigned port offset, and a
 generated `.env`. Bypassing it leaves orphaned state files, port collisions
 between worktrees, and broken compose stacks that the script can no longer
-recover. Always use `openemr-cmd worktree` subcommands instead — `add`,
+recover. Always use `tabemr-cmd worktree` subcommands instead — `add`,
 `remove`, `up`, `down`, `start`, `stop`, `exec`, `set-env`, `list`, `regen`,
 `prune`.
 
 Even for tasks where it feels like you don't need a docker stack (docs-only
-PRs, branch checkouts for review), still use `openemr-cmd worktree add
+PRs, branch checkouts for review), still use `tabemr-cmd worktree add
 <branch> --start` (`-b` if the branch is new). The `git commit` hook routes
-via openemr-cmd into the worktree's container, so without a state entry
+via tabemr-cmd into the worktree's container, so without a state entry
 pointing the hook at a running stack, commits fail with `Could not
 automatically determine target OpenEMR container`. Raw `git worktree add`
 skips both the state registration and the stack. If you already made that
-mistake, recovery is `git worktree remove <path>` then `openemr-cmd worktree
+mistake, recovery is `git worktree remove <path>` then `tabemr-cmd worktree
 add <branch> --start` (omit `-b` since the branch persists).
 
-If `openemr-cmd worktree list` shows entries with status `missing` or
-`invalid` (and a footer `(N stale state entries — run "openemr-cmd worktree
+If `tabemr-cmd worktree list` shows entries with status `missing` or
+`invalid` (and a footer `(N stale state entries — run "tabemr-cmd worktree
 prune" to clean up; directories on disk are left intact)`), a worktree's
-state has drifted from disk/git reality. Run `openemr-cmd worktree prune`
+state has drifted from disk/git reality. Run `tabemr-cmd worktree prune`
 to remove those state entries — never hand-edit `.worktrees.json`. If
 instead the footer reads `(N entries have missing compose files — run
-"openemr-cmd worktree regen <branch>" to regenerate)`, the directory is
+"tabemr-cmd worktree regen <branch>" to regenerate)`, the directory is
 intact but its compose files are gone; use `regen`, not `prune`.
-`openemr-cmd worktree remove <branch>` is also tolerant of an
+`tabemr-cmd worktree remove <branch>` is also tolerant of an
 already-missing directory: it cleans the state entry, skips the destructive
 steps, and prints a manual hint for any leftover docker resources.
 
 When running commands against a worktree's containers, use
-`openemr-cmd worktree exec <branch> <cmd>` rather than
-`cd docker/development-easy && docker compose exec openemr ...`. The `exec`
-subcommand resolves the worktree's `openemr` container by compose project
+`tabemr-cmd worktree exec <branch> <cmd>` rather than
+`cd docker/development-easy && docker compose exec tabemr ...`. The `exec`
+subcommand resolves the worktree's `tabemr` container by compose project
 labels; the bare `docker compose` form will hit the wrong stack (or none)
 because each worktree has a distinct compose project name and port offset.
-Any standard `openemr-cmd` command works through `exec` — `ut`, `at`, `et`,
+Any standard `tabemr-cmd` command works through `exec` — `ut`, `at`, `et`,
 `php-log`, `shell`, `drid`, etc.
 
 For short pauses, prefer `worktree stop` / `worktree start` over
@@ -94,39 +94,39 @@ containers (data preserved, much faster); `down`/`up` recreates them.
 
 ## Testing
 
-Tests run inside the openemr container. Invoke via `openemr-cmd` (the
+Tests run inside the tabemr container. Invoke via `tabemr-cmd` (the
 canonical CLI; see CONTRIBUTING.md for install). Works from any directory.
 
 ```bash
 # Run all tests
-openemr-cmd clean-sweep-tests            # alias: cst
+tabemr-cmd clean-sweep-tests            # alias: cst
 
 # Individual test suites
-openemr-cmd unit-test                    # alias: ut
-openemr-cmd api-test                     # alias: at
-openemr-cmd e2e-test                     # alias: et
-openemr-cmd services-test                # alias: st
+tabemr-cmd unit-test                    # alias: ut
+tabemr-cmd api-test                     # alias: at
+tabemr-cmd e2e-test                     # alias: et
+tabemr-cmd services-test                # alias: st
 
 # View PHP error log
-openemr-cmd php-log                      # alias: pl
+tabemr-cmd php-log                      # alias: pl
 ```
 
 To target a specific worktree's container from outside it, prefix with
-`worktree exec`: `openemr-cmd worktree exec <branch> ut`.
+`worktree exec`: `tabemr-cmd worktree exec <branch> ut`.
 
 Under the hood each of these is equivalent to running
-`docker compose exec openemr /root/devtools <cmd>` from
+`docker compose exec tabemr /root/devtools <cmd>` from
 `docker/development-easy/` — useful as a fallback on environments where
-openemr-cmd isn't available (e.g. Windows cmd.exe without WSL2 / Git Bash).
+tabemr-cmd isn't available (e.g. Windows cmd.exe without WSL2 / Git Bash).
 
 ### Isolated tests
 
 Isolated tests run without a database — fast; pure-PHP logic, Twig template
-compilation/render tests, etc. Available both in-container (via openemr-cmd,
+compilation/render tests, etc. Available both in-container (via tabemr-cmd,
 no host PHP toolchain needed) and on the host directly:
 
 ```bash
-openemr-cmd phpunit-isolated        # in container (alias: pit)
+tabemr-cmd phpunit-isolated        # in container (alias: pit)
 composer phpunit-isolated           # on host (requires PHP + Composer + vendor/)
 ```
 
@@ -173,7 +173,7 @@ fixture files. **Mutating maintenance command** — overwrites the recorded
 expected-output files. Available in-container or on host:
 
 ```bash
-openemr-cmd update-twig-fixtures    # in container (alias: utf)
+tabemr-cmd update-twig-fixtures    # in container (alias: utf)
 composer update-twig-fixtures       # on host
 ```
 
@@ -190,7 +190,7 @@ each layout-field renderer branch (one per `data_type`/mode in
 When intentionally changing the renderer, regenerate the fixtures:
 
 ```bash
-openemr-cmd update-layout-field-fixtures    # in container (alias: ulff)
+tabemr-cmd update-layout-field-fixtures    # in container (alias: ulff)
 composer update-layout-field-fixtures       # on host
 ```
 
@@ -199,32 +199,32 @@ Review the diff before committing.
 ## Code Quality
 
 The same composer scripts back every PHP code-quality check, whether
-invoked in the openemr container via `openemr-cmd` (no host toolchain
+invoked in the tabemr container via `tabemr-cmd` (no host toolchain
 needed) or directly on the host. Pick whichever fits your setup; the
 container path is preferred when avoiding a host PHP/Node install.
 
 In container (only requires Docker on host):
 
 ```bash
-openemr-cmd code-quality                # alias: cq -- full code-quality suite
-openemr-cmd phpstan                     # alias: pst
-openemr-cmd phpstan-generate            # alias: psg -- regenerate baseline
-openemr-cmd phpstan-generate-reset      # alias: pgr -- wipe + regenerate baseline from scratch
-openemr-cmd psr12-report                # alias: pr  (composer phpcs)
-openemr-cmd psr12-fix                   # alias: pf  (composer phpcbf)
-openemr-cmd rector-dry-run              # alias: rd
-openemr-cmd rector-process              # alias: rp  (apply changes)
-openemr-cmd require-checker             # alias: crc
-openemr-cmd composer-checks             # alias: cck (validate + normalize)
-openemr-cmd codespell                   # alias: cps
-openemr-cmd conventional-commits-check  # alias: ccc
-openemr-cmd php-parserror               # alias: pp  (php -l)
-openemr-cmd lint-javascript-report      # alias: ljr
-openemr-cmd lint-themes-report          # alias: ltr
+tabemr-cmd code-quality                # alias: cq -- full code-quality suite
+tabemr-cmd phpstan                     # alias: pst
+tabemr-cmd phpstan-generate            # alias: psg -- regenerate baseline
+tabemr-cmd phpstan-generate-reset      # alias: pgr -- wipe + regenerate baseline from scratch
+tabemr-cmd psr12-report                # alias: pr  (composer phpcs)
+tabemr-cmd psr12-fix                   # alias: pf  (composer phpcbf)
+tabemr-cmd rector-dry-run              # alias: rd
+tabemr-cmd rector-process              # alias: rp  (apply changes)
+tabemr-cmd require-checker             # alias: crc
+tabemr-cmd composer-checks             # alias: cck (validate + normalize)
+tabemr-cmd codespell                   # alias: cps
+tabemr-cmd conventional-commits-check  # alias: ccc
+tabemr-cmd php-parserror               # alias: pp  (php -l)
+tabemr-cmd lint-javascript-report      # alias: ljr
+tabemr-cmd lint-themes-report          # alias: ltr
 ```
 
 Target a specific worktree's container from outside it:
-`openemr-cmd worktree exec <branch> <cmd>` works for any of the above.
+`tabemr-cmd worktree exec <branch> <cmd>` works for any of the above.
 
 On the host (requires local PHP / Composer with `vendor/` populated / Node):
 
@@ -524,7 +524,7 @@ When modifying PHP files, ensure proper docblock:
  * @link      https://www.open-emr.org
  * @author    Your Name <your@email.com>
  * @copyright Copyright (c) YEAR Your Name or Organization
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 ```
 
@@ -534,12 +534,12 @@ Preserve existing authors/copyrights when editing files.
 
 - Multiple template engines: check extension (.twig, .html, .php)
 - Event system uses Symfony EventDispatcher
-- **Pre-commit hooks:** Install with `openemr-cmd prek-install` (alias `pi`).
-  This writes git hooks that route through the running openemr container, so
+- **Pre-commit hooks:** Install with `tabemr-cmd prek-install` (alias `pi`).
+  This writes git hooks that route through the running tabemr container, so
   `git commit` validates against the project's full `.pre-commit-config.yaml`
   suite (phpstan, rector, phpcs, codespell, actionlint, and more) without
   requiring PHP, Node, Python, codespell, or actionlint on the host. Manual
-  passthrough is `openemr-cmd prek run [args...]` (use `--all-files` for a
+  passthrough is `tabemr-cmd prek run [args...]` (use `--all-files` for a
   whole-codebase check before pushing). See CONTRIBUTING.md's "Pre-commit
   hooks for the docker dev environment" section (Advanced Use item 2) for
   the full workflow.

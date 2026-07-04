@@ -9,7 +9,7 @@
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2012 tajemo.co.za <http://www.tajemo.co.za/>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 // removed as jquery is already called in messages page (if you need to use jQuery, uncomment it further down)

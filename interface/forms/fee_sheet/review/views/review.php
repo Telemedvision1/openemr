@@ -11,7 +11,7 @@
  * @copyright Copyright (c) 2013 Kevin Yeh <kevin.y@integralemr.com>
  * @copyright Copyright (c) 2013 OEMR
  * @copyright Copyright (c) 2019 bradymiller <bradymiller@users.sourceforge.net>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 // Hoist legacy `globals.php` locals so PHPStan can see them (#11792 Phase 5).

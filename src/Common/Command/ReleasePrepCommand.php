@@ -14,14 +14,14 @@
  *   --scope=rel    pre-tag mutations on the release branch
  *   --scope=master post-cut version bump on master
  *
- * See docs/release-automation-plan.md and openemr/openemr-devops#664
+ * See docs/release-automation-plan.md and tabemr/tabemr-devops#664
  * for the full design.
  *
  * @package   OpenEMR
  * @link      http://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -63,7 +63,7 @@ final class ReleasePrepCommand extends Command
     protected function configure(): void
     {
         $this
-            ->setName('openemr:release-prep')
+            ->setName('tabemr:release-prep')
             ->setDescription('Apply mechanical release-prep mutations for the conductor workflow')
             ->addOption(
                 'target-version',

@@ -8,7 +8,7 @@
  *
  * @author    Eric Stern <erics@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenEMR
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  * @link      https://www.open-emr.org
  * @package   OpenEMR
  */
@@ -52,7 +52,7 @@ class ForbiddenGlobalKeywordRule implements Rule
 
         return [
             RuleErrorBuilder::message($message)
-                ->identifier('openemr.forbiddenGlobalKeyword')
+                ->identifier('tabemr.forbiddenGlobalKeyword')
                 ->tip('If you need to modify a variable out of function scope, it can be passed by reference.')
                 ->addTip('See https://phpstan.org/blog/enhancements-in-handling-parameters-passed-by-reference for tips on further refining type safety when doing so.')
                 ->build()

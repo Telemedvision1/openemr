@@ -12,7 +12,7 @@
  * @author    Ian Jardine <https://github.com/epsdky>
  * @copyright Copyright (c) 2011 Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2023 Ian Jardine <https://github.com/epsdky>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
 */
 
 require_once(__DIR__ . "/encounter_events.inc.php");
@@ -171,12 +171,12 @@ function fetchEvents($from_date, $to_date, $where_param = null, $orderby_param =
         "f.name, " .
         "$tracker_fields" .
         "c.pc_catname, c.pc_catid, e.pc_facility " .
-        "FROM openemr_postcalendar_events AS e " .
+        "FROM tabemr_postcalendar_events AS e " .
         "$tracker_joins" .
         "LEFT OUTER JOIN facility AS f ON e.pc_facility = f.id " .
         "LEFT OUTER JOIN patient_data AS p ON p.pid = e.pc_pid " .
         "LEFT OUTER JOIN users AS u ON u.id = e.pc_aid " .
-        "LEFT OUTER JOIN openemr_postcalendar_categories AS c ON c.pc_catid = e.pc_catid " .
+        "LEFT OUTER JOIN tabemr_postcalendar_categories AS c ON c.pc_catid = e.pc_catid " .
         "WHERE $where " .
         "ORDER BY $order_by";
     }
@@ -460,7 +460,7 @@ function fetchXPastAppts($pid2, $pastApptsNumber, $orderOfAppts = '1')
     $currentDate = date("Y-m-d");
     $totalAppts = [];
     $res2 = sqlStatement("SELECT MIN(pc_eventDate) as minDate " .
-        "FROM openemr_postcalendar_events " .
+        "FROM tabemr_postcalendar_events " .
         "WHERE pc_pid = ? " .
         "AND pc_eventDate < ? ;", [$pid2, $currentDate]);
     $row2 = sqlFetchArray($res2);
@@ -742,7 +742,7 @@ function compareAppointmentsByCompletedDrugScreen($appointment1, $appointment2)
 function fetchAppointmentCategories()
 {
      $catSQL = " SELECT pc_catid as id, pc_catname as category "
-            . " FROM openemr_postcalendar_categories WHERE pc_active=1 and pc_recurrtype=0 and pc_cattype=0";
+            . " FROM tabemr_postcalendar_categories WHERE pc_active=1 and pc_recurrtype=0 and pc_cattype=0";
     if (OEGlobalsBag::getInstance()->getBoolean('enable_group_therapy')) {
         $catSQL .= " OR pc_cattype=3";
     }
@@ -778,8 +778,8 @@ function interpretRecurrence($recurr_freq, $recurr_type)
 
 function fetchRecurrences($pid)
 {
-    $query = "SELECT pe.pc_title, pe.pc_endDate, pe.pc_recurrtype, pe.pc_recurrspec, pc.pc_catname FROM openemr_postcalendar_events AS pe "
-                    . "JOIN openemr_postcalendar_categories AS pc ON pe.pc_catid=pc.pc_catid "
+    $query = "SELECT pe.pc_title, pe.pc_endDate, pe.pc_recurrtype, pe.pc_recurrspec, pc.pc_catname FROM tabemr_postcalendar_events AS pe "
+                    . "JOIN tabemr_postcalendar_categories AS pc ON pe.pc_catid=pc.pc_catid "
                     . "WHERE pe.pc_pid = ?  AND pe.pc_recurrtype > 0;";
     $sqlBindArray = [];
     array_push($sqlBindArray, $pid);

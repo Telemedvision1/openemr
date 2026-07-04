@@ -9,7 +9,7 @@
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com
  * @copyright Copyright (c) 2023 OpenEMR Foundation, Inc
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Modules\EhiExporter\Services;
@@ -103,7 +103,7 @@ class ExportKeyDefinitionFilterer
         ,'patient_tracker_element' => [
             'room' => ['localValueOverride' => 'patient_flow_board_rooms', 'foreignKeyColumn' => 'list_id']
         ]
-        ,'openemr_postcalendar_events' => [
+        ,'tabemr_postcalendar_events' => [
             'pc_apptstatus' => ['localValueOverride' => 'apptstat', 'foreignKeyColumn' => 'list_id'],
             'pc_room' => ['localValueOverride' => 'patient_flow_board_rooms', 'foreignKeyColumn' => 'list_id']
         ]

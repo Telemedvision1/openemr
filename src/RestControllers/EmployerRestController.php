@@ -3,11 +3,11 @@
 /**
  * EmployerRestController handles the API rest requests to the employer data for a patient
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\RestControllers;
@@ -48,7 +48,7 @@ class EmployerRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => ['user/employer.read', 'patient/employer.read']]]
+        security: [['tabemr_auth' => ['user/employer.read', 'patient/employer.read']]]
     )]
     public function getAll($searchParams)
     {

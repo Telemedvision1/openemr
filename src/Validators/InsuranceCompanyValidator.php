@@ -12,7 +12,7 @@ use Particle\Validator\Validator;
  * @link      https://www.open-emr.org
  * @author    Vishnu Yarmaneni <vardhanvishnu@gmail.com>
  * @copyright Copyright (c) 2021 Vishnu Yarmaneni <vardhanvishnu@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 class InsuranceCompanyValidator extends BaseValidator
 {

@@ -19,7 +19,7 @@
  * @author         Michael A. Smith <michael@opencoreemr.com>
  * @copyright      Copyright (c) 2025 - 2026 <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license        https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license        https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Telemetry;
@@ -30,7 +30,7 @@ use OpenEMR\Common\Utils\ValidationUtils;
 class GeoTelemetry implements GeoTelemetryInterface
 {
     private const GET_IP_URL = 'https://api.ipify.org';
-    private const CACHE_FILENAME = 'openemr_geo_cache.json';
+    private const CACHE_FILENAME = 'tabemr_geo_cache.json';
     private const CACHE_DURATION = 86400; // 24 hours in seconds
 
     /**

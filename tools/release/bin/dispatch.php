@@ -9,7 +9,7 @@
  * @link      http://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -45,7 +45,7 @@ use Symfony\Component\HttpClient\HttpClient;
         'repo',
         null,
         InputOption::VALUE_REQUIRED,
-        'Source repo (owner/name) to record in the envelope; defaults to openemr/openemr',
+        'Source repo (owner/name) to record in the envelope; defaults to tabemr/tabemr',
     )
     ->addOption('sha', null, InputOption::VALUE_REQUIRED, '40-hex commit SHA the event refers to')
     ->addOption('actor', null, InputOption::VALUE_REQUIRED, 'Identity dispatching the event')
@@ -65,7 +65,7 @@ use Symfony\Component\HttpClient\HttpClient;
     ->addOption('branch', null, InputOption::VALUE_REQUIRED, 'rel-* branch name (rel-cut/update/tag events)')
     ->addOption('release-version', null, InputOption::VALUE_REQUIRED, 'MAJOR.MINOR.PATCH release version')
     ->addOption('prev-release', null, InputOption::VALUE_REQUIRED, 'Previous release version (rel-cut/update)')
-    ->addOption('tag', null, InputOption::VALUE_REQUIRED, 'Tag name (openemr-tag event)')
+    ->addOption('tag', null, InputOption::VALUE_REQUIRED, 'Tag name (tabemr-tag event)')
     ->addOption('probe', null, InputOption::VALUE_NONE, 'Bypass schema validation (permissions-check probe)')
     ->setCode(function (InputInterface $input, OutputInterface $output): int {
         $opts = new OptionReader($input);
@@ -81,9 +81,9 @@ use Symfony\Component\HttpClient\HttpClient;
         try {
             $request = new DispatchRequest(
                 event: $event,
-                repo: $opts->string('repo', 'openemr/openemr'),
+                repo: $opts->string('repo', 'tabemr/tabemr'),
                 sha: $opts->string('sha'),
-                actor: $opts->string('actor', 'openemr-release-bot'),
+                actor: $opts->string('actor', 'tabemr-release-bot'),
                 dispatchedAt: gmdate('Y-m-d\TH:i:s\Z'),
                 appToken: $token,
                 data: $data,

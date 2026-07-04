@@ -1,4 +1,4 @@
-<CCDA><serverRoot></serverRoot><document_location>/var/www/localhost/htdocs/openemr/sites/default</document_location><username></username><password></password><hie>MyHealth</hie><time_start>19870404000000+0000</time_start><time_end>20251215213658+0000</time_end><client_id></client_id><created_time>20251215213658</created_time><created_time_timezone>20251215213658+0000</created_time_timezone><timezone_local_offset>+0000</timezone_local_offset><send>0</send><doc_type></doc_type><assignedEntity>
+<CCDA><serverRoot></serverRoot><document_location>/var/www/localhost/htdocs/tabemr/sites/default</document_location><username></username><password></password><hie>MyHealth</hie><time_start>19870404000000+0000</time_start><time_end>20251215213658+0000</time_end><client_id></client_id><created_time>20251215213658</created_time><created_time_timezone>20251215213658+0000</created_time_timezone><timezone_local_offset>+0000</timezone_local_offset><send>0</send><doc_type></doc_type><assignedEntity>
     <streetAddressLine></streetAddressLine>
     <city></city>
     <state></state>

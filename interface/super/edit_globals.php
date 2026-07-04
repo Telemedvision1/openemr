@@ -15,7 +15,7 @@
  * @copyright Copyright (c) 2019 Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2020-2024 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
@@ -281,7 +281,7 @@ function checkBackgroundServices(): void
                         switch ($fldid) {
                             case 'first_day_week':
                                 // update PostCalendar config as well
-                                sqlStatement("UPDATE openemr_module_vars SET pn_value = ? WHERE pn_name = 'pcFirstDayOfWeek'", [$fldvalue]);
+                                sqlStatement("UPDATE tabemr_module_vars SET pn_value = ? WHERE pn_name = 'pcFirstDayOfWeek'", [$fldvalue]);
                                 break;
                         }
 
@@ -683,7 +683,7 @@ function checkBackgroundServices(): void
                                                         "<input type='button' value='" . xla('Default') . "' onclick=\"document.forms[0].form_$i.jscolor.fromString(" . attr_js($flddef) . ")\">\n";
                                                 } elseif ($fldtype == GlobalSetting::DATA_TYPE_DEFAULT_VISIT_CATEGORY) {
                                                     $sql = "SELECT pc_catid, pc_catname, pc_cattype
-                                                FROM openemr_postcalendar_categories
+                                                FROM tabemr_postcalendar_categories
                                                 WHERE pc_active = 1 ORDER BY pc_seq";
                                                     $result = sqlStatement($sql);
                                                     echo "<select class='form-control' name='form_{$i}' id='form_{$i}'>\n";

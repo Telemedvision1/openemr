@@ -15,7 +15,7 @@
  * @copyright Copyright (c) 2010 Tomasz Wyderka <wyderkat@cofoh.com>
  * @copyright Copyright (c) 2015 Ensoftek <rammohan@ensoftek.com>
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
@@ -159,7 +159,7 @@ if (!empty($_POST['form_get_hl7']) && ($_POST['form_get_hl7'] === 'true')) {
 
     while ($r = sqlFetchArray($res)) {
         // MSH
-        $content .= "MSH|^~\&|" . strtoupper(\OpenEMR\Core\OEGlobalsBag::getInstance()->getString('openemr_name')) .
+        $content .= "MSH|^~\&|" . strtoupper(\OpenEMR\Core\OEGlobalsBag::getInstance()->getString('tabemr_name')) .
         "|" . $facility_info['name'] . "^" . $facility_info['facility_npi'] . "^NPI" .
         "|||$now||" .
         "ADT^A01^ADT_A01" . // Hard-code to A01: Patient visits provider/facility

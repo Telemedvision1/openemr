@@ -15,7 +15,7 @@
  * @copyright Copyright (c) 2015 Roberto Vasquez <robertogagliotta@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once('../globals.php');
@@ -227,7 +227,7 @@ function popup_close() {
                 delete_drug_sales($patient);
                 deleter_row_delete("payments", "pid = ?", [$patient]);
                 deleter_row_modify("ar_activity", "deleted = NOW()", "pid = ? AND deleted IS NULL", [$patient]);
-                deleter_row_delete("openemr_postcalendar_events", "pc_pid = ?", [$patient]);
+                deleter_row_delete("tabemr_postcalendar_events", "pc_pid = ?", [$patient]);
                 deleter_row_delete("immunizations", "patient_id = ?", [$patient]);
                 deleter_row_delete("issue_encounter", "pid = ?", [$patient]);
                 deleter_row_delete("lists", "pid = ?", [$patient]);

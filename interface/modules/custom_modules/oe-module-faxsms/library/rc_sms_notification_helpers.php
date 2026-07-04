@@ -27,7 +27,7 @@
  * @copyright Copyright (c) 2018-2024 Jerry Padgett
  * @copyright Copyright (c) 2021 Robert Down <robertdown@live.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  *
  * @codeCoverageIgnore Procedural global-namespace SQL helpers loaded via
  *     require_once from two entry points. Every function here either
@@ -81,7 +81,7 @@ if (!function_exists('rc_sms_notification_cron_update_entry')) {
             NotificationChannel::EMAIL => 'pc_sendalertemail',
         };
 
-        $query = "UPDATE openemr_postcalendar_events SET {$column} = 'YES' WHERE pc_pid = ? AND pc_eid = ?";
+        $query = "UPDATE tabemr_postcalendar_events SET {$column} = 'YES' WHERE pc_pid = ? AND pc_eid = ?";
 
         QueryUtils::sqlStatementThrowException($query, [$pid, $pc_eid]);
     }

@@ -4,11 +4,11 @@
  * FhirServiceLocator.php  This class locates fhir service classes for the fhir resources.  Note that because it leverages
  * the Capability statement this can take 500-900ms to execute and should be used with caution.
  * TODO: @adunsulag Look at changing up this class to not use the capability statement or optimize that class to be more performant.
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Services\FHIR\Utils;

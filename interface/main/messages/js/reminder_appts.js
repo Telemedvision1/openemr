@@ -7,7 +7,7 @@
  * @author  Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2017 MedEx <support@MedExBank.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 var labels = [];
@@ -82,7 +82,7 @@ function setpatient(pid, lname='', fname='', dob='') {
             var today = moment().format('YYYY-MM-DD');
             $("#DOLV").val(today);
         }
-        //there is an openemr global for age display under X years old (eg. under "2", so == 17 months old)
+        //there is an tabemr global for age display under X years old (eg. under "2", so == 17 months old)
         //not sure where it is though... or if we can use it here.
         $("#new_age").html(obj.age + ' years old');
         $("#new_reason").val(obj.PLAN);

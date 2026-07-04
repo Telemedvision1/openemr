@@ -43,8 +43,8 @@ README-Isolated-Testing.md     export-ignore
 # globs (which match immediate children only, leaving the parent dirs
 # walkable) plus -export-ignore carve-outs for the two files.
 Documentation/EHI_Export/docs/* export-ignore
-Documentation/EHI_Export/docs/openemr.openemr.xml -export-ignore
+Documentation/EHI_Export/docs/tabemr.tabemr.xml -export-ignore
 Documentation/EHI_Export/schemaspy/* export-ignore
 Documentation/EHI_Export/schemaspy/schemas -export-ignore
 Documentation/EHI_Export/schemaspy/schemas/* export-ignore
-Documentation/EHI_Export/schemaspy/schemas/openemr.meta.xml -export-ignore
+Documentation/EHI_Export/schemaspy/schemas/tabemr.meta.xml -export-ignore

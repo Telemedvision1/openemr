@@ -7,8 +7,8 @@
 # the Free Software Foundation; either version 3 of the License, or
 # (at your option) any later version.
 #
-# php-fpm Dockerfile build for openemr development docker environment
-# This docker is hosted here: https://hub.docker.com/r/openemr/dev-php-fpm/ <tag is 7.1>
+# php-fpm Dockerfile build for tabemr development docker environment
+# This docker is hosted here: https://hub.docker.com/r/tabemr/dev-php-fpm/ <tag is 7.1>
 #
 FROM php:7.1-fpm
 
@@ -40,7 +40,7 @@ RUN chmod uga+x /usr/local/bin/install-php-extensions \
 
 
 
-# Needed to ensure permissions work across shared volumes with openemr, nginx, and php-fpm dockers
+# Needed to ensure permissions work across shared volumes with tabemr, nginx, and php-fpm dockers
 RUN usermod -u 1000 www-data
 
 # Copy over the php.ini conf

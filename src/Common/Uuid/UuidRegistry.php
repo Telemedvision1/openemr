@@ -20,7 +20,7 @@
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019 Gerhard Brink <gjdbrink@gmail.com>
  * @copyright Copyright (c) 2020 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Common\Uuid;
@@ -57,7 +57,7 @@ class UuidRegistry
         'insurance_companies' => ['table_name' => 'insurance_companies'],
         'insurance_data' => ['table_name' => 'insurance_data'],
         'lists' => ['table_name' => 'lists'],
-        'openemr_postcalendar_events' => ['table_name' => 'openemr_postcalendar_events', 'table_id' => 'pc_eid'],
+        'tabemr_postcalendar_events' => ['table_name' => 'tabemr_postcalendar_events', 'table_id' => 'pc_eid'],
         'patient_care_experience_preferences' => ['table_name' => 'patient_care_experience_preferences'],
         'patient_data' => ['table_name' => 'patient_data'],
         'patient_history' => ['table_name' => 'patient_history'],

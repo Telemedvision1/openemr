@@ -168,8 +168,8 @@ ALTER TABLE `facility_user_ids` ADD `date_created` DATETIME NOT NULL DEFAULT CUR
 ALTER TABLE `facility_user_ids` ADD `last_updated` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
 #EndIf
 
-#IfMissingColumn openemr_postcalendar_categories pc_last_updated
-ALTER TABLE `openemr_postcalendar_categories` ADD `pc_last_updated` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+#IfMissingColumn tabemr_postcalendar_categories pc_last_updated
+ALTER TABLE `tabemr_postcalendar_categories` ADD `pc_last_updated` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
 #EndIf
 
 #IfMissingColumn list_options last_updated

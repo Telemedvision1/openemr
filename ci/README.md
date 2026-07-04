@@ -101,8 +101,8 @@ The CI system uses Docker Compose's multi-file composition (otherwise known as c
    services:
      mysql:
        image: mariadb:11.4                            # Specify MariaDB/MySQL version
-     openemr:
-       image: openemr/openemr:flex-3.21               # Specify PHP version
+     tabemr:
+       image: tabemr/tabemr:flex-3.21               # Specify PHP version
    ```
 
 #### Adding a New Configuration
@@ -136,8 +136,8 @@ To add a new test configuration:
    services:
      mysql:
        image: mariadb:<version>                       # Specify MariaDB version
-     openemr:
-       image: openemr/openemr:<tag>                   # Specify PHP version
+     tabemr:
+       image: tabemr/tabemr:<tag>                   # Specify PHP version
    ```
 
    **For Apache environments with MySQL**:
@@ -152,8 +152,8 @@ To add a new test configuration:
    services:
      mysql:
        image: mysql:<version>                         # Specify MySQL version
-     openemr:
-       image: openemr/openemr:<tag>                   # Specify PHP version
+     tabemr:
+       image: tabemr/tabemr:<tag>                   # Specify PHP version
    ```
 
    **For Nginx environments with MariaDB**:
@@ -168,8 +168,8 @@ To add a new test configuration:
    services:
      mysql:
        image: mariadb:<version>                         # Specify MariaDB version
-     openemr:
-       image: openemr/dev-php-fpm:<php-version>       # Specify PHP version
+     tabemr:
+       image: tabemr/dev-php-fpm:<php-version>       # Specify PHP version
    ```
 
    **For Nginx environments with MySQL**:
@@ -184,8 +184,8 @@ To add a new test configuration:
    services:
      mysql:
        image: mysql:<version>                         # Specify MySQL version
-     openemr:
-       image: openemr/dev-php-fpm:<php-version>       # Specify PHP version
+     tabemr:
+       image: tabemr/dev-php-fpm:<php-version>       # Specify PHP version
    ```
 
 4. Customize any additional settings specific to your configuration as needed.
@@ -211,7 +211,7 @@ If tests are failing in CI but passing locally, check:
 - For below commands:
   - Replace `apache_84_114` with the configuration directory you want to test.
   - Replace `compose-shared-mariadb.yml` and `compose-shared-apache.yml` with the database and webserver `x-includes` values from the configuration's docker-compose.yml file.
-  - Run the below commands from the base openemr directory.
+  - Run the below commands from the base tabemr directory.
   - Note that for future: the first entry (-f) in the command needs to be in ci/ (if it has a subdirectory then it breaks things)
 
 You can view the fully merged configuration file with the following `config` command:
@@ -226,7 +226,7 @@ docker compose -f "ci/compose-shared-mariadb.yml" -f "ci/compose-shared-apache.y
 
 You can go directly into the OpenEMR testing container:
 ```bash
-docker compose -f "ci/compose-shared-mariadb.yml" -f "ci/compose-shared-apache.yml" -f "ci/compose-shared-selenium/docker-compose.yml" -f "ci/compose-shared-mailpit/compose.yml" -f "ci/apache_84_114/docker-compose.yml" exec -it openemr sh
+docker compose -f "ci/compose-shared-mariadb.yml" -f "ci/compose-shared-apache.yml" -f "ci/compose-shared-selenium/docker-compose.yml" -f "ci/compose-shared-mailpit/compose.yml" -f "ci/apache_84_114/docker-compose.yml" exec -it tabemr sh
 ```
 
 You can shut down the Docker Compose setup:

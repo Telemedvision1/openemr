@@ -11,7 +11,7 @@
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2014-2020 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2017-2020 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Billing\BillingProcessor\Tasks;

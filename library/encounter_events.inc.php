@@ -9,7 +9,7 @@
  * @author    Paul Simon K <paul@zhservices.com>
  * @author    Ian Jardine ( github.com/epsdky ) ( Modified calendar_arrived )
  * @copyright Copyright (c) 2010 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
 */
 
 require_once(__DIR__ . '/calendar.inc.php');
@@ -46,7 +46,7 @@ function calendar_arrived($form_pid)
     } elseif ($appt_count == 1) {
         $enc = todaysEncounterCheck($form_pid);
         if ($appts[0]['pc_recurrtype'] == 0) {
-            sqlStatement("UPDATE openemr_postcalendar_events SET pc_apptstatus = '@' WHERE pc_eid = ?", [$appts[0]['pc_eid']]);
+            sqlStatement("UPDATE tabemr_postcalendar_events SET pc_apptstatus = '@' WHERE pc_eid = ?", [$appts[0]['pc_eid']]);
         } else {
             update_event($appts[0]['pc_eid']);
         }
@@ -257,7 +257,7 @@ function todaysEncounter($patient_id, $reason = '')
 // get the original event's repeat specs
 function update_event($eid): void
 {
-    $origEventRes = sqlStatement("SELECT * FROM openemr_postcalendar_events WHERE pc_eid = ?", [$eid]);
+    $origEventRes = sqlStatement("SELECT * FROM tabemr_postcalendar_events WHERE pc_eid = ?", [$eid]);
     $origEvent = sqlFetchArray($origEventRes);
     $oldRecurrspec = unserialize($origEvent['pc_recurrspec'], ['allowed_classes' => false]);
     $duration = $origEvent['pc_duration'];
@@ -271,7 +271,7 @@ function update_event($eid): void
     }
 
     // mod original event recur specs to exclude this date
-        sqlStatement("UPDATE openemr_postcalendar_events SET pc_recurrspec = ? WHERE pc_eid = ?", [serialize($oldRecurrspec),$eid]);
+        sqlStatement("UPDATE tabemr_postcalendar_events SET pc_recurrspec = ? WHERE pc_eid = ?", [serialize($oldRecurrspec),$eid]);
     // specify some special variables needed for the INSERT
   // no recurr specs, this is used for adding a new non-recurring event
         $noRecurrspec = ["event_repeat_freq" => "",
@@ -315,7 +315,7 @@ function update_event($eid): void
 // check if event exists
 function check_event_exist($eid)
 {
-    $origEventRes = sqlStatement("SELECT * FROM openemr_postcalendar_events WHERE pc_eid = ?", [$eid]);
+    $origEventRes = sqlStatement("SELECT * FROM tabemr_postcalendar_events WHERE pc_eid = ?", [$eid]);
     $origEvent = sqlFetchArray($origEventRes);
     $pc_catid = $origEvent['pc_catid'];
     $pc_aid = $origEvent['pc_aid'];
@@ -327,7 +327,7 @@ function check_event_exist($eid)
     $pc_billing_location = $origEvent['pc_billing_location'];
     $pc_recurrspec_array = unserialize($origEvent['pc_recurrspec'], ['allowed_classes' => false]);
     $origEvent = sqlStatement(
-        "SELECT * FROM openemr_postcalendar_events WHERE pc_eid != ? and pc_catid=? and pc_aid=? " .
+        "SELECT * FROM tabemr_postcalendar_events WHERE pc_eid != ? and pc_catid=? and pc_aid=? " .
         "and pc_pid=? and pc_eventDate=? and pc_startTime=? and pc_endTime=? and pc_facility=? and pc_billing_location=?",
         [$eid,$pc_catid,$pc_aid,$pc_pid,$pc_eventDate,$pc_startTime,$pc_endTime,$pc_facility,$pc_billing_location]
     );
@@ -363,7 +363,7 @@ function InsertEvent($args, $from = 'general')
     if ($from == 'general') {
         $session = SessionWrapperFactory::getInstance()->getActiveSession();
         $pc_eid = sqlInsert(
-            "INSERT INTO openemr_postcalendar_events ( " .
+            "INSERT INTO tabemr_postcalendar_events ( " .
             "pc_catid, pc_multiple, pc_aid, pc_pid, pc_gid, pc_title, pc_time, pc_hometext, " .
             "pc_informant, pc_eventDate, pc_endDate, pc_duration, pc_recurrtype, " .
             "pc_recurrspec, pc_startTime, pc_endTime, pc_alldayevent, " .
@@ -386,7 +386,7 @@ function InsertEvent($args, $from = 'general')
             return $pc_eid;
     } elseif ($from == 'payment') {
         sqlStatement(
-            "INSERT INTO openemr_postcalendar_events ( " .
+            "INSERT INTO tabemr_postcalendar_events ( " .
             "pc_catid, pc_multiple, pc_aid, pc_pid, pc_title, pc_time, " .
             "pc_eventDate, pc_endDate, pc_duration, pc_recurrtype, " .
             "pc_recurrspec, pc_startTime, pc_endTime, pc_alldayevent, " .

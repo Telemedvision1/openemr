@@ -913,16 +913,16 @@ CREATE TABLE `erx_weno_drugs` (
 #IfNotWenoRx
 #EndIf
 
-#IfTable openemr_postcalendar_limits
-DROP TABLE `openemr_postcalendar_limits`;
+#IfTable tabemr_postcalendar_limits
+DROP TABLE `tabemr_postcalendar_limits`;
 #EndIf
 
-#IfTable openemr_postcalendar_topics
-DROP TABLE `openemr_postcalendar_topics`;
+#IfTable tabemr_postcalendar_topics
+DROP TABLE `tabemr_postcalendar_topics`;
 #EndIf
 
-#IfTable openemr_session_info
-DROP TABLE `openemr_session_info`;
+#IfTable tabemr_session_info
+DROP TABLE `tabemr_session_info`;
 #EndIf
 
 #IfTable array

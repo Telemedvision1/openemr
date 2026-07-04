@@ -8,7 +8,7 @@
  *
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Events\Messaging;
@@ -22,7 +22,7 @@ use Symfony\Contracts\EventDispatcher\Event;
  * @package OpenEMR\Events\Messaging
  *
  * Enables adding a general send SMS messages dialog. It includes a patient select dialog.
- * See for example: interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php
+ * See for example: interface/modules/custom_modules/oe-module-faxsms/tabemr.bootstrap.php
  */
 
 class SendSmsEvent extends Event

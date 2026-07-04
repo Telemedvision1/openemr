@@ -894,7 +894,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Function getTwigNamespaces\\(\\) return type has no value type specified in iterable type array\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Method OpenEMR\\\\Modules\\\\FaxSMS\\\\BootstrapService\\:\\:fetchPersistedSetupSettings\\(\\) return type has no value type specified in iterable type array\\.$#',
@@ -1064,7 +1064,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^PHPDoc tag @var for variable \\$module has no value type specified in iterable type array\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Method Juggernaut\\\\OpenEMR\\\\Modules\\\\PriorAuthModule\\\\Controller\\\\AuthorizationService\\:\\:listPatientAuths\\(\\) return type has no value type specified in iterable type array\\.$#',

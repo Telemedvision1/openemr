@@ -58,7 +58,7 @@ try {
     // write into a queue" receiver, and immediately yield a 2xx. As long as
     // the Webhook structure is serializable, the processors should work just
     // fine asynchronously.
-    // See openemr/openemr#10334.
+    // See tabemr/tabemr#10334.
     $disp = new Dispatcher(
         processors: [
             // Future: this should all get wired through DI, etc.

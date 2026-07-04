@@ -14,7 +14,7 @@
  * @copyright Copyright (C) 2016-2017 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (C) 2019 Ian Jardine ( github.com/epsdky )
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 // Note from Rod 2013-01-22:
@@ -121,7 +121,7 @@ $slotsecs = $globalsBag->get('calendar_interval') * 60;
 
 $catslots = 1;
 if ($input_catid) {
-    $srow = sqlQuery("SELECT pc_duration FROM openemr_postcalendar_categories WHERE pc_catid = ?", [$input_catid]);
+    $srow = sqlQuery("SELECT pc_duration FROM tabemr_postcalendar_categories WHERE pc_catid = ?", [$input_catid]);
     if ($srow['pc_duration']) {
         $catslots = ceil($srow['pc_duration'] / $slotsecs);
     }
@@ -177,7 +177,7 @@ if ($_REQUEST['providerid']) {
     //  echo $sdate." -- ".$edate;
     $query = "SELECT pc_eventDate, pc_endDate, pc_startTime, pc_duration, " .
         "pc_recurrtype, pc_recurrspec, pc_alldayevent, pc_catid, pc_prefcatid, pc_title " .
-        "FROM openemr_postcalendar_events " .
+        "FROM tabemr_postcalendar_events " .
         "WHERE pc_aid = ? AND " .
         "((pc_endDate >= ? AND pc_eventDate < ?) OR " .
         "(pc_endDate IS NULL AND pc_eventDate >= ? AND pc_eventDate < ?))";

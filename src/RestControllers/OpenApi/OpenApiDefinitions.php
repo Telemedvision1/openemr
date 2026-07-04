@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Eric Stern <eric@ericpstern.com>
  * @copyright Copyright (c) 2026 Eric Stern <eric@ericpstern.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\RestControllers\OpenApi;
@@ -18,7 +18,7 @@ use OpenApi\Attributes as OA;
 #[OA\Server(url: '/apis/default/')]
 
 #[OA\SecurityScheme(
-    securityScheme: 'openemr_auth',
+    securityScheme: 'tabemr_auth',
     type: 'oauth2',
     flows: [
         new OA\Flow(

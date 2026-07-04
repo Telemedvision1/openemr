@@ -14,7 +14,7 @@
  * @copyright Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2021-2023 Robert Down <robertdown@live.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 // @TODO: jQuery UI Removal
@@ -45,7 +45,7 @@ $emailRegistered = (new ProductRegistrationService())->getRegistrationEmail() ??
 $viewArgs = [
     'onlineSupportHref' => OEGlobalsBag::getInstance()->getString("online_support_link"),
     'ackHref' => "../../acknowledge_license_cert.html",
-    'applicationTitle' => OEGlobalsBag::getInstance()->getString('openemr_name'),
+    'applicationTitle' => OEGlobalsBag::getInstance()->getString('tabemr_name'),
     'versionNumber' => (string) $versionService->getSoftwareVersion(),
     'supportPhoneNumber' => OEGlobalsBag::getInstance()->getString('support_phone_number') ?? false,
     'theUUID' => UniqueInstallationUuid::getUniqueInstallationUuid(),

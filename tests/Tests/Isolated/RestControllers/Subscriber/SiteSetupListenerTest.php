@@ -11,7 +11,7 @@
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -272,10 +272,10 @@ class SiteSetupListenerTest extends TestCase
         // checkForOauth2Request checks basePath ending in "/oauth2"
         // Symfony needs SCRIPT_NAME + SCRIPT_FILENAME to compute basePath
         $event = $this->createRequestEvent(
-            '/openemr/oauth2/default/token',
+            '/tabemr/oauth2/default/token',
             server: [
-                'SCRIPT_NAME' => '/openemr/oauth2/index.php',
-                'SCRIPT_FILENAME' => '/var/www/openemr/oauth2/index.php',
+                'SCRIPT_NAME' => '/tabemr/oauth2/index.php',
+                'SCRIPT_FILENAME' => '/var/www/tabemr/oauth2/index.php',
             ]
         );
 

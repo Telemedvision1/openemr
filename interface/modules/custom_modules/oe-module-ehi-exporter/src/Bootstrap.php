@@ -8,7 +8,7 @@
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com
  * @copyright Copyright (c) 2023 OpenEMR Foundation, Inc
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Modules\EhiExporter;
@@ -100,7 +100,7 @@ class Bootstrap
     public function getExporter()
     {
         $xmlConfigPath = OEGlobalsBag::getInstance()->get('webserver_root') . DIRECTORY_SEPARATOR . 'Documentation' . DIRECTORY_SEPARATOR . 'EHI_Export';
-        // . DIRECTORY_SEPARATOR . 'docs' . DIRECTORY_SEPARATOR . 'openemr.openemr.xml';
+        // . DIRECTORY_SEPARATOR . 'docs' . DIRECTORY_SEPARATOR . 'tabemr.tabemr.xml';
         return new EhiExporter(
             OEGlobalsBag::getInstance()->get('webserver_root') . $this->getPublicPath(),
             $this->getPublicPath(),

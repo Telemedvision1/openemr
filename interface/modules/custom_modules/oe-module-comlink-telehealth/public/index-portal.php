@@ -3,16 +3,16 @@
 /**
  * Handles API requests for patient portal.
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 //landing page definition -- where to go if something goes wrong
 // this should trim the following path /interface/modules/custom_modules/oe-module-comlink-telehealth/public/
-// this should get us to the main openemr directory and include the webroot path if we have it
+// this should get us to the main tabemr directory and include the webroot path if we have it
 // we have to do this as we don't have access to the globals.php file yet.
 $originalPath = parse_url((string) $_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $basePath = dirname($originalPath, 6);

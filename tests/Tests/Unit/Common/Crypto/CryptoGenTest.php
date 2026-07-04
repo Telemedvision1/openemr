@@ -53,7 +53,7 @@ final class CryptoGenTest extends TestCase
         $this->originalGlobals = $globalsCopy;
 
         // Create test site directory
-        $this->testSiteDir = sys_get_temp_dir() . '/openemr_test_' . uniqid();
+        $this->testSiteDir = sys_get_temp_dir() . '/tabemr_test_' . uniqid();
         mkdir($this->testSiteDir . '/documents/logs_and_misc/methods', 0755, true);
 
         // Mock GLOBALS for testing

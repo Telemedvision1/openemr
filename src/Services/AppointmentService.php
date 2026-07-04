@@ -9,7 +9,7 @@
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018 Matthew Vita <matthewvita48@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Services;
@@ -29,7 +29,7 @@ use Particle\Validator\Validator;
 
 class AppointmentService extends BaseService
 {
-    const TABLE_NAME = "openemr_postcalendar_events";
+    const TABLE_NAME = "tabemr_postcalendar_events";
     const PATIENT_TABLE = "patient_data";
     const PRACTITIONER_TABLE = "users";
     const FACILITY_TABLE = "facility";
@@ -170,7 +170,7 @@ class AppointmentService extends BaseService
                                pc_website,
                                pc_informant
                             FROM
-                                 openemr_postcalendar_events
+                                 tabemr_postcalendar_events
                        ) pce
                        LEFT JOIN facility as f1 ON pce.pc_facility = f1.id
                        LEFT JOIN uuid_mapping as f1_map ON f1_map.target_uuid=f1.uuid AND f1_map.resource='Location'
@@ -233,7 +233,7 @@ class AppointmentService extends BaseService
                        f1_map.uuid as facility_uuid,
                        f2.name as billing_location_name,
                        f2_map.uuid as billing_location_uuid
-                       FROM openemr_postcalendar_events as pce
+                       FROM tabemr_postcalendar_events as pce
                        LEFT JOIN facility as f1 ON pce.pc_facility = f1.id
                        LEFT JOIN uuid_mapping as f1_map ON f1_map.target_uuid=f1.uuid AND f1_map.resource='Location'
                        LEFT JOIN facility as f2 ON pce.pc_billing_location = f2.id
@@ -289,7 +289,7 @@ class AppointmentService extends BaseService
                        f1_map.uuid as facility_uuid,
                        f2.name as billing_location_name,
                        f2_map.uuid as billing_location_uuid
-                       FROM openemr_postcalendar_events as pce
+                       FROM tabemr_postcalendar_events as pce
                        LEFT JOIN facility as f1 ON pce.pc_facility = f1.id
                        LEFT JOIN uuid_mapping as f1_map ON f1_map.target_uuid=f1.uuid AND f1_map.resource='Location'
                        LEFT JOIN facility as f2 ON pce.pc_billing_location = f2.id
@@ -322,7 +322,7 @@ class AppointmentService extends BaseService
 
         $session = SessionWrapperFactory::getInstance()->getActiveSession();
 
-        $sql  = " INSERT INTO openemr_postcalendar_events SET";
+        $sql  = " INSERT INTO tabemr_postcalendar_events SET";
         $sql .= "     uuid=?,";
         $sql .= "     pc_pid=?,";
         $sql .= "     pc_catid=?,";
@@ -379,11 +379,11 @@ class AppointmentService extends BaseService
         // =======================================
         if (OEGlobalsBag::getInstance()->getBoolean('select_multi_providers')) {
             // what is multiple key around this $eid?
-            $row = sqlQuery("SELECT pc_multiple FROM openemr_postcalendar_events WHERE pc_eid = ?", [$eid]);
+            $row = sqlQuery("SELECT pc_multiple FROM tabemr_postcalendar_events WHERE pc_eid = ?", [$eid]);
 
             // obtain current list of providers regarding the multiple key
             $providers_current = [];
-            $up = sqlStatement("SELECT pc_aid FROM openemr_postcalendar_events WHERE pc_multiple=?", [$row['pc_multiple']]);
+            $up = sqlStatement("SELECT pc_aid FROM tabemr_postcalendar_events WHERE pc_multiple=?", [$row['pc_multiple']]);
             while ($current = sqlFetchArray($up)) {
                 $providers_current[] = $current['pc_aid'];
             }
@@ -402,7 +402,7 @@ class AppointmentService extends BaseService
                 foreach ($providers_current as $provider) {
                     // update the provider's original event
                     // get the original event's repeat specs
-                    $origEvent = sqlQuery("SELECT pc_recurrspec FROM openemr_postcalendar_events " .
+                    $origEvent = sqlQuery("SELECT pc_recurrspec FROM tabemr_postcalendar_events " .
                         " WHERE pc_aid <=> ? AND pc_multiple=?", [$provider,$row['pc_multiple']]);
                     $oldRecurrspec = unserialize($origEvent['pc_recurrspec'], ['allowed_classes' => false]);
                     $selected_date = date("Y-m-d", strtotime((string) $event_selected_date));
@@ -413,7 +413,7 @@ class AppointmentService extends BaseService
                     }
 
                     // mod original event recur specs to exclude this date
-                    sqlStatement("UPDATE openemr_postcalendar_events SET " .
+                    sqlStatement("UPDATE tabemr_postcalendar_events SET " .
                         " pc_recurrspec = ? " .
                         " WHERE " . $whereClause, [serialize($oldRecurrspec), $whereBind]);
                 }
@@ -424,14 +424,14 @@ class AppointmentService extends BaseService
                     // In case of a change in the middle of the event
                     if (strcmp((string) $_POST['event_start_date'], (string) $event_selected_date) != 0) {
                         // update the provider's original event
-                        sqlStatement("UPDATE openemr_postcalendar_events SET " .
+                        sqlStatement("UPDATE tabemr_postcalendar_events SET " .
                             " pc_enddate = ? " .
                             " WHERE " . $whereClause, [$selected_date, $whereBind]);
                     } else { // In case of a change in the event head
                         // as we need to notify events that we are deleting this record we need to grab all of the pc_eid
                         // so we can process the events
                         $pc_eids = QueryUtils::fetchTableColumn(
-                            "SELECT pc_eid FROM openemr_postcalendar_events WHERE " . $whereClause,
+                            "SELECT pc_eid FROM tabemr_postcalendar_events WHERE " . $whereClause,
                             'pc_eid',
                             [$whereBind]
                         );
@@ -445,7 +445,7 @@ class AppointmentService extends BaseService
                 // as we need to notify events that we are deleting this record we need to grab all of the pc_eid
                 // so we can process the events
                 $pc_eids = QueryUtils::fetchTableColumn(
-                    "SELECT pc_eid FROM openemr_postcalendar_events WHERE " . $whereClause,
+                    "SELECT pc_eid FROM tabemr_postcalendar_events WHERE " . $whereClause,
                     'pc_eid',
                     [$whereBind]
                 );
@@ -457,7 +457,7 @@ class AppointmentService extends BaseService
             if ($recurr_affect == 'current') {
                 // mod original event recur specs to exclude this date
                 // get the original event's repeat specs
-                $origEvent = sqlQuery("SELECT pc_recurrspec FROM openemr_postcalendar_events WHERE pc_eid = ?", [$eid]);
+                $origEvent = sqlQuery("SELECT pc_recurrspec FROM tabemr_postcalendar_events WHERE pc_eid = ?", [$eid]);
                 $oldRecurrspec = unserialize($origEvent['pc_recurrspec'], ['allowed_classes' => false]);
                 $selected_date = date("Ymd", strtotime((string) $_POST['selected_date']));
                 if ($oldRecurrspec['exdate'] != "") {
@@ -466,13 +466,13 @@ class AppointmentService extends BaseService
                     $oldRecurrspec['exdate'] .= $selected_date;
                 }
 
-                sqlStatement("UPDATE openemr_postcalendar_events SET " .
+                sqlStatement("UPDATE tabemr_postcalendar_events SET " .
                     " pc_recurrspec = ? " .
                     " WHERE pc_eid = ?", [serialize($oldRecurrspec),$eid]);
             } elseif ($recurr_affect == 'future') {
                 // mod original event to stop recurring on this date-1
                 $selected_date = date("Ymd", (strtotime((string) $_POST['selected_date']) - 24 * 60 * 60));
-                sqlStatement("UPDATE openemr_postcalendar_events SET " .
+                sqlStatement("UPDATE tabemr_postcalendar_events SET " .
                     " pc_enddate = ? " .
                     " WHERE pc_eid = ?", [$selected_date,$eid]);
             } else {
@@ -486,7 +486,7 @@ class AppointmentService extends BaseService
     {
         $servicePreDeleteEvent = new ServiceDeleteEvent($this, $eid);
         $this->getEventDispatcher()->dispatch($servicePreDeleteEvent, ServiceDeleteEvent::EVENT_PRE_DELETE);
-        QueryUtils::sqlStatementThrowException("DELETE FROM openemr_postcalendar_events WHERE pc_eid = ?", $eid);
+        QueryUtils::sqlStatementThrowException("DELETE FROM tabemr_postcalendar_events WHERE pc_eid = ?", $eid);
         $servicePostDeleteEvent = new ServiceDeleteEvent($this, $eid);
         $this->getEventDispatcher()->dispatch($servicePostDeleteEvent, ServiceDeleteEvent::EVENT_POST_DELETE);
     }
@@ -497,7 +497,7 @@ class AppointmentService extends BaseService
      */
     public function getCalendarCategories()
     {
-        $sql = "SELECT pc_catid, pc_constant_id, pc_catname, pc_cattype,aco_spec, pc_last_updated FROM openemr_postcalendar_categories "
+        $sql = "SELECT pc_catid, pc_constant_id, pc_catname, pc_cattype,aco_spec, pc_last_updated FROM tabemr_postcalendar_categories "
         . " WHERE pc_active = 1 ORDER BY pc_seq";
         return QueryUtils::fetchRecords($sql);
     }
@@ -678,13 +678,13 @@ class AppointmentService extends BaseService
      */
     public function getOneCalendarCategory($cat_id)
     {
-        $sql = "SELECT * FROM openemr_postcalendar_categories WHERE pc_catid = ?";
+        $sql = "SELECT * FROM tabemr_postcalendar_categories WHERE pc_catid = ?";
         return QueryUtils::fetchRecords($sql, [$cat_id]);
     }
 
     public function searchCalendarCategories(array $oeSearchParameters)
     {
-        $sql = "SELECT * FROM openemr_postcalendar_categories ";
+        $sql = "SELECT * FROM tabemr_postcalendar_categories ";
         $whereClause = FhirSearchWhereClauseBuilder::build($oeSearchParameters, true);
         $sql .= $whereClause->getFragment();
         $sqlBindArray = $whereClause->getBoundValues();

@@ -9,7 +9,7 @@
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2024 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2025-2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -37,7 +37,7 @@ trait BaseTrait
         if ($useGrid === "true") {
             // Use Selenium Grid (consistent testing environment with goal of stability)
             $seleniumHost = getenv("SELENIUM_HOST", true) ?? "selenium";
-            $e2eBaseUrl = getenv("SELENIUM_BASE_URL", true) ?: "http://openemr";
+            $e2eBaseUrl = getenv("SELENIUM_BASE_URL", true) ?: "http://tabemr";
             $forceHeadless = getenv("SELENIUM_FORCE_HEADLESS", true) ?? "false";
             // Implicit wait must be 0 when using explicit waits (waitFor,
             // waitForVisibility, wait()->until()). A non-zero implicit wait

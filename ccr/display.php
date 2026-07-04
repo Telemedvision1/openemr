@@ -3,7 +3,7 @@
 /**
  * display.php  Is responsible for display a CCR/CCD/CCDA document previewed from the documents folder.
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Ajil P.M <ajilpm@zhservices.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
@@ -12,7 +12,7 @@
  * @copyright Copyright (c) 2011 Z&H Consultancy Services Private Limited <ajilpm@zhservices.com>
  * @copyright Copyright (c) 2013 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../interface/globals.php");

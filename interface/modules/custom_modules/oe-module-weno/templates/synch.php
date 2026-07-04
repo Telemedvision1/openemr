@@ -7,7 +7,7 @@
  * @author     Jerry Padgett <sjpadgett@gmail.com>
  * @copyright  Copyright (c) 2023 omega systems group international <info@omegasystemsgroup.com>
  * @copyright  Copyright (c) 2024 Jerry Padgett <sjpadgett@gmail.com>
- * @license    https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license    https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(dirname(__DIR__, 4) . "/globals.php");

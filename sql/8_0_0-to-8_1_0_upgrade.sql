@@ -115,7 +115,7 @@
 
 --
 -- Organization Type list (HL7 Value Set: OrganizationType)
--- See: https://github.com/openemr/openemr/issues/6826
+-- See: https://github.com/tabemr/tabemr/issues/6826
 --
 
 #IfNotRow2D list_options list_id lists option_id organization-type
@@ -142,7 +142,7 @@ ALTER TABLE `facility` ADD `organization_type` VARCHAR(50) NOT NULL DEFAULT 'pro
 -- Rename the misspelled list_options option_id from 'declne_to_specfy' to 'decline_to_specify',
 -- and update any patient_data.race, patient_data.language, and patient_data.ethnicity
 -- records that reference the old value.
--- See: https://github.com/openemr/openemr/issues/10385
+-- See: https://github.com/tabemr/tabemr/issues/10385
 --
 
 #IfRow patient_data race declne_to_specfy
@@ -180,7 +180,7 @@ INSERT INTO list_options ( list_id, option_id, title, seq, is_default, option_va
 --
 -- Rename the misspelled 'interpretter' column to 'interpreter' in patient_data,
 -- and update the layout_options field_id to match.
--- See: https://github.com/openemr/openemr/issues/10351
+-- See: https://github.com/tabemr/tabemr/issues/10351
 --
 
 #IfColumn patient_data interpretter
@@ -241,14 +241,14 @@ DELETE FROM `globals` WHERE `gl_name` IN (
 -- Drop the onsite_activity_view which was dynamically created at runtime.
 -- The view is no longer needed as the OnsiteActivityViewReporter now uses
 -- a direct JOIN query instead.
--- See: https://github.com/openemr/openemr/issues/10975
+-- See: https://github.com/tabemr/tabemr/issues/10975
 --
 
 DROP VIEW IF EXISTS `onsite_activity_view`;
 
 --
 -- Fix medex_recalls.r_created default for MySQL strict mode compatibility.
--- See: https://github.com/openemr/openemr/issues/11179
+-- See: https://github.com/tabemr/tabemr/issues/11179
 --
 
 #IfNotColumnTypeDefault medex_recalls r_created timestamp CURRENT_TIMESTAMP
@@ -258,7 +258,7 @@ ALTER TABLE `medex_recalls` MODIFY `r_created` timestamp NOT NULL DEFAULT CURREN
 --
 -- Fix onetime_auth index prefix length for MySQL strict mode compatibility.
 -- With utf8mb4 (4 bytes/char), a 255 character prefix exceeds InnoDB limits.
--- See: https://github.com/openemr/openemr/issues/11179
+-- See: https://github.com/tabemr/tabemr/issues/11179
 --
 
 #IfIndex onetime_auth pid
@@ -267,7 +267,7 @@ ALTER TABLE `onetime_auth` DROP INDEX `pid`, ADD INDEX `pid` (`pid`, `onetime_to
 
 --
 -- Fix document_templates zero dates for MySQL strict mode compatibility.
--- See: https://github.com/openemr/openemr/issues/11179
+-- See: https://github.com/tabemr/tabemr/issues/11179
 --
 
 #IfTable document_templates
@@ -293,28 +293,28 @@ ALTER TABLE `questionnaire_repository` MODIFY `active` tinyint(1) NOT NULL DEFAU
 #EndIf
 
 --
--- Fix openemr_postcalendar_events date defaults for MySQL strict mode.
+-- Fix tabemr_postcalendar_events date defaults for MySQL strict mode.
 -- The zero date values are incompatible with NO_ZERO_DATE mode.
 -- pc_eventDate: NOT NULL, no default - every event must have a start date.
 --   Rows with 0000-00-00 are orphaned (invisible in queries) and deleted.
 -- pc_endDate: NULL allowed - non-recurring or open-ended events have no end.
--- See: https://github.com/openemr/openemr/issues/11179
+-- See: https://github.com/tabemr/tabemr/issues/11179
 --
 
 -- Delete orphaned events with invalid zero dates (these never appeared in
 -- calendar views since date range queries filtered them out)
 SET @currentSQLMode = (SELECT @@sql_mode);
 SET sql_mode = '';
-DELETE FROM `openemr_postcalendar_events` WHERE `pc_eventDate` = '0000-00-00';
-UPDATE `openemr_postcalendar_events` SET `pc_endDate` = NULL WHERE `pc_endDate` = '0000-00-00';
+DELETE FROM `tabemr_postcalendar_events` WHERE `pc_eventDate` = '0000-00-00';
+UPDATE `tabemr_postcalendar_events` SET `pc_endDate` = NULL WHERE `pc_endDate` = '0000-00-00';
 SET sql_mode = @currentSQLMode;
 
 -- Remove the zero-date default from pc_eventDate (keep NOT NULL)
 -- This ALTER is idempotent - safe to run even if already applied
-ALTER TABLE `openemr_postcalendar_events` MODIFY `pc_eventDate` date NOT NULL;
+ALTER TABLE `tabemr_postcalendar_events` MODIFY `pc_eventDate` date NOT NULL;
 
-#IfNotColumnTypeDefault openemr_postcalendar_events pc_endDate date NULL
-ALTER TABLE `openemr_postcalendar_events` MODIFY `pc_endDate` date DEFAULT NULL;
+#IfNotColumnTypeDefault tabemr_postcalendar_events pc_endDate date NULL
+ALTER TABLE `tabemr_postcalendar_events` MODIFY `pc_endDate` date DEFAULT NULL;
 #EndIf
 
 #IfNotTable migrations

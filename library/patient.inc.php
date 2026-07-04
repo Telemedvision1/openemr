@@ -15,7 +15,7 @@
  * @copyright Copyright (c) 2018-2025 Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2021-2022 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\BC\Utilities;

@@ -12,7 +12,7 @@
  * @copyright Copyright (c) 2023 Providence Healthtech
  * @copyright Copyright (c) 2023 Robert Down <robertdown@live.com>
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Events\UserInterface;

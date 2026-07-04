@@ -15,7 +15,7 @@
 //  2 form_encounter (visits)
 //  3 immunizations
 //  4 lists (issues)
-//  5 openemr_postcalendar_events (appointments)
+//  5 tabemr_postcalendar_events (appointments)
 //  6 pnotes
 //  7 prescriptions
 //  8 transactions (e.g. referrals)

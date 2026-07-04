@@ -1,5 +1,5 @@
 services:
-  openemr:
+  tabemr:
     environment:
       OPENEMR_BASE_URL_API: "https://nginx"
       OPENEMR_ENABLE_CI_PHP: "1"
@@ -9,20 +9,20 @@ services:
       # on the seed patient's birthday (DOB 1958-05-02). See issue #11980.
       OPENEMR_SETTING_patient_birthday_alert: "0"
     volumes:
-    - ../:/usr/share/nginx/html/openemr
+    - ../:/usr/share/nginx/html/tabemr
     - ./nginx/php.ini:/usr/local/etc/php/php.ini:ro
   nginx:
-    image: openemr/dev-nginx:latest@sha256:cd70ec94ddce2956b6acbc5f873c6bbfffda5129cc5fbf6f3f76979ae7afdb80
+    image: tabemr/dev-nginx:latest@sha256:cd70ec94ddce2956b6acbc5f873c6bbfffda5129cc5fbf6f3f76979ae7afdb80
     ports:
     - 80:80
     - 443:443
     volumes:
-    - ../:/usr/share/nginx/html/openemr
+    - ../:/usr/share/nginx/html/tabemr
     - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     - ./nginx/dummy-cert:/etc/nginx/dummy-cert:ro
     - ./nginx/dummy-key:/etc/nginx/dummy-key:ro
     depends_on:
-    - openemr
+    - tabemr
     healthcheck:
       test:
       - CMD

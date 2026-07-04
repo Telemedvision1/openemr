@@ -11,7 +11,7 @@
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2013-2021 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 set_time_limit(0);
@@ -540,7 +540,7 @@ if (!AclMain::aclCheckCore('admin', 'super')) {
                     updateRows($tblname, 'ct_pid', $source_pid, $target_pid);
                 } elseif ($tblname == 'documents') {
                     // Documents already handled.
-                } elseif ($tblname == 'openemr_postcalendar_events') {
+                } elseif ($tblname == 'tabemr_postcalendar_events') {
                     updateRows($tblname, 'pc_pid', $source_pid, $target_pid);
                 } elseif ($tblname == 'lists_touch') {
                     mergeRows($tblname, 'pid', $source_pid, $target_pid);

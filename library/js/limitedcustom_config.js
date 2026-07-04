@@ -1,10 +1,10 @@
 /**
  * Custom CKEditor configuration for the limited version used by plaintext editors.
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  * @license   There are segments of code in this file that have been generated via Claude.ai and are licensed as Public Domain.  They have been marked with a header and footer.
  * @license   There are segments of code in this file that have been generated via ChatGPT and are licensed as Public Domain.  They have been marked with a header and footer.
  */

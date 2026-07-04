@@ -18,7 +18,7 @@
  * @author    Amiel Elboim <amielel@matrix.co.il>
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018 Amiel Elboim <amielel@matrix.co.il>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\Common\Session\SessionWrapperFactory;

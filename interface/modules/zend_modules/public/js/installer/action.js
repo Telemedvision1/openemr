@@ -9,7 +9,7 @@
  * @copyright Copyright (c) 2020-2024 Jerry Padgett <sjpadgett@gmail.com>
  * @author    Remesh Babu S <remesh@zhservices.com>
  * @copyright Copyright (c) 2013 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 function register(status, title, name, method, type) {

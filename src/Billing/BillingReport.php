@@ -14,7 +14,7 @@
  * @copyright Copyright (c) 2018-2019 Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Rod Roark <rod@sunsetsystems.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Billing;
@@ -187,7 +187,7 @@ class BillingReport
 
         $query = sqlStatement("SELECT pid, 'COPAY' AS code_type, pay_amount AS code, date(post_time) AS date " .
             "FROM ar_activity where deleted IS NULL $query_part2 and payer_type=0 and account_code='PCP'");
-        //new fees screen copay gives account_code='PCP' openemr payment screen copay gives code='CO-PAY'
+        //new fees screen copay gives account_code='PCP' tabemr payment screen copay gives code='CO-PAY'
         for ($iter; $row = sqlFetchArray($query); $iter++) {
             $all[$iter] = $row;
         }

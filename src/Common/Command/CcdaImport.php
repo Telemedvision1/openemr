@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2022 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Common\Command;
@@ -27,7 +27,7 @@ class CcdaImport extends Command
     protected function configure(): void
     {
         $this
-            ->setName('openemr:ccda-import')
+            ->setName('tabemr:ccda-import')
             ->setDescription('Import ccda into ccda table from a document id')
             ->addUsage('--site=default --document_id=5')
             ->setDefinition(

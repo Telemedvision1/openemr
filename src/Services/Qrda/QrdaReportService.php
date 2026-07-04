@@ -10,7 +10,7 @@
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2022 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Services\Qrda;
@@ -215,7 +215,7 @@ class QrdaReportService
             $reportingPeriod = trim(OEGlobalsBag::getInstance()->getString('cqm_performance_period') ?? '2023');
         }
 
-        $orgName = OEGlobalsBag::getInstance()->getString('openemr_name') ?? 'OpenEMR_Practice';
+        $orgName = OEGlobalsBag::getInstance()->getString('tabemr_name') ?? 'OpenEMR_Practice';
         $orgName = preg_replace('/[^a-zA-Z0-9]/', '_', $orgName);
         $timestamp = date('Ymd_His');
 

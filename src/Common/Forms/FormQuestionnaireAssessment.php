@@ -6,11 +6,11 @@
  *
  * @see \OpenEMR\Services\FormService on how this class is saved in the database.
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Discover and Change, Inc. <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2023 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Common\Forms;

@@ -1,8 +1,8 @@
 {
-  "event": "openemr-docs-binaries",
-  "repo": "openemr/website-openemr",
+  "event": "tabemr-docs-binaries",
+  "repo": "tabemr/website-tabemr",
   "sha": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
-  "actor": "openemr-release-bot",
+  "actor": "tabemr-release-bot",
   "dispatched_at": "2026-04-29T13:00:00Z",
   "data": {
     "version": "8.1.0",

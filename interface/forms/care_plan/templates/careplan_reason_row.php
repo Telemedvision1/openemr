@@ -2,11 +2,11 @@
 
 /**
  * careplan_reason_row.php is a template file for the careplan reason data elements.
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 /** @var int $key (loop key from including file care_plan/new.php; $check_res is keyed by an int $iter) */

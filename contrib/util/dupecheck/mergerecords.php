@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  * @deprecated Its unlikely these files are used as the functionality has been replaced by the "Merge Patients" feature in the patient summary screen.
  */
 class DupeCheckMergeRecordsIsDeprecated
@@ -109,7 +109,7 @@ foreach ($parameters['otherid'] as $otherID) {
     UpdateTable("transactions", "pid", $otherPID, $masterPID);
 
     UpdateTable("chart_tracker", "ct_pid", $otherPID, $masterPID);
-    UpdateTable("openemr_postcalendar_events", "pc_pid", $otherPID, $masterPID);
+    UpdateTable("tabemr_postcalendar_events", "pc_pid", $otherPID, $masterPID);
     UpdateTable("documents", "foreign_id", $otherPID, $masterPID);
 
     // update all the forms* tables

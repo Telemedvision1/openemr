@@ -83,7 +83,7 @@ final class InfernoSinglePatientAPITest extends TestCase
     public const TEST_SUITE_G10_CERTIFICATION = 'g10_certification';
 
     public const DEFAULT_TEST_SUITE = self::TEST_SUITE_US_CORE_V311;
-    public const DEFAULT_OPENEMR_BASE_URL_API = 'http://openemr';
+    public const DEFAULT_OPENEMR_BASE_URL_API = 'http://tabemr';
     public const DEFAULT_INFERNO_BASE_URL = 'http://nginx';
     public const DEFAULT_TEST_GROUP_ID = 'us_core_v311-us_core_v311_fhir_api';
     public const TIMEOUT = 60; // seconds

@@ -17,11 +17,11 @@
  *
  * Note only one code selector window can be instantiated at a time.  The widget will override the default set_related callback
  * in the document window and restore it once the find code popup window closes.
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 (function(window, oeUI) {

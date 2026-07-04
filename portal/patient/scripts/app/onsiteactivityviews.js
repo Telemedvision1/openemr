@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2016-2017 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 const actpage = {
     onsiteActivityViews: new model.OnsiteActivityViewCollection(),
@@ -166,7 +166,7 @@ const actpage = {
                 let node = document.createElement("tr");
                 // note this is a synchronous operation! event consumers should not do anything that takes a long time
                 // or they should fire off async work and return immediately
-                let event = new CustomEvent('openemr:portal:provider:onsiteactivityview:click',
+                let event = new CustomEvent('tabemr:portal:provider:onsiteactivityview:click',
                     {bubbles: true, detail: eventData, cancelable: true});
                 let continueExecution = e.target.dispatchEvent(event);
                 if (!continueExecution) { // prevent default was called

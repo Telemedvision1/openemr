@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2016-2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\Common\Acl\AccessDeniedHelper;
@@ -531,7 +531,7 @@ function renderProfileHtml(): void
     <html>
     <head>
         <?php
-        if (empty($globalsBag->get('openemr_version'))) {
+        if (empty($globalsBag->get('tabemr_version'))) {
             Header::setupHeader(['opener', 'sortablejs']);
         } else {
             Header::setupHeader(['opener']); ?>

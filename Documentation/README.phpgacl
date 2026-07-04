@@ -12,7 +12,7 @@ Upgrading Instructions
 
 After you have upgraded to a new version of OpenEMR, you should
 run the acl_upgrade.php program using your web browser
-(e.g. http://openemr.location/acl_upgrade.php). This will ensure your
+(e.g. http://tabemr.location/acl_upgrade.php). This will ensure your
 phpGACL database contains all the required OpenEMR Access Control
 Objects.
 

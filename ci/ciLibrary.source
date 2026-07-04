@@ -7,7 +7,7 @@
 # the Free Software Foundation; either version 3 of the License, or
 # (at your option) any later version.
 #
-# Bash library for openemr ci
+# Bash library for tabemr ci
 #
 
 set -xeuo pipefail
@@ -91,7 +91,7 @@ with_retry() {
 # rely on `dc up --quiet-pull` to fetch anything still missing (e.g. a
 # profile-gated image the first pull's COMPOSE_PROFILES did not include).
 pull_images() {
-    local marker="${RUNNER_TEMP:-/tmp}/openemr-ci-images-pulled"
+    local marker="${RUNNER_TEMP:-/tmp}/tabemr-ci-images-pulled"
     if [[ -f "${marker}" ]]; then
         echo 'Images already pulled this job; skipping pull (up will fetch anything missing).'
         return 0
@@ -105,19 +105,19 @@ _exec() {
         # Set XDEBUG_MODE env var for xdebug coverage (ignored if using pcov).
         # NOTE: This env var is ignored when xdebug.mode is set in php.ini.
         # PHPUnit invocations also pass -d xdebug.mode=coverage for reliability.
-        dc exec --env XDEBUG_MODE=coverage --workdir "${OPENEMR_DIR?}" openemr "$@"
+        dc exec --env XDEBUG_MODE=coverage --workdir "${OPENEMR_DIR?}" tabemr "$@"
     else
-        dc exec --workdir "${OPENEMR_DIR?}" openemr "$@"
+        dc exec --workdir "${OPENEMR_DIR?}" tabemr "$@"
     fi
 }
 
 ##
-# Echo the first existing web-server user inside the openemr container.
+# Echo the first existing web-server user inside the tabemr container.
 # OpenEMR ships two web stacks: the apache image uses `apache`, the
 # nginx + php-fpm image uses `www-data`. Probe both so the same wrap
 # pattern works across the full CI matrix without needing per-stack
 # branching at every su call site.
-web_user_in_openemr() {
+web_user_in_tabemr() {
     # shellcheck disable=SC2016  # $u is the inner for-loop variable, intentionally evaluated inside the container's shell.
     _exec sh -c 'for u in apache www-data; do if id "$u" >/dev/null 2>&1; then echo "$u"; exit 0; fi; done; exit 1'
 }
@@ -245,39 +245,39 @@ install_configure() {
     )
     # we need this to occur on the docker image of OpenEMR, on local systems this may be the same but in the ci engine its inside the docker container
     # until we get the devops repo setup we'll just grab the auto_configure.php script and use that
-    _exec sh -c 'curl -v https://raw.githubusercontent.com/openemr/openemr-devops/refs/heads/master/docker/openemr/flex/auto_configure.php > /root/auto_configure.php'
+    _exec sh -c 'curl -v https://raw.githubusercontent.com/tabemr/tabemr-devops/refs/heads/master/docker/tabemr/flex/auto_configure.php > /root/auto_configure.php'
     # InstallerAuto goes through the Installer class, which RootCliGuard
     # refuses to run as root (PR #12267, def8758). Drop to the web user
     # for the subprocess — same approach as the upgradeOpenEMR override
-    # below. The openemr-devops devtools change will eventually carry the
+    # below. The tabemr-devops devtools change will eventually carry the
     # same privilege drop; until that lands, the ci library wraps locally.
     # Web user differs between stacks (apache image: apache, nginx image:
-    # www-data); web_user_in_openemr probes both.
+    # www-data); web_user_in_tabemr probes both.
     local web_user
-    web_user=$(web_user_in_openemr)
+    web_user=$(web_user_in_tabemr)
     _exec sh -c "OPENEMR_ENABLE_INSTALLER_AUTO=1 su -p -s /bin/sh ${web_user} -c 'php -f ./contrib/util/installScripts/InstallerAuto.php rootpass=root server=mysql loginhost=%'"
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'INSERT INTO product_registration (opt_out) VALUES (1)' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_api"' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_fhir_api"' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_portal_api"' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 3 WHERE gl_name = "oauth_password_grant"' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_system_scopes_api"' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 3 WHERE gl_name = "ccda_alt_service_enable"' openemr
+    _exec mysql -u tabemr --password=tabemr --ssl=false -h mysql -e 'INSERT INTO product_registration (opt_out) VALUES (1)' tabemr
+    _exec mysql -u tabemr --password=tabemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_api"' tabemr
+    _exec mysql -u tabemr --password=tabemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_fhir_api"' tabemr
+    _exec mysql -u tabemr --password=tabemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_portal_api"' tabemr
+    _exec mysql -u tabemr --password=tabemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 3 WHERE gl_name = "oauth_password_grant"' tabemr
+    _exec mysql -u tabemr --password=tabemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_system_scopes_api"' tabemr
+    _exec mysql -u tabemr --password=tabemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 3 WHERE gl_name = "ccda_alt_service_enable"' tabemr
 }
 
 ##
 # Reseed the database from the flex image's 5.0.0 demo dump and run the
 # upgrade chain to current — the same flow developers hit locally via
-# `openemr-cmd drid` (dev-reset-install-demodata). install_configure must
+# `tabemr-cmd drid` (dev-reset-install-demodata). install_configure must
 # have completed first so sqlconf.php exists for sql_upgrade.php to find
 # the database.
 post_install_upgrade() {
-    # Run only the demoData portion of openemr-cmd drid: drop the fresh
+    # Run only the demoData portion of tabemr-cmd drid: drop the fresh
     # install's tables, reseed from /root/demo_5_0_0_5.sql, run
     # sql_upgrade.php --from=5.0.0 through every sql/*upgrade.sql file
     # to current, and re-encode to utf8mb4. The full drid sequence
     # (dev-reset-install-demodata) also runs resetOpenemr + installOpenemr
-    # first, but resetOpenemr rsyncs from /openemr/sites which only exists
+    # first, but resetOpenemr rsyncs from /tabemr/sites which only exists
     # in the dev compose (read-only second bind mount) — the CI compose
     # has no such mount, so the rsync silently fails and leaves
     # sites/default/config.php missing, which then crashes sql_upgrade.php
@@ -287,7 +287,7 @@ post_install_upgrade() {
     # devtoolsLibrary.source uses bash-style [[ ]]; the container's
     # /bin/sh is busybox ash which supports it. prepareVariables() reads
     # MYSQL_HOST and MYSQL_ROOT_PASS from the env (the dev compose sets
-    # these on the openemr service; the CI compose does not). Export
+    # these on the tabemr service; the CI compose does not). Export
     # rather than the `VAR=val cmd` form — demoData also references
     # $MYSQL_HOST / $MYSQL_ROOT_PASS directly, and the inline form would
     # scope them only to the prepareVariables call.
@@ -296,13 +296,13 @@ post_install_upgrade() {
     # demoData drops all tables and reseeds from the 5.0.0 dump (which
     # has its own globals values), so the CI-specific globals that
     # install_configure set originally are gone. Re-apply.
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'INSERT INTO product_registration (opt_out) VALUES (1)' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_api"' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_fhir_api"' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_portal_api"' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 3 WHERE gl_name = "oauth_password_grant"' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_system_scopes_api"' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 3 WHERE gl_name = "ccda_alt_service_enable"' openemr
+    _exec mysql -u tabemr --password=tabemr --ssl=false -h mysql -e 'INSERT INTO product_registration (opt_out) VALUES (1)' tabemr
+    _exec mysql -u tabemr --password=tabemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_api"' tabemr
+    _exec mysql -u tabemr --password=tabemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_fhir_api"' tabemr
+    _exec mysql -u tabemr --password=tabemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_portal_api"' tabemr
+    _exec mysql -u tabemr --password=tabemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 3 WHERE gl_name = "oauth_password_grant"' tabemr
+    _exec mysql -u tabemr --password=tabemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_system_scopes_api"' tabemr
+    _exec mysql -u tabemr --password=tabemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 3 WHERE gl_name = "ccda_alt_service_enable"' tabemr
 }
 
 ##
@@ -314,8 +314,8 @@ setup_e2e_bookends() {
     local webserver="${1:-apache}"
     local php_scan_dir
     local prepend_file='ci/auto_prepend.php'
-    local prepend_marker='openemr-autoprepend-PREPEND_EXECUTED'
-    local shutdown_marker='openemr-autoprepend-SHUTDOWN_EXECUTED'
+    local prepend_marker='tabemr-autoprepend-PREPEND_EXECUTED'
+    local shutdown_marker='tabemr-autoprepend-SHUTDOWN_EXECUTED'
     local webserver_host
 
     # Map webserver types to their hostnames
@@ -350,10 +350,10 @@ setup_e2e_bookends() {
     {
         echo "auto_prepend_file=${OPENEMR_DIR}/${prepend_file}"
     } > "${prepend_ini_file}"
-    dc cp "${prepend_ini_file}" "openemr:${php_scan_dir}/php_prepend.ini"
+    dc cp "${prepend_ini_file}" "tabemr:${php_scan_dir}/php_prepend.ini"
 
     echo 'Restarting services to pick up the new PHP configuration'
-    dc restart openemr
+    dc restart tabemr
     dockers_env_start
 
     echo 'Testing prepend/shutdown behavior…'
@@ -364,7 +364,7 @@ setup_e2e_bookends() {
 
     sleep 1  # Give filesystem time to flush
 
-    _exec sh -c 'ls /tmp/openemr-autoprepend-*_EXECUTED'
+    _exec sh -c 'ls /tmp/tabemr-autoprepend-*_EXECUTED'
 
     echo 'Checking prepend marker file after web request:'
     _exec sh -c "cat '/tmp/${prepend_marker}'"
@@ -491,15 +491,15 @@ build_test_redis_failover() {
     local poll_interval=3
 
     # Detect TLS mode so redis-cli commands use the right flags.
-    # The openemr container carries the authoritative env vars.
+    # The tabemr container carries the authoritative env vars.
     local -a redis_cli_tls_args=()
     local tls_label=""
     local _tls _x509
-    _tls=$(docker compose exec -T openemr printenv REDIS_TLS 2>/dev/null) || _tls=""
+    _tls=$(docker compose exec -T tabemr printenv REDIS_TLS 2>/dev/null) || _tls=""
     if [[ "${_tls}" == "yes" ]]; then
         redis_cli_tls_args=(--tls --cacert /certs/ca.crt)
         tls_label=" (TLS)"
-        _x509=$(docker compose exec -T openemr printenv REDIS_X509 2>/dev/null) || _x509=""
+        _x509=$(docker compose exec -T tabemr printenv REDIS_X509 2>/dev/null) || _x509=""
         if [[ "${_x509}" == "yes" ]]; then
             redis_cli_tls_args+=(--cert /certs/client.crt --key /certs/client.key)
             tls_label=" (mTLS)"
@@ -524,7 +524,7 @@ build_test_redis_failover() {
     echo "Step 1.5: Writing pre-failover test value to Redis..."
     # shellcheck disable=SC2016
     _exec php -r '
-        require "/var/www/localhost/htdocs/openemr/vendor/autoload.php";
+        require "/var/www/localhost/htdocs/tabemr/vendor/autoload.php";
         $r = (new \OpenEMR\Common\Session\Predis\SentinelUtil())->configureClient();
         $r->set("oe:failover-test", "pre-failover-data");
         echo "Written: " . $r->get("oe:failover-test") . "\n";
@@ -582,7 +582,7 @@ build_test_redis_failover() {
         # triggered by a bash function appearing in a || condition.
         local health_status=0
         local health_body=""
-        health_body=$(docker compose exec -T openemr curl -fsSL --insecure --max-time 15 https://localhost/meta/health/readyz 2>/dev/null) || health_status=$?
+        health_body=$(docker compose exec -T tabemr curl -fsSL --insecure --max-time 15 https://localhost/meta/health/readyz 2>/dev/null) || health_status=$?
         # readyz returns HTTP 200 even for errors; check the body for "error" status
         if [[ "${health_status}" -eq 0 && "${health_body}" != *'"status":"error"'* ]]; then
             echo "  ${health_body}"
@@ -602,7 +602,7 @@ build_test_redis_failover() {
     echo "Step 4.5: Verifying pre-failover data survived on new master..."
     # shellcheck disable=SC2016
     _exec php -r '
-        require "/var/www/localhost/htdocs/openemr/vendor/autoload.php";
+        require "/var/www/localhost/htdocs/tabemr/vendor/autoload.php";
         $r = (new \OpenEMR\Common\Session\Predis\SentinelUtil())->configureClient();
         $v = $r->get("oe:failover-test");
         if ($v !== "pre-failover-data") {

@@ -11,7 +11,7 @@
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2011 Z&H Consultancy Services Private Limited <sam@zhservices.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../interface/globals.php");
@@ -48,6 +48,6 @@ if ($_GET['mode'] === 'get_user_data') {
 $pid = $_POST['pid'];
 $facility = $_POST['facility'];
 $date = $_POST['date'];
-$q = sqlStatement("SELECT pc_billing_location FROM openemr_postcalendar_events WHERE pc_pid=? AND pc_eventDate=? AND pc_facility=?", [$pid, $date, $facility]);
+$q = sqlStatement("SELECT pc_billing_location FROM tabemr_postcalendar_events WHERE pc_pid=? AND pc_eventDate=? AND pc_facility=?", [$pid, $date, $facility]);
 $row = sqlFetchArray($q);
 billing_facility('billing_facility', $row['pc_billing_location']);

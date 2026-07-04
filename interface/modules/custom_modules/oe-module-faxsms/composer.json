@@ -1,7 +1,7 @@
 {
-    "name": "openemr/oe-module-faxsms",
+    "name": "tabemr/oe-module-faxsms",
     "description": "OpenEMR Fax and SMS module",
-    "type": "openemr-module",
+    "type": "tabemr-module",
     "license": "GPL-3.0",
     "authors": [
         {

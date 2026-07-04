@@ -8,11 +8,11 @@
  * issue as a developer issue.  That way regular users can see feature changes separated out from developer specific issues
  * such as api, code refactoring, etc.
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2023 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Common\Command;
@@ -33,7 +33,7 @@ class CreateReleaseChangelogCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('openemr-dev:create-release-change-log')
+            ->setName('tabemr-dev:create-release-change-log')
             ->setDescription("Utility class to help test and use the client credentials grant assertion")
             ->addUsage('--site=default')
             ->setDefinition(
@@ -73,7 +73,7 @@ class CreateReleaseChangelogCommand extends Command
                 echo "Generating OpenEMR Changelog for Milestone " . $milestone . "\n\n";
                 echo "Issues count: " . count($issues) . "\n\n";
             }
-            echo "## [" . $milestoneName . "](https://github.com/openemr/openemr/milestone/" . $milestone . "?closed=1) - " . date("Y-m-d") . "\n\n";
+            echo "## [" . $milestoneName . "](https://github.com/tabemr/tabemr/milestone/" . $milestone . "?closed=1) - " . date("Y-m-d") . "\n\n";
 
             $uniqueCategories = [];
             $categorizedIssues = array_map(function ($issue) use (&$uniqueCategories) {
@@ -180,7 +180,7 @@ class CreateReleaseChangelogCommand extends Command
     private function getMilestoneNumberForMilestoneStatus($milestoneStatus, $milestoneName, $accessToken)
     {
         $url = http_build_query(['state' => $milestoneStatus, 'per_page' => 100]);
-        $url = "https://api.github.com/repos/openemr/openemr/milestones?" . $url;
+        $url = "https://api.github.com/repos/tabemr/tabemr/milestones?" . $url;
 
         $guzzle = new Client();
         try {
@@ -328,7 +328,7 @@ class CreateReleaseChangelogCommand extends Command
         //--url "https://api.github.com/repos/octocat/Spoon-Knife/issues" \
         //--header "Accept: application/vnd.github+json"
         $url = http_build_query(['milestone' => $milestone, 'state' => 'closed', 'per_page' => 100]);
-        $url = "https://api.github.com/repos/openemr/openemr/issues?" . $url;
+        $url = "https://api.github.com/repos/tabemr/tabemr/issues?" . $url;
         $guzzle = new Client();
         // make a guzzle request with an Authorization: token <token> header;
         if (!empty($accessToken)) {

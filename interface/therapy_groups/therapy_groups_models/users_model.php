@@ -28,7 +28,7 @@
 class Users
 {
     const TABLE = 'users';
-    const EVENTS_TABLE = 'openemr_postcalendar_events';
+    const EVENTS_TABLE = 'tabemr_postcalendar_events';
 
     /**
      * Get all users' ids and full names from users table.

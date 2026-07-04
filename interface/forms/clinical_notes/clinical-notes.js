@@ -14,7 +14,7 @@
  * @copyright Copyright (c) 2021 <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (C) 2025 Open Plan IT Ltd. <support@openplanit.com>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 (function() {
     let codeArray = [];

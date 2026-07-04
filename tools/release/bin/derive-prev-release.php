@@ -4,13 +4,13 @@
 /**
  * Print the previous release version (the most recent v<MAJOR>_<MINOR>_<PATCH>
  * tag in the local checkout). Used by the conductor workflow to populate
- * the prev_release field of openemr-rel-cut / openemr-rel-update payloads.
+ * the prev_release field of tabemr-rel-cut / tabemr-rel-update payloads.
  *
  * @package   OpenEMR
  * @link      http://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);

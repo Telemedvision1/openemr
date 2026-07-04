@@ -5,7 +5,7 @@
  * @link      https://www.open-emr.org
  * @author    Eric Stern <erics@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -35,7 +35,7 @@ class ShutdownTracker implements FinishedSubscriber
     {
         register_shutdown_function(function (): void {
             if (!$this->gotFinishedEvent) {
-                // @phpstan-ignore openemr.forbiddenErrorLog (System logger not available here)
+                // @phpstan-ignore tabemr.forbiddenErrorLog (System logger not available here)
                 error_log("CRITICAL ERROR: Exiting without having received PHPUnit shutdown event");
                 exit(70); // "Internal software error"
             }

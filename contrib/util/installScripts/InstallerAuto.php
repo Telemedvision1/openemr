@@ -28,9 +28,9 @@
  *     port       -> MySQL port (3306)
  *     root       -> MySQL server root username (root)
  *     rootpass   -> MySQL server root password ()
- *     login      -> username to MySQL openemr database (openemr)
- *     pass       -> password to MySQL openemr database (openemr)
- *     dbname     -> MySQL openemr database name (openemr)
+ *     login      -> username to MySQL tabemr database (tabemr)
+ *     pass       -> password to MySQL tabemr database (tabemr)
+ *     dbname     -> MySQL tabemr database name (tabemr)
  *     collate    -> collation for mysql (utf8_general_ci)
  *     site       -> location of this instance in sites/ (default)
  *     source_site_id -> location of instance to clone and mirror ()
@@ -48,30 +48,30 @@
  *     2) Provide root sql user password for installation
  *        (otherwise use default configuration settings)
  *          php -f InstallerAuto.php rootpass=howdy
- *     3) Provide root sql user password and openemr sql user password
+ *     3) Provide root sql user password and tabemr sql user password
  *        (otherwise use default configuration settings)
  *          php -f InstallerAuto.php rootpass=howdy pass=hey
- *     4) Provide sql user settings and openemr user settings
+ *     4) Provide sql user settings and tabemr user settings
  *        (otherwise use default configuration settings)
- *          php -f InstallerAuto.php rootpass=howdy login=openemr2 pass=hey dbname=openemr2 iuser=tom iuname=Miller iuserpass=heynow
+ *          php -f InstallerAuto.php rootpass=howdy login=tabemr2 pass=hey dbname=tabemr2 iuser=tom iuname=Miller iuserpass=heynow
  *     5) Create mutli-site (note this is very advanced usage)
  *          a. First create first installation
  *            php -f InstallerAuto.php
  *          b. Can create an installation that duplicates 'default' site but not the database
- *            php -f InstallerAuto.php login=openemr2 pass=openemr2 dbname=openemr2 site=default2 source_site_id=default
+ *            php -f InstallerAuto.php login=tabemr2 pass=tabemr2 dbname=tabemr2 site=default2 source_site_id=default
  *          c. Or can create an installation that duplicates 'default' site and database
- *             php -f InstallerAuto.php login=openemr2 pass=openemr2 dbname=openemr2 site=default2 source_site_id=default clone_database=yes
+ *             php -f InstallerAuto.php login=tabemr2 pass=tabemr2 dbname=tabemr2 site=default2 source_site_id=default clone_database=yes
  *          d. Can continue installing new instances as needed ...
- *             php -f InstallerAuto.php login=openemr3 pass=openemr3 dbname=openemr3 site=default3 source_site_id=default clone_database=yes
+ *             php -f InstallerAuto.php login=tabemr3 pass=tabemr3 dbname=tabemr3 site=default3 source_site_id=default clone_database=yes
  *     6) Provide pre-created database and restricted privilege user access credentials - example from Planettel.com.sg Proxmox OpenVZ Template
  *        (otherwise use default configuration settings - do not use for cloning / migration)
- *          php -f /var/www/openemr/contrib/util/installScripts/InstallerAuto.php no_root_db_access=1 iuserpass=oemr123 login=oemrusr pass=${UPASSWD} > /dev/null 2>&1
+ *          php -f /var/www/tabemr/contrib/util/installScripts/InstallerAuto.php no_root_db_access=1 iuserpass=oemr123 login=oemrusr pass=${UPASSWD} > /dev/null 2>&1
  *
  * @package   OpenEMR
  * @link      https://www.open-emr.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (C) 2010-2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 // This safety check prevents accidental execution of this script.
@@ -95,9 +95,9 @@ $installSettings['loginhost']                = 'localhost'; // php/apache server
 $installSettings['port']                     = '3306';
 $installSettings['root']                     = 'root';
 $installSettings['rootpass']                 = 'BLANK';
-$installSettings['login']                    = 'openemr';
-$installSettings['pass']                     = 'openemr';
-$installSettings['dbname']                   = 'openemr';
+$installSettings['login']                    = 'tabemr';
+$installSettings['pass']                     = 'tabemr';
+$installSettings['dbname']                   = 'tabemr';
 $installSettings['collate']                  = 'utf8mb4_general_ci';
 $installSettings['site']                     = 'default';
 $installSettings['source_site_id']           = 'BLANK';

@@ -179,7 +179,7 @@ function payerPatient($patient_id)
 function allEncPat($patient_id, $from_date, $to_date)
 {
     $encArr = [];
-    $patQry = "SELECT fe.encounter, fe.date,fe.pc_catid,opc.pc_catname FROM form_encounter fe inner join openemr_postcalendar_categories opc on opc.pc_catid = fe.pc_catid WHERE fe.pid = ? AND (DATE(fe.date) BETWEEN ? AND ?)";
+    $patQry = "SELECT fe.encounter, fe.date,fe.pc_catid,opc.pc_catname FROM form_encounter fe inner join tabemr_postcalendar_categories opc on opc.pc_catid = fe.pc_catid WHERE fe.pid = ? AND (DATE(fe.date) BETWEEN ? AND ?)";
     $patRes = sqlStatement($patQry, [$patient_id, $from_date, $to_date]);
     while ($patRow = sqlFetchArray($patRes)) {
         $encArr[] = $patRow;

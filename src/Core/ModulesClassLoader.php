@@ -1,7 +1,7 @@
 <?php
 
 /**
- * ModulesClassLoader is made available in every custom_module's openemr.bootstrap.php file as the variable $classLoader.
+ * ModulesClassLoader is made available in every custom_module's tabemr.bootstrap.php file as the variable $classLoader.
  * Modules can use the ModulesClassLoader to register their namespace in order to auto load their classes.  This facilitates
  * modules being dropped into the filesystem without having to go through a composer install / dumping of the autoloader.
  *
@@ -13,9 +13,9 @@
  * For performance reasons, if a module writer wishes to avoid hitting the filesystem for class discovery, they can use
  * the registerClassmap function to optimize their runtime performance.
  *
- * An example use in an openemr.bootstrap.php file is as follows:
+ * An example use in an tabemr.bootstrap.php file is as follows:
  * <example>
- * // openemr.bootstrap.php
+ * // tabemr.bootstrap.php
  * namespace Acme\OpenEMR\Modules\MyUniqueModule;
  * use OpenEMR\Core\ModulesClassLoader;
  * // @global ModulesClassLoader $classLoader
@@ -28,7 +28,7 @@
  *
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2019 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Core;

@@ -10,7 +10,7 @@
  * @link      https://www.open-emr.org
  * @author    Stephen Waite stephen.waite@open-emr.org
  * @copyright Copyright (c) 2023 Stephen Waite stephen.waite@open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Billing\BillingProcessor;

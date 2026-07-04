@@ -30,7 +30,7 @@ Compiling SASS files locally requires [node.js](http://nodejs.org) and [npm](htt
 1. **Setup your local development environment** as described in [CONTRIBUTING.md](../CONTRIBUTING.md)
 
 - If running on a local machine, run `npm install` from the root directory.
-- If running in docker: `docker exec -it [your_container_id] /bin/sh` then cd into `openemr`
+- If running in docker: `docker exec -it [your_container_id] /bin/sh` then cd into `tabemr`
 
 From here you can either:
 * `npm run dev` - just compiles the local `.scss` files and recompiles them whenever they are changed.

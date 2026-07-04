@@ -16,7 +16,7 @@
  * @copyright Copyright (C) 2017-2021 Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (C) 2018 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019 Ranganath Pathak <pathak@scrs1.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../globals.php");

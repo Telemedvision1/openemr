@@ -305,7 +305,7 @@ If you regenerate the baseline and a count changes:
 - **Count went down** — lower the cap in `fatal-baseline-caps.php` to match.
 - **Count went up** — fix the underlying code instead of raising the cap. Each entry resolves to one of four fixes: delete dead code, wrap optional code in `class_exists()` / `function_exists()` / `defined()`, add a PHPStan stub, or install the missing dependency.
 
-See openemr/openemr#11792 for the plan to drive every cap to zero.
+See tabemr/tabemr#11792 for the plan to drive every cap to zero.
 
 ## Running PHPStan
 

@@ -53,7 +53,7 @@ class PdfTemplatesController extends PrescriptionTemplatesController
         $htmlView = $this->renderer->render($defaultHtml);
 
         /* create pdf */
-        $mpdf = new Mpdf(['tempDir' => (new CacheDirectory())->for('openemr-mpdf')]);
+        $mpdf = new Mpdf(['tempDir' => (new CacheDirectory())->for('tabemr-mpdf')]);
         $mpdf->autoLangToFont = true;
         $mpdf->WriteHTML($htmlView);
         $mpdf->Output();

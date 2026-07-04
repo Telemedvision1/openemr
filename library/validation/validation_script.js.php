@@ -88,7 +88,7 @@ function submitme(new_validate,e,form_id, constraints) {
             }
             var valid = true ;
 
-            //We use a common error for all the errors because of the multilanguage capability of openemr
+            //We use a common error for all the errors because of the multilanguage capability of tabemr
             var form = document.querySelector("form#"+form_id);
             //gets all the "elements" in the form and sends them to the validate library
             //for more information @see https://validatejs.org/

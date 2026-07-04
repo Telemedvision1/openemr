@@ -37,7 +37,7 @@ class NQF_0002_Numerator implements CqmFilterIF
 
         //Patients who were tested for Streptococcus A during the same encounter that the antibiotic was prescribed, Encounter category should be office visit.
         $query = "SELECT count(*) as cnt FROM form_encounter fe " .
-                 "INNER JOIN openemr_postcalendar_categories opc ON fe.pc_catid = opc.pc_catid " .
+                 "INNER JOIN tabemr_postcalendar_categories opc ON fe.pc_catid = opc.pc_catid " .
                  "INNER JOIN procedure_order po ON po.encounter_id = fe.encounter " .
                  "INNER JOIN procedure_order_code pc ON po.procedure_order_id = pc.procedure_order_id " .
                  "INNER JOIN procedure_report pr on pr.procedure_order_id = po.procedure_order_id " .

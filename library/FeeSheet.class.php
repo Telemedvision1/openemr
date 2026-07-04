@@ -129,7 +129,7 @@ class FeeSheet
         $visit_row = sqlQuery("SELECT fe.date, fe.provider_id, fe.supervisor_id, " .
           "opc.pc_catname, fac.extra_validation " .
           "FROM form_encounter AS fe " .
-          "LEFT JOIN openemr_postcalendar_categories AS opc ON opc.pc_catid = fe.pc_catid " .
+          "LEFT JOIN tabemr_postcalendar_categories AS opc ON opc.pc_catid = fe.pc_catid " .
           "LEFT JOIN facility AS fac ON fac.id = fe.facility_id " .
           "WHERE fe.pid = ? AND fe.encounter = ? LIMIT 1", [$this->pid, $this->encounter]);
         $this->visit_date    = substr((string) $visit_row['date'], 0, 10);

@@ -9,9 +9,9 @@
 //
 // Modified 7-2009 by BM in order to migrate using the form,
 // unit, route, and interval lists with the
-// functions in openemr/library/options.inc.php .
+// functions in tabemr/library/options.inc.php .
 // These lists are based on the constants found in the
-// openemr/library/classes/Prescription.class.php file.
+// tabemr/library/classes/Prescription.class.php file.
 
 use OpenEMR\Common\Session\SessionWrapperFactory;
 use OpenEMR\Core\OEGlobalsBag;

@@ -22,7 +22,7 @@ use Symfony\Component\HttpFoundation\Response;
  * @link      https://www.open-emr.org
  * @author    Yash Bothra <yashrajbothra786@gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  *
  */
 class FhirOrganizationRestController
@@ -173,7 +173,7 @@ class FhirOrganizationRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function getAll($searchParams): Response
     {
@@ -279,7 +279,7 @@ class FhirOrganizationRestController
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
             new OA\Response(response: '404', ref: '#/components/responses/uuidnotfound'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function getOne(string $fhirId, ?string $puuidBind = null): Response
     {
@@ -418,7 +418,7 @@ class FhirOrganizationRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function post(array $fhirJson): Response
     {
@@ -524,7 +524,7 @@ class FhirOrganizationRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function patch(string $fhirId, array $fhirJson): Response
     {

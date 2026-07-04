@@ -5,11 +5,11 @@
  * For backwards compatibility it extends ORDataObject (which implements the a form of the Active record data pattern),
  * but the preferred mechanism is to use this as a POPO (Plain old PHP object) and save / retrieve data using
  * the VitalsService class.
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Common\Forms;

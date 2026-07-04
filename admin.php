@@ -10,7 +10,7 @@
  * @author Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (C) 2010 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2019 Ranganath Pathak <pathak@scrs1.org>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 // Checks if the server's PHP version is compatible with OpenEMR:
@@ -130,13 +130,13 @@ function adminSqlQuery($statement, $link)
                                 echo "  <td colspan='3' class='text-danger'>" . htmlspecialchars($errmsg, ENT_NOQUOTES) . "</td>\n";
                             } else {
                                 // Get site name for display.
-                                $row = adminSqlQuery("SELECT gl_value FROM globals WHERE gl_name = 'openemr_name' LIMIT 1", $dbh);
-                                $openemr_name = $row ? $row['gl_value'] : '';
+                                $row = adminSqlQuery("SELECT gl_value FROM globals WHERE gl_name = 'tabemr_name' LIMIT 1", $dbh);
+                                $tabemr_name = $row ? $row['gl_value'] : '';
 
                                 // Get version indicators from the database.
                                 $row = adminSqlQuery("SHOW TABLES LIKE 'version'", $dbh);
                                 if (empty($row)) {
-                                    $openemr_version = 'Unknown';
+                                    $tabemr_version = 'Unknown';
                                     $database_version = 0;
                                 } else {
                                     $row = adminSqlQuery("SELECT * FROM version LIMIT 1", $dbh);
@@ -145,7 +145,7 @@ function adminSqlQuery($statement, $link)
                                         $database_patch_txt = " (" . $row['v_realpatch'] . ")";
                                     }
 
-                                    $openemr_version = $row['v_major'] . "." . $row['v_minor'] . "." .
+                                    $tabemr_version = $row['v_major'] . "." . $row['v_minor'] . "." .
                                     $row['v_patch'] . $row['v_tag'] . $database_patch_txt;
                                     $database_version = 0 + $row['v_database'];
                                     $database_acl = 0 + $row['v_acl'];
@@ -153,8 +153,8 @@ function adminSqlQuery($statement, $link)
                                 }
 
                                 // Display relevant columns.
-                                echo "  <td>" . htmlspecialchars($openemr_name, ENT_NOQUOTES) . "</td>\n";
-                                echo "  <td>" . htmlspecialchars($openemr_version, ENT_NOQUOTES) . "</td>\n";
+                                echo "  <td>" . htmlspecialchars($tabemr_name, ENT_NOQUOTES) . "</td>\n";
+                                echo "  <td>" . htmlspecialchars($tabemr_version, ENT_NOQUOTES) . "</td>\n";
                                 if ($v_database != $database_version) {
                                     echo "  <td><a href='sql_upgrade.php?site=" . htmlspecialchars(urlencode($sfname), ENT_QUOTES) . "' class='text-decoration-none'>Upgrade Database</a></td>\n";
                                 } elseif (($v_acl > $database_acl)) {
@@ -212,7 +212,7 @@ function adminSqlQuery($statement, $link)
     <script>
         $(function () {
             $('#help-href').click (function() {
-                document.getElementById('targetiframe').src = "Documentation/help_files/openemr_multisite_admin_help.php";
+                document.getElementById('targetiframe').src = "Documentation/help_files/tabemr_multisite_admin_help.php";
             });
         });
         $(function () {

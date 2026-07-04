@@ -10,7 +10,7 @@
  * @author    Paul Simon K <paul@zhservices.com>
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2010 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\BC\Utilities;

@@ -5,7 +5,7 @@
  *
  * Combines the responsibilities of the legacy Holidays_Controller and
  * Holidays_Storage classes: uploaded-CSV handling, the calendar_external
- * staging table, and synchronization into openemr_postcalendar_events.
+ * staging table, and synchronization into tabemr_postcalendar_events.
  *
  * @package   OpenEMR
  * @link      https://www.open-emr.org
@@ -13,7 +13,7 @@
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2016 Sharon Cohen <sharonco@matrix.co.il>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -233,7 +233,7 @@ final class HolidayService implements HolidayServiceInterface
 
         $this->connection->executeStatement(
             <<<'SQL'
-            DELETE FROM openemr_postcalendar_events WHERE pc_catid = ?
+            DELETE FROM tabemr_postcalendar_events WHERE pc_catid = ?
             SQL,
             [self::CATEGORY_HOLIDAY]
         );
@@ -246,7 +246,7 @@ final class HolidayService implements HolidayServiceInterface
             }
             $this->connection->executeStatement(
                 <<<'SQL'
-                INSERT INTO openemr_postcalendar_events (
+                INSERT INTO tabemr_postcalendar_events (
                     pc_catid, pc_aid, pc_pid, pc_title, pc_time,
                     pc_eventDate, pc_duration, pc_recurrspec, pc_alldayevent,
                     pc_eventstatus, pc_facility, pc_sharing
@@ -287,7 +287,7 @@ final class HolidayService implements HolidayServiceInterface
         try {
             $rows = $this->connection->fetchAllAssociative(
                 <<<'SQL'
-                SELECT pc_eventDate FROM openemr_postcalendar_events
+                SELECT pc_eventDate FROM tabemr_postcalendar_events
                 WHERE (pc_catid = ? OR pc_catid = ?)
                   AND pc_eventDate >= ? AND pc_eventDate <= ?
                 SQL,
@@ -314,7 +314,7 @@ final class HolidayService implements HolidayServiceInterface
             try {
                 $rows = $this->connection->fetchAllAssociative(
                     <<<'SQL'
-                    SELECT pc_eventDate FROM openemr_postcalendar_events
+                    SELECT pc_eventDate FROM tabemr_postcalendar_events
                     WHERE pc_catid = ? OR pc_catid = ?
                     SQL,
                     [self::CATEGORY_HOLIDAY, self::CATEGORY_CLOSED]

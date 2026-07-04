@@ -24,11 +24,11 @@
  * baseline — if one ever appears, the test fails instead of quietly
  * baselining it.
  *
- * See openemr/openemr#11792 for the plan to drive every cap to zero.
+ * See tabemr/tabemr#11792 for the plan to drive every cap to zero.
  *
  * @package   OpenEMR
  * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);

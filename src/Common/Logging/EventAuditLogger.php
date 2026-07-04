@@ -9,7 +9,7 @@
  * @author    Kyle Wiering <kyle@softwareadvice.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019 Kyle Wiering <kyle@softwareadvice.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Common\Logging;
@@ -142,10 +142,10 @@ class EventAuditLogger
         "registry" => "security-administration",
         "users" => "security-administration",
         "groups" => "security-administration",
-        "openemr_postcalendar_events" => "scheduling",
-        "openemr_postcalendar_categories" => "security-administration",
-        "openemr_postcalendar_limits" => "security-administration",
-        "openemr_postcalendar_topics" => "security-administration",
+        "tabemr_postcalendar_events" => "scheduling",
+        "tabemr_postcalendar_categories" => "security-administration",
+        "tabemr_postcalendar_limits" => "security-administration",
+        "tabemr_postcalendar_topics" => "security-administration",
         "gacl_acl" => "security-administration",
         "gacl_acl_sections" => "security-administration",
         "gacl_acl_seq" => "security-administration",
@@ -802,7 +802,7 @@ class EventAuditLogger
             }
         } elseif ($table == 'amendments' || $table == 'amendments_history') {
             return "Amendments";
-        } elseif ($table == 'openemr_postcalendar_events') {
+        } elseif ($table == 'tabemr_postcalendar_events') {
             return "Scheduling";
         } elseif ($table == 'procedure_order' || $table == 'procedure_order_code') {
             return "Lab Order";

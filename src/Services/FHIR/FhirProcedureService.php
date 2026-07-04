@@ -9,7 +9,7 @@
  * @author             Stephen Nielson <stephen@nielson.org>
  * @copyright          Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
  * @copyright          Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license            https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license            https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Services\FHIR;
@@ -99,7 +99,7 @@ class FhirProcedureService extends FhirServiceBase implements IResourceUSCIGProf
 
 
     /**
-     * Retrieves all of the fhir observation resources mapped to the underlying openemr data elements.
+     * Retrieves all of the fhir observation resources mapped to the underlying tabemr data elements.
      */
     public function getAll($fhirSearchParameters, $puuidBind = null): ProcessingResult
     {

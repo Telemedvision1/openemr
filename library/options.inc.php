@@ -21,7 +21,7 @@
  * @copyright Copyright (c) 2025 David Eschelbacher <psoas@tampabay.rr.com>
  * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@open-emr.org>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  *
  * Note: there are translation wrappers for the lists and layout labels
  * at library/translation.inc.php. The functions are titled xl_list_label()
@@ -1020,7 +1020,7 @@ function generate_form_field($frow, $currvalue): void
         }
     } elseif ($data_type == 18) { // Visit categories.
         $cres = sqlStatement("SELECT pc_catid, pc_catname " .
-        "FROM openemr_postcalendar_categories ORDER BY pc_catname");
+        "FROM tabemr_postcalendar_categories ORDER BY pc_catname");
         echo "<select name='form_$field_id_esc' id='form_$field_id_esc' class='form-control$smallform' title='$description'" . " $lbfonchange $disabled>";
         // @phpstan-ignore argument.type (legacy on-the-fly translation of dynamic value; migration tracked in #11498)
         echo "<option value=''>" . xlt($empty_title) . "</option>";
@@ -1926,7 +1926,7 @@ function generate_print_field($frow, $currvalue, $value_allowed = true): void
         if ($currvalue) {
             $crow = sqlQuery(
                 "SELECT pc_catid, pc_catname " .
-                "FROM openemr_postcalendar_categories WHERE pc_catid = ?",
+                "FROM tabemr_postcalendar_categories WHERE pc_catid = ?",
                 [$currvalue]
             );
             $tmp = xl_appt_category($crow['pc_catname']);
@@ -2496,7 +2496,7 @@ function generate_display_field($frow, $currvalue)
     } elseif ($data_type == 18) { // visit category
         $crow = sqlQuery(
             "SELECT pc_catid, pc_catname " .
-            "FROM openemr_postcalendar_categories WHERE pc_catid = ?",
+            "FROM tabemr_postcalendar_categories WHERE pc_catid = ?",
             [$currvalue]
         );
         $s = htmlspecialchars((string) $crow['pc_catname'], ENT_NOQUOTES);
@@ -2964,7 +2964,7 @@ function generate_plaintext_field($frow, $currvalue)
     } elseif ($data_type == 18) { // visit category
         $crow = sqlQuery(
             "SELECT pc_catid, pc_catname " .
-            "FROM openemr_postcalendar_categories WHERE pc_catid = ?",
+            "FROM tabemr_postcalendar_categories WHERE pc_catid = ?",
             [$currvalue]
         );
         $s = $crow['pc_catname'];

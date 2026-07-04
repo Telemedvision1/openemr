@@ -17,7 +17,7 @@ class OAuth2PublicJsonWebKeyControllerTest extends TestCase
      */
     public function testGetJsonWebKeyResponse(): void
     {
-        $publicKeyPath = __DIR__ . '/../../../data/Unit/Common/Auth/Grant/openemr-rsa384-public.pem';
+        $publicKeyPath = __DIR__ . '/../../../data/Unit/Common/Auth/Grant/tabemr-rsa384-public.pem';
         $controller = new OAuth2PublicJsonWebKeyController($publicKeyPath);
 
         $request = HttpRestRequest::create('/oauth2/jwk');

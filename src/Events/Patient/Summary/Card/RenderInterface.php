@@ -4,8 +4,8 @@
  * Requirements for an object being sent to the CardRenderEvent class. Ensure core
  * can do its job
  *
- * @link      https://github.com/openemr/openemr/tree/master
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link      https://github.com/tabemr/tabemr/tree/master
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  * @package   OpenEMR\Events\Patient\Summary\Card
  *
  * @author    Robert Down <robertdown@live.com>

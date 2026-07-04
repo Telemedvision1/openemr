@@ -3,7 +3,7 @@ facility
 preference_value_sets
 therapy_groups
 contact
-openemr_postcalendar_categories
+tabemr_postcalendar_categories
 drugs
 form_physical_exam_diagnoses
 form_track_anything_type
@@ -25,7 +25,7 @@ lists
 forms
 procedure_order
 form_CAMOS_category
-openemr_postcalendar_events
+tabemr_postcalendar_events
 documents
 ehi_export_job
 form_CAMOS_subcategory
@@ -275,8 +275,8 @@ onsite_mail
 onsite_messages
 onsite_online
 address
-openemr_module_vars
-openemr_modules
+tabemr_module_vars
+tabemr_modules
 patient_birthday_alert
 patient_portal_menu
 patient_settings

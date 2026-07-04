@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2025 OpenEMR <info@open-emr.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Services\FHIR;
@@ -81,7 +81,7 @@ class FhirMedicationDispenseService extends FhirServiceBase implements
     }
 
     /**
-     * Retrieves all of the fhir medication dispense resources mapped to the underlying openemr data elements.
+     * Retrieves all of the fhir medication dispense resources mapped to the underlying tabemr data elements.
      * @param $fhirSearchParameters The FHIR resource search parameters
      * @param $puuidBind - Optional variable to only allow visibility of the patient with this puuid.
      * @return ProcessingResult

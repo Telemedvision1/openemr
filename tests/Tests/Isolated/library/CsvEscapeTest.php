@@ -9,7 +9,7 @@
  *
  * @package   OpenEMR
  * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  *
  * AI-Generated Code Notice: This file contains code generated with
  * assistance from Claude Code (Anthropic). The code has been reviewed

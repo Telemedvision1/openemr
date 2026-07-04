@@ -87,7 +87,7 @@ trait ContextualEncryptionTrait
             $version = KeyVersion::fromPrefix($value);
             // Value IS encrypted
             return $this->shouldEncryptForDatabase && $version === KeyVersion::CURRENT;
-        } catch (ValueError) { // @phpstan-ignore openemr.forbiddenCatchType
+        } catch (ValueError) { // @phpstan-ignore tabemr.forbiddenCatchType
             // Value is NOT encrypted.
             return !$this->shouldEncryptForDatabase;
         }
@@ -106,7 +106,7 @@ trait ContextualEncryptionTrait
             $version = KeyVersion::fromPrefix($value);
             // Value IS encrypted
             return $this->shouldEncryptForFilesystem && $version === KeyVersion::CURRENT;
-        } catch (ValueError) { // @phpstan-ignore openemr.forbiddenCatchType
+        } catch (ValueError) { // @phpstan-ignore tabemr.forbiddenCatchType
             // Value is NOT encrypted.
             return !$this->shouldEncryptForFilesystem;
         }

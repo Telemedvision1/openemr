@@ -7,13 +7,13 @@ https://dev.mysql.com/doc/refman/8.0/en/creating-ssl-files-using-openssl.html
 
 CN assignments in certs/keys:
 - `easy` directory holds certs/keys for the easy docker development environment
-  - CA: openemr-ca
+  - CA: tabemr-ca
   - Server: couchdb (server-cert.pem, server-key.pem)
-  - Client: openemr (client-cert.pem, client-key.pem)
+  - Client: tabemr (client-cert.pem, client-key.pem)
 - `insane` directory holds certs/keys for the insane docker development environment
-  - CA: openemr-ca
+  - CA: tabemr-ca
   - Server: couchdb (server-cert.pem, server-key.pem)
-  - Client: openemr-7-3-312 (client-cert.pem, client-key.pem)
+  - Client: tabemr-7-3-312 (client-cert.pem, client-key.pem)
 
 files in `easy`/`insane` directories:
 - CA

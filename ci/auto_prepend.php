@@ -14,7 +14,7 @@
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2025 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 if (!getenv('OPENEMR_ENABLE_CI_PHP')) {
@@ -22,10 +22,10 @@ if (!getenv('OPENEMR_ENABLE_CI_PHP')) {
     return;
 }
 
-const PREPEND_MARKER = '/tmp/openemr-autoprepend-PREPEND_EXECUTED';
-const SHUTDOWN_MARKER = '/tmp/openemr-autoprepend-SHUTDOWN_EXECUTED';
+const PREPEND_MARKER = '/tmp/tabemr-autoprepend-PREPEND_EXECUTED';
+const SHUTDOWN_MARKER = '/tmp/tabemr-autoprepend-SHUTDOWN_EXECUTED';
 
-const COVERAGE_DIR = '/tmp/openemr-coverage';
+const COVERAGE_DIR = '/tmp/tabemr-coverage';
 
 // Detect test type based on the request URI or environment
 // Priority order: inferno > api > e2e

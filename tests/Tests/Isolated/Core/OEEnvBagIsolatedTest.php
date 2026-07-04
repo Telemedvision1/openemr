@@ -6,7 +6,7 @@
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -86,10 +86,10 @@ class OEEnvBagIsolatedTest extends TestCase
 
     public function testGetIntAndGetString(): void
     {
-        $bag = new OEEnvBag(['PORT' => '8080', 'NAME' => 'openemr']);
+        $bag = new OEEnvBag(['PORT' => '8080', 'NAME' => 'tabemr']);
 
         $this->assertSame(8080, $bag->getInt('PORT'));
-        $this->assertSame('openemr', $bag->getString('NAME'));
+        $this->assertSame('tabemr', $bag->getString('NAME'));
     }
 
     public function testCreateInstanceMergesEnvSources(): void

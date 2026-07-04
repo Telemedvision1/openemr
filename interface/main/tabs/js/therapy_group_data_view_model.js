@@ -7,7 +7,7 @@
  * @author    Amiel Elboim <amielel@matrix.co.il>
  * @copyright Copyright (c) 2016 Kevin Yeh <kevin.y@integralemr.com>
  * @copyright Copyright (c) 2017 Amiel Elboim <amielel@matrix.co.il>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 function encounter_data(id,date,category)

@@ -9,7 +9,7 @@
  * @link       https://www.open-emr.org
  * @author     Kevin McCormick
  * @copyright  Copyright (c) 2016 Kevin McCormick    Longview, Texas
- * @license    https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license    https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 // a security measure to prevent direct web access to this file

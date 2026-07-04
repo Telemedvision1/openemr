@@ -5,11 +5,11 @@
  * various reporting years and methods for AMC this class holds the types of reporting methods and calculations we use
  * for each certification of OpenEMR.  The most current report type we run will be contained in the DEFAULT constant.
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\ClinicalDecisionRules\AMC;

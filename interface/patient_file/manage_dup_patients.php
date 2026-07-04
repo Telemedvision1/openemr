@@ -13,7 +13,7 @@
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
  * @copyright Copyright (c) 2026 Ruth Moulton <ruth@muswell.me.uk>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
@@ -205,7 +205,7 @@ if ($is_csv) {
     header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
     header("Content-Type: application/force-download");
     $today = date('YmdHi');
-    $instance_name = OEGlobalsBag::getInstance()->getString('openemr_name');
+    $instance_name = OEGlobalsBag::getInstance()->getString('tabemr_name');
     $filename = "duplicate_patients_" . $instance_name . "_" . $today . ".csv";
     header("Content-Disposition: attachment; filename=" . $filename);
     header("Content-Description: File Transfer");

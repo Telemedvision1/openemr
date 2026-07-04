@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\RestControllers\FHIR;
@@ -106,7 +106,7 @@ class FhirServiceRequestRestController
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
             new OA\Response(response: '404', ref: '#/components/responses/uuidnotfound'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function getOne($fhirId, $puuidBind = null)
     {
@@ -215,7 +215,7 @@ class FhirServiceRequestRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function getAll($searchParams, $puuidBind = null)
     {

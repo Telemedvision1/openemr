@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2018 Ranganath Pathak <pathak@scrs1.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\Core\Header;
@@ -316,7 +316,7 @@ require_once("../../interface/globals.php");
                     </p>
 
                     <p><?php echo xlt("Detailed information on how to setup and troubleshoot phiMail messages is available here");?>.
-                        <a href="https://raw.githubusercontent.com/openemr/openemr/master/Documentation/Direct_Messaging_README.txt" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
+                        <a href="https://raw.githubusercontent.com/tabemr/tabemr/master/Documentation/Direct_Messaging_README.txt" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
                     </p>
                 </div>
             </div>

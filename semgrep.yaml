@@ -180,7 +180,7 @@ rules:
 
   # OpenEMR-specific SQL functions with string concatenation
   # These functions are unique to OpenEMR and not covered by p/php or p/security-audit
-- id: openemr-sql-injection-sqlstatement
+- id: tabemr-sql-injection-sqlstatement
   patterns:
   - pattern: sqlStatement($QUERY, ...)
   - pattern-not: sqlStatement("...", ...)
@@ -192,7 +192,7 @@ rules:
   message: Potential SQL injection in sqlStatement() - use parameterized queries
   languages: [php]
   severity: ERROR
-- id: openemr-sql-injection-sqlquery
+- id: tabemr-sql-injection-sqlquery
   patterns:
   - pattern: sqlQuery($QUERY, ...)
   - pattern-not: sqlQuery("...", ...)
@@ -209,7 +209,7 @@ rules:
 
   # Detect eval() on dynamic data (e.g. AJAX responses, variables).
   # Excludes eval of literal strings which are safe.
-- id: openemr-js-eval-ajax-response
+- id: tabemr-js-eval-ajax-response
   patterns:
   - pattern: eval($DATA)
   - pattern-not: eval("...")
@@ -234,7 +234,7 @@ rules:
 
   # Detect dynamic innerHTML assignments (DOM-based XSS).
   # Excludes assignments of literal strings which are safe.
-- id: openemr-js-innerhtml-dynamic
+- id: tabemr-js-innerhtml-dynamic
   patterns:
   - pattern: $EL.innerHTML = $DATA;
   - pattern-not: $EL.innerHTML = "...";
@@ -265,7 +265,7 @@ rules:
 
   # Detect unescaped Twig output in href attributes.
   # Safe patterns use |e, |attr_url, or |safe_href filters.
-- id: openemr-twig-unescaped-output-in-href
+- id: tabemr-twig-unescaped-output-in-href
   pattern: href="{{ $VAR }}"
   message: >-
     Unescaped Twig variable in href attribute. Autoescape is disabled in OpenEMR.
@@ -290,7 +290,7 @@ rules:
     confidence: MEDIUM
 
   # Detect unescaped Twig output in form action attributes.
-- id: openemr-twig-unescaped-output-in-action
+- id: tabemr-twig-unescaped-output-in-action
   pattern: action="{{ $VAR }}"
   message: >-
     Unescaped Twig variable in action attribute. Autoescape is disabled in OpenEMR.
@@ -318,7 +318,7 @@ rules:
 
   # Detect disable-output-escaping in XSL transforms.
   # Bypasses XML output encoding, risky when transforming untrusted CCR/CCD data.
-- id: openemr-xsl-disable-output-escaping
+- id: tabemr-xsl-disable-output-escaping
   pattern: disable-output-escaping="yes"
   message: >-
     disable-output-escaping bypasses XML output encoding. When transforming

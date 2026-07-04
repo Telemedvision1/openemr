@@ -13,7 +13,7 @@
  * @copyright Copyright (c) 2021 Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2022 David Eschelbacher <psoas@tampabay.rr.com>
  * @copyright Copyright (c) 2022 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Common\ORDataObject;

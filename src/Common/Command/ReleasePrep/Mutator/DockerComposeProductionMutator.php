@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Pin docker/production/docker-compose.yml's openemr image from
+ * Pin docker/production/docker-compose.yml's tabemr image from
  * `latest@sha256:...` to `<version>@sha256:...`. The published image's
  * digest is supplied via --image-digest by the conductor workflow after
  * the release image has been built and pushed; if absent the existing
@@ -11,7 +11,7 @@
  * @link      http://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -30,7 +30,7 @@ final readonly class DockerComposeProductionMutator implements MutatorInterface
 
     public function name(): string
     {
-        return 'docker/production/docker-compose.yml (pin openemr image)';
+        return 'docker/production/docker-compose.yml (pin tabemr image)';
     }
 
     public function apply(MutatorContext $context): MutatorResult
@@ -48,13 +48,13 @@ final readonly class DockerComposeProductionMutator implements MutatorInterface
             ? null
             : preg_replace('/^sha256:/', '', $context->imageDigest);
 
-        // Pattern matches `image: openemr/openemr:<tag>` with an optional
+        // Pattern matches `image: tabemr/tabemr:<tag>` with an optional
         // `@sha256:<digest>` suffix. The tag may be `latest`, the target
         // version, or another version (idempotence + handles re-runs after
         // a digest update). The digest is optional because rel-* branches
         // that were cut before the digest-pinning automation existed start
-        // with a bare tag (e.g. `openemr/openemr:8.1.0`).
-        $pattern = '/(image:\s*openemr\/openemr:)([^@\s]+)(?:(@sha256:)([0-9a-f]{64}))?/';
+        // with a bare tag (e.g. `tabemr/tabemr:8.1.0`).
+        $pattern = '/(image:\s*tabemr\/tabemr:)([^@\s]+)(?:(@sha256:)([0-9a-f]{64}))?/';
         $updated = preg_replace_callback(
             $pattern,
             static function (array $match) use ($version, $newDigestHex): string {
@@ -74,7 +74,7 @@ final readonly class DockerComposeProductionMutator implements MutatorInterface
         }
         if ($count === 0) {
             throw new \RuntimeException(
-                'Expected an `image: openemr/openemr:<tag>` line in docker-compose.yml',
+                'Expected an `image: tabemr/tabemr:<tag>` line in docker-compose.yml',
             );
         }
         if ($updated === $contents) {
@@ -82,10 +82,10 @@ final readonly class DockerComposeProductionMutator implements MutatorInterface
         }
         // Validate beyond well-formedness: the regex preserves formatting
         // but doesn't know YAML structure. Parse the result and assert
-        // that services.openemr.image is exactly the value we intended
+        // that services.tabemr.image is exactly the value we intended
         // to write. This catches both invalid YAML and the case where
         // the regex matched something that looked right but wasn't
-        // actually the openemr image entry.
+        // actually the tabemr image entry.
         try {
             $parsed = Yaml::parse($updated);
         } catch (ParseException $e) {
@@ -97,16 +97,16 @@ final readonly class DockerComposeProductionMutator implements MutatorInterface
         }
         $expectedDigest = $newDigestHex ?? $this->extractDigest($contents);
         $expectedImage = $expectedDigest === null
-            ? sprintf('openemr/openemr:%s', $version)
-            : sprintf('openemr/openemr:%s@sha256:%s', $version, $expectedDigest);
+            ? sprintf('tabemr/tabemr:%s', $version)
+            : sprintf('tabemr/tabemr:%s@sha256:%s', $version, $expectedDigest);
         $actualImage = is_array($parsed)
             && is_array($parsed['services'] ?? null)
-            && is_array($parsed['services']['openemr'] ?? null)
-            ? ($parsed['services']['openemr']['image'] ?? null)
+            && is_array($parsed['services']['tabemr'] ?? null)
+            ? ($parsed['services']['tabemr']['image'] ?? null)
             : null;
         if ($actualImage !== $expectedImage) {
             throw new \RuntimeException(sprintf(
-                'docker-compose.yml: post-mutation services.openemr.image was %s; expected %s',
+                'docker-compose.yml: post-mutation services.tabemr.image was %s; expected %s',
                 var_export($actualImage, true),
                 $expectedImage,
             ));
@@ -126,7 +126,7 @@ final readonly class DockerComposeProductionMutator implements MutatorInterface
 
     private function extractDigest(string $original): ?string
     {
-        if (preg_match('/image:\s*openemr\/openemr:[^@\s]+@sha256:([0-9a-f]{64})/', $original, $m) !== 1) {
+        if (preg_match('/image:\s*tabemr\/tabemr:[^@\s]+@sha256:([0-9a-f]{64})/', $original, $m) !== 1) {
             return null;
         }
         return $m[1];

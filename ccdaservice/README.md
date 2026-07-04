@@ -27,14 +27,14 @@ If node is not already installed then do the following(Research the required ins
 - `curl -sL https://deb.nodesource.com/setup_24.x | sudo -E bash -`
 - `sudo apt-get install -y nodejs`
 
-Navigate to: openemr/ccdaservice and run the following to install requires dependencies.
+Navigate to: tabemr/ccdaservice and run the following to install requires dependencies.
 - `sudo npm install --omit=dev`
 ## Windows Setup
 * Download and install nodejs for your Windows version.
   - Latest version tested is node v24.1.0
 * Ensure system variable NODE_PATH is set i.e. `%USERPROFILE%\AppData\Roaming\npm\node_modules`.
 
-Navigate to: openemr/ccdaservice and run the following from an elevated PowerShell or CMD.exe (run as Administrator):
+Navigate to: tabemr/ccdaservice and run the following from an elevated PowerShell or CMD.exe (run as Administrator):
 - `npm install --global --omit=dev windows-build-tools` (Recommended) Though compiling libxmljs is no longer required, if for some reason your environment doesn't have download  compiled libxmljs2 binary available then npm will try to compile.
 - `npm install --omit=dev`
 ### Use
@@ -47,4 +47,4 @@ Navigate to: openemr/ccdaservice and run the following from an elevated PowerShe
 * The nodejs ccda service now starts on demand.
 #### License
    	    Copyright 2018-2023 sjpadgett@gmail.com
-        https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+        https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3

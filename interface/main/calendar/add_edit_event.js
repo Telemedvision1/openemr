@@ -10,7 +10,7 @@
  *
  * @package   OpenEMR
  * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 /* global DateToYYYYMMDD_js, dlgopen, dlgclose, restoreSession, submitme, $ */
@@ -25,7 +25,7 @@ function setpatient(pid, lname, fname, dob) {
     f.form_pid.value = pid;
     var dobstyle = (dob == '' || dob.substr(5, 10) == '00-00') ? '' : 'none';
     document.getElementById('dob_row').style.display = dobstyle;
-    let event = new CustomEvent('openemr:appointment:patient:set', {
+    let event = new CustomEvent('tabemr:appointment:patient:set', {
         bubbles: true,
         detail: {form: f, pid: pid, lname: lname, fname: fname, dob: dob}
     });

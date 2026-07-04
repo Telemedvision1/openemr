@@ -14,7 +14,7 @@
  * @copyright Copyright (c) Visolve <vicareplus_engg@visolve.com>
  * @copyright Copyright (c) 2018-2020 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE CNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE CNU General Public License 3
  */
 
 require_once("../globals.php");
@@ -67,7 +67,7 @@ function download_file($filename, $filetype): void
  * Create and download a client certificate, given the following form inputs:
  *   client_cert_user - The username to store in the certificate
  *   client_cert_email - The email to store in the certificate
- * A temporary certificate will be written to /tmp/openemr_client_cert.p12.
+ * A temporary certificate will be written to /tmp/tabemr_client_cert.p12.
  * If an error occurs, set the $error_msg (which is displayed later below).
  */
 function create_client_cert(): void
@@ -115,7 +115,7 @@ function create_client_cert(): void
         return;
     }
 
-    $filename = OEGlobalsBag::getInstance()->getString('temporary_files_dir') . "/openemr_client_cert.p12";
+    $filename = OEGlobalsBag::getInstance()->getString('temporary_files_dir') . "/tabemr_client_cert.p12";
     $handle = fopen($filename, 'w');
     fwrite($handle, $data);
     fclose($handle);

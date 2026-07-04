@@ -2339,52 +2339,52 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Function getTwigNamespaces may not be defined in the global namespace\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Function oe_module_faxsms_add_menu_item may not be defined in the global namespace\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Function oe_module_faxsms_document_render_action_anchors may not be defined in the global namespace\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Function oe_module_faxsms_document_render_javascript_fax_dialog may not be defined in the global namespace\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Function oe_module_faxsms_patient_report_render_action_buttons may not be defined in the global namespace\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Function oe_module_faxsms_patient_report_render_javascript_post_load may not be defined in the global namespace\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Function oe_module_faxsms_sms_render_action_buttons may not be defined in the global namespace\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Function oe_module_faxsms_sms_render_javascript_post_load may not be defined in the global namespace\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Function oe_module_priorauth_add_menu_item may not be defined in the global namespace\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Function oe_module_priorauth_patient_menu_item may not be defined in the global namespace\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Function isValid may not be defined in the global namespace\\.$#',
@@ -7474,22 +7474,22 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Function oe_module_custom_patient_menu may not be defined in the global namespace\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../tests/eventdispatcher/oe-modify-patient-menu-example/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../tests/eventdispatcher/oe-modify-patient-menu-example/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Function oe_module_custom_patient_created_action may not be defined in the global namespace\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../tests/eventdispatcher/oe-patient-create-update-hooks-example/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../tests/eventdispatcher/oe-patient-create-update-hooks-example/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Function oe_module_custom_patient_update_action may not be defined in the global namespace\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../tests/eventdispatcher/oe-patient-create-update-hooks-example/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../tests/eventdispatcher/oe-patient-create-update-hooks-example/tabemr.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Function send_patient_data_to_remote_system may not be defined in the global namespace\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../tests/eventdispatcher/oe-patient-create-update-hooks-example/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../tests/eventdispatcher/oe-patient-create-update-hooks-example/tabemr.bootstrap.php',
 ];
 
 return ['parameters' => ['ignoreErrors' => $ignoreErrors]];

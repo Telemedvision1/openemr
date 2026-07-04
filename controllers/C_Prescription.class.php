@@ -13,7 +13,7 @@
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018 Sherwin Gaddis <sherwingaddis@gmail.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->get('fileroot') . "/library/registry.inc.php");
@@ -1013,7 +1013,7 @@ class C_Prescription extends Controller
         $this->multiprintplain_footer();
         $data = ob_get_clean();
         $result = [
-            'subject' => OEGlobalsBag::getInstance()->getString('openemr_name') . " " . xl(" Prescription ")
+            'subject' => OEGlobalsBag::getInstance()->getString('tabemr_name') . " " . xl(" Prescription ")
             ,'message' => $data
         ];
         http_response_code(200);
@@ -1119,7 +1119,7 @@ class C_Prescription extends Controller
         if ($sendAsPdf) {
             [$pdf, $patient] = $this->generatePdfObjectForPrescriptionIds($id);
             $pdfAsString = $pdf->output();
-            $mailBody = OEGlobalsBag::getInstance()->getString('openemr_name') . " " . xl("Prescription attached to this email.") . " " . xl("Patient") . " " . $patient->get_name_display();
+            $mailBody = OEGlobalsBag::getInstance()->getString('tabemr_name') . " " . xl("Prescription attached to this email.") . " " . xl("Patient") . " " . $patient->get_name_display();
         } else {
             [$mailBody, $patient] = $this->generateHtmlObjectForPrescriptionIds($id);
             $mail->isHTML(true);
@@ -1129,7 +1129,7 @@ class C_Prescription extends Controller
 //        $mail->FromName = $p->provider->get_name_display();
 //        $text_body  = $p->get_prescription_display();
         $mail->Body = $mailBody;
-        $mail->Subject = OEGlobalsBag::getInstance()->getString('openemr_name') . " " . xl("Prescription");
+        $mail->Subject = OEGlobalsBag::getInstance()->getString('tabemr_name') . " " . xl("Prescription");
         $mail->AddAddress($email);
         if ($sendAsPdf) {
             $mail->addStringAttachment($pdfAsString, 'Prescription-' . date("Y-m-d_H_i_s") . ".pdf");

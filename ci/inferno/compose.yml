@@ -19,14 +19,14 @@ services:
       interval: 1m
       timeout: 5s
       retries: 3
-  openemr:
+  tabemr:
     restart: always
-    image: openemr/openemr:flex-3.23-php-8.5@sha256:227bcf2e7181a3d786f3109b56fdbd7d26c0dacd6ddcf359328a64b5b9ec3ffc
+    image: tabemr/tabemr:flex-3.23-php-8.5@sha256:227bcf2e7181a3d786f3109b56fdbd7d26c0dacd6ddcf359328a64b5b9ec3ffc
     ports:
     - 8080:80
     - 8523:443
     volumes:
-    - ../../:/var/www/localhost/htdocs/openemr
+    - ../../:/var/www/localhost/htdocs/tabemr
     environment:
       EMPTY: yes
       FORCE_NO_BUILD_MODE: yes
@@ -39,8 +39,8 @@ services:
       OPENEMR_SETTING_couchdb_user: admin
       MYSQL_HOST: mysql
       MYSQL_ROOT_PASS: root
-      MYSQL_USER: openemr
-      MYSQL_PASS: openemr
+      MYSQL_USER: tabemr
+      MYSQL_PASS: tabemr
       # Coverage settings - controlled by ENABLE_COVERAGE variable
       # Set ENABLE_COVERAGE=true in run.sh to enable coverage collection
       ENABLE_COVERAGE: ${ENABLE_COVERAGE:-false}
@@ -55,7 +55,7 @@ services:
         condition: service_healthy
   ##
   # extend the inferno services so that they're in the same docker
-  # network as the openemr service,
+  # network as the tabemr service,
   # but use the onc-certification-g10-test-kit directory for relative mounts.
   inferno:
     extends:

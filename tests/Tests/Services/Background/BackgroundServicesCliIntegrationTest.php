@@ -20,7 +20,7 @@
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -214,7 +214,7 @@ class BackgroundServicesCliIntegrationTest extends TestCase
      * Return the first username in `$candidates` that exists on this
      * system, or null if none do. Existence is probed via `id <name>`
      * (Symfony Process) — the same single-path approach RootCliGuard
-     * uses, since the openemr docker images don't ship the posix
+     * uses, since the tabemr docker images don't ship the posix
      * extension.
      *
      * @param list<string> $candidates
@@ -243,7 +243,7 @@ class BackgroundServicesCliIntegrationTest extends TestCase
     /**
      * Resolve the current process's effective UID via `id -u` (Symfony
      * Process). Mirrors RootCliGuard's resolver, which uses the same
-     * single-path approach since posix isn't loaded in the openemr
+     * single-path approach since posix isn't loaded in the tabemr
      * docker images.
      */
     private static function currentEffectiveUid(): ?int

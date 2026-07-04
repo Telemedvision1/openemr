@@ -1,11 +1,11 @@
 <?php
 
 /*
- * @package openemr
+ * @package tabemr
  * @link https://www.open-emr.org
  * @author Sherwin Gaddis <sherwingaddis@gmail.com>
  * @copyright (c) 2023
- * @https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Events\Billing\Payments;

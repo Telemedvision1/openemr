@@ -6,7 +6,7 @@
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -482,7 +482,7 @@ class SymfonyBackgroundServiceSpawnerTest extends TestCase
         // the finder returns PHP_BINARY (the test suite's own PHP
         // binary); the assertion is that the resolved value is a
         // non-empty executable path, not the empty string the bug
-        // surfaced as under Apache mod_php (openemr/openemr#11932).
+        // surfaced as under Apache mod_php (tabemr/tabemr#11932).
         $spawner = new SymfonyBackgroundServiceSpawner(
             $this->fakeProjectDir,
             $this->logger,
@@ -499,7 +499,7 @@ class SymfonyBackgroundServiceSpawnerTest extends TestCase
 
     public function testEmptyStringBinaryIsTreatedAsNullAndResolves(): void
     {
-        // openemr/openemr#11932 reproduction at the constructor layer:
+        // tabemr/tabemr#11932 reproduction at the constructor layer:
         // Apache mod_php on Alpine evaluates the PHP_BINARY constant to
         // "" (empty string, not null), which the previous default
         // forwarded straight to Symfony Process and produced

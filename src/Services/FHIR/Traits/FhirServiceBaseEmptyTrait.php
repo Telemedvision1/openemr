@@ -4,11 +4,11 @@
  * FhirServiceBaseEmptyTrait is used to provide default empty service methods for when a FHIR service class is implementing
  * only a single or subset of service methods.  At some point we may want to consider refactoring the FHIRServiceBase
  * class to make these methods not required.
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Services\FHIR\Traits;

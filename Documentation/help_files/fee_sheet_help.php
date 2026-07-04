@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2017 - 2018 Ranganath Pathak <pathak@scrs1.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\Core\Header;
@@ -198,7 +198,7 @@ require_once("../../interface/globals.php");
                 <h4 class="oe-help-heading"><?php echo xlt("Customize the Fee Sheet"); ?><a href="#"><i class="fa fa-arrow-circle-up oe-pull-away oe-help-redirect" aria-hidden="true"></i></a></h4>
                 <p><?php echo xlt("There are several ways to customize the fee sheet. It depends on how comfortable you are in adding information to the database itself"); ?>.</p>
 
-                <p><?php echo xlt("Read these two wiki articles for customizing the Fee Sheet"); ?>. <strong><a href="https://www.open-emr.org/wiki/index.php/HOWTO:_Create_Multiple_Code_Fee_Sheet_List_Categories" rel="noopener" target="_blank"><?php echo xlt("Article"); ?> 1 </a></strong> <strong><a href="http://openemr.sourceforge.net/wiki/index.php/Preparing_for_Billing_and_using_the_Fee_Sheet" rel="noopener" target="_blank"><?php echo xlt("Article"); ?> 2</a></strong></p>
+                <p><?php echo xlt("Read these two wiki articles for customizing the Fee Sheet"); ?>. <strong><a href="https://www.open-emr.org/wiki/index.php/HOWTO:_Create_Multiple_Code_Fee_Sheet_List_Categories" rel="noopener" target="_blank"><?php echo xlt("Article"); ?> 1 </a></strong> <strong><a href="http://tabemr.sourceforge.net/wiki/index.php/Preparing_for_Billing_and_using_the_Fee_Sheet" rel="noopener" target="_blank"><?php echo xlt("Article"); ?> 2</a></strong></p>
 
                 <p><?php echo xlt("If you do not want to do so the following method involves adding data manually using the openEMR interface"); ?>.</p>
 

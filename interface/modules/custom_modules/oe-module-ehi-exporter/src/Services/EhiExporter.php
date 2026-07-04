@@ -8,7 +8,7 @@
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com
  * @copyright Copyright (c) 2023 OpenEMR Foundation, Inc
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Modules\EhiExporter\Services;
@@ -355,9 +355,9 @@ class EhiExporter
     private function exportBreadthAlgorithm(EhiExportJobTask $jobTask): EhiExportJobTask
     {
         $patientPids = $jobTask->getPatientIds();
-        $xmlTableStructure = $this->getXmlNode($this->xmlConfigPath . DIRECTORY_SEPARATOR . 'docs' . DIRECTORY_SEPARATOR . 'openemr.openemr.xml');
+        $xmlTableStructure = $this->getXmlNode($this->xmlConfigPath . DIRECTORY_SEPARATOR . 'docs' . DIRECTORY_SEPARATOR . 'tabemr.tabemr.xml');
         $xmlMetaStructure = $this->getXmlNode($this->xmlConfigPath . DIRECTORY_SEPARATOR . 'schemaspy'
-            . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'openemr.meta.xml');
+            . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'tabemr.meta.xml');
         $exportState = new Models\ExportState($this->logger, $xmlTableStructure, $xmlMetaStructure, $jobTask);
 
         $pidKey = new Models\ExportKeyDefinition();

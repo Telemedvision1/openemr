@@ -14,7 +14,7 @@
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -59,7 +59,7 @@ class HolidayServiceTest extends TestCase
             )
             SQL);
         $this->connection->executeStatement(<<<'SQL'
-            CREATE TABLE openemr_postcalendar_events (
+            CREATE TABLE tabemr_postcalendar_events (
                 pc_eid INTEGER PRIMARY KEY AUTOINCREMENT,
                 pc_catid INTEGER,
                 pc_aid INTEGER,
@@ -246,7 +246,7 @@ class HolidayServiceTest extends TestCase
         $service->importHolidaysFromCsv();
         $service->publishHolidayEvents();
 
-        $events = $this->connection->fetchAllAssociative('SELECT pc_catid, pc_title, pc_time, pc_eventDate, pc_facility, pc_sharing FROM openemr_postcalendar_events');
+        $events = $this->connection->fetchAllAssociative('SELECT pc_catid, pc_title, pc_time, pc_eventDate, pc_facility, pc_sharing FROM tabemr_postcalendar_events');
         self::assertCount(1, $events);
         // SQLite returns DB integers as strings via PDO; compare loosely.
         self::assertEquals(HolidayService::CATEGORY_HOLIDAY, $events[0]['pc_catid']);
@@ -273,7 +273,7 @@ class HolidayServiceTest extends TestCase
         ]);
         $this->newService()->publishHolidayEvents();
         $titles = $this->connection->fetchFirstColumn(
-            'SELECT pc_title FROM openemr_postcalendar_events WHERE pc_catid = ? ORDER BY pc_eventDate',
+            'SELECT pc_title FROM tabemr_postcalendar_events WHERE pc_catid = ? ORDER BY pc_eventDate',
             [HolidayService::CATEGORY_HOLIDAY],
         );
         // Only the row with a non-null description gets published.
@@ -292,7 +292,7 @@ class HolidayServiceTest extends TestCase
             // clock omitted — exercise the default branch
         );
         $service->uploadAndSync($this->uploadedCsv("2026-12-25,Christmas\n"));
-        $pcTime = $this->connection->fetchOne('SELECT pc_time FROM openemr_postcalendar_events');
+        $pcTime = $this->connection->fetchOne('SELECT pc_time FROM tabemr_postcalendar_events');
         self::assertIsString($pcTime);
         self::assertSame(
             $pcTime,
@@ -305,14 +305,14 @@ class HolidayServiceTest extends TestCase
     {
         $service = $this->newService();
         // Pre-seed one stale holiday event.
-        $this->connection->insert('openemr_postcalendar_events', [
+        $this->connection->insert('tabemr_postcalendar_events', [
             'pc_catid' => HolidayService::CATEGORY_HOLIDAY,
             'pc_title' => 'Stale Holiday',
             'pc_eventDate' => '2026-01-01',
         ]);
         // Empty staging table: publish should still wipe the stale event.
         $service->publishHolidayEvents();
-        $count = $this->connection->fetchOne('SELECT COUNT(*) FROM openemr_postcalendar_events WHERE pc_catid = ?', [HolidayService::CATEGORY_HOLIDAY]);
+        $count = $this->connection->fetchOne('SELECT COUNT(*) FROM tabemr_postcalendar_events WHERE pc_catid = ?', [HolidayService::CATEGORY_HOLIDAY]);
         self::assertEquals(0, $count);
     }
 
@@ -329,7 +329,7 @@ class HolidayServiceTest extends TestCase
     {
         $service = $this->newService();
         $service->uploadAndSync($this->uploadedCsv("date,description\n2026-12-25,Christmas\n"));
-        $event = $this->connection->fetchAssociative('SELECT pc_title, pc_eventDate FROM openemr_postcalendar_events');
+        $event = $this->connection->fetchAssociative('SELECT pc_title, pc_eventDate FROM tabemr_postcalendar_events');
         self::assertSame(['pc_title' => 'Christmas', 'pc_eventDate' => '2026-12-25'], $event);
     }
 
@@ -405,7 +405,7 @@ class HolidayServiceTest extends TestCase
 
     private function seedHolidayEvent(string $date, string $title): void
     {
-        $this->connection->insert('openemr_postcalendar_events', [
+        $this->connection->insert('tabemr_postcalendar_events', [
             'pc_catid' => HolidayService::CATEGORY_HOLIDAY,
             'pc_title' => $title,
             'pc_eventDate' => $date,

@@ -3,11 +3,11 @@
 /**
  * Contains all of the TeleHealth global settings and configuration
  *
- * @package   openemr
+ * @package   tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Comlink\OpenEMR\Modules\TeleHealthModule;
@@ -36,7 +36,7 @@ class TelehealthGlobalConfig
     public const COMLINK_AUTO_PROVISION_PROVIDER = 'comlink_autoprovision_provider';
     public const COMLINK_ENABLE_THIRDPARTY_INVITATIONS = "comlink_telehealth_thirdparty_enabled";
     public const UNIQUE_INSTALLATION_ID = "unique_installation_id";
-    public const INSTALLATION_NAME = "openemr_name";
+    public const INSTALLATION_NAME = "tabemr_name";
     public const DEBUG_MODE_FLAG = "comlink_telehealth_debug";
 
     public const COMLINK_MINIMIZED_SESSION_POSITION_DEFAULT = "comlink_telehealth_minimized_position_default";
@@ -87,7 +87,7 @@ class TelehealthGlobalConfig
 
     public function getOpenEMRName()
     {
-        return $this->getGlobalSetting('openemr_name');
+        return $this->getGlobalSetting('tabemr_name');
     }
 
     public function getPatientReminderName()
@@ -224,7 +224,7 @@ class TelehealthGlobalConfig
             // check to make sure the portal url is not the default
             $defaultValue = $this->getGlobalSetting('portal_onsite_two_address');
             // TODO: @adunsulag can we pull the default onsite configuration pulled out into a constant somewhere?
-            if ($defaultValue == 'https://your_web_site.com/openemr/portal') {
+            if ($defaultValue == 'https://your_web_site.com/tabemr/portal') {
                 ServiceContainer::getLogger()->debug("Telehealth is using unconfigured portal_onsite_two_address");
                 return false;
             }

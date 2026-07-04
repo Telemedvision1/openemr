@@ -9,7 +9,7 @@ namespace OpenEMR\Cqm\Qdm;
  *
  * @QDM Version 5.6
  * @author Ken Chapple <ken@mi-squared.com>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General
+ * @license https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General
  * Public License 3
  */
 class MedicationActive extends QDMBaseType

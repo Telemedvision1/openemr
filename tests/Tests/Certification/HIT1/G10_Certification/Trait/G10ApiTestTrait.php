@@ -31,7 +31,7 @@ trait G10ApiTestTrait
     const TEST_SUITE_G10_CERTIFICATION = 'g10_certification'; // this is the test suite id for the US Core v3.11 certification tests
 
     const TEST_SUITE = self::TEST_SUITE_G10_CERTIFICATION;
-    const DEFAULT_OPENEMR_BASE_URL_API = 'http://openemr';
+    const DEFAULT_OPENEMR_BASE_URL_API = 'http://tabemr';
     const DEFAULT_INFERNO_BASE_URL = 'http://nginx';
     const DEFAULT_TEST_GROUP_ID = 'us_core_v311-us_core_v311_fhir_api';
 

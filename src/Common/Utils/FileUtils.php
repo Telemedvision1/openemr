@@ -10,7 +10,7 @@
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) Kevin McCormick Longview, Texas
  * @copyright Copyright (c) 2023 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Common\Utils;

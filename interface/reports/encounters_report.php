@@ -14,7 +14,7 @@
  * @copyright Copyright (c) 2007-2016 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2015 Terry Hill <terry@lillysystems.com>
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");

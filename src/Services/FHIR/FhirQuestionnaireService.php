@@ -9,7 +9,7 @@
  *
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2022 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Services\FHIR;
@@ -56,7 +56,7 @@ class FhirQuestionnaireService extends FhirServiceBase implements IResourceReada
     }
 
     /**
-     * Retrieves all of the fhir observation resources mapped to the underlying openemr data elements.
+     * Retrieves all of the fhir observation resources mapped to the underlying tabemr data elements.
      * @param array $fhirSearchParameters The FHIR resource search parameters
      * @param string $puuidBind - Optional variable to only allow visibility of the patient with this puuid.
      * @return ProcessingResult processing result

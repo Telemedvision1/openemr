@@ -14,7 +14,7 @@
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\PHPStan\Rules;
@@ -93,7 +93,7 @@ class ForbiddenRequestGlobalsRule implements Rule
                     $superglobal,
                 ),
             )
-                ->identifier('openemr.forbiddenRequestGlobals')
+                ->identifier('tabemr.forbiddenRequestGlobals')
                 ->tip('Symfony Request: $request->query->get(), $request->request->get(), $request->server->get(), etc. Fallback: filter_input(INPUT_GET, ...), filter_input(INPUT_SERVER, ...), etc.')
                 ->build(),
         ];

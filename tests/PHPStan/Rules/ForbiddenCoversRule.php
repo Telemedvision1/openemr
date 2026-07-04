@@ -12,7 +12,7 @@
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -56,7 +56,7 @@ class ForbiddenCoversRule implements Rule
         $docComment = $node->getDocComment();
         if ($docComment !== null && preg_match('/@covers\b/', $docComment->getText()) === 1) {
             $errors[] = RuleErrorBuilder::message(sprintf(self::ERROR_MESSAGE, '@covers'))
-                ->identifier('openemr.forbiddenCovers')
+                ->identifier('tabemr.forbiddenCovers')
                 ->line($docComment->getStartLine())
                 ->build();
         }
@@ -67,7 +67,7 @@ class ForbiddenCoversRule implements Rule
                 $attrName = $attr->name->getLast();
                 if (in_array($attrName, self::FORBIDDEN_ATTRIBUTES, true)) {
                     $errors[] = RuleErrorBuilder::message(sprintf(self::ERROR_MESSAGE, '#[' . $attrName . ']'))
-                        ->identifier('openemr.forbiddenCovers')
+                        ->identifier('tabemr.forbiddenCovers')
                         ->line($attr->getStartLine())
                         ->build();
                 }
@@ -84,7 +84,7 @@ class ForbiddenCoversRule implements Rule
             $methodDoc = $stmt->getDocComment();
             if ($methodDoc !== null && preg_match('/@covers\b/', $methodDoc->getText()) === 1) {
                 $errors[] = RuleErrorBuilder::message(sprintf(self::ERROR_MESSAGE, '@covers'))
-                    ->identifier('openemr.forbiddenCovers')
+                    ->identifier('tabemr.forbiddenCovers')
                     ->line($methodDoc->getStartLine())
                     ->build();
             }
@@ -95,7 +95,7 @@ class ForbiddenCoversRule implements Rule
                     $attrName = $attr->name->getLast();
                     if (in_array($attrName, self::FORBIDDEN_ATTRIBUTES, true)) {
                         $errors[] = RuleErrorBuilder::message(sprintf(self::ERROR_MESSAGE, '#[' . $attrName . ']'))
-                            ->identifier('openemr.forbiddenCovers')
+                            ->identifier('tabemr.forbiddenCovers')
                             ->line($attr->getStartLine())
                             ->build();
                     }

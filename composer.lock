@@ -439,11 +439,11 @@
             },
             "require": {
                 "nyholm/psr7": "^1.4",
-                "openemr/oe-module-installer-plugin": "^0.1.0",
+                "tabemr/oe-module-installer-plugin": "^0.1.0",
                 "php": ">=7.1",
                 "symfony/event-dispatcher": "^4.4 || ^5.0 || ^6.0 || ^7.0"
             },
-            "type": "openemr-module",
+            "type": "tabemr-module",
             "autoload": {
                 "psr-4": {
                     "OpenEMR\\Modules\\ClaimRevConnector\\": "src/"
@@ -464,8 +464,8 @@
             "keywords": [
                 "claimrev",
                 "clearinghouse",
-                "openemr",
-                "openemr-module"
+                "tabemr",
+                "tabemr-module"
             ],
             "support": {
                 "issues": "https://github.com/claimrevolution/oe-module-claimrev-connect/issues",
@@ -6612,16 +6612,16 @@
             "time": "2022-03-22T10:58:41+00:00"
         },
         {
-            "name": "openemr/mustache",
+            "name": "tabemr/mustache",
             "version": "v2.15.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/openemr/mustache.php.git",
+                "url": "https://github.com/tabemr/mustache.php.git",
                 "reference": "936596936d306725f34bb13f11e9a16bdbe99887"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openemr/mustache.php/zipball/936596936d306725f34bb13f11e9a16bdbe99887",
+                "url": "https://api.github.com/repos/tabemr/mustache.php/zipball/936596936d306725f34bb13f11e9a16bdbe99887",
                 "reference": "936596936d306725f34bb13f11e9a16bdbe99887",
                 "shasum": ""
             },
@@ -6655,28 +6655,28 @@
                 }
             ],
             "description": "A Mustache implementation in PHP.",
-            "homepage": "https://github.com/openemr/mustache.php",
+            "homepage": "https://github.com/tabemr/mustache.php",
             "keywords": [
                 "mustache",
                 "templating"
             ],
             "support": {
-                "issues": "https://github.com/openemr/mustache.php/issues",
-                "source": "https://github.com/openemr/mustache.php/tree/v2.15.2"
+                "issues": "https://github.com/tabemr/mustache.php/issues",
+                "source": "https://github.com/tabemr/mustache.php/tree/v2.15.2"
             },
             "time": "2022-03-03T14:53:09+00:00"
         },
         {
-            "name": "openemr/oe-module-installer-plugin",
+            "name": "tabemr/oe-module-installer-plugin",
             "version": "0.1.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/openemr/oe-module-installer-plugin.git",
+                "url": "https://github.com/tabemr/oe-module-installer-plugin.git",
                 "reference": "4803eb0e6ad07328bd0eac485d0b2ff9e075f9f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openemr/oe-module-installer-plugin/zipball/4803eb0e6ad07328bd0eac485d0b2ff9e075f9f6",
+                "url": "https://api.github.com/repos/tabemr/oe-module-installer-plugin/zipball/4803eb0e6ad07328bd0eac485d0b2ff9e075f9f6",
                 "reference": "4803eb0e6ad07328bd0eac485d0b2ff9e075f9f6",
                 "shasum": ""
             },
@@ -6708,12 +6708,12 @@
             ],
             "description": "OpenEMR Module Installer plugin for installing custom modules into the OpenEMR codebase.",
             "keywords": [
-                "openemr",
-                "openemr-module"
+                "tabemr",
+                "tabemr-module"
             ],
             "support": {
-                "issues": "https://github.com/openemr/oe-module-installer-plugin/issues",
-                "source": "https://github.com/openemr/oe-module-installer-plugin/tree/0.1.5"
+                "issues": "https://github.com/tabemr/oe-module-installer-plugin/issues",
+                "source": "https://github.com/tabemr/oe-module-installer-plugin/tree/0.1.5"
             },
             "time": "2021-05-03T14:22:43+00:00"
         },

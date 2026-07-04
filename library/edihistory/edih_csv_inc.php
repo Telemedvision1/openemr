@@ -9,7 +9,7 @@
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2012 Kevin McCormick Longview, Texas
  * @copyright Copyright (c) 2021 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 /**
@@ -328,7 +328,7 @@ function csv_notes_file($content = '', $open = true)
  */
 function csv_edih_basedir()
 {
-    // should be something like /var/www/htdocs/openemr/sites/default
+    // should be something like /var/www/htdocs/tabemr/sites/default
     if (OEGlobalsBag::getInstance()->has('OE_SITE_DIR')) {
         // debug
         //echo 'csv_edih_basedir OE_SITE_DIR '.$GLOBALS['OE_SITE_DIR'].'<br />'.PHP_EOL;
@@ -384,7 +384,7 @@ function csv_setup()
     $isOK = false;
     $out_str = '';
     $chr = 0;
-    // $GLOBALS['OE_SITE_DIR'] should be like /var/www/htdocs/openemr/sites/default
+    // $GLOBALS['OE_SITE_DIR'] should be like /var/www/htdocs/tabemr/sites/default
     $sitedir = OEGlobalsBag::getInstance()->get('OE_SITE_DIR');
     //$sitedir = csv_edih_basedir();
     //

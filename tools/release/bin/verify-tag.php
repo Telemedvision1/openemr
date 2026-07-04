@@ -3,7 +3,7 @@
 
 /**
  * CLI entry point for TagVerifier. Asserts the named tag is annotated
- * and its message conforms to openemr/openemr-devops#664 (version, ISO
+ * and its message conforms to tabemr/tabemr-devops#664 (version, ISO
  * date, merge-commit SHA). Run between create-tag and dispatch on the
  * conductor's finalize job so a malformed tag is caught before
  * consumers fan out on it.
@@ -12,7 +12,7 @@
  * @link      http://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);

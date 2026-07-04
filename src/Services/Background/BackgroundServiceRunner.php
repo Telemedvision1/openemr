@@ -17,7 +17,7 @@
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -69,10 +69,10 @@ class BackgroundServiceRunner
      *
      * GET_LOCK is session-scoped, so when the orchestrator process dies
      * (SIGKILL, container restart, fatal), the DB session closes and the
-     * lock auto-releases. The name is prefixed with `openemr.` so it
+     * lock auto-releases. The name is prefixed with `tabemr.` so it
      * doesn't collide with anything else using GET_LOCK in the same DB.
      */
-    private const ORCHESTRATOR_LOCK_NAME = 'openemr.bg_orchestrator';
+    private const ORCHESTRATOR_LOCK_NAME = 'tabemr.bg_orchestrator';
 
     private ?string $currentServiceName = null;
 

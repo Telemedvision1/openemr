@@ -4,12 +4,12 @@
  * CreateClientCredentialsAssertion Is a helper utility to create a Client Credentials Grant assertion statement as
  * well as print out the Public JSON Web Key Set that can be used for a test System App.
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Common\Command;
@@ -32,7 +32,7 @@ class CreateClientCredentialsAssertionSymfonyCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('openemr:create-client-credentials-assertion')
+            ->setName('tabemr:create-client-credentials-assertion')
             ->setDescription("Utility class to help test and use the client credentials grant assertion")
             ->addUsage('--site=default')
             ->setDefinition(
@@ -76,8 +76,8 @@ class CreateClientCredentialsAssertionSymfonyCommand extends Command
         $configuration = Configuration::forAsymmetricSigner(
         // You may use RSA or ECDSA and all their variations (256, 384, and 512)
             new Sha384(),
-            InMemory::file($keyLocation . "openemr-rsa384-private.key"),
-            InMemory::file($keyLocation . "openemr-rsa384-public.pem")
+            InMemory::file($keyLocation . "tabemr-rsa384-private.key"),
+            InMemory::file($keyLocation . "tabemr-rsa384-public.pem")
             // You may also override the JOSE encoder/decoder if needed by providing extra arguments here
         );
 

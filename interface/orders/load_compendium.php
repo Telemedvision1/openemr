@@ -77,7 +77,7 @@ if (!empty($_POST['form_import'])) {
 $auto_continue = false;
 
 // Set up main paths.
-$EXPORT_FILE = OEGlobalsBag::getInstance()->getString('temporary_files_dir') . "/openemr_config.sql";
+$EXPORT_FILE = OEGlobalsBag::getInstance()->getString('temporary_files_dir') . "/tabemr_config.sql";
 ?>
 <html>
 

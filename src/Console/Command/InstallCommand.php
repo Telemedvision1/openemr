@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Eric Stern <eric@opencoreemr.com>
  * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -39,7 +39,7 @@ class InstallCommand extends Command
         #[Option(description: 'Database server port')] int $dbPort = 3306,
         #[Option(description: 'Database username for OpenEMR')] string $dbUser = '',
         #[Option(description: 'Database password for OpenEMR')] string $dbPassword = '',
-        #[Option(description: 'Database name')] string $dbName = 'openemr',
+        #[Option(description: 'Database name')] string $dbName = 'tabemr',
         #[Option(description: 'Database root username')] string $dbRootUser = 'root',
         #[Option(description: 'Database root password')] string $dbRootPassword = '',
         #[Option(description: 'OpenEMR admin display name')] string $oeAdminName = 'Administrator',

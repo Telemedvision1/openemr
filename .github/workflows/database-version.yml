@@ -62,7 +62,7 @@ jobs:
             echo
             echo '```sql'
             echo '--'
-            echo '-- Database: `openemr`'
+            echo '-- Database: `tabemr`'
             printf '%s\n' "-- v_database: $php_version"
             echo '--'
             echo '```'

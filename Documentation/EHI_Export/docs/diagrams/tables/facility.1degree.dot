@@ -5,7 +5,7 @@ digraph "oneDegreeRelationshipsDiagram" {
   "care_team_member":"facility_id":w -> "facility":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "care_team_member":"updated_by":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "care_team_member":"user_id":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "form_groups_encounter":"appt_id":w -> "openemr_postcalendar_events":"pc_eid":e [arrowhead=none dir=back arrowtail=crowodot];
+  "form_groups_encounter":"appt_id":w -> "tabemr_postcalendar_events":"pc_eid":e [arrowhead=none dir=back arrowtail=crowodot];
   "form_groups_encounter":"facility_id":w -> "facility":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "form_groups_encounter":"provider_id":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "form_groups_encounter":"supervisor_id":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -13,10 +13,10 @@ digraph "oneDegreeRelationshipsDiagram" {
   "medex_recalls":"r_provider":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "onsite_documents":"facility":w -> "facility":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "onsite_documents":"user":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "openemr_postcalendar_events":"pc_aid":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "openemr_postcalendar_events":"pc_billing_location":w -> "facility":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "openemr_postcalendar_events":"pc_facility":w -> "facility":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "openemr_postcalendar_events":"pc_informant":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tabemr_postcalendar_events":"pc_aid":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tabemr_postcalendar_events":"pc_billing_location":w -> "facility":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tabemr_postcalendar_events":"pc_facility":w -> "facility":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tabemr_postcalendar_events":"pc_informant":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "procedure_order":"account_facility":w -> "facility":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "procedure_order":"collector_id":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "procedure_order":"location_id":w -> "facility":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -144,10 +144,10 @@ digraph "oneDegreeRelationshipsDiagram" {
     target="_top"
     tooltip="onsite_documents"
   ];
-  "openemr_postcalendar_events" [
+  "tabemr_postcalendar_events" [
    label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3"  BGCOLOR="#f5f5f5"><TABLE BORDER="0" CELLSPACING="0"><TR><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="182" HEIGHT="16"><B>openemr_postcalendar_events</B></TD><TD ALIGN="RIGHT">[table]</TD></TR></TABLE></TD></TR>
+      <TR><TD COLSPAN="3"  BGCOLOR="#f5f5f5"><TABLE BORDER="0" CELLSPACING="0"><TR><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="182" HEIGHT="16"><B>tabemr_postcalendar_events</B></TD><TD ALIGN="RIGHT">[table]</TD></TR></TABLE></TD></TR>
       <TR><TD PORT="pc_eid" COLSPAN="3" ALIGN="LEFT"><TABLE BORDER="0" CELLSPACING="0" ALIGN="LEFT"><TR ALIGN="LEFT"><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="15" HEIGHT="16"><IMG SRC="../../images/primaryKeys.png"/></TD><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="182" HEIGHT="16">pc_eid</TD></TR></TABLE></TD></TR>
       <TR><TD PORT="pc_catid" COLSPAN="3" BGCOLOR="#ffffff" ALIGN="LEFT"><TABLE BORDER="0" CELLSPACING="0" ALIGN="LEFT"><TR ALIGN="LEFT"><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="15" HEIGHT="16"><IMG SRC="../../images/foreignKeys.png"/></TD><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="182" HEIGHT="16">pc_catid</TD></TR></TABLE></TD></TR>
       <TR><TD PORT="pc_aid" COLSPAN="3" BGCOLOR="#ffffff" ALIGN="LEFT"><TABLE BORDER="0" CELLSPACING="0" ALIGN="LEFT"><TR ALIGN="LEFT"><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="15" HEIGHT="16"><IMG SRC="../../images/foreignKeys.png"/></TD><TD ALIGN="LEFT" FIXEDSIZE="TRUE" WIDTH="182" HEIGHT="16">pc_aid</TD></TR></TABLE></TD></TR>
@@ -168,9 +168,9 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#ffffff">&lt; 10</TD><TD ALIGN="RIGHT" BGCOLOR="#ffffff">  </TD><TD ALIGN="RIGHT" BGCOLOR="#ffffff">2 &gt;</TD></TR>
     </TABLE>>
-    URL="../../tables/openemr_postcalendar_events.html"
+    URL="../../tables/tabemr_postcalendar_events.html"
     target="_top"
-    tooltip="openemr_postcalendar_events"
+    tooltip="tabemr_postcalendar_events"
   ];
   "procedure_order" [
    label=<

@@ -8,7 +8,7 @@
  * @author    Sam Likins <sam.likins@wsi-services.com>
  * @author    Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2015 Sam Likins <sam.likins@wsi-services.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\Core\OEGlobalsBag;

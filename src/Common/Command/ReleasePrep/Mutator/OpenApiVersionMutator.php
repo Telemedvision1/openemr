@@ -3,14 +3,14 @@
 /**
  * Bump the version on the `#[OA\Info(...)]` attribute in
  * src/RestControllers/OpenApi/OpenApiDefinitions.php so the generated
- * swagger/openemr-api.yaml advertises the new release version. The
+ * swagger/tabemr-api.yaml advertises the new release version. The
  * SwaggerRegenMutator then re-emits the YAML from this constant.
  *
  * @package   OpenEMR
  * @link      http://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);

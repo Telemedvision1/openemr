@@ -36,7 +36,7 @@ class NQF_0002_InitialPatientPopulation implements CqmFilterIF
             //Children 2-18 years of age who had an outpatient or emergency department (ED) visit with a diagnosis of pharyngitis during the measurement period and an antibiotic ordered on or three days after the visit
             $antibiotics = implode(',', Codes::lookup(Medication::ANTIBIOTIC_FOR_PHARYNGITIS, 'RXNORM'));
             $query = "SELECT p.drug as drug FROM form_encounter fe " .
-                     "INNER JOIN openemr_postcalendar_categories opc ON fe.pc_catid = opc.pc_catid " .
+                     "INNER JOIN tabemr_postcalendar_categories opc ON fe.pc_catid = opc.pc_catid " .
                      "INNER JOIN prescriptions p ON fe.pid = p.patient_id " .
                      "WHERE opc.pc_catname = 'Office Visit' AND fe.pid = ? AND (fe.date BETWEEN ? AND ? ) " .
                      " AND p.rxnorm_drugcode in ( $antibiotics ) AND DATEDIFF(fe.date,p.date_added) <= 3";

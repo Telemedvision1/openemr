@@ -9,7 +9,7 @@
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @author    AI Generated - Claude (Anthropic)
  * @copyright Copyright (c) 2025 - Public Domain for AI generated content
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 // ============================================================================

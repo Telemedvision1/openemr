@@ -36,7 +36,7 @@ use OpenEMR\Validators\ProcessingResult;
  * @link               https://www.open-emr.org
  * @author             Yash Bothra <yashrajbothra786gmail.com>
  * @copyright          Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
- * @license            https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license            https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 class FhirObservationService extends FhirServiceBase implements IResourceSearchableService, IResourceUSCIGProfileService, IPatientCompartmentResourceService, IFhirExportableResourceService
 {
@@ -94,7 +94,7 @@ class FhirObservationService extends FhirServiceBase implements IResourceSearcha
     }
 
     /**
-     * Retrieves all of the fhir observation resources mapped to the underlying openemr data elements.
+     * Retrieves all of the fhir observation resources mapped to the underlying tabemr data elements.
      */
     public function getAll($fhirSearchParameters, $puuidBind = null): ProcessingResult
     {

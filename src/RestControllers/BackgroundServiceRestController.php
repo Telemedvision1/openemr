@@ -8,7 +8,7 @@
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -59,7 +59,7 @@ class BackgroundServiceRestController
             ),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function listAll(): Response
     {
@@ -120,7 +120,7 @@ class BackgroundServiceRestController
                 )
             ),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function getOne(string $name): Response
     {
@@ -176,7 +176,7 @@ class BackgroundServiceRestController
             ),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]],
+        security: [['tabemr_auth' => []]],
     )]
     public function runAllDue(): Response
     {
@@ -281,7 +281,7 @@ class BackgroundServiceRestController
                 )
             ),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function runService(string $name, array $data = []): Response
     {

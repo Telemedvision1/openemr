@@ -26,8 +26,8 @@ class BearerTokenAuthorizationStrategyTest extends TestCase
     const ISSUER = 'http://example.com';
     const AUDIENCE = 'http://example.com/oauth2/token';
 
-    const KEY_PATH_PUBLIC = __DIR__ . '/../../../data/Unit/Common/Auth/Grant/openemr-rsa384-public.pem';
-    const KEY_PATH_PRIVATE = __DIR__ . '/../../../data/Unit/Common/Auth/Grant/openemr-rsa384-private.key';
+    const KEY_PATH_PUBLIC = __DIR__ . '/../../../data/Unit/Common/Auth/Grant/tabemr-rsa384-public.pem';
+    const KEY_PATH_PRIVATE = __DIR__ . '/../../../data/Unit/Common/Auth/Grant/tabemr-rsa384-private.key';
 
     private function getMockSessionForRequest(HttpRestRequest $request): SessionInterface
     {

@@ -28,8 +28,8 @@ CREATE TABLE IF NOT EXISTS `comlink_telehealth_person_settings`
 ) ENGINE = InnoDB;
 #EndIf
 
-#IfNotRow openemr_postcalendar_categories pc_constant_id comlink_telehealth_new_patient
-INSERT INTO `openemr_postcalendar_categories` (
+#IfNotRow tabemr_postcalendar_categories pc_constant_id comlink_telehealth_new_patient
+INSERT INTO `tabemr_postcalendar_categories` (
     `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`,
    `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`,
    `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`,
@@ -43,8 +43,8 @@ VALUES (
 );
 #EndIf
 
-#IfNotRow openemr_postcalendar_categories pc_constant_id comlink_telehealth_established_patient
-INSERT INTO `openemr_postcalendar_categories` (
+#IfNotRow tabemr_postcalendar_categories pc_constant_id comlink_telehealth_established_patient
+INSERT INTO `tabemr_postcalendar_categories` (
     `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`,
     `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`,
     `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`,
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `comlink_telehealth_appointment_session`
 (
     `id`              	            BIGINT(20)         NOT NULL AUTO_INCREMENT,
     `user_id`                       BIGINT(20)         NOT NULL COMMENT 'Foreign key reference to users.id',
-    `pc_eid`                        INT(11) UNSIGNED   NOT NULL COMMENT 'Foreign key reference to openemr_postcalendar_events.pc_eid',
+    `pc_eid`                        INT(11) UNSIGNED   NOT NULL COMMENT 'Foreign key reference to tabemr_postcalendar_events.pc_eid',
     `encounter`                     BIGINT(20)         NOT NULL COMMENT 'Foreign key reference to forms.encounter',
     `pid`                           BIGINT(20)         NOT NULL COMMENT 'Foreign key reference to patient_data.pid',
     `provider_start_time`           DATETIME           DEFAULT NULL DEFAULT CURRENT_TIMESTAMP  COMMENT 'Provider start time',

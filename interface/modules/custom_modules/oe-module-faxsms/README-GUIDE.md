@@ -135,7 +135,7 @@ To automate appointment reminders:
 
 ```bash
 30 8 * * * www-data /usr/bin/php \
-  /var/www/openemr/interface/modules/custom_modules/oe-module-faxsms/library/rc_sms_notification.php \
+  /var/www/tabemr/interface/modules/custom_modules/oe-module-faxsms/library/rc_sms_notification.php \
   site=default user=admin type=sms testrun=0 >/dev/null 2>&1
 ```
 

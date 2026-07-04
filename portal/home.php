@@ -13,7 +13,7 @@
  * @copyright Copyright (c) 2019-2021 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Shiqiang Tao <StrongTSQ@gmail.com>
  * @copyright Copyright (c) 2021 Ben Marte <benmarte@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\BC\ServiceContainer;
@@ -56,7 +56,7 @@ if (!$session->has('portal_init')) {
     SessionUtil::setSession('portal_init', true);
 }
 
-// Example https://localhost/openemr/portal/index.php?site=default&landOn=BillingSummary
+// Example https://localhost/tabemr/portal/index.php?site=default&landOn=BillingSummary
 // landOn query is used to redirect to a specific section of the portal.
 $landOnHref = [
     'ClinicalDocuments' => '#onsitedocuments',
@@ -372,7 +372,7 @@ try {
         'youHave' => xl('You have'),
         'navMenu' => $navMenu,
         'primaryMenuLogoHeight' => $globalsBag->getString('portal_primary_menu_logo_height') ?? '30',
-        'pagetitle' => $globalsBag->getString('openemr_name') . ' ' . xl('Portal'),
+        'pagetitle' => $globalsBag->getString('tabemr_name') . ' ' . xl('Portal'),
         'messagesURL' => $messagesURL,
         'patientID' => $pid,
         'patientName' => $session->get('ptName', null),

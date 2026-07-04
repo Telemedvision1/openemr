@@ -4,11 +4,11 @@
  * TrustedUserService handles CRUD operations for OAUTH2 Trusted Users.  A Trusted User represents an authorized
  * oauth2 connection that we use to validate against inside of OpenEMR.  Trusted User's can be revoked / removed which
  * prevents the associated client / user app from using their access tokens.
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Services;

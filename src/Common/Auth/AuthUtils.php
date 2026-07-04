@@ -35,7 +35,7 @@
  * @copyright Copyright (c) 2013 OEMR
  * @copyright Copyright (c) 2018-2021 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Common\Auth;
@@ -293,7 +293,7 @@ class AuthUtils
         // check IP login counter if this option is set
         if ($this->loginAuth || $this->apiAuth) {
             $this->setupIpLoginFailedCounter($ip['ip_string']);
-            // Utilize this during logins (and not during standard password checks within openemr such as esign)
+            // Utilize this during logins (and not during standard password checks within tabemr such as esign)
             $returnArray = $this->checkIpLoginFailedCounter($ip['ip_string']);
             if (!$returnArray['pass']) {
                 $this->incrementIpLoginFailedCounter($ip['ip_string']);
@@ -316,7 +316,7 @@ class AuthUtils
         // Check to ensure username and password are not empty
         if (empty($username) || empty($password)) {
             if ($this->loginAuth || $this->apiAuth) {
-                // Utilize this during logins (and not during standard password checks within openemr such as esign)
+                // Utilize this during logins (and not during standard password checks within tabemr such as esign)
                 $this->incrementIpLoginFailedCounter($ip['ip_string']);
             }
             EventAuditLogger::getInstance()->newEvent($event, $username, '', 0, $beginLog . ": " . $ip['ip_string'] . ". empty username or password");
@@ -330,7 +330,7 @@ class AuthUtils
         $userInfo = privQuery($getUserSQL, [$username]);
         if (empty($userInfo) || empty($userInfo['id'])) {
             if ($this->loginAuth || $this->apiAuth) {
-                // Utilize this during logins (and not during standard password checks within openemr such as esign)
+                // Utilize this during logins (and not during standard password checks within tabemr such as esign)
                 $this->incrementIpLoginFailedCounter($ip['ip_string']);
             }
             EventAuditLogger::getInstance()->newEvent($event, $username, '', 0, $beginLog . ": " . $ip['ip_string'] . ". user not found");
@@ -339,7 +339,7 @@ class AuthUtils
             return false;
         } elseif ($userInfo['active'] != 1) {
             if ($this->loginAuth || $this->apiAuth) {
-                // Utilize this during logins (and not during standard password checks within openemr such as esign)
+                // Utilize this during logins (and not during standard password checks within tabemr such as esign)
                 $this->incrementIpLoginFailedCounter($ip['ip_string']);
             }
             EventAuditLogger::getInstance()->newEvent($event, $username, '', 0, $beginLog . ": " . $ip['ip_string'] . ". user not active");
@@ -353,7 +353,7 @@ class AuthUtils
         $authGroup = $userService->getAuthGroupForUser($username);
         if (empty($authGroup)) {
             if ($this->loginAuth || $this->apiAuth) {
-                // Utilize this during logins (and not during standard password checks within openemr such as esign)
+                // Utilize this during logins (and not during standard password checks within tabemr such as esign)
                 $this->incrementIpLoginFailedCounter($ip['ip_string']);
             }
             EventAuditLogger::getInstance()->newEvent($event, $username, '', 0, $beginLog . ": " . $ip['ip_string'] . ". user not found in a group");
@@ -365,7 +365,7 @@ class AuthUtils
         // Check to ensure user is in a acl group
         if (AclExtended::aclGetGroupTitles($username) == 0) {
             if ($this->loginAuth || $this->apiAuth) {
-                // Utilize this during logins (and not during standard password checks within openemr such as esign)
+                // Utilize this during logins (and not during standard password checks within tabemr such as esign)
                 $this->incrementIpLoginFailedCounter($ip['ip_string']);
             }
             EventAuditLogger::getInstance()->newEvent($event, $username, $authGroup, 0, $beginLog . ": " . $ip['ip_string'] . ". user not in any phpGACL groups");
@@ -381,7 +381,7 @@ class AuthUtils
         $userSecure = privQuery($getUserSecureSQL, [$username]);
         if (empty($userSecure) || empty($userSecure['id']) || empty($userSecure['password'])) {
             if ($this->loginAuth || $this->apiAuth) {
-                // Utilize this during logins (and not during standard password checks within openemr such as esign)
+                // Utilize this during logins (and not during standard password checks within tabemr such as esign)
                 $this->incrementIpLoginFailedCounter($ip['ip_string']);
             }
             EventAuditLogger::getInstance()->newEvent($event, $username, $authGroup, 0, $beginLog . ": " . $ip['ip_string'] . ". user credentials not found");
@@ -392,7 +392,7 @@ class AuthUtils
 
         // check login counter if this option is set
         if ($this->loginAuth || $this->apiAuth) {
-            // Utilize this during logins (and not during standard password checks within openemr such as esign)
+            // Utilize this during logins (and not during standard password checks within tabemr such as esign)
             $checkArray = $this->checkLoginFailedCounter($username);
             if (!$checkArray['pass']) {
                 $this->incrementLoginFailedCounter($username);
@@ -412,7 +412,7 @@ class AuthUtils
             // ldap authentication
             if (!$this->activeDirectoryValidation($username, $password)) {
                 if ($this->loginAuth || $this->apiAuth) {
-                    // Utilize this during logins (and not during standard password checks within openemr such as esign)
+                    // Utilize this during logins (and not during standard password checks within tabemr such as esign)
                     $this->incrementLoginFailedCounter($username);
                     $this->incrementIpLoginFailedCounter($ip['ip_string']);
                 }
@@ -425,7 +425,7 @@ class AuthUtils
             // First, ensure the user hash is a valid hash
             if (!AuthHash::hashValid($userSecure['password'])) {
                 if ($this->loginAuth || $this->apiAuth) {
-                    // Utilize this during logins (and not during standard password checks within openemr such as esign)
+                    // Utilize this during logins (and not during standard password checks within tabemr such as esign)
                     $this->incrementIpLoginFailedCounter($ip['ip_string']);
                 }
                 EventAuditLogger::getInstance()->newEvent($event, $username, $authGroup, 0, $beginLog . ": " . $ip['ip_string'] . ". user stored password hash is invalid");
@@ -436,7 +436,7 @@ class AuthUtils
             // Second, authentication
             if (!AuthHash::passwordVerify($password, $userSecure['password'])) {
                 if ($this->loginAuth || $this->apiAuth) {
-                    // Utilize this during logins (and not during standard password checks within openemr such as esign)
+                    // Utilize this during logins (and not during standard password checks within tabemr such as esign)
                     $this->incrementLoginFailedCounter($username);
                     $this->incrementIpLoginFailedCounter($ip['ip_string']);
                 }
@@ -448,7 +448,7 @@ class AuthUtils
 
         // check for rehash
         if ($this->loginAuth || $this->apiAuth) {
-            // Utilize this during logins (and not during standard password checks within openemr such as esign)
+            // Utilize this during logins (and not during standard password checks within tabemr such as esign)
             if ($this->authHashAuth->passwordNeedsRehash($userSecure['password'])) {
                 // Hash needs updating, so create a new hash, and replace the old one
                 $newHash = $this->rehashPassword($username, $password);
@@ -460,7 +460,7 @@ class AuthUtils
         // Check to ensure password not expired if this option is set (note ldap skips this)
         if (!$this->checkPasswordNotExpired($username)) {
             if ($this->loginAuth || $this->apiAuth) {
-                // Utilize this during logins (and not during standard password checks within openemr such as esign)
+                // Utilize this during logins (and not during standard password checks within tabemr such as esign)
                 $this->incrementIpLoginFailedCounter($ip['ip_string']);
             }
             EventAuditLogger::getInstance()->newEvent($event, $username, $authGroup, 0, $beginLog . ": " . $ip['ip_string'] . ". user password is expired");
@@ -472,7 +472,7 @@ class AuthUtils
         // PASSED
         $this->clearFromMemory($password);
         if ($this->loginAuth || $this->apiAuth) {
-            // Utilize this during logins (and not during standard password checks within openemr such as esign)
+            // Utilize this during logins (and not during standard password checks within tabemr such as esign)
             self::resetLoginFailedCounter($username);
             $this->resetIpLoginFailedCounter($ip['ip_string']);
         }

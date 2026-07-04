@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -79,7 +79,7 @@ class NetworkUtilsTest extends TestCase
     {
         yield 'https example.com' => ['https://example.com'];
         yield 'http 8.8.8.8' => ['http://8.8.8.8'];
-        yield 'https with path' => ['https://api.openemr.org/v1/patients'];
+        yield 'https with path' => ['https://api.tabemr.org/v1/patients'];
     }
 
     #[DataProvider('loopbackAddressProvider')]

@@ -1,11 +1,11 @@
 name: Release Prep Conductor
 
 # Long-lived release-prep PR pattern (release-please-shaped) for the
-# openemr/openemr conductor in the three-PR release-automation flow
-# (openemr/openemr-devops#664). On every push to a rel-* branch, runs
+# tabemr/tabemr conductor in the three-PR release-automation flow
+# (tabemr/tabemr-devops#664). On every push to a rel-* branch, runs
 # the mechanical edits and force-pushes them to release-prep/<rel-branch>,
 # opening or updating a draft PR. On merge of that PR, creates the
-# annotated release tag and dispatches openemr-tag to the consumer
+# annotated release tag and dispatches tabemr-tag to the consumer
 # repos.
 
 on:
@@ -66,7 +66,7 @@ jobs:
     strategy:
       matrix:
         # The conductor itself is tooling (only runs on CI) so per OCE
-        # conventions it tracks the latest stable PHP, not the openemr
+        # conventions it tracks the latest stable PHP, not the tabemr
         # application floor. The release-prep mutators only need to
         # parse application code, not execute it on this PHP version.
         php-version:
@@ -87,7 +87,7 @@ jobs:
         # targets, otherwise repository_dispatch to the consumer repos
         # returns 403 "Resource not accessible by integration".
         owner: ${{ github.repository_owner }}
-        repositories: openemr,openemr-devops,website-openemr,demo_farm_openemr
+        repositories: tabemr,tabemr-devops,website-tabemr,demo_farm_tabemr
 
     - name: Setup PHP and Composer
       uses: ./.github/actions/setup-php-composer
@@ -167,7 +167,7 @@ jobs:
       env:
         VERSION: ${{ steps.resolve.outputs.version }}
       run: |
-        php bin/console openemr:release-prep \
+        php bin/console tabemr:release-prep \
           --skip-globals \
           --target-version="${VERSION}" \
           --scope=rel
@@ -185,8 +185,8 @@ jobs:
         title: 'chore(release): prep ${{ steps.resolve.outputs.version }}${{ steps.resolve.outputs.title-suffix }}'
         body: ${{ steps.pr-body.outputs.body }}
         commit-message: 'chore(release): prep ${{ steps.resolve.outputs.version }}${{ steps.resolve.outputs.title-suffix }}'
-        author: 'openemr-release-bot <release-bot@openemr.invalid>'
-        committer: 'openemr-release-bot <release-bot@openemr.invalid>'
+        author: 'tabemr-release-bot <release-bot@tabemr.invalid>'
+        committer: 'tabemr-release-bot <release-bot@tabemr.invalid>'
         draft: true
         delete-branch: false
 
@@ -211,13 +211,13 @@ jobs:
         # treat it as rel-update — rel-cut is only correct on the very
         # first PR creation.
         case "${OPERATION}" in
-          created) event='openemr-rel-cut' ;;
-          *)       event='openemr-rel-update' ;;
+          created) event='tabemr-rel-cut' ;;
+          *)       event='tabemr-rel-update' ;;
         esac
         php tools/release/bin/dispatch.php \
           --event="${event}" \
           --sha="${PUSH_SHA}" \
-          --actor='openemr-release-bot' \
+          --actor='tabemr-release-bot' \
           --branch="${REL_BRANCH}" \
           --release-version="${VERSION}" \
           --prev-release="${prev_release}"
@@ -254,7 +254,7 @@ jobs:
         # targets, otherwise repository_dispatch to the consumer repos
         # returns 403 "Resource not accessible by integration".
         owner: ${{ github.repository_owner }}
-        repositories: openemr,openemr-devops,website-openemr,demo_farm_openemr
+        repositories: tabemr,tabemr-devops,website-tabemr,demo_farm_tabemr
 
     - name: Setup PHP and Composer
       uses: ./.github/actions/setup-php-composer
@@ -325,7 +325,7 @@ jobs:
         git fetch --tags --quiet
         php tools/release/bin/verify-tag.php "${TAG_NAME}"
 
-    - name: Dispatch openemr-tag to consumers
+    - name: Dispatch tabemr-tag to consumers
       env:
         RELEASE_APP_TOKEN: ${{ steps.app-token.outputs.token }}
         VERSION: ${{ steps.resolve.outputs.version }}
@@ -334,9 +334,9 @@ jobs:
         TAG_NAME: ${{ steps.tag.outputs.tag-name }}
       run: |
         php tools/release/bin/dispatch.php \
-          --event=openemr-tag \
+          --event=tabemr-tag \
           --sha="${MERGE_SHA}" \
-          --actor='openemr-release-bot' \
+          --actor='tabemr-release-bot' \
           --branch="${REL_BRANCH}" \
           --release-version="${VERSION}" \
           --tag="${TAG_NAME}"

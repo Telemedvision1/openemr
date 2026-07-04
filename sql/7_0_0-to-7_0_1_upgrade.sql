@@ -169,12 +169,12 @@ CREATE TABLE `form_questionnaire_assessments` (
 INSERT INTO `registry` (`name`, `state`, `directory`, `sql_run`, `unpackaged`, `date`, `priority`, `category`, `nickname`, `patient_encounter`, `therapy_group_encounter`, `aco_spec`, `form_foreign_id`) VALUES ('New Questionnaire', 1, 'questionnaire_assessments', 1, 1, '2022-08-04 14:45:15', 0, 'Questionnaires', '', 1, 0, 'admin|forms', NULL);
 #EndIf
 
-#IfMissingColumn openemr_postcalendar_events uuid
-ALTER TABLE `openemr_postcalendar_events` ADD `uuid` binary(16) DEFAULT NULL;
+#IfMissingColumn tabemr_postcalendar_events uuid
+ALTER TABLE `tabemr_postcalendar_events` ADD `uuid` binary(16) DEFAULT NULL;
 #EndIf
 
-#IfNotIndex openemr_postcalendar_events uuid
-CREATE UNIQUE INDEX `uuid` ON `openemr_postcalendar_events` (`uuid`);
+#IfNotIndex tabemr_postcalendar_events uuid
+CREATE UNIQUE INDEX `uuid` ON `tabemr_postcalendar_events` (`uuid`);
 #EndIf
 
 #IfNotRow2D list_options list_id drug_route option_id bymouth
@@ -256,7 +256,7 @@ UPDATE `categories` SET `aco_spec` = 'patients|demo' WHERE `name` = 'Patient Pho
 #EndIf
 
 #IfNotColumnType audit_details field_value LONGTEXT
-ALTER TABLE `audit_details` CHANGE `field_value` `field_value` LONGTEXT COMMENT 'openemr table field value';
+ALTER TABLE `audit_details` CHANGE `field_value` `field_value` LONGTEXT COMMENT 'tabemr table field value';
 #EndIf
 
 #IfMissingColumn audit_master is_unstructured_document

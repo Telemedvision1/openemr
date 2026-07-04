@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2020 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\FHIR\SMART;
@@ -21,7 +21,7 @@ class SMARTLaunchToken
     public const VALID_INTENTS = [self::INTENT_PATIENT_DEMOGRAPHICS_DIALOG, self::INTENT_APPOINTMENT_DIALOG, self::INTENT_ENCOUNTER_DIALOG, self::INTENT_MAIN_TAB];
 
     // used on the appointment add/edit dialog, context will include the selected appointment
-    // for now this intent is used by custom apps that consume the openemr.appointment.add_edit_event.close.before event
+    // for now this intent is used by custom apps that consume the tabemr.appointment.add_edit_event.close.before event
     // to present a SMART app as a 2nd step to the add/edit appointment workflow
     public const INTENT_APPOINTMENT_DIALOG = 'appointment.edit.dialog';
 

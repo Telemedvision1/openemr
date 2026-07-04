@@ -7,7 +7,7 @@
  *  @author  Kofi Appiah <kkappiah@medsov.com>
  *  @copyright Copyright (c) 2020 Sherwin Gaddis <sherwingaddis@gmail.com>
  *  @copyright Copyright (c) 2023 Omega Systems Group International <info@omegasystemsgroup.com>
- *  @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ *  @license https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Modules\WenoModule\Services;

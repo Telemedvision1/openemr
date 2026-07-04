@@ -21,11 +21,11 @@
  *  2. import to ccda table (bypassed in development-mode)
  *  3. import as new patient
  *  4. run function to populate all the uuids via the universal service function that already exists
- *  5. (optional via enableMoves) move files after being processed to the <openemrPath>/contrib/import_ccdas/processed
+ *  5. (optional via enableMoves) move files after being processed to the <tabemrPath>/contrib/import_ccdas/processed
  *                                directory
  *  6. (optional via dedup) check for a patient duplicate before importing (if it is a duplicate and enableMoves is
  *                          true, then will not import patient and will move the file to the
- *                          <openemrPath>/contrib/import_ccdas/duplicates directory and log the duplicate information)
+ *                          <tabemrPath>/contrib/import_ccdas/duplicates directory and log the duplicate information)
  *
  * @package   OpenEMR
  * @link      https://www.open-emr.org
@@ -33,7 +33,7 @@
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021-2025 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 // Enable this script via environment variable
@@ -70,7 +70,7 @@ function showHelp(): void
     echo "  --authName      Required if isDev=false. userAuth so Documents can be saved/moved.\n";
     echo "  --sourcePath     Required. Path to the directory containing CCDA files to import.\n";
     echo "  --site           Required. OpenEMR site ID.\n";
-    echo "  --openemrPath    Required. Path to OpenEMR web root.\n";
+    echo "  --tabemrPath    Required. Path to OpenEMR web root.\n";
     echo "  --isDev          Optional. Set to 'true' for development mode, 'false' for production. Default: true.\n";
     echo "  --enableMoves    Optional. Set to 'true' to move processed files, 'false' to disable. Default: false.\n";
     echo "  --dedup          Optional. Set to 'true' to enable duplicate checking, 'false' to disable. Default: false.\n";
@@ -80,7 +80,7 @@ function showHelp(): void
     echo "  php import_ccda.php --sourcePath=/path/to/import/documents \\\n";
     echo "                      --authName=admin \\\n";
     echo "                      --site=default \\\n";
-    echo "                      --openemrPath=/var/www/openemr \\\n";
+    echo "                      --tabemrPath=/var/www/tabemr \\\n";
     echo "                      --isDev=true \\\n";
     echo "                      --enableMoves=false \\\n";
     echo "                      --dedup=false\n";
@@ -99,7 +99,7 @@ function outputMessage($message): void
 $args = parseArgs($argv ?? []);
 
 // Required arguments
-$requiredArgs = ['sourcePath', 'site', 'openemrPath'];
+$requiredArgs = ['sourcePath', 'site', 'tabemrPath'];
 
 // Validate input
 foreach ($requiredArgs as $req) {
@@ -111,7 +111,7 @@ foreach ($requiredArgs as $req) {
 
 $dir = rtrim((string) $args['sourcePath'], '/') . '/*';
 $_GET['site'] = $args['site'] ?? 'default';
-$openemrPath = $args['openemrPath'] ?? '';
+$tabemrPath = $args['tabemrPath'] ?? '';
 $seriousOptimizeFlag = filter_var($args['isDev'] ?? true, FILTER_VALIDATE_BOOLEAN); // default to true/on
 $enableMoves = filter_var($args['enableMoves'] ?? false, FILTER_VALIDATE_BOOLEAN); // default to false/off
 $dedup = filter_var($args['dedup'] ?? false, FILTER_VALIDATE_BOOLEAN); // default to false/off
@@ -124,7 +124,7 @@ if ($seriousOptimizeFlag == "true") {
 }
 
 $ignoreAuth = 1;
-require_once($openemrPath . "/interface/globals.php");
+require_once($tabemrPath . "/interface/globals.php");
 
 use OpenEMR\Common\Session\SessionWrapperFactory;
 use OpenEMR\Common\Uuid\UuidRegistry;
@@ -133,7 +133,7 @@ use OpenEMR\Services\Cda\CdaComponentParseHelpers;
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 
 // show parameters (need to do after globals)
-outputMessage("OpenEMR path: " . $openemrPath);
+outputMessage("OpenEMR path: " . $tabemrPath);
 outputMessage("CCDA Imports Location: " . $args['sourcePath']);
 outputMessage("Site: " . $session->get('site_id'));
 
@@ -184,7 +184,7 @@ foreach (glob($dir) as $file) {
     if ($seriousOptimize) {
         // development-mode is on (note step 1 and step 2 are bypassed)
         // 3. import as new patient
-        exec("php " . $openemrPath . "/bin/console openemr:ccda-newpatient-import --site=" . $session->get('site_id') . " --document=" . $file);
+        exec("php " . $tabemrPath . "/bin/console tabemr:ccda-newpatient-import --site=" . $session->get('site_id') . " --document=" . $file);
     } else {
         // development mode is off
         //  1. import ccda document
@@ -194,10 +194,10 @@ foreach (glob($dir) as $file) {
         $document->createDocument('00', 13, basename($file), 'text/xml', $fileContents);
         $documentId = $document->get_id();
         //  2. import to ccda table
-        exec("php " . $openemrPath . "/bin/console openemr:ccda-import --site=" . $session->get('site_id') . " --document_id=" . $documentId . " --auth_name=" . $authName);
+        exec("php " . $tabemrPath . "/bin/console tabemr:ccda-import --site=" . $session->get('site_id') . " --document_id=" . $documentId . " --auth_name=" . $authName);
         $auditId = sqlQueryNoLog("SELECT max(`id`) as `maxid` FROM `audit_master`")['maxid'];
         //  3. import as new patient
-        exec("php " . $openemrPath . "/bin/console openemr:ccda-newpatient --site=" . $session->get('site_id') . " --am_id=" . $auditId . " --document_id=" . $documentId . " --auth_name=" . $authName);
+        exec("php " . $tabemrPath . "/bin/console tabemr:ccda-newpatient --site=" . $session->get('site_id') . " --am_id=" . $auditId . " --document_id=" . $documentId . " --auth_name=" . $authName);
     }
     try {
         if ($enableMoves) {

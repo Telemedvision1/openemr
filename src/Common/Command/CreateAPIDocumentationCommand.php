@@ -2,11 +2,11 @@
 
 /**
  * CreateAPIDocumentation.php
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Common\Command;
@@ -30,7 +30,7 @@ class CreateAPIDocumentationCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('openemr:create-api-documentation')
+            ->setName('tabemr:create-api-documentation')
             ->setDescription("Generates an OpenAPI swagger file that documents the OpenEMR API")
             ->addUsage('--site=default')
             ->setDefinition(
@@ -43,7 +43,7 @@ class CreateAPIDocumentationCommand extends Command
     {
         $fileroot = OEGlobalsBag::getInstance()->getProjectDir();
         $fileDestinationFolder = $fileroot . DIRECTORY_SEPARATOR . "swagger" . DIRECTORY_SEPARATOR;
-        $fileDestinationYaml =  $fileDestinationFolder . "openemr-api.yaml";
+        $fileDestinationYaml =  $fileDestinationFolder . "tabemr-api.yaml";
 
         $generator = new Generator();
         // Use only AttributeAnnotationFactory to avoid picking up docblock comments as summaries

@@ -8,7 +8,7 @@
  *
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2022 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\RestControllers\FHIR;
@@ -103,7 +103,7 @@ class FhirQuestionnaireRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['tabemr_auth' => []]]
     )]
     public function list(HttpRestRequest $request): ResponseInterface
     {

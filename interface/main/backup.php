@@ -4,8 +4,8 @@
  * This script creates a backup tarball, emr_backup.tar, and sends
  * it to the user's browser for download.  The tarball includes:
  *
- * an OpenEMR database dump  (openemr.sql.gz)
- * the OpenEMR web directory (openemr.tar.gz)
+ * an OpenEMR database dump  (tabemr.sql.gz)
+ * the OpenEMR web directory (tabemr.tar.gz)
  *
  * The OpenEMR web directory is important because it includes config-
  * uration files, patient documents, and possible customizations, and
@@ -30,7 +30,7 @@
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019 Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\BC\DatabaseConnectionOptions;
@@ -119,10 +119,10 @@ $auto_continue = false;
 # set up main paths
 $backup_file_prefix = "emr_backup";
 $backup_file_suffix = ".tar";
-$TMP_BASE = OEGlobalsBag::getInstance()->getString('temporary_files_dir') . "/openemr_web_backup";
+$TMP_BASE = OEGlobalsBag::getInstance()->getString('temporary_files_dir') . "/tabemr_web_backup";
 $BACKUP_DIR = $TMP_BASE . "/emr_backup";
 $TAR_FILE_PATH = $TMP_BASE . DIRECTORY_SEPARATOR . $backup_file_prefix . $backup_file_suffix;
-$EXPORT_FILE = OEGlobalsBag::getInstance()->getString('temporary_files_dir') . "/openemr_config.sql";
+$EXPORT_FILE = OEGlobalsBag::getInstance()->getString('temporary_files_dir') . "/tabemr_config.sql";
 $MYSQL_PATH = realpath(OEGlobalsBag::getInstance()->getString('mysql_bin_dir'));
 $PERL_PATH = realpath(OEGlobalsBag::getInstance()->getString('perl_bin_dir'));
 
@@ -518,7 +518,7 @@ if ($form_step == 1) {
         die(xlt("Couldn't create backup dir:") . " " . text($BACKUP_DIR));
     }
 
-    $file_to_compress = "$BACKUP_DIR/openemr.sql";   // gzip this file after creation
+    $file_to_compress = "$BACKUP_DIR/tabemr.sql";   // gzip this file after creation
 
     $cmd = escapeshellcmd($mysql_dump_cmd) . " -u " . escapeshellarg($dbOptions->user) .
     " -p" . escapeshellarg($dbOptions->password) .
@@ -571,7 +571,7 @@ if ($form_step == 3) {
 
     closedir($dh);
 
-    $arch_file = $BACKUP_DIR . DIRECTORY_SEPARATOR . "openemr.tar.gz";
+    $arch_file = $BACKUP_DIR . DIRECTORY_SEPARATOR . "tabemr.tar.gz";
     if (!create_tar_archive($arch_file, "gz", $file_list)) {
         die(xlt("An error occurred while dumping OpenEMR web directory tree"));
     }

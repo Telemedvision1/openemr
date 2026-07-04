@@ -5,11 +5,11 @@
  * to the provided stream.  The writer will abort if the current system time exceeds the shutdown time specified for
  * the writer.  This allows the script to be processed in an asynchronous fashion.  The Writer tracks the last processed
  * fhir resource which can be used by callers to resume or retry a resource in the stream.
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\FHIR\Export;

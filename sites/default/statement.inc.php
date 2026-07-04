@@ -21,8 +21,8 @@
  * @copyright Copyright (c) 2020 Stephen Waite <stephen.waite@cmsvt.com>
  * @author Daniel Pflieger <daniel@growlingflea.com>
  * @copyright Copyright (c) 2018 Daniel Pflieger <daniel@growlingflea.com>
- * @link https://github.com/openemr/openemr/tree/master
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link https://github.com/tabemr/tabemr/tree/master
+ * @license https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\Core\OEGlobalsBag;
@@ -30,8 +30,8 @@ use OpenEMR\Core\OEGlobalsBag;
 // The location/name of a temporary file to hold printable statements.
 // May want to alter these names to allow multi-site installs out-of-the-box
 
-$STMT_TEMP_FILE = OEGlobalsBag::getInstance()->getString('temporary_files_dir') . "/openemr_statements.txt";
-$STMT_TEMP_FILE_PDF = OEGlobalsBag::getInstance()->getString('temporary_files_dir') . "/openemr_statements.pdf";
+$STMT_TEMP_FILE = OEGlobalsBag::getInstance()->getString('temporary_files_dir') . "/tabemr_statements.txt";
+$STMT_TEMP_FILE_PDF = OEGlobalsBag::getInstance()->getString('temporary_files_dir') . "/tabemr_statements.pdf";
 
 /** There are two options to print a batch of PDF statements:
  *  1.  The original statement, a text based statement, using CezPDF
@@ -40,7 +40,7 @@ $STMT_TEMP_FILE_PDF = OEGlobalsBag::getInstance()->getString('temporary_files_di
  *  2.  Branded Statement, whose core is build from 1., the original statement, using mPDF.
  *
  *      To customize 2., add your practice location/images/practice_logo.gif
- *      In the base/default install this is located at '/openemr/sites/default/images/practice_logo.gif',
+ *      In the base/default install this is located at '/tabemr/sites/default/images/practice_logo.gif',
  *      Adjust directory paths per your installation.
  *      Further customize 2. manually in functions report_2() and create_HTML_statement(), below.
  *

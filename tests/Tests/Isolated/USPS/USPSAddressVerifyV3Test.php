@@ -11,7 +11,7 @@
  * @link      https://www.open-emr.org
  * @author    stephen waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2025 stephen waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);

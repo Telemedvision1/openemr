@@ -19,7 +19,7 @@ use Psr\Http\Message\ResponseInterface;
  * @package   OpenEMR
  * @link      http://www.open-emr.org
  * @author    studebaker8
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 class PatientAllergyConditionApiTest extends TestCase
 {

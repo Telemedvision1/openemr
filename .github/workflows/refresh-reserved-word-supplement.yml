@@ -37,7 +37,7 @@ permissions:
 jobs:
   refresh:
     # Only run from master branch on the main repository
-    if: github.repository_owner == 'openemr' && github.repository == 'openemr/openemr' && github.ref == 'refs/heads/master'
+    if: github.repository_owner == 'tabemr' && github.repository == 'tabemr/tabemr' && github.ref == 'refs/heads/master'
     name: Refresh supplement
     runs-on: ubuntu-24.04
 

@@ -16,7 +16,7 @@
  * @copyright Copyright (c) 2005-2020 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2018-2020 Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2019-2020 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
@@ -303,7 +303,7 @@ if (!empty($_POST['form_save']) || !empty($_POST['form_cancel']) || !empty($_POS
 // The sl_eob_search page needs its invoice links modified to invoke
 // javascript to load form parms for all the above and submit.
 // At the same time that page would be modified to work off the
-// openemr database exclusively.
+// tabemr database exclusively.
 // And back to the sl_eob_invoice page, I think we may want to move
 // the source input fields from row level to header level.
 

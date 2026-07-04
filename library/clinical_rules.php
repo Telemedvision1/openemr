@@ -13,7 +13,7 @@
  * @copyright Copyright (c) 2011 Medical Information Integration, LLC
  * @copyright Copyright (c) 2011 Ensofttek, LLC
  * @copyright Copyright (c) 2026 OpenEMR Foundation Inc
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/patient.inc.php");
@@ -2576,15 +2576,15 @@ function appointment_check($patient_id, $dateFocus = '', $dateTarget = '')
 
     // Basically, if the appointment is within the current date to the target date,
     //  then return true. (will not send reminders on same day as appointment)
-    $sql = sqlStatementCdrEngine("SELECT openemr_postcalendar_events.pc_eid, " .
-        "openemr_postcalendar_events.pc_title, " .
-        "openemr_postcalendar_events.pc_eventDate, " .
-        "openemr_postcalendar_events.pc_startTime, " .
-        "openemr_postcalendar_events.pc_endTime " .
-        "FROM openemr_postcalendar_events " .
-        "WHERE openemr_postcalendar_events.pc_eventDate > ? " .
-        "AND openemr_postcalendar_events.pc_eventDate <= ? " .
-        "AND openemr_postcalendar_events.pc_pid = ?", [$currentDate,$dateTarget,$patient_id]);
+    $sql = sqlStatementCdrEngine("SELECT tabemr_postcalendar_events.pc_eid, " .
+        "tabemr_postcalendar_events.pc_title, " .
+        "tabemr_postcalendar_events.pc_eventDate, " .
+        "tabemr_postcalendar_events.pc_startTime, " .
+        "tabemr_postcalendar_events.pc_endTime " .
+        "FROM tabemr_postcalendar_events " .
+        "WHERE tabemr_postcalendar_events.pc_eventDate > ? " .
+        "AND tabemr_postcalendar_events.pc_eventDate <= ? " .
+        "AND tabemr_postcalendar_events.pc_pid = ?", [$currentDate,$dateTarget,$patient_id]);
 
     // return results of check
     //
@@ -3224,7 +3224,7 @@ function collect_database_label($label, $table)
             // unknown label, so return the original label
             $returnedLabel = $label;
         }
-    } elseif ($table == 'openemr_postcalendar_events') {
+    } elseif ($table == 'tabemr_postcalendar_events') {
         // return requested label for prescriptions table
         if ($label == "pid") {
             $returnedLabel = "pc_pid";

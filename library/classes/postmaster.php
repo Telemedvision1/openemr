@@ -12,7 +12,7 @@
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -133,7 +133,7 @@ class MyMailer extends PHPMailer
                         $twig = $twigContainer->getTwig();
                         if (!empty($ret['template_name'])) {
                             $templateData = json_decode((string) $ret['body'], true);
-                            // we make sure to prefix this so that people have to work inside the openemr namespace for email templates
+                            // we make sure to prefix this so that people have to work inside the tabemr namespace for email templates
                             $htmlBody = $twig->render($ret['template_name'] . ".html.twig", $templateData);
                             $textBody = $twig->render($ret['template_name'] . ".text.twig", $templateData);
                         } else {

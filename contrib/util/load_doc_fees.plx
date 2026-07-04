@@ -30,7 +30,7 @@ use DBI;
 #               Parameters that you should customize                  #
 #######################################################################
 
-my $DBNAME         = "openemr";  # database name
+my $DBNAME         = "tabemr";  # database name
 my $CARRIER        = "05440";    # Tennessee
 my $FEE_MULTIPLIER = 1.5;        # fee multiplier
 

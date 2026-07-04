@@ -129,8 +129,8 @@ groups:
     - form_taskman
 
   calendar:
-    - openemr_postcalendar_events
-    - openemr_postcalendar_categories
+    - tabemr_postcalendar_events
+    - tabemr_postcalendar_categories
     - medex_recalls
 
   static:

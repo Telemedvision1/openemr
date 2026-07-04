@@ -311,7 +311,7 @@ abstract class AbstractAmcReport implements RsReportIF
             case "transitions-in":
                  $sql = "SELECT amc_misc_data.map_id as `encounter`, amc_misc_data.date_completed as `completed`, form_encounter.date as `date` " .
                         "FROM `amc_misc_data`, `form_encounter` " .
-                        "INNER JOIN openemr_postcalendar_categories opc on opc.pc_catid = form_encounter.pc_catid " .
+                        "INNER JOIN tabemr_postcalendar_categories opc on opc.pc_catid = form_encounter.pc_catid " .
                         "WHERE amc_misc_data.map_id = form_encounter.encounter " .
                         "AND amc_misc_data.map_category = 'form_encounter' " .
                         "AND amc_misc_data.pid = ? AND form_encounter.pid = ? " .

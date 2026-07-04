@@ -2,11 +2,11 @@
 
 /**
  * FhirDeviceService.php
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Robert Jones (Analog Informatics Corporation) <robert@analoginfo.com>, <robert@justjones.org>
  * @copyright Copyright (c) 2023 Analog Informatics Corporation <https://analoginfo.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Services\FHIR;
@@ -46,13 +46,13 @@ class FhirValueSetService extends FhirServiceBase implements IResourceUSCIGProfi
 
     /**
      * NB: started w Device as a base, but DocumentReference is what I needed... no underlying service either
-     *  pc_catid => openemr_postcalendar_categories
+     *  pc_catid => tabemr_postcalendar_categories
      *  doc category => categories
      *   facility POS code
      *  customlists ??
      *  option_lists by list_id
      *
-     *  MariaDB [openemr]> select list_id    , option_id         , title                 , seq , is_default , option_value , mapping , notes, codes from list_options limit 40;
+     *  MariaDB [tabemr]> select list_id    , option_id         , title                 , seq , is_default , option_value , mapping , notes, codes from list_options limit 40;
      *  +---------------------------------+-------------------+-----------------------+-----+------------+--------------+---------+-------+-------+
      *  | list_id                         | option_id         | title                 | seq | is_default | option_value | mapping | notes | codes |
      *  +---------------------------------+-------------------+-----------------------+-----+------------+--------------+---------+-------+-------+
@@ -118,7 +118,7 @@ class FhirValueSetService extends FhirServiceBase implements IResourceUSCIGProfi
     }
 
     /**
-     * Retrieves all of the fhir observation resources mapped to the underlying openemr data elements.
+     * Retrieves all of the fhir observation resources mapped to the underlying tabemr data elements.
      */
     public function getAll($fhirSearchParameters, $puuidBind = null): ProcessingResult
     {

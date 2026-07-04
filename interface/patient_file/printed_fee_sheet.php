@@ -14,7 +14,7 @@
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019 Ron Pulcer <rspulcer_2k@yahoo.com>
  * @copyright Copyright (c) 2019 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
@@ -468,7 +468,7 @@ foreach ($pid_list as $pid) {
             }
 
             // Note: You would think that pc_comments would have the Appt. comments,
-            // but it is actually stored in pc_hometext in DB table (openemr_postcalendar_events).
+            // but it is actually stored in pc_hometext in DB table (tabemr_postcalendar_events).
             $html .= $appointment['pc_hometext'] ?? '';
 
             $html .= "</td>

@@ -3,11 +3,11 @@
 /**
  * RegisterApiTestClientCommand.php - Utility class to help test api clients by registering a test client with the OpenEMR API
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2023 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Common\Command;
@@ -29,7 +29,7 @@ class RegisterApiTestClientCommand extends Command
     protected function configure(): void
     {
         $this
-            ->setName('openemr-dev:register-api-test-client')
+            ->setName('tabemr-dev:register-api-test-client')
             ->setDescription("Utility class to help test api clients by registering a test client with the OpenEMR API")
             ->addUsage('--site=default')
             ->setDefinition(

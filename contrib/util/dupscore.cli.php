@@ -23,16 +23,16 @@
  * where it left off.
  *
  * A common usage is:
- * php /var/www/html/openemr/contrib/util/dupscore.cli.php --maxmins=240
+ * php /var/www/html/tabemr/contrib/util/dupscore.cli.php --maxmins=240
  *
  * Here is a sample crontab entry to automatically run up to 2 hours nightly:
- * 3 1 * * * root php /var/www/html/openemr/contrib/util/dupscore.cli.php -q --maxmins=120
+ * 3 1 * * * root php /var/www/html/tabemr/contrib/util/dupscore.cli.php -q --maxmins=120
  *
  * @package   OpenEMR
  * @link      https://www.open-emr.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2021 Rod Roark <rod@sunsetsystems.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 // The number of scores to compute between tests for time expiration.

@@ -1,5 +1,5 @@
 {
-  "name": "openemr-interface",
+  "name": "tabemr-interface",
   "version": "0.2.0",
   "description": "UI toolkit, theme and component library for OpenEMR",
   "main": "index.js",
@@ -19,7 +19,7 @@
     "stylelint-fix": "npm run stylelint -- --fix"
   },
   "keywords": [
-    "openemr"
+    "tabemr"
   ],
   "author": "d3sandoval",
   "license": "GNU GPL",

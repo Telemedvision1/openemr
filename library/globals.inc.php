@@ -12,7 +12,7 @@
  * @copyright Copyright (c) 2018 Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2021-2023 Robert Down <robertdown@live.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 //  Current supported languages:    // Allow capture of term for translation:
@@ -434,7 +434,7 @@ $GLOBALS_METADATA = [
     ],
 
     'Branding' => [
-        'openemr_name' => [
+        'tabemr_name' => [
             xl('Application Title'),
             'text',
             'OpenEMR',
@@ -3108,7 +3108,7 @@ $GLOBALS_METADATA = [
         'portal_onsite_two_address' => [
             xl('Patient Portal Site Address'),
             'text',                           // data type
-            'https://your_web_site.com/openemr/portal',
+            'https://your_web_site.com/tabemr/portal',
             xl('Website link for the Patient Portal.')
         ],
 

@@ -28,7 +28,7 @@ use OpenEMR\Validators\ProcessingResult;
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Yash Bothra <yashrajbothra786@gmail.com>
  * @copyright Copyright (c) 2020 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 class FhirPractitionerService extends FhirServiceBase implements IFhirExportableResourceService, IResourceUSCIGProfileService
 {

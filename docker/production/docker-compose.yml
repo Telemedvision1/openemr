@@ -1,7 +1,7 @@
-# Use admin/pass as user/password credentials to login to openemr (from OE_USER and OE_PASS below)
-# MYSQL_HOST and MYSQL_ROOT_PASS are required for openemr
-# MYSQL_USER, MYSQL_PASS, OE_USER, OE_PASS are optional for openemr and
-#   if not provided, then default to openemr, openemr, admin, and pass respectively.
+# Use admin/pass as user/password credentials to login to tabemr (from OE_USER and OE_PASS below)
+# MYSQL_HOST and MYSQL_ROOT_PASS are required for tabemr
+# MYSQL_USER, MYSQL_PASS, OE_USER, OE_PASS are optional for tabemr and
+#   if not provided, then default to tabemr, tabemr, admin, and pass respectively.
 services:
   mysql:
     restart: always
@@ -23,20 +23,20 @@ services:
       interval: 1m
       timeout: 5s
       retries: 3
-  openemr:
+  tabemr:
     restart: always
-    image: openemr/openemr:latest@sha256:632e6c43c59b77fa4aa295d8c1cdd462f006a55be5aac35775cc9aec58e18d89
+    image: tabemr/tabemr:latest@sha256:632e6c43c59b77fa4aa295d8c1cdd462f006a55be5aac35775cc9aec58e18d89
     ports:
     - 80:80
     - 443:443
     volumes:
     - logvolume01:/var/log
-    - sitevolume:/var/www/localhost/htdocs/openemr/sites
+    - sitevolume:/var/www/localhost/htdocs/tabemr/sites
     environment:
       MYSQL_HOST: mysql
       MYSQL_ROOT_PASS: root
-      MYSQL_USER: openemr
-      MYSQL_PASS: openemr
+      MYSQL_USER: tabemr
+      MYSQL_PASS: tabemr
       OE_USER: admin
       OE_PASS: pass
     depends_on:

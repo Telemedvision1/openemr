@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -22,20 +22,20 @@ class DbUtilsTest extends TestCase
 {
     public function testBuildMysqlDsnWithAllParameters(): void
     {
-        $dsn = DbUtils::buildMysqlDsn('openemr', 'localhost', '3306');
-        $this->assertSame('mysql:dbname=openemr;host=localhost;port=3306', $dsn);
+        $dsn = DbUtils::buildMysqlDsn('tabemr', 'localhost', '3306');
+        $this->assertSame('mysql:dbname=tabemr;host=localhost;port=3306', $dsn);
     }
 
     public function testBuildMysqlDsnWithoutPort(): void
     {
-        $dsn = DbUtils::buildMysqlDsn('openemr', 'localhost');
-        $this->assertSame('mysql:dbname=openemr;host=localhost', $dsn);
+        $dsn = DbUtils::buildMysqlDsn('tabemr', 'localhost');
+        $this->assertSame('mysql:dbname=tabemr;host=localhost', $dsn);
     }
 
     public function testBuildMysqlDsnWithEmptyPort(): void
     {
-        $dsn = DbUtils::buildMysqlDsn('openemr', 'localhost', '');
-        $this->assertSame('mysql:dbname=openemr;host=localhost', $dsn);
+        $dsn = DbUtils::buildMysqlDsn('tabemr', 'localhost', '');
+        $this->assertSame('mysql:dbname=tabemr;host=localhost', $dsn);
     }
 
     public function testBuildMysqlDsnWithPort1(): void
@@ -53,24 +53,24 @@ class DbUtilsTest extends TestCase
     public function testBuildMysqlDsnThrowsOnPort0(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        DbUtils::buildMysqlDsn('openemr', 'localhost', '0');
+        DbUtils::buildMysqlDsn('tabemr', 'localhost', '0');
     }
 
     public function testBuildMysqlDsnThrowsOnPort65536(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        DbUtils::buildMysqlDsn('openemr', 'localhost', '65536');
+        DbUtils::buildMysqlDsn('tabemr', 'localhost', '65536');
     }
 
     public function testBuildMysqlDsnThrowsOnNonNumericPort(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        DbUtils::buildMysqlDsn('openemr', 'localhost', 'abc');
+        DbUtils::buildMysqlDsn('tabemr', 'localhost', 'abc');
     }
 
     public function testBuildMysqlDsnThrowsOnNegativePort(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        DbUtils::buildMysqlDsn('openemr', 'localhost', '-1');
+        DbUtils::buildMysqlDsn('tabemr', 'localhost', '-1');
     }
 }

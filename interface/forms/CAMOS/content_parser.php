@@ -9,7 +9,7 @@
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2006-2009 Mark Leeds <drleeds@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\Common\Database\QueryUtils;
@@ -27,14 +27,14 @@ function addAppt(string $days, string $time): int
         return 0;
     }
     $session = SessionWrapperFactory::getInstance()->getActiveSession();
-    $sql = "insert into openemr_postcalendar_events (pc_pid, pc_eventDate," .
+    $sql = "insert into tabemr_postcalendar_events (pc_pid, pc_eventDate," .
     "pc_comments, pc_aid,pc_startTime) values (?, date_add(current_date(), interval " . $intervalDays .
     " day),'from CAMOS', ?, ?)";
     return QueryUtils::sqlInsert($sql, [$session->get('pid'), $session->get('authUserID'), $time]);
 }
 function addVitals(string $weight, string $height, string $systolic, string $diastolic, string $pulse, string $temp): void
 {
-//This is based on code from /openemr/interface/forms/vitals/C_FormVitals.class.phpif it doesn't work, look there for changes.
+//This is based on code from /tabemr/interface/forms/vitals/C_FormVitals.class.phpif it doesn't work, look there for changes.
     $_POST['process'] = 'true';
     $_POST['weight'] = $weight;
     $_POST['height'] = $height;
@@ -291,7 +291,7 @@ function replace(int $pid, int $enc, string $content): string
         [$name,$age,strtolower($gender),$doctorname],
         $content
     );
-    //Below will fix blocks that were inadvertently double escaped in openemr versions 5.0.1.0 - 5.0.1.5
+    //Below will fix blocks that were inadvertently double escaped in tabemr versions 5.0.1.0 - 5.0.1.5
     return str_replace("\\n", "\n", $ret ?? '');
 }
 function patient_age(string $birthday, string $date): int

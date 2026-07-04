@@ -9,7 +9,7 @@
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2009 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 /**
@@ -86,9 +86,9 @@ function process_cols_escape($s)
  * Escape/sanitize a table sql column name for a sql query..
  *
  * This will escape/sanitize the sql column name for a sql query. It is done by whitelisting
- * all of the current sql column names in the openemr database from a table(s). Note that if
+ * all of the current sql column names in the tabemr database from a table(s). Note that if
  * there is no match, then it will die() and a error message will be sent to the screen and
- * the error log. This function should not be used for escaping tables outside the openemr
+ * the error log. This function should not be used for escaping tables outside the tabemr
  * database (should use escape_identifier() function below for that scenario)
  *
  * @param   string|array        $s       sql column name(s) variable to be escaped/sanitized.
@@ -161,12 +161,12 @@ function escape_sql_column_name($s, $tables, $long = false, $throwException = fa
  * process tables that contain any upper case letters.
  *
  * This will escape/sanitize the table name for a sql query. It is done by whitelisting
- * all of the current tables in the openemr database. The matching is not case sensitive,
+ * all of the current tables in the tabemr database. The matching is not case sensitive,
  * although it will attempt a case sensitive match before proceeding to a case insensitive
  * match (see below escape_identifier() function for more details on this). Note that if
  * there is no match, then it will die() and a error message will be sent to the screen
  * and the error log. This function should not be used for escaping tables outside the
- * openemr database (should use escape_identifier() function below for that scenario).
+ * tabemr database (should use escape_identifier() function below for that scenario).
  * Another use of this function is to deal with casing issues that arise in tables that
  * contain upper case letter(s) (these tables can be huge issues when transferring databases
  * from Windows to Linux and vice versa); this function can avoid these issues if the

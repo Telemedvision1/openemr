@@ -2283,14 +2283,14 @@
 <polyline fill="none" stroke="#000000" points="981,-7473.5066 977.0094,-7473.7802 "/>
 <ellipse fill="none" stroke="#000000" cx="973.8169" cy="-7473.9991" rx="3.2" ry="3.2"/>
 </g>
-<!-- openemr_postcalendar_events -->
+<!-- tabemr_postcalendar_events -->
 <g id="node57" class="node">
-<title>openemr_postcalendar_events</title>
-<g id="a_node57"><a xlink:href="../../tables/openemr_postcalendar_events.html" xlink:title="openemr_postcalendar_events" target="_top">
+<title>tabemr_postcalendar_events</title>
+<g id="a_node57"><a xlink:href="../../tables/tabemr_postcalendar_events.html" xlink:title="tabemr_postcalendar_events" target="_top">
 <polygon fill="#ffffff" stroke="transparent" points="395.5,-5762.0066 395.5,-5823.0066 616.5,-5823.0066 616.5,-5762.0066 395.5,-5762.0066"/>
 <polygon fill="#f5f5f5" stroke="transparent" points="396,-5799.5066 396,-5822.5066 617,-5822.5066 617,-5799.5066 396,-5799.5066"/>
 <polygon fill="none" stroke="#000000" points="396,-5799.5066 396,-5822.5066 617,-5822.5066 617,-5799.5066 396,-5799.5066"/>
-<text text-anchor="start" x="401" y="-5808.1066" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#000000">openemr_postcalendar_events</text>
+<text text-anchor="start" x="401" y="-5808.1066" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#000000">tabemr_postcalendar_events</text>
 <text text-anchor="start" x="582.5219" y="-5807.6066" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#000000">[table]</text>
 <polygon fill="none" stroke="#000000" points="396,-5780.5066 396,-5799.5066 617,-5799.5066 617,-5780.5066 396,-5780.5066"/>
 <text text-anchor="start" x="399" y="-5786.6066" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#000000">...</text>
@@ -2306,9 +2306,9 @@
 </a>
 </g>
 </g>
-<!-- form_groups_encounter&#45;&gt;openemr_postcalendar_events -->
+<!-- form_groups_encounter&#45;&gt;tabemr_postcalendar_events -->
 <g id="edge112" class="edge">
-<title>form_groups_encounter:w&#45;&gt;openemr_postcalendar_events:e</title>
+<title>form_groups_encounter:w&#45;&gt;tabemr_postcalendar_events:e</title>
 <path fill="none" stroke="#000000" d="M966.7359,-7470.68C946.7415,-7460.8201 954.6229,-7426.8943 945,-7396.5066 938.3435,-7375.4863 677.8135,-5852.7219 667,-5833.5066 652.4826,-5807.7094 646.6015,-5789.5066 617,-5789.5066"/>
 <polygon fill="#000000" stroke="#000000" points="973.1526,-7471.9515 980.3002,-7477.0379 977.0763,-7472.729 981,-7473.5066 981,-7473.5066 981,-7473.5066 977.0763,-7472.729 981.6998,-7469.9752 973.1526,-7471.9515 973.1526,-7471.9515"/>
 <ellipse fill="none" stroke="#000000" cx="970.0136" cy="-7471.3295" rx="3.2" ry="3.2"/>
@@ -2355,44 +2355,44 @@
 <polygon fill="#000000" stroke="#000000" points="761.0416,-7678.6921 768.6335,-7683.0879 765.0208,-7679.0993 769,-7679.5066 769,-7679.5066 769,-7679.5066 765.0208,-7679.0993 769.3665,-7675.9253 761.0416,-7678.6921 761.0416,-7678.6921"/>
 <ellipse fill="none" stroke="#000000" cx="757.8582" cy="-7678.3663" rx="3.2" ry="3.2"/>
 </g>
-<!-- openemr_postcalendar_events&#45;&gt;list_options -->
+<!-- tabemr_postcalendar_events&#45;&gt;list_options -->
 <g id="edge262" class="edge">
-<title>openemr_postcalendar_events:w&#45;&gt;list_options:e</title>
+<title>tabemr_postcalendar_events:w&#45;&gt;list_options:e</title>
 <path fill="none" stroke="#000000" d="M381.6466,-5787.2013C298.2058,-5764.4672 324.138,-5590.8119 312,-5577.5066 263.8576,-5524.7341 204.7177,-5585.5442 158,-5531.5066 157.359,-5530.7651 87.9252,-5053.4093 67.8679,-4919.1955"/>
 <polygon fill="#000000" stroke="#000000" points="388.1012,-5788.2379 395.4291,-5793.061 392.0506,-5788.8722 396,-5789.5066 396,-5789.5066 396,-5789.5066 392.0506,-5788.8722 396.5709,-5785.9521 388.1012,-5788.2379 388.1012,-5788.2379"/>
 <ellipse fill="none" stroke="#000000" cx="384.9417" cy="-5787.7305" rx="3.2" ry="3.2"/>
 </g>
-<!-- openemr_postcalendar_events&#45;&gt;list_options -->
+<!-- tabemr_postcalendar_events&#45;&gt;list_options -->
 <g id="edge266" class="edge">
-<title>openemr_postcalendar_events:w&#45;&gt;list_options:e</title>
+<title>tabemr_postcalendar_events:w&#45;&gt;list_options:e</title>
 <path fill="none" stroke="#000000" d="M381.3894,-5789.0466C298.2592,-5777.1101 324.1255,-5603.7982 312,-5590.5066 263.8576,-5537.7341 204.7177,-5598.5442 158,-5544.5066 157.3517,-5543.7566 86.331,-5055.4487 67.2005,-4919.3139"/>
 <polygon fill="#000000" stroke="#000000" points="388.004,-5789.2548 395.8867,-5793.1048 392.002,-5789.3807 396,-5789.5066 396,-5789.5066 396,-5789.5066 392.002,-5789.3807 396.1133,-5785.9083 388.004,-5789.2548 388.004,-5789.2548"/>
 <ellipse fill="none" stroke="#000000" cx="384.8055" cy="-5789.1541" rx="3.2" ry="3.2"/>
 </g>
-<!-- openemr_postcalendar_events&#45;&gt;users -->
+<!-- tabemr_postcalendar_events&#45;&gt;users -->
 <g id="edge261" class="edge">
-<title>openemr_postcalendar_events:w&#45;&gt;users:e</title>
+<title>tabemr_postcalendar_events:w&#45;&gt;users:e</title>
 <path fill="none" stroke="#000000" d="M381.6226,-5791.2177C363.1731,-5796.2143 356.2582,-5811.8136 345,-5833.5066 310.6438,-5899.706 360.4789,-6110.8276 312,-6167.5066 266.0353,-6221.2461 205.4731,-6155.0948 158,-6207.5066 100.6196,-6270.8563 183.9733,-6587.5066 98.5,-6587.5066"/>
 <polygon fill="#000000" stroke="#000000" points="388.0561,-5790.452 396.4255,-5793.0813 392.028,-5789.9793 396,-5789.5066 396,-5789.5066 396,-5789.5066 392.028,-5789.9793 395.5745,-5785.9318 388.0561,-5790.452 388.0561,-5790.452"/>
 <ellipse fill="none" stroke="#000000" cx="384.8785" cy="-5790.8302" rx="3.2" ry="3.2"/>
 </g>
-<!-- openemr_postcalendar_events&#45;&gt;users -->
+<!-- tabemr_postcalendar_events&#45;&gt;users -->
 <g id="edge264" class="edge">
-<title>openemr_postcalendar_events:w&#45;&gt;users:e</title>
+<title>tabemr_postcalendar_events:w&#45;&gt;users:e</title>
 <path fill="none" stroke="#000000" d="M381.6239,-5791.2183C363.1778,-5796.2168 356.2711,-5811.8203 345,-5833.5066 311.0125,-5898.9008 358.5795,-6106.3934 312,-6163.5066 266.689,-6219.0643 204.8832,-6157.2689 158,-6211.5066 102.6787,-6275.5059 183.0953,-6587.5066 98.5,-6587.5066"/>
 <polygon fill="#000000" stroke="#000000" points="388.0561,-5790.4525 396.4257,-5793.0813 392.0281,-5789.9795 396,-5789.5066 396,-5789.5066 396,-5789.5066 392.0281,-5789.9795 395.5743,-5785.9318 388.0561,-5790.4525 388.0561,-5790.4525"/>
 <ellipse fill="none" stroke="#000000" cx="384.8786" cy="-5790.8309" rx="3.2" ry="3.2"/>
 </g>
-<!-- openemr_postcalendar_events&#45;&gt;patient_data -->
+<!-- tabemr_postcalendar_events&#45;&gt;patient_data -->
 <g id="edge265" class="edge">
-<title>openemr_postcalendar_events:w&#45;&gt;patient_data:e</title>
+<title>tabemr_postcalendar_events:w&#45;&gt;patient_data:e</title>
 <path fill="none" stroke="#000000" d="M381.4703,-5788.3174C318.4181,-5776.9572 357.0753,-5686.3535 345,-5609.5066 281.074,-5202.6816 333.7935,-5094.7463 312,-4683.5066 289.8831,-4266.1633 249.085,-3760.22 237.9007,-3624.4311"/>
 <polygon fill="#000000" stroke="#000000" points="388.0267,-5788.8539 395.7063,-5793.0946 392.0133,-5789.1802 396,-5789.5066 396,-5789.5066 396,-5789.5066 392.0133,-5789.1802 396.2937,-5785.9186 388.0267,-5788.8539 388.0267,-5788.8539"/>
 <ellipse fill="none" stroke="#000000" cx="384.8373" cy="-5788.5929" rx="3.2" ry="3.2"/>
 </g>
-<!-- openemr_postcalendar_events&#45;&gt;therapy_groups -->
+<!-- tabemr_postcalendar_events&#45;&gt;therapy_groups -->
 <g id="edge263" class="edge">
-<title>openemr_postcalendar_events:w&#45;&gt;therapy_groups:e</title>
+<title>tabemr_postcalendar_events:w&#45;&gt;therapy_groups:e</title>
 <path fill="none" stroke="#000000" d="M381.5419,-5791.1776C362.88,-5796.0689 355.46,-5811.4176 345,-5833.5066 324.9974,-5875.7474 348.7375,-7515.5066 302,-7515.5066"/>
 <polygon fill="#000000" stroke="#000000" points="388.0529,-5790.4251 396.4134,-5793.0827 392.0265,-5789.9658 396,-5789.5066 396,-5789.5066 396,-5789.5066 392.0265,-5789.9658 395.5866,-5785.9304 388.0529,-5790.4251 388.0529,-5790.4251"/>
 <ellipse fill="none" stroke="#000000" cx="384.8741" cy="-5790.7926" rx="3.2" ry="3.2"/>
@@ -4458,9 +4458,9 @@
 <polygon fill="#000000" stroke="#000000" points="733.0523,-3438.5931 740.589,-3443.083 737.0262,-3439.0498 741,-3439.5066 741,-3439.5066 741,-3439.5066 737.0262,-3439.0498 741.411,-3435.9301 733.0523,-3438.5931 733.0523,-3438.5931"/>
 <ellipse fill="none" stroke="#000000" cx="729.8732" cy="-3438.2278" rx="3.2" ry="3.2"/>
 </g>
-<!-- patient_tracker&#45;&gt;openemr_postcalendar_events -->
+<!-- patient_tracker&#45;&gt;tabemr_postcalendar_events -->
 <g id="edge286" class="edge">
-<title>patient_tracker:w&#45;&gt;openemr_postcalendar_events:e</title>
+<title>patient_tracker:w&#45;&gt;tabemr_postcalendar_events:e</title>
 <path fill="none" stroke="#000000" d="M726.386,-3442.121C712.1227,-3448.1763 707.8004,-3464.1357 700,-3483.5066 655.8757,-3593.0814 683.8618,-5492.5909 667,-5609.5066 655.148,-5691.6854 700.0291,-5789.5066 617,-5789.5066"/>
 <polygon fill="#000000" stroke="#000000" points="733.125,-3440.9155 741.634,-3443.0503 737.0625,-3440.211 741,-3439.5066 741,-3439.5066 741,-3439.5066 737.0625,-3440.211 740.366,-3435.9628 733.125,-3440.9155 733.125,-3440.9155"/>
 <ellipse fill="none" stroke="#000000" cx="729.975" cy="-3441.479" rx="3.2" ry="3.2"/>

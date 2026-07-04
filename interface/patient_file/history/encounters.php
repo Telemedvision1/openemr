@@ -13,7 +13,7 @@
  * @copyright Copyright (c) 2015 Roberto Vasquez <robertogagliotta@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018-2021 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../globals.php");
@@ -840,7 +840,7 @@ window.onload = function() {
 
                 $encounter_type = [];
                 if (OEGlobalsBag::getInstance()->getBoolean('enable_group_therapy') && !$billing_view && $therapy_group == 0) {
-                    $encounter_type = sqlQuery("SELECT pc_catname, pc_cattype FROM openemr_postcalendar_categories where pc_catid = ?", [$result4['pc_catid']]);
+                    $encounter_type = sqlQuery("SELECT pc_catname, pc_cattype FROM tabemr_postcalendar_categories where pc_catid = ?", [$result4['pc_catid']]);
                     echo "<td>" . xlt($encounter_type['pc_catname']) . "</td>\n";
                 }
 

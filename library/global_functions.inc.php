@@ -14,7 +14,7 @@
  *
  * @package   OpenEMR
  * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\Common\Database\QueryUtils;
@@ -168,7 +168,7 @@ function cron_getPhoneAlertpatientData($type, $trigger_hours)
             ope.pc_hometext,ope.pc_eventDate,ope.pc_endDate,
             ope.pc_duration,ope.pc_alldayevent,ope.pc_startTime,ope.pc_endTime,ope.pc_facility
         from
-            openemr_postcalendar_events as ope ,patient_data as pd
+            tabemr_postcalendar_events as ope ,patient_data as pd
         where
             ope.pc_pid=pd.pid $ssql
         order by
@@ -194,7 +194,7 @@ function cron_getPhoneAlertpatientData($type, $trigger_hours)
  */
 function cron_updateentry(string $type, $pid, $pc_eid): void
 {
-    $query = "UPDATE openemr_postcalendar_events SET ";
+    $query = "UPDATE tabemr_postcalendar_events SET ";
 
     if ($type === 'SMS' || $type === 'Phone') {
         $query .= "pc_sendalertsms = 'YES'";

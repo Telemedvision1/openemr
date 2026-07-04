@@ -1,11 +1,11 @@
 <?php
 
 /**
- * @package   openemr
+ * @package   tabemr
  * @link      https://www.open-emr.org
  * @author    Eric Stern <erics@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -173,10 +173,10 @@ readonly class FallbackRouter
         $fileDirectory = pathinfo($targetFile, PATHINFO_DIRNAME);
         chdir($fileDirectory);
 
-        // @phpstan-ignore openemr.forbiddenRequestGlobals
+        // @phpstan-ignore tabemr.forbiddenRequestGlobals
         $_SERVER['SCRIPT_FILENAME'] = $targetFile;
 
-        // @phpstan-ignore openemr.forbiddenRequestGlobals, openemr.forbiddenRequestGlobals
+        // @phpstan-ignore tabemr.forbiddenRequestGlobals, tabemr.forbiddenRequestGlobals
         $_SERVER['SCRIPT_NAME'] = $_SERVER['PHP_SELF'] = substr($targetFile, strlen($this->installRoot));
     }
 

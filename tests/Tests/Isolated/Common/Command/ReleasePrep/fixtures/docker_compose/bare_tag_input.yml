@@ -1,5 +1,5 @@
 services:
-  openemr:
-    image: openemr/openemr:latest
+  tabemr:
+    image: tabemr/tabemr:latest
     ports:
     - 80:80

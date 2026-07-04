@@ -126,7 +126,7 @@ jobs:
         for file in "${files_to_check[@]}"; do
           [[ -f "$file" ]] || continue
           # Skip files in the obsolete directory
-          [[ "$file" = docker/openemr/obsolete/* ]] && continue
+          [[ "$file" = docker/tabemr/obsolete/* ]] && continue
           # Get hash of file content
           hash=$(sha256sum "$file" | cut -d ' ' -f 1)
           # Check if we've seen this hash before

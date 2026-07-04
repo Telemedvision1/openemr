@@ -8,7 +8,7 @@
  *
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Events\Appointments;
@@ -22,7 +22,7 @@ class AppointmentJavascriptEventNames extends Event
      * It fires on the form element that contains the appointment data and bubbles up.
      * <example>
      * const form = document.querySelector("form"); // could also use body since this bubbles up
-     * form.addEventListener("openemr:appointment:patient:set", (event) => {
+     * form.addEventListener("tabemr:appointment:patient:set", (event) => {
      *  console.log(event.detail.form); // the form that the patient was set in
      *  console.log(event.detail.pid); // the pid of the patient that was set
      *  console.log(event.detail); // for the remainder of the data passed in the event
@@ -31,5 +31,5 @@ class AppointmentJavascriptEventNames extends Event
      *
      * @see add_edit_event.php
      */
-    const APPOINTMENT_PATIENT_SET_EVENT = 'openemr:appointment:patient:set';
+    const APPOINTMENT_PATIENT_SET_EVENT = 'tabemr:appointment:patient:set';
 }

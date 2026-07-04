@@ -5,7 +5,7 @@
  *
  * Each layout-field data_type branch in library/options.inc.php may read from
  * list_options, users, facility, patient_data, pharmacies, address_book,
- * libreehr_groups, insurance_companies, openemr_postcalendar_categories, etc.
+ * libreehr_groups, insurance_companies, tabemr_postcalendar_categories, etc.
  * This manager seeds the minimum world each branch needs so that
  * generate_form_field / generate_display_field / generate_print_field can be
  * exercised against deterministic data. Every seeded row carries the
@@ -21,7 +21,7 @@
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);

@@ -69,7 +69,7 @@ class NQF_0002_Exclusion implements CqmFilterIF
 
 
         $query = "SELECT count(*) as cnt FROM form_encounter fe " .
-                 "INNER JOIN openemr_postcalendar_categories opc ON fe.pc_catid = opc.pc_catid " .
+                 "INNER JOIN tabemr_postcalendar_categories opc ON fe.pc_catid = opc.pc_catid " .
                  " INNER JOIN lists l on l.type='medical_problem' and fe.pid = l.pid " .
                  "INNER JOIN prescriptions p ON fe.pid = p.patient_id " .
                  "WHERE opc.pc_catname = 'Office Visit' AND fe.pid = ? AND fe.date BETWEEN ? and ? " .

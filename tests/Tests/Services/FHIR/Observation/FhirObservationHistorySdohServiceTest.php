@@ -2,13 +2,13 @@
 
 /*
  * FhirObservationHistorySdohServiceTest.php
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    AI Assistant (GitHub Claude.Ai)
  * @copyright Elements marked with AI GENERATED CODE - are in the public domain
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  *
  * AI GENERATED CODE - START
  * This entire file was generated with assistance from AI (GitHub Copilot/ChatGPT)

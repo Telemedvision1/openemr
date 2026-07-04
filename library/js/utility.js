@@ -1,5 +1,5 @@
 /**
- * Javascript utility functions for openemr
+ * Javascript utility functions for tabemr
  *
  * @package   OpenEMR
  * @link      https://www.open-emr.org
@@ -7,7 +7,7 @@
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019-2021 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 /* We should really try to keep this library jQuery free ie javaScript only! */
 

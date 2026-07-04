@@ -14,7 +14,7 @@ services:
       interval: 1m
       timeout: 5s
       retries: 3
-  openemr:
+  tabemr:
     depends_on:
       mysql:
         condition: service_healthy

@@ -1,8 +1,8 @@
 {
-  "event": "openemr-rel-update",
-  "repo": "openemr/openemr",
+  "event": "tabemr-rel-update",
+  "repo": "tabemr/tabemr",
   "sha": "not-a-valid-sha",
-  "actor": "openemr-release-bot",
+  "actor": "tabemr-release-bot",
   "dispatched_at": "2026-04-29T12:15:30Z",
   "data": {
     "branch": "rel-810",

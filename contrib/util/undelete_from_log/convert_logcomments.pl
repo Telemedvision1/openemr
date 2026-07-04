@@ -15,7 +15,7 @@
 #
 #
 
-# Converts openemr log output containing deleted records and
+# Converts tabemr log output containing deleted records and
 # produces the necessary "insert into <table> values ... on duplicate key
 # update... "
 

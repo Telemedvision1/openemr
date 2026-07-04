@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2016-2019 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\BC\ServiceContainer;
@@ -15,7 +15,7 @@ use OpenEMR\Common\Session\SessionWrapperFactory;
 use OpenEMR\Common\Twig\TwigContainer;
 use OpenEMR\Core\OEGlobalsBag;
 
-// this script is used by both the patient portal and main openemr; below does authorization.
+// this script is used by both the patient portal and main tabemr; below does authorization.
 // Need access to classes, so run autoloader now instead of in globals.php.
 require_once(__DIR__ . "/../../../vendor/autoload.php");
 $globalsBag = OEGlobalsBag::getInstance();

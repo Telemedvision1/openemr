@@ -278,14 +278,14 @@ div.category-display {
   margin-top: 25px;
 }
 
-/*~~openemr5 tabs menu, user and logout icon~~*/
+/*~~tabemr5 tabs menu, user and logout icon~~*/
 #menu_icon,
 #logout_icon,
 #user_icon {
   color: $gray-600 !important;
 }
 
-/*~~openemr5 tabs menu , user and logout icon~~*/
+/*~~tabemr5 tabs menu , user and logout icon~~*/
 /*openrmr5.0.2 edit_globals vertical menu*/
 #theform input[type="text"] {
   border: 1px solid $gray-400;
@@ -347,14 +347,14 @@ div.category-display {
 }
 
 /*bootstrap navbar */
-/*openemr 5 patient-finder*/
+/*tabemr 5 patient-finder*/
 @media screen and (max-width: 750px) {
   #pt_table {
     @include font-size("1.2rem");
   }
 }
 
-/*openemr 5 patient-finder*/
+/*tabemr 5 patient-finder*/
 /*vertical main menu */
 
 .appMenu_small .menuSection > .menuEntries {

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Per-mutator tests for the openemr:release-prep conductor command.
+ * Per-mutator tests for the tabemr:release-prep conductor command.
  * Each test copies a fixture into a tmp project root, applies the
  * mutator, asserts the result matches the expected fixture exactly,
  * then re-applies the mutator and asserts the second run is a no-op.
@@ -12,7 +12,7 @@
  * @link      http://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -42,7 +42,7 @@ final class MutatorTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->tmpDir = sys_get_temp_dir() . '/openemr-release-prep-' . bin2hex(random_bytes(8));
+        $this->tmpDir = sys_get_temp_dir() . '/tabemr-release-prep-' . bin2hex(random_bytes(8));
         if (!mkdir($this->tmpDir, 0700, true)) {
             throw new \RuntimeException('Failed to create tmp dir: ' . $this->tmpDir);
         }
@@ -175,13 +175,13 @@ final class MutatorTest extends TestCase
 
     public function testSwaggerRegenInvokesConsoleSubprocess(): void
     {
-        $this->writeFile('swagger/openemr-api.yaml', "openapi: 3.0.0\ninfo:\n  version: 8.0.1\n");
+        $this->writeFile('swagger/tabemr-api.yaml', "openapi: 3.0.0\ninfo:\n  version: 8.0.1\n");
 
         $invocations = [];
         $runner = function (Process $process) use (&$invocations): int {
             $invocations[] = $process->getCommandLine();
             // Simulate the subprocess writing a new YAML.
-            $target = $process->getWorkingDirectory() . '/swagger/openemr-api.yaml';
+            $target = $process->getWorkingDirectory() . '/swagger/tabemr-api.yaml';
             file_put_contents($target, "openapi: 3.0.0\ninfo:\n  version: 8.1.0\n");
             return 0;
         };
@@ -191,7 +191,7 @@ final class MutatorTest extends TestCase
 
         self::assertTrue($result->changed());
         self::assertCount(1, $invocations);
-        self::assertStringContainsString('openemr:create-api-documentation', $invocations[0]);
+        self::assertStringContainsString('tabemr:create-api-documentation', $invocations[0]);
         self::assertStringContainsString('--skip-globals', $invocations[0]);
 
         // Idempotence: running again with the same output is a no-op.
@@ -201,7 +201,7 @@ final class MutatorTest extends TestCase
 
     public function testSwaggerRegenFailsWhenSubprocessExitsNonZero(): void
     {
-        $this->writeFile('swagger/openemr-api.yaml', "openapi: 3.0.0\n");
+        $this->writeFile('swagger/tabemr-api.yaml', "openapi: 3.0.0\n");
         $runner = static fn (Process $process): int => 7;
         $mutator = new SwaggerRegenMutator($runner);
 

@@ -16,7 +16,7 @@
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019 Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2025 Mountain Valley Health <mvhinspire@mountainvalleyhealthinc.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  * @license   There are segments of code in this file that have been generated via Claude.ai and are licensed as Public Domain.  They have been marked with a header and footer.
  */
 
@@ -205,7 +205,7 @@ class C_EncounterVisitForm
     function getVisitCategoriesForTemplate($viewmode, $encounter, $default_visit_category)
     {
         $visitSQL = "SELECT pc_catid, pc_catname, pc_cattype
-                 FROM openemr_postcalendar_categories
+                 FROM tabemr_postcalendar_categories
                  WHERE pc_active = 1 AND pc_cattype IN (0,3)
                  AND pc_constant_id != 'no_show'
                  ORDER BY pc_seq";
@@ -386,7 +386,7 @@ class C_EncounterVisitForm
     {
         $categories = [];
         $visitSQL = "SELECT pc_catid, pc_catname, pc_cattype
-                 FROM openemr_postcalendar_categories
+                 FROM tabemr_postcalendar_categories
                  WHERE pc_active = 1 AND pc_cattype = 3
                  AND pc_constant_id != 'no_show'
                  ORDER BY pc_seq";
@@ -599,7 +599,7 @@ class C_EncounterVisitForm
             $encnow = date('Y-m-d 00:00:00');
             $time = date("H:i:00");
             $q = "SELECT pc_aid, pc_facility, pc_billing_location, pc_catid, pc_startTime" .
-                " FROM openemr_postcalendar_events WHERE pc_pid=? AND pc_eventDate=?" .
+                " FROM tabemr_postcalendar_events WHERE pc_pid=? AND pc_eventDate=?" .
                 " ORDER BY pc_startTime ASC";
             $q_events = sqlStatement($q, [$pid, $now]);
             while ($override = sqlFetchArray($q_events)) {

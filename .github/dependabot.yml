@@ -143,7 +143,7 @@ updates:
 
   # Docker CI images (database + PHP + shared services)
   # Database and PHP image tags encode the version under test (e.g., mysql:8.4.8,
-  # openemr/dev-php-fpm:8.5), so major/minor bumps are blocked for those.
+  # tabemr/dev-php-fpm:8.5), so major/minor bumps are blocked for those.
   # Tooling images (mailpit, dev-nginx, couchdb, redis) are unconstrained.
 - package-ecosystem: docker-compose
   directories:
@@ -184,9 +184,9 @@ updates:
     update-types: [version-update:semver-major, version-update:semver-minor]
   - dependency-name: mysql
     update-types: [version-update:semver-major, version-update:semver-minor]
-  - dependency-name: openemr/openemr
+  - dependency-name: tabemr/tabemr
     update-types: [version-update:semver-major, version-update:semver-minor]
-  - dependency-name: openemr/dev-php-fpm
+  - dependency-name: tabemr/dev-php-fpm
     update-types: [version-update:semver-major, version-update:semver-minor]
   groups:
     mariadb:
@@ -195,9 +195,9 @@ updates:
     mysql:
       patterns:
       - mysql
-    openemr-images:
+    tabemr-images:
       patterns:
-      - openemr/*
+      - tabemr/*
     couchdb:
       patterns:
       - couchdb
@@ -234,9 +234,9 @@ updates:
     mariadb:
       patterns:
       - mariadb
-    openemr-images:
+    tabemr-images:
       patterns:
-      - openemr/*
+      - tabemr/*
     couchdb:
       patterns:
       - couchdb
@@ -270,9 +270,9 @@ updates:
     update-types: [version-update:semver-major, version-update:semver-minor]
   - dependency-name: mysql
     update-types: [version-update:semver-major, version-update:semver-minor]
-  - dependency-name: openemr/openemr
+  - dependency-name: tabemr/tabemr
     update-types: [version-update:semver-major, version-update:semver-minor]
-  - dependency-name: openemr/dev-php-fpm
+  - dependency-name: tabemr/dev-php-fpm
     update-types: [version-update:semver-major, version-update:semver-minor]
   groups:
     mariadb:
@@ -281,9 +281,9 @@ updates:
     mysql:
       patterns:
       - mysql
-    openemr-images:
+    tabemr-images:
       patterns:
-      - openemr/*
+      - tabemr/*
     couchdb:
       patterns:
       - couchdb

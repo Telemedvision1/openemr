@@ -173,7 +173,7 @@ final class EventAuditLoggerTest extends TestCase
 
         // Setup default $_SERVER values
         $_SERVER = [
-            'SERVER_NAME' => 'test.openemr.local',
+            'SERVER_NAME' => 'test.tabemr.local',
             'SERVER_ADDR' => '127.0.0.1',
             'REQUEST_METHOD' => 'GET',
             'SCRIPT_NAME' => '/test/script.php',
@@ -704,7 +704,7 @@ final class EventAuditLoggerTest extends TestCase
         $this->assertEquals('Vitals', $reflectionMethod->invoke($this->eventAuditLogger, 'INSERT INTO form_vitals', 'patient-record', 'form_vitals'));
         $this->assertEquals('Patient Demographics', $reflectionMethod->invoke($this->eventAuditLogger, 'UPDATE patient_data', 'patient-record', 'patient_data'));
         $this->assertEquals('Billing', $reflectionMethod->invoke($this->eventAuditLogger, 'INSERT INTO billing', 'patient-record', 'billing'));
-        $this->assertEquals('Scheduling', $reflectionMethod->invoke($this->eventAuditLogger, 'UPDATE openemr_postcalendar_events', 'scheduling', 'openemr_postcalendar_events'));
+        $this->assertEquals('Scheduling', $reflectionMethod->invoke($this->eventAuditLogger, 'UPDATE tabemr_postcalendar_events', 'scheduling', 'tabemr_postcalendar_events'));
     }
 
     /**
@@ -1544,7 +1544,7 @@ final class EventAuditLoggerTest extends TestCase
         $this->assertEquals('Clinical Mail', $reflectionMethod->invoke($this->eventAuditLogger, 'SELECT * FROM pnotes', 'select', 'pnotes'));
         $this->assertEquals('Medication', $reflectionMethod->invoke($this->eventAuditLogger, 'SELECT * FROM prescriptions', 'select', 'prescriptions'));
         $this->assertEquals('Amendments', $reflectionMethod->invoke($this->eventAuditLogger, 'SELECT * FROM amendments', 'select', 'amendments'));
-        $this->assertEquals('Scheduling', $reflectionMethod->invoke($this->eventAuditLogger, 'SELECT * FROM openemr_postcalendar_events', 'select', 'openemr_postcalendar_events'));
+        $this->assertEquals('Scheduling', $reflectionMethod->invoke($this->eventAuditLogger, 'SELECT * FROM tabemr_postcalendar_events', 'select', 'tabemr_postcalendar_events'));
         $this->assertEquals('Lab Order', $reflectionMethod->invoke($this->eventAuditLogger, 'SELECT * FROM procedure_order', 'select', 'procedure_order'));
         $this->assertEquals('Lab Result', $reflectionMethod->invoke($this->eventAuditLogger, 'SELECT * FROM procedure_result', 'select', 'procedure_result'));
     }

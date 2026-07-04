@@ -9,7 +9,7 @@
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Joe Slam <joe@produnis.de>
  * @author    Michael A. Smith <michael@opencoreemr.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  * @copyright Copyright (c) 2010-2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2011 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2014 Joe Slam <joe@produnis.de>

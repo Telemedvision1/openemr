@@ -3,7 +3,7 @@
 /**
  * Oauth2KeyConfig is responsible for configuring, generating, and returning oauth2 keys that are used by the OpenEMR system.
  *
- * @package   openemr
+ * @package   tabemr
  * @link      https://www.open-emr.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
@@ -11,7 +11,7 @@
  * @copyright Copyright (c) 2020-2025 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020-2025 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Common\Auth;

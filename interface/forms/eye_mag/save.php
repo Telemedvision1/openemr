@@ -21,7 +21,7 @@
  * @link      https://www.open-emr.org
  * @author    Ray Magauran <rmagauran@gmail.com>
  * @copyright Copyright (c) 2016- Raymond Magauran <rmagauran@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 $table_name = "form_eye_mag";
@@ -577,7 +577,7 @@ if (($_REQUEST["mode"]  ?? '') == "new") {
                         $newdata[$field_id] = get_layout_form_value($frow);
                     }
                 }
-                //have to figure where to put comments in this next line for the rest of openemr
+                //have to figure where to put comments in this next line for the rest of tabemr
                 updateHistoryData($pid, $newdata);
                 if ($_REQUEST['marital_status'] > '') {
                     // have to match input with list_option for marital to not break openEMR
@@ -891,7 +891,7 @@ if (($_REQUEST["mode"]  ?? '') == "new") {
                 "(`pt_tracker_id`, `start_datetime`, `user`, `status`, `room`, `seq`) " .
                 "VALUES (?,NOW(),?,?,?,?)";
             sqlStatement($sql, [$tracker['id'], $userauthorized, $_POST['new_status'], ' ', ($tracker['lastseq'] + 1)]);
-            $sql = "UPDATE `openemr_postcalendar_events` SET `pc_apptstatus` = ?, pc_room='' WHERE `pc_eid` = ?";
+            $sql = "UPDATE `tabemr_postcalendar_events` SET `pc_apptstatus` = ?, pc_room='' WHERE `pc_eid` = ?";
             sqlStatement($sql, [$_POST['new_status'], $tracker['eid']]);
             echo "saved";
             exit;

@@ -11,7 +11,7 @@
   * @copyright Copyright (c) 2018 Ranganath Pathak <pathak@scrs1.org>
   * @copyright Copyright (c) 2018-2020 Brady Miller <brady.g.miller@gmail.com>
   * @copyright Copyright (c) 2022-2023 Robert Down <robertdown@live.com>
-  * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+  * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
   */
 
 require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/display_help_icon_inc.php");

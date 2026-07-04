@@ -36,7 +36,7 @@
  * @copyright Copyright (c) 2018-2024 Jerry Padgett
  * @copyright Copyright (c) 2021 Robert Down <robertdown@live.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  *
  * @codeCoverageIgnore Top-level admin popup / argv entry point. Mixes
  *     globals.php bootstrap, raw `$_GET` writes for site/type, ACL gating

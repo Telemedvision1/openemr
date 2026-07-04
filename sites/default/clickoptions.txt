@@ -16,7 +16,7 @@
 # Categories and choices for the select boxes are entered with a '::' separating them. see
 # below for example.  You may add more choices, change them or do away with them altogether.
 # If a category has no choices assigned in this file, the select box will not appear.
-# The files that had to be altered for this feature to work are in openemr/interface/patient_file/summary.
+# The files that had to be altered for this feature to work are in tabemr/interface/patient_file/summary.
 # Three statements were added to 5 files marked with a clickoptions comment and two files were added
 # to the directory, 'clickoptions1.php' and 'clickoptions2.php'.
 medical_problem::HTN

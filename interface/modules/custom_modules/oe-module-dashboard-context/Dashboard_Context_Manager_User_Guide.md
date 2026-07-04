@@ -308,7 +308,7 @@ A: Critical alerts and clinical decision support reminders should be configured 
 For questions, issues, or feature requests:
 
 - **OpenEMR Forums**: [community.open-emr.org](https://community.open-emr.org)
-- **GitHub Issues**: [github.com/openemr/openemr](https://github.com/openemr/openemr)
+- **GitHub Issues**: [github.com/tabemr/tabemr](https://github.com/tabemr/tabemr)
 
 ---
 

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Tests the orchestration of openemr:release-prep: option parsing,
+ * Tests the orchestration of tabemr:release-prep: option parsing,
  * scope dispatching, and the order in which mutators are invoked.
  * Mutators themselves are exercised by MutatorTest.
  *
@@ -9,7 +9,7 @@
  * @link      http://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -103,7 +103,7 @@ final class ReleasePrepCommandTest extends TestCase
         $command = new ReleasePrepCommand($relMutators, $masterMutators);
         $app = new Application();
         $app->addCommand($command);
-        return new CommandTester($app->find('openemr:release-prep'));
+        return new CommandTester($app->find('tabemr:release-prep'));
     }
 }
 

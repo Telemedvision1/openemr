@@ -6,7 +6,7 @@
  * @package   OpenEMR
  * @author    Eric Stern <erics@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\PHPStan\Rules;
@@ -93,7 +93,7 @@ class ForbiddenInstantiationsRule implements Rule
 
         return [
             RuleErrorBuilder::message($message)
-                ->identifier('openemr.forbiddenInstantiation')
+                ->identifier('tabemr.forbiddenInstantiation')
                 ->tip('See src/BC/ServiceContainer.php for service access patterns')
                 ->build()
         ];

@@ -15,7 +15,7 @@
  * @copyright Copyright (c) 2018-2025 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019-2020 Sherwin Gaddis <sherwingaddis@gmail.com>
  * @copyright Copyright (c) 2021-2025 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once "../globals.php";
@@ -75,7 +75,7 @@ if (isset($_POST['mode'])) {
             header("Pragma: public");
             header("Expires: 0");
             header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
-            header("Content-Disposition: attachment; filename=openemr_ofx.ofx");
+            header("Content-Disposition: attachment; filename=tabemr_ofx.ofx");
             header("Content-Type: text/xml");
             echo $ofx->get_OFX();
             exit();
@@ -1034,8 +1034,8 @@ $partners = $x->_utility_array($x->x12_partner_factory());
 
                                 // Encounter details are stored to javascript as array.
                                 $result4 = sqlStatement(
-                                    "SELECT fe.encounter,fe.date,fe.billing_note,openemr_postcalendar_categories.pc_catname FROM form_encounter AS fe " .
-                                    " LEFT JOIN openemr_postcalendar_categories ON fe.pc_catid=openemr_postcalendar_categories.pc_catid  WHERE fe.pid = ? ORDER BY fe.date DESC",
+                                    "SELECT fe.encounter,fe.date,fe.billing_note,tabemr_postcalendar_categories.pc_catname FROM form_encounter AS fe " .
+                                    " LEFT JOIN tabemr_postcalendar_categories ON fe.pc_catid=tabemr_postcalendar_categories.pc_catid  WHERE fe.pid = ? ORDER BY fe.date DESC",
                                     [
                                     $iter['enc_pid']
                                     ]

@@ -11,8 +11,8 @@
  * @author Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2008-2010 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2011-2021 Brady Miller <brady.g.miller@gmail.com>
- * @link https://github.com/openemr/openemr/tree/master
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link https://github.com/tabemr/tabemr/tree/master
+ * @license https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 /* @TODO add language selection. needs RTL testing */
@@ -28,7 +28,7 @@ if (php_sapi_name() === 'cli') {
     $GLOBALS['force_simple_sql_upgrade'] = true;
 
     // Set HTTP_HOST for CLI mode so globals.php can determine the site
-    // @phpstan-ignore openemr.forbiddenRequestGlobals (Required for write)
+    // @phpstan-ignore tabemr.forbiddenRequestGlobals (Required for write)
     $_SERVER['HTTP_HOST'] = 'default';
 
     // Parse --from=VERSION argument for CLI upgrades

@@ -113,7 +113,7 @@
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2020 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Common\Acl;
@@ -242,7 +242,7 @@ class AclMain
      *
      * Same Functionality in the Zend Module
      * for ACL Check in Zend
-     * Path openemr/interface/modules/zend_modules/module/Application/src/Application/Model/ApplicationTable
+     * Path tabemr/interface/modules/zend_modules/module/Application/src/Application/Model/ApplicationTable
      * Function Name zAclCheck
      *
      * @param String $user_id Auth user Id
@@ -376,7 +376,7 @@ class AclMain
     public static function fetchPostCalendarCategoryACO($pc_catid)
     {
         $aco = sqlQuery(
-            "SELECT aco_spec FROM openemr_postcalendar_categories WHERE pc_catid = ? LIMIT 1",
+            "SELECT aco_spec FROM tabemr_postcalendar_categories WHERE pc_catid = ? LIMIT 1",
             [$pc_catid]
         );
         return $aco['aco_spec'];

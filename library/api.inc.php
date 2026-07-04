@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2017-2021 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\Billing\BillingUtilities;
@@ -49,7 +49,7 @@ function formSubmit($tableName, $values, $id, $authorized = "0")
         if ($key == "csrf_token_form") {
             continue;
         }
-        if (str_starts_with((string) $key, "openemr_net_cpt")) {
+        if (str_starts_with((string) $key, "tabemr_net_cpt")) {
             //code to auto add cpt code
             if (!empty($value)) {
                 $code_array = explode(" ", (string) $value, 2);

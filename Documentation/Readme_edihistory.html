@@ -49,7 +49,7 @@ This applies to version 2 of my edi_history project. <strong>Use at your own ris
 In order to best use these scripts, you must diligently upload all your edi files using the &quot;New Files&quot; tab. Of course, in order to upload you must first download.  In order to download, you must complete some registrations, obtain accounts with usernames and passwords, and configure OpenEMR with the information for your x12 partner(s).
 </p>
 <p>
-Since the information in the EDI files is <strong>HIPAA protected</strong>, do not use these scripts on a public server! (or any computer where access is not restricted)  The files and tables are stored in the OpenEMR directory under &quot;openemr/sites/[sitedir]/edi/history/&quot;  Use the OpenEMR access control scheme to determine which users can use the scripts, probably &quot;accounting&quot;. The files and contained information will be as secure as your OpenEMR installation.
+Since the information in the EDI files is <strong>HIPAA protected</strong>, do not use these scripts on a public server! (or any computer where access is not restricted)  The files and tables are stored in the OpenEMR directory under &quot;tabemr/sites/[sitedir]/edi/history/&quot;  Use the OpenEMR access control scheme to determine which users can use the scripts, probably &quot;accounting&quot;. The files and contained information will be as secure as your OpenEMR installation.
 </p>
 <p><em>Upgrade</em><br />
 The &quot;upgrade&quot; process consists of renaming existing .csv files to <em>old_[files|claims]_[type].csv</em> and moving the existing &quot;era&quot; files to the newly created &quot;f835&quot; directory. This is handled by the <em>csv_setup()</em> function in <em>edih_csv_inc.php</em>. Otherwise, the only actons are the creation of the new directories. If you want the <em>/history/</em> directory to be clear of old cruft, then you can manually delete or move the &quot;old&quot; csv files under the <em>/csv</em> directory and also remove the <em>era</em>, <em>text</em>, <em>ibr</em>, <em>ebr</em>, and <em>dpr</em> directories, if present. Do not delete any of the following directories: archive, csv, f270, f271, f276, f277, f278, f835, f997, log, or tmp.
@@ -59,27 +59,27 @@ If for some reason the scripted upgrade does not work, you may wish to manually 
 <br />
 The [sitedir] is often called &quot;default&quot; and [/path/to/mydir] is your choice. Directory path details may vary.<br />
 <pre><code>
-cd /var/www/htdocs/openemr/sites/[sitedir]/edi<br />
+cd /var/www/htdocs/tabemr/sites/[sitedir]/edi<br />
 cp -a history [/path/to/mydir]<br />
 rm -rf history<br />
 </code></pre>
 Click EDI History in left nav (setup script will run. Check the log under the Notes tab)<br />
 Now copy your existing x12 edi files into their respective directories. Note [ftype] will be like f277, f835, f997, etc.<br />
 <pre><code>
-cp [/path/to/mydir]/history/[ftype]/* /var/www/htdocs/openemr/sites/[sitedir]/documents/edi/history/[ftype]/<br />
+cp [/path/to/mydir]/history/[ftype]/* /var/www/htdocs/tabemr/sites/[sitedir]/documents/edi/history/[ftype]/<br />
 </code></pre>
 Repeat for each file type, but do not copy the csv files. <br />
 &nbsp;&nbsp;&ndash; the dpr, text, ebr, ibr types are no longer used, so don't bother.<br />
 &nbsp;&nbsp;&ndash; the era directory is now the f835 directory<br />
 Find your OpenEMR &quot;owner group&quot; with:<br />
 <pre><code>
-ls -l /var/www/htdocs/openemr<br />
+ls -l /var/www/htdocs/tabemr<br />
 &nbsp;&nbsp;<samp>-rw-r--r--  1 apache apache   969 Mar 24 02:25 COPYRIGHT_AND_LICENSE</samp><br />
 </code></pre>
 Verify file ownership and permissions. (example: owner apache, group apache)<br />
 The directories permissions should be &quot;0755&quot; (&quot;drwxr-xr-x&quot;) and x12 files &quot;0400&quot; (&quot;-r--------&quot;)<br />
 <pre><code>
-cd /var/www/htdocs/openemr/sites/[sitedir]/documents/edi/history<br />
+cd /var/www/htdocs/tabemr/sites/[sitedir]/documents/edi/history<br />
 chown apache:apache [ftype]/*<br />
 chmod 0400 [ftype]/*<br />
 </code></pre>
@@ -92,7 +92,7 @@ Select multiple files from your user directory where you have downloaded the fil
 After new files are uploaded, click the &quot;Process&quot; button. You can (de)select html and/or errors-only, but they are on by default, so you will see a listing of summary information about the files, with particular details where the script detected a possible problem, like a rejected claim.
 </p>
 <p><em>CSV Tables</em><br />
-On this tab, there is a select list to choose a table to view.  Also, select a period or date range to limit the response.  The tables are rows of information intended to allow you to select files or transactions of interest.  The jQuery DataTables plugin has sorting and searching capability.  The &quot;H&quot; link will open a formatted report of the data and the &quot;T&quot; link will open a rendition of the actual data segments from the edi file.  The &quot;Trace&quot; column generally has a reference to the transaction in another file, such as claim status tracing back to the submitted claim.  In the 835 &quot;Payment&quot; tables, the trace is to the payment check/eft number.  Unfortunately, in my opinion the standard OpemEMR claim generation file does not create a correct value in the BHT segment, so tracing to the exact claim submission is not reliable. (See note below) <br />
+On this tab, there is a select list to choose a table to view.  Also, select a period or date range to limit the response.  The tables are rows of information intended to allow you to select files or transactions of interest.  The jQuery DataTables plugin has sorting and searching capability.  The &quot;H&quot; link will open a formatted report of the data and the &quot;T&quot; link will open a rendition of the actual data segments from the edi file.  The &quot;Trace&quot; column generally has a reference to the transaction in another file, such as claim status tracing back to the submitted claim.  In the 835 &quot;Payment&quot; tables, the trace is to the payment check/eft number.  Unfortunately, in my opinion the standard TAB EMR claim generation file does not create a correct value in the BHT segment, so tracing to the exact claim submission is not reliable. (See note below) <br />
 <em>Per Encounter</em><br />
 Enter the claim id (xxxx-xxxxx) (from the 837 CLM01 value). The csv tables will be searched and a dialog will open with links to the corresponding 837, 277, and 835 transactions, and 997/999 if the batch file was rejected.
 </p>
@@ -130,34 +130,34 @@ If this project proves to be useful and reliable, then I would suggest modifying
 Secondly, the x12 batch files could be stored under designated directories to avoid a hodgepodge situation in the /edi directory.
 </p>
 </p>
-Thirdly, There is a rough draft script &quot;test_edih_sftp_files.php&quot; in the &quot;/openemr/library/edihistory/$quot; directory which outlines a possibility for automated file transfers using sftp.
+Thirdly, There is a rough draft script &quot;test_edih_sftp_files.php&quot; in the &quot;/tabemr/library/edihistory/$quot; directory which outlines a possibility for automated file transfers using sftp.
 <p>
 <h3>File Locations:</h3>
 <p>
 The installed directory tree would be:
 </p>
 <ul>
-	<li>/openemr/interface/billing </li>
-	<li>/openemr/library/edihistory</li>
-	<li>/openemr/library/css</li>
-	<li>/openemr/library/js</li>
+	<li>/tabemr/interface/billing </li>
+	<li>/tabemr/library/edihistory</li>
+	<li>/tabemr/library/css</li>
+	<li>/tabemr/library/js</li>
 </ul>
 
 <p>
 Installed files:
 </p>
 <ul>
-    <li>/openemr/Documentation
+    <li>/tabemr/Documentation
         <ul>
             <li>Readme_edihistory.html</li>
         </ul>
     </li>
-	<li>/openemr/interface/billing </li>
+	<li>/tabemr/interface/billing </li>
 		<ul>
 			<li>edih_view.php</li>
 			<li>edih_main.php</li>
 		</ul>
-	<li>/openemr/library/edihistory </li>
+	<li>/tabemr/library/edihistory </li>
 		<ul>
 			<li>edih_archive.php</li>
 			<li>edih_csv_data.php</li>
@@ -173,18 +173,18 @@ Installed files:
 			<li>edih_835_html.php</li>
 			<li>edih_997_error.php</li>
 		</ul>
-	<li>/openemr/library/edihistory/codes</li>
+	<li>/tabemr/library/edihistory/codes</li>
 		<ul>
 			<li>edih_271_code_class.php</li>
 			<li>edih_835_code_class.php</li>
 			<li>edih_997_codes.php</li>
 	   </ul>
-	<li>/openemr/library/css</li>
+	<li>/tabemr/library/css</li>
 	<ul>
       <li>edi_history_v2.css</li>
 	</ul>
 	<ul>
-	  <li>/openemr/library/js/DataTables-1.10.11</li>
+	  <li>/tabemr/library/js/DataTables-1.10.11</li>
 	  <ul>
 		<li>datatables.min.js</li>
       </ul>
@@ -206,11 +206,11 @@ Installed files:
 </ul>
 <p>
 The <em>csv_setup()</em> function creates a file storage directory tree: <br />
-&nbsp;&nbsp; openemr/sites/[sitedir]/documents/edi/history <br />
+&nbsp;&nbsp; tabemr/sites/[sitedir]/documents/edi/history <br />
 with subdirectories: archive csv f270 f271 f276 f277 f278 f835 f997 log tmp
 </p>
 <p>
-and these csv files under: /openemr/sites/[sitedir]/documents/edi/history/csv<br />
+and these csv files under: /tabemr/sites/[sitedir]/documents/edi/history/csv<br />
 &nbsp;&nbsp; claims_[ftype].csv  files_[ftype].csv tables are created for each file type on first appearance
 </p>
 <p>
@@ -219,7 +219,7 @@ The path to these files is set by <em>csv_edih_basedir()</em> based upon the Ope
 <p>
 Note:  I suggest the following edit to the OpenEMR <em>/interface/billing/billing_process.php</em> script:
 <br />
-&nbsp;  In the file openemr/interface/billing/billing_process.php<br />
+&nbsp;  In the file tabemr/interface/billing/billing_process.php<br />
 &nbsp;  in &quot;function append_claim(&amp;$segs)&quot;<br />
  near line 82  (after the &quot;if (elems[0] == 'ST') { }&quot; block)
 </p>

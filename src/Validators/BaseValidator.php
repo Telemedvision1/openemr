@@ -17,7 +17,7 @@ use Ramsey\Uuid\Exception\InvalidUuidStringException;
  * @copyright Copyright (c) 2020 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Dixon Whitmire <dixonwh@gmail.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 abstract class BaseValidator
 {

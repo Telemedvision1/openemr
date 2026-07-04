@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2024 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General public License 3
  */
 
 namespace OpenEMR\Services\ImageUtilities;
@@ -60,7 +60,7 @@ class HandleImageService
     /**
      * Resize Example:
      * $control = new HandleImageService();
-     * $sourceImage = 'C:\xampp\htdocs\openemr\public\images\balloons-154949_960_720.png';
+     * $sourceImage = 'C:\xampp\htdocs\tabemr\public\images\balloons-154949_960_720.png';
      * $resizedImage = $control->resizeImage($sourceImage, 200, 200);
      *
      * @param $sourceImage

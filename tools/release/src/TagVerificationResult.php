@@ -1,16 +1,16 @@
 <?php
 
 /**
- * Result of verifying a release tag against the openemr/openemr-devops#664 spec.
+ * Result of verifying a release tag against the tabemr/tabemr-devops#664 spec.
  *
- * Vendored from openemr/openemr-devops; see
+ * Vendored from tabemr/tabemr-devops; see
  * tools/release/bin/check-vendored.php in that repo for the drift check.
  *
  * @package   OpenEMR
  * @link      http://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);

@@ -5,7 +5,7 @@
  * @link      https://www.open-emr.org
  * @author    Eric Stern <erics@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR <https://opencoreemr.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -24,7 +24,7 @@ final class CacheDirectoryTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->testBaseDir = sys_get_temp_dir() . '/openemr-cache-test-' . bin2hex(random_bytes(8));
+        $this->testBaseDir = sys_get_temp_dir() . '/tabemr-cache-test-' . bin2hex(random_bytes(8));
         mkdir($this->testBaseDir, 0700, true);
     }
 
@@ -138,7 +138,7 @@ final class CacheDirectoryTest extends TestCase
 
     public function testForUsesSystemTempDirWhenNoBaseDirProvided(): void
     {
-        $scope = 'openemr-cache-test-' . bin2hex(random_bytes(8));
+        $scope = 'tabemr-cache-test-' . bin2hex(random_bytes(8));
         $cache = new CacheDirectory();
         $tempDir = sys_get_temp_dir();
 

@@ -7,13 +7,13 @@
  *
  * Uses the Tag Object endpoint plus a refs/tags reference, not a
  * lightweight ref, so the tag carries author/date/message metadata
- * required by openemr/openemr-devops#664.
+ * required by tabemr/tabemr-devops#664.
  *
  * @package   OpenEMR
  * @link      http://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);

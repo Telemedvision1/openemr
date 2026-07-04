@@ -15,7 +15,7 @@
  * @copyright Copyright (c) 2005 andres_paglayan <andres_paglayan>
  * @copyright Copyright (c) 2016 Wakie87 <scott@npclinics.com.au>
  * @copyright Copyright (c) 2017-2023 Robert Down <robertdown@live.com>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use OpenEMR\Common\Acl\AclMain;

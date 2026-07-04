@@ -67,7 +67,7 @@ See [Authorization Guide](AUTHORIZATION.md#standard-api-scopes-apioemr) for comp
 
 Standard API endpoints use the following base URL pattern:
 ```
-https://{your-openemr-host}/apis/{site}/api
+https://{your-tabemr-host}/apis/{site}/api
 ```
 
 ### Default Site
@@ -122,7 +122,7 @@ Accept: application/json
 
 ## API Endpoints
 
-### Standard API ([swagger](https://demo.openemr.io/openemr/swagger/#/standard))
+### Standard API ([swagger](https://demo.tabemr.io/tabemr/swagger/#/standard))
 | Resource                         | permissions | Description                                                                                            |
 |----------------------------------|-------------|--------------------------------------------------------------------------------------------------------|
 | Facility                         | crus        | Manage facility/service location information (`facility` table).                                       |
@@ -158,7 +158,7 @@ Accept: application/json
 | d           | Delete resource                      |
 | s           | Search/List resources                |
 
-## Patient Portal API ([swagger](https://demo.openemr.io/openemr/swagger/#/standard-patient))
+## Patient Portal API ([swagger](https://demo.tabemr.io/tabemr/swagger/#/standard-patient))
 
 **EXPERIMENTAL** - Patient-facing API endpoints.
 
@@ -457,7 +457,7 @@ curl -X POST 'https://localhost:9300/apis/default/api/patient/90cde167-7b9b-4ed1
 
 Test Standard API endpoints interactively with Swagger UI:
 ```
-https://your-openemr-install/swagger/
+https://your-tabemr-install/swagger/
 ```
 
 Navigate to the **standard** section in Swagger UI.
@@ -490,7 +490,7 @@ https://localhost:9300/swagger/oauth2-redirect.html
 
 **Support:**
 - Community Forum: https://community.open-emr.org/
-- GitHub Issues: https://github.com/openemr/openemr/issues
+- GitHub Issues: https://github.com/tabemr/tabemr/issues
 - API Development Thread: https://community.open-emr.org/t/v6-authorization-and-api-changes-afoot/15450
 
 **Recommendation:**
@@ -516,9 +516,9 @@ All technical accuracy is maintained from the original community-authored docume
 
 ### Contributing
 OpenEMR is an open-source project. To contribute to this documentation:
-- **Report Issues:** [GitHub Issues](https://github.com/openemr/openemr/issues)
+- **Report Issues:** [GitHub Issues](https://github.com/tabemr/tabemr/issues)
 - **Discuss:** [Community Forum](https://community.open-emr.org/)
-- **Submit Changes:** [Pull Requests](https://github.com/openemr/openemr/pulls)
+- **Submit Changes:** [Pull Requests](https://github.com/tabemr/tabemr/pulls)
 
 **Last Updated:** November 2025
 **License:** GPL v3

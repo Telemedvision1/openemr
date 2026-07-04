@@ -35,7 +35,7 @@
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 function datetimepickerTranslated(selector, params) {
     if (typeof selector === 'undefined') {

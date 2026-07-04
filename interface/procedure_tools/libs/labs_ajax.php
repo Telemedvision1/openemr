@@ -7,7 +7,7 @@
  * @link      https://www.open-emr.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../../interface/globals.php");
@@ -78,7 +78,7 @@ if ($action === 'print_labels') {
     }
 
     $pdf = new mPDF([
-        'tempDir' => (new CacheDirectory())->for('openemr-mpdf'),
+        'tempDir' => (new CacheDirectory())->for('tabemr-mpdf'),
         'mode' => 'utf-8',
         'format' => [45, 19],
         'default_font_size' => '9',

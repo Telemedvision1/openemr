@@ -20,7 +20,7 @@
  * @author    Eric Stern <erics@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
  * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -119,7 +119,7 @@ class ForbiddenCatchTypeRule implements Rule
                     $declaredFqn,
                     $forbiddenFqn,
                 ))
-                    ->identifier('openemr.forbiddenCatchType')
+                    ->identifier('tabemr.forbiddenCatchType')
                     ->line($typeName->getStartLine())
                     ->tip('Narrow the catch to a type unrelated to the forbidden one, or re-throw (throw;) after any observation/logging so the failure propagates to the global exception handler.')
                     ->build();

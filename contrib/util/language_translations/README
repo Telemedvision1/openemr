@@ -2,11 +2,11 @@ This directory holds the developer tools to maintain the language translations.
 These were created during development of OpenEMR version 3.0.2
 
 The collectConstants.pl script can be used to collect all of the constants
-from the openemr source code.  This script uses the manuallyAddedConstants.txt and
+from the tabemr source code.  This script uses the manuallyAddedConstants.txt and
 manuallyRemovedConstants.txt list to manually add or remove constants from
 the final output. Note that it also requires a list of old constants
 (this can be over-rided) to ensure no old constants are lost (ie ensure
-previous versions of openemr are still supported) Instructions are included in
+previous versions of tabemr are still supported) Instructions are included in
 the file.
   -The manuallyRemovedConstants.txt file includes constants to filter out.
    This is a good place to place any 'junk' constants that are erroneously

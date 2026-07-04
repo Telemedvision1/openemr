@@ -29,7 +29,7 @@ use DBI;
 #               Parameters that you should customize                  #
 #######################################################################
 
-my $DBNAME         = "openemr";  # database name
+my $DBNAME         = "tabemr";  # database name
 
 # You can hard-code the database user name and password (see below),
 # or else put them into the environment with bash commands like these

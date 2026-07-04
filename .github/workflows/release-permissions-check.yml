@@ -5,7 +5,7 @@ name: Release Permissions Check
 # loudly with the missing scope name. Run after installing the App on
 # this repo and the consumer repos, and after rotating secrets.
 #
-# Per openemr/openemr-devops#664.
+# Per tabemr/tabemr-devops#664.
 
 on:
   workflow_dispatch:
@@ -30,7 +30,7 @@ jobs:
       matrix:
         # Conductor tooling runs only on CI runners (no customer
         # deployment), so per OCE conventions it tracks the latest
-        # stable PHP rather than the openemr application floor.
+        # stable PHP rather than the tabemr application floor.
         php-version:
         - '8.5'
     steps:
@@ -47,7 +47,7 @@ jobs:
         # targets, otherwise repository_dispatch to the consumer repos
         # returns 403 "Resource not accessible by integration".
         owner: ${{ github.repository_owner }}
-        repositories: openemr,openemr-devops,website-openemr,demo_farm_openemr
+        repositories: tabemr,tabemr-devops,website-tabemr,demo_farm_tabemr
 
     - name: Setup PHP and Composer
       uses: ./.github/actions/setup-php-composer
@@ -135,7 +135,7 @@ jobs:
         sha=$(gh api "repos/${REPO}/git/ref/heads/${BRANCH}" --jq '.object.sha')
         date=$(date -u +%Y-%m-%dT%H:%M:%SZ)
         message="release-permissions-check probe ${RUN_ID}"
-        tag_sha=$(gh api -X POST "repos/${REPO}/git/tags" -f "tag=${tag_name}" -f "message=${message}" -f "object=${sha}" -f 'type=commit' -F 'tagger[name]=openemr-release-bot' -F 'tagger[email]=release-bot@openemr.invalid' -F "tagger[date]=${date}" --jq '.sha')
+        tag_sha=$(gh api -X POST "repos/${REPO}/git/tags" -f "tag=${tag_name}" -f "message=${message}" -f "object=${sha}" -f 'type=commit' -F 'tagger[name]=tabemr-release-bot' -F 'tagger[email]=release-bot@tabemr.invalid' -F "tagger[date]=${date}" --jq '.sha')
         if [[ -z "${tag_sha}" ]]; then
           echo "FAIL: cannot create annotated tag object" >&2
           exit 1
@@ -154,9 +154,9 @@ jobs:
         php tools/release/bin/dispatch.php \
           --probe \
           --event=release-permissions-probe \
-          --target-repos=openemr/openemr-devops,openemr/website-openemr,openemr/demo_farm_openemr \
+          --target-repos=tabemr/tabemr-devops,tabemr/website-tabemr,tabemr/demo_farm_tabemr \
           --sha='${{ github.sha }}' \
-          --actor=openemr-release-bot
+          --actor=tabemr-release-bot
         echo "OK: dispatched release-permissions-probe to consumer repos"
 
     # Cleanup steps use continue-on-error so a failure to clean up is

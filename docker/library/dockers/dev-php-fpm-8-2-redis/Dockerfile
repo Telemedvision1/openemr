@@ -7,8 +7,8 @@
 # the Free Software Foundation; either version 3 of the License, or
 # (at your option) any later version.
 #
-# php-fpm Dockerfile build for openemr development docker environment
-# This docker is hosted here: https://hub.docker.com/r/openemr/dev-php-fpm/ <tag is 7.2>
+# php-fpm Dockerfile build for tabemr development docker environment
+# This docker is hosted here: https://hub.docker.com/r/tabemr/dev-php-fpm/ <tag is 7.2>
 #
 FROM php:8.2-fpm
 
@@ -49,7 +49,7 @@ RUN chmod uga+x /usr/local/bin/install-php-extensions \
                            xsl \
                            zip
 
-# Needed to ensure permissions work across shared volumes with openemr, nginx, and php-fpm dockers
+# Needed to ensure permissions work across shared volumes with tabemr, nginx, and php-fpm dockers
 RUN usermod -u 1000 www-data
 
 # Copy over the php.ini conf
@@ -57,6 +57,6 @@ COPY php.ini /usr/local/etc/php/php.ini
 
 # Copy xdebug installation script for CI coverage support
 # Script is placed at /usr/share/nginx/html/xdebug.sh so CI can call ../xdebug.sh
-# from the OpenEMR directory at /usr/share/nginx/html/openemr
+# from the OpenEMR directory at /usr/share/nginx/html/tabemr
 COPY xdebug.sh /usr/share/nginx/html/xdebug.sh
 RUN chmod +x /usr/share/nginx/html/xdebug.sh

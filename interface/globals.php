@@ -10,7 +10,7 @@
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2018-2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 use Dotenv\Dotenv;
@@ -51,7 +51,7 @@ if (!defined('IS_WINDOWS')) {
 
 // The webserver_root and web_root are now automatically collected.
 // If not working, can set manually below.
-// Auto collect the full absolute directory path for openemr.
+// Auto collect the full absolute directory path for tabemr.
 $webserver_root = dirname(__FILE__, 2);
 if (IS_WINDOWS) {
     $webserver_root = str_replace("\\", "/", $webserver_root);
@@ -185,8 +185,8 @@ if (IS_WINDOWS) {
 // browser after the server address to get to OpenEMR.
 // This removes the leading portion of $webserver_root that it has in common with the web server's document
 // root and assigns the result to $web_root. In addition to the common case where $webserver_root is
-// /var/www/openemr and document root is /var/www, this also handles the case where document root is
-// /var/www/html and there is an Apache "Alias" command that directs /openemr to /var/www/openemr.
+// /var/www/tabemr and document root is /var/www, this also handles the case where document root is
+// /var/www/html and there is an Apache "Alias" command that directs /tabemr to /var/www/tabemr.
 $web_root = substr($webserver_root, strspn($webserver_root ^ $server_document_root, "\0"));
 // Ensure web_root starts with a path separator
 if (preg_match("/^[^\/]/", $web_root)) {
@@ -196,8 +196,8 @@ if (preg_match("/^[^\/]/", $web_root)) {
 // The webserver_root and web_root are now automatically collected in
 //  real time per above code. If above is not working, can uncomment and
 //  set manually here:
-//   $webserver_root = "/var/www/openemr";
-//   $web_root =  "/openemr";
+//   $webserver_root = "/var/www/tabemr";
+//   $web_root =  "/tabemr";
 
 $ResolveServerHost = static function () {
     $scheme = ($_SERVER['REQUEST_SCHEME'] ?? 'https') . "://";
@@ -378,7 +378,7 @@ try {
     die();
 }
 
-// This will open the openemr mysql connection.
+// This will open the tabemr mysql connection.
 require_once(__DIR__ . "/../library/sql.inc.php");
 $globalsBag->set("adodb", $GLOBALS['adodb'] ?? null);
 $globalsBag->set("dbh", $GLOBALS['dbh'] ?? null);
@@ -622,9 +622,9 @@ if (!empty($glrow)) {
     $globalsBag->set('translate_document_categories', true);
     $globalsBag->set('translate_appt_categories', true);
     $globalsBag->set('timeout', 7200);
-    $openemr_name = 'OpenEMR';
+    $tabemr_name = 'OpenEMR';
     $css_header = "$web_root/public/themes/style_default.css";
-    $globalsBag->set('openemr_name', $openemr_name);
+    $globalsBag->set('tabemr_name', $tabemr_name);
     $globalsBag->set('css_header', $css_header);
     $compact_header = "$web_root/public/themes/style_default.css";
     $globalsBag->set('compact_header', $compact_header);

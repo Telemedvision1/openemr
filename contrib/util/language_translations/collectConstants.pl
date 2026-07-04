@@ -21,12 +21,12 @@
 #  -Below command will find all unique constants, filter through the
 #   add/remove files, sort, and dump into file constants.txt. Note this
 #   will remove old constants so the below remove flag must be set:
-#  ./collectConstants /var/www/openemr
+#  ./collectConstants /var/www/tabemr
 #
 #  -Below command will find all unique constants, ensure none are deleted from the
 #   previous listings of constants,
 #   filter through the add/remove files, sort, and dump to file constants.txt:
-#  ./collectConstants /var/www/openemr previousConstants.txt
+#  ./collectConstants /var/www/tabemr previousConstants.txt
 #
 #
 

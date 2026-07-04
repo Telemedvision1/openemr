@@ -8,7 +8,7 @@
  *
  * @package   OpenEMR
  * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -274,12 +274,12 @@ class TelemetryServiceTest extends TestCase
         $telemetryService = new TelemetryService($mockRepository, $mockVersionService, $mockLogger);
 
         // Set up a Kernel with webroot to test URL normalization
-        $GLOBALS['kernel'] = new Kernel('/var/www/openemr', '/openemr');
+        $GLOBALS['kernel'] = new Kernel('/var/www/tabemr', '/tabemr');
 
         $data = [
             'eventType' => 'click',
             'eventLabel' => 'test-label',
-            'eventUrl' => 'http://example.com/openemr/interface/test#section?param=value',
+            'eventUrl' => 'http://example.com/tabemr/interface/test#section?param=value',
             'eventTarget' => 'button'
         ];
 
@@ -687,7 +687,7 @@ class TelemetryServiceTest extends TestCase
         $telemetryService = new TelemetryService($mockRepository, $mockVersionService, $mockLogger);
 
         // Set up a Kernel with empty webroot to test the fallback behavior
-        $GLOBALS['kernel'] = new Kernel('/var/www/openemr', '');
+        $GLOBALS['kernel'] = new Kernel('/var/www/tabemr', '');
 
         $data = [
             'eventType' => 'click',
@@ -715,7 +715,7 @@ class TelemetryServiceTest extends TestCase
 
     public function testReportClickEventNormalizesUrlWithFragmentOnly(): void
     {
-        $GLOBALS['kernel'] = new Kernel('/var/www/openemr', '/openemr');
+        $GLOBALS['kernel'] = new Kernel('/var/www/tabemr', '/tabemr');
 
         $mockRepository = $this->createMock(TelemetryRepository::class);
         $mockVersionService = $this->createMock(VersionServiceInterface::class);

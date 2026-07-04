@@ -2,11 +2,11 @@
  * Javascript Controller for the entire conference room.  It handles both the waiting room and session conference room
  * controls and interactions.
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2023 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 import {ConfirmSessionCloseDialog} from "./confirm-session-close-dialog.js";

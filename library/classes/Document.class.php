@@ -7,14 +7,14 @@
  * It is implicit that a document can have other related tables to it at least a one document to many notes
  *  which join on a documents id and categories which do the same.
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Unknown -- No ownership was listed on this document prior to February 5th 2021
  * @author    Stephen Nielson <stephen@nielson.org>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright OpenEMR contributors (c) 2021
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../pnotes.inc.php");

@@ -4,11 +4,11 @@
  * CreateClientCredentialsAssertion Is a helper utility to create a Client Credentials Grant assertion statement as
  * well as print out the Public JSON Web Key Set that can be used for a test System App.
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace OpenEMR\Common\Command;
@@ -76,8 +76,8 @@ class CreateClientCredentialsAssertionCommand implements IOpenEMRCommand
         $oauthTokenUrl = $opts['a'];
         $clientId = $opts['i'];
         $assertion = ClientCredentialsAssertionGenerator::generateAssertion(
-            LocalFileReference::file($keyLocation . "openemr-rsa384-private.key"),
-            LocalFileReference::file($keyLocation . "openemr-rsa384-public.pem"),
+            LocalFileReference::file($keyLocation . "tabemr-rsa384-private.key"),
+            LocalFileReference::file($keyLocation . "tabemr-rsa384-public.pem"),
             $oauthTokenUrl,
             $clientId
         );

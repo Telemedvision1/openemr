@@ -6,7 +6,7 @@
  * Apache2 license of the originating code.
  * @see https://github.com/jumbojett/OpenID-Connect-PHP
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author  Michael Jett <mjett@mitre.org>
  * @author    Stephen Nielson <stephen@nielson.org>

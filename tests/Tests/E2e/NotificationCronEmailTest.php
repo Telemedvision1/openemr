@@ -11,7 +11,7 @@
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -80,11 +80,11 @@ class NotificationCronEmailTest extends TestCase
         $GLOBALS['EMAIL_METHOD'] = 'SMTP';
         $GLOBALS['SMTP_HOST'] = getenv('OPENEMR_SETTING_SMTP_HOST') ?: 'mailpit';
         $GLOBALS['SMTP_PORT'] = getenv('OPENEMR_SETTING_SMTP_PORT') ?: '1025';
-        $GLOBALS['SMTP_USER'] = getenv('OPENEMR_SETTING_SMTP_USER') ?: 'openemr';
-        $GLOBALS['SMTP_PASS'] = getenv('OPENEMR_SETTING_SMTP_PASS') ?: 'openemr';
+        $GLOBALS['SMTP_USER'] = getenv('OPENEMR_SETTING_SMTP_USER') ?: 'tabemr';
+        $GLOBALS['SMTP_PASS'] = getenv('OPENEMR_SETTING_SMTP_PASS') ?: 'tabemr';
         $GLOBALS['SMTP_SECURE'] = getenv('OPENEMR_SETTING_SMTP_SECURE') ?: 'none';
         $GLOBALS['SMTP_Auth'] = getenv('OPENEMR_SETTING_SMTP_Auth') ?: 'TRUE';
-        $GLOBALS['practice_return_email_path'] = 'noreply@openemr.local';
+        $GLOBALS['practice_return_email_path'] = 'noreply@tabemr.local';
         $GLOBALS['patient_reminder_sender_name'] = 'OpenEMR Test';
         $GLOBALS['oe_enable_email'] = true;
         // AppDispatch::getServiceType() reads the enable flag from the
@@ -124,7 +124,7 @@ class NotificationCronEmailTest extends TestCase
     {
         if ($this->testEventEid > 0) {
             QueryUtils::sqlStatementThrowException(
-                'DELETE FROM openemr_postcalendar_events WHERE pc_eid = ?',
+                'DELETE FROM tabemr_postcalendar_events WHERE pc_eid = ?',
                 [$this->testEventEid],
             );
         }
@@ -192,7 +192,7 @@ class NotificationCronEmailTest extends TestCase
     public function cancelledAppointmentIsExcludedFromNotification(): void
     {
         QueryUtils::sqlStatementThrowException(
-            "UPDATE openemr_postcalendar_events SET pc_apptstatus = 'x' WHERE pc_eid = ?",
+            "UPDATE tabemr_postcalendar_events SET pc_apptstatus = 'x' WHERE pc_eid = ?",
             [$this->testEventEid],
         );
 
@@ -267,7 +267,7 @@ class NotificationCronEmailTest extends TestCase
         $eventDate = date('Y-m-d', $timestamp);
 
         QueryUtils::sqlStatementThrowException(
-            "INSERT INTO openemr_postcalendar_events"
+            "INSERT INTO tabemr_postcalendar_events"
             . " (pc_pid, pc_aid, pc_eventDate, pc_endDate,"
             . "  pc_startTime, pc_endTime, pc_duration, pc_catid,"
             . "  pc_apptstatus, pc_sendalertemail, pc_sendalertsms,"
@@ -277,7 +277,7 @@ class NotificationCronEmailTest extends TestCase
             [$this->testPatientPid, $eventDate, $eventDate],
         );
         $eid = QueryUtils::fetchSingleValue(
-            'SELECT MAX(pc_eid) AS v FROM openemr_postcalendar_events WHERE pc_pid = ?',
+            'SELECT MAX(pc_eid) AS v FROM tabemr_postcalendar_events WHERE pc_pid = ?',
             'v',
             [$this->testPatientPid],
         );
@@ -293,7 +293,7 @@ class NotificationCronEmailTest extends TestCase
     {
         $row = QueryUtils::querySingleRow(
             'SELECT pc_apptstatus, pc_sendalertemail, pc_sendalertsms'
-            . ' FROM openemr_postcalendar_events WHERE pc_eid = ?',
+            . ' FROM tabemr_postcalendar_events WHERE pc_eid = ?',
             [$this->testEventEid],
         );
         $this->assertIsArray($row);

@@ -2,11 +2,11 @@
  * Represents a unique participant caller in the telehealth conference room.  It can have multiple video slots
  * in the call (for screen share and camera feeds).
  *
- * @package openemr
+ * @package tabemr
  * @link      https://www.open-emr.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2023 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 import {ATSlot} from "./at-slot.js";

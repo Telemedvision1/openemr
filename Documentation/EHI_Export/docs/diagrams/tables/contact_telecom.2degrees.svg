@@ -1337,14 +1337,14 @@
 <polygon fill="#000000" stroke="#000000" points="536.0137,-161.6791 544.2106,-164.805 540.0068,-161.4451 544,-161.2112 544,-161.2112 544,-161.2112 540.0068,-161.4451 543.7894,-157.6173 536.0137,-161.6791 536.0137,-161.6791"/>
 <ellipse fill="none" stroke="#000000" cx="532.8192" cy="-161.8663" rx="3.2" ry="3.2"/>
 </g>
-<!-- openemr_postcalendar_events -->
+<!-- tabemr_postcalendar_events -->
 <g id="node26" class="node">
-<title>openemr_postcalendar_events</title>
-<g id="a_node26"><a xlink:href="../../tables/openemr_postcalendar_events.html" xlink:title="openemr_postcalendar_events" target="_top">
+<title>tabemr_postcalendar_events</title>
+<g id="a_node26"><a xlink:href="../../tables/tabemr_postcalendar_events.html" xlink:title="tabemr_postcalendar_events" target="_top">
 <polygon fill="#ffffff" stroke="transparent" points="492.5,-811.7112 492.5,-872.7112 713.5,-872.7112 713.5,-811.7112 492.5,-811.7112"/>
 <polygon fill="#f5f5f5" stroke="transparent" points="493,-849.2112 493,-872.2112 714,-872.2112 714,-849.2112 493,-849.2112"/>
 <polygon fill="none" stroke="#000000" points="493,-849.2112 493,-872.2112 714,-872.2112 714,-849.2112 493,-849.2112"/>
-<text text-anchor="start" x="498" y="-857.8112" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#000000">openemr_postcalendar_events</text>
+<text text-anchor="start" x="498" y="-857.8112" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#000000">tabemr_postcalendar_events</text>
 <text text-anchor="start" x="679.5219" y="-857.3112" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#000000">[table]</text>
 <polygon fill="none" stroke="#000000" points="493,-830.2112 493,-849.2112 714,-849.2112 714,-830.2112 493,-830.2112"/>
 <text text-anchor="start" x="496" y="-836.3112" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#000000">...</text>
@@ -1360,23 +1360,23 @@
 </a>
 </g>
 </g>
-<!-- openemr_postcalendar_events&#45;&gt;list_options -->
+<!-- tabemr_postcalendar_events&#45;&gt;list_options -->
 <g id="edge89" class="edge">
-<title>openemr_postcalendar_events:w&#45;&gt;list_options:e</title>
+<title>tabemr_postcalendar_events:w&#45;&gt;list_options:e</title>
 <path fill="none" stroke="#000000" d="M478.5604,-838.9012C352.4305,-833.4966 285.6,-760.2779 188,-847.2112 127.4888,-901.109 217.5344,-1208.2112 136.5,-1208.2112"/>
 <polygon fill="#000000" stroke="#000000" points="485.0018,-839.0394 492.9227,-842.8103 489.0009,-839.1253 493,-839.2112 493,-839.2112 493,-839.2112 489.0009,-839.1253 493.0773,-835.612 485.0018,-839.0394 485.0018,-839.0394"/>
 <ellipse fill="none" stroke="#000000" cx="481.8026" cy="-838.9708" rx="3.2" ry="3.2"/>
 </g>
-<!-- openemr_postcalendar_events&#45;&gt;list_options -->
+<!-- tabemr_postcalendar_events&#45;&gt;list_options -->
 <g id="edge91" class="edge">
-<title>openemr_postcalendar_events:w&#45;&gt;list_options:e</title>
+<title>tabemr_postcalendar_events:w&#45;&gt;list_options:e</title>
 <path fill="none" stroke="#000000" d="M478.5528,-838.9142C352.343,-833.7371 285.1387,-763.6789 188,-851.2112 128.4543,-904.8681 216.6546,-1208.2112 136.5,-1208.2112"/>
 <polygon fill="#000000" stroke="#000000" points="485.0017,-839.0467 492.926,-842.8104 489.0008,-839.1289 493,-839.2112 493,-839.2112 493,-839.2112 489.0008,-839.1289 493.074,-835.6119 485.0017,-839.0467 485.0017,-839.0467"/>
 <ellipse fill="none" stroke="#000000" cx="481.8024" cy="-838.9809" rx="3.2" ry="3.2"/>
 </g>
-<!-- openemr_postcalendar_events&#45;&gt;patient_data -->
+<!-- tabemr_postcalendar_events&#45;&gt;patient_data -->
 <g id="edge90" class="edge">
-<title>openemr_postcalendar_events:w&#45;&gt;patient_data:e</title>
+<title>tabemr_postcalendar_events:w&#45;&gt;patient_data:e</title>
 <path fill="none" stroke="#000000" d="M478.3468,-840.6762C398.3566,-857.9003 452.2791,-1021.2112 356.5,-1021.2112"/>
 <polygon fill="#000000" stroke="#000000" points="485.0397,-840.0071 493.3582,-842.7933 489.0198,-839.6091 493,-839.2112 493,-839.2112 493,-839.2112 489.0198,-839.6091 492.6418,-835.629 485.0397,-840.0071 485.0397,-840.0071"/>
 <ellipse fill="none" stroke="#000000" cx="481.8556" cy="-840.3254" rx="3.2" ry="3.2"/>

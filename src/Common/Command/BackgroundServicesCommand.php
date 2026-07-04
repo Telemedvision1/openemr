@@ -9,7 +9,7 @@
  * @link      https://www.open-emr.org
  * @author    Michael A. Smith <michael@opencoreemr.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -161,7 +161,7 @@ class BackgroundServicesCommand extends Command implements IGlobalsAware
         // still in progress), not failures. Only hard errors and not_found
         // produce a non-zero exit code so Kubernetes CronJobs, systemd, and
         // cron MAILTO don't treat routine no-ops as failures. See #11664,
-        // #11677, opencoreemr/chart-oce-openemr#114.
+        // #11677, opencoreemr/chart-oce-tabemr#114.
         foreach ($results as $result) {
             if ($result['status'] === 'error' || $result['status'] === 'not_found') {
                 return Command::FAILURE;

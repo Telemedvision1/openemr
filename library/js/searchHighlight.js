@@ -12,7 +12,7 @@
  * @link      https://www.open-emr.org
  * @author    Andrew Alanis <progradedteam@gmail.com>
  * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/tabemr/tabemr/blob/master/LICENSE GNU General Public License 3
  */
 /* This module is pure vanilla JavaScript — no jQuery dependency. */
 

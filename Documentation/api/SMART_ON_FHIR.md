@@ -129,7 +129,7 @@ SMART apps must be registered before use. OpenEMR provides two registration meth
 
 1. **Navigate to registration page:**
 ```
-   https://your-openemr.example.com/interface/smart/register-app.php
+   https://your-tabemr.example.com/interface/smart/register-app.php
 ```
 
 2. **Fill in app details:**
@@ -1424,7 +1424,7 @@ See [Authorization Guide - Revoking Access](AUTHORIZATION.md#revoking-access) fo
 
 **Support:**
 - Community Forum: https://community.open-emr.org/
-- GitHub Issues: https://github.com/openemr/openemr/issues
+- GitHub Issues: https://github.com/tabemr/tabemr/issues
 
 ---
 ## Documentation Attribution
@@ -1446,9 +1446,9 @@ All technical accuracy is maintained from the original community-authored docume
 
 ### Contributing
 OpenEMR is an open-source project. To contribute to this documentation:
-- **Report Issues:** [GitHub Issues](https://github.com/openemr/openemr/issues)
+- **Report Issues:** [GitHub Issues](https://github.com/tabemr/tabemr/issues)
 - **Discuss:** [Community Forum](https://community.open-emr.org/)
-- **Submit Changes:** [Pull Requests](https://github.com/openemr/openemr/pulls)
+- **Submit Changes:** [Pull Requests](https://github.com/tabemr/tabemr/pulls)
 
 **Last Updated:** November 2025
 **License:** GPL v3
